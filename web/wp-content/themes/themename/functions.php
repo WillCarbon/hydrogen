@@ -1,33 +1,37 @@
 <?php
 /**
  * Custom Functions
- *
- * (None of this works without auto-loader present)
  */
 
 /**
- * Register ACF
+ * ACF Settings
  */
-(new Carbonite\ACF\Register());
+include('lib/ACF.php');
 
 /**
- * Register Theme
+ * Load Theme Classes
  */
-(new Carbonite\Theme\Register());
+include('lib/Theme/Activation.php');
+include('lib/Theme/CleanUp.php');
+include('lib/Theme/Images.php');
+include('lib/Theme/LoadBem.php');
+include('lib/Theme/Setup.php');
+include('lib/Theme/Scripts.php');
+include('lib/Theme/Styles.php');
+include('lib/Theme/TinyMCE.php');
+include('lib/Theme/TrackingCodes.php');
 
 /**
  * Register Post Types
  */
-(new Carbonite\Post\Register());
+#include('lib/PostType/ExamplePostType.php');
 
 /**
  * Register REST Routes
  *
  * You need to update REST_NAMESPACE in REST\REST.php
  */
-(new Carbonite\REST\Register());
+#include('lib/REST/REST.php');
+#include('lib/REST/RESTActionInterface.php');
+#include('lib/REST/ExampleAction.php');
 
-/**
- * Register Gravity Forms
- */
-(new Carbonite\GravityForms\Register());

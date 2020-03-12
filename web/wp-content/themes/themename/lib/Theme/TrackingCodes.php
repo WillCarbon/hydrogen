@@ -1,14 +1,16 @@
 <?php
-namespace Carbonite\Theme;
 
-class TrackingCodes
+/**
+ * Class CarbonTrackingCodes
+ */
+class CarbonTrackingCodes
 {
     public $googleAnalytics;
     public $googleTags;
     public $hotjarAnalytics;
 
     /**
-     * TrackingCodes constructor.
+     * CarbonTrackingCodes constructor.
      */
     public function __construct()
     {
@@ -87,3 +89,4 @@ class TrackingCodes
         ' ;
     }
 }
+(new CarbonTrackingCodes());

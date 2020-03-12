@@ -1,7 +1,5 @@
 <?php
-namespace Carbonite\Theme;
-
-class Setup
+class CarbonSetup
 {
     /**
      * Setup constructor.
@@ -83,3 +81,4 @@ class Setup
         }
     }
 }
+(new CarbonSetup());

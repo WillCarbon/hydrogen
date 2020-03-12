@@ -1,7 +1,9 @@
 <?php
-namespace Carbonite\Theme;
 
-class Activation
+/**
+ * Class CarbonActivation
+ */
+class CarbonActivation
 {
     public function __construct()
     {
@@ -95,3 +97,4 @@ class Activation
     }
 
 }
+(new CarbonActivation());

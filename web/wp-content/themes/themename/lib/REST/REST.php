@@ -1,7 +1,8 @@
 <?php
 
-namespace Carbonite\REST;
-
+/**
+ * Class REST
+ */
 class REST
 {
     /**
@@ -10,6 +11,10 @@ class REST
      */
     const REST_NAMESPACE = 'api';
 
+    /**
+     * @param string $route
+     * @param array $args
+     */
     public function registerRoute($route = '/', $args = [])
     {
         register_rest_route(self::REST_NAMESPACE, $route, $args);

@@ -1,7 +1,9 @@
 <?php
-namespace Carbonite\Theme;
 
-class CleanUp
+/**
+ * Class CarbonCleanUp
+ */
+class CarbonCleanUp
 {
     public function __construct()
     {
@@ -181,3 +183,4 @@ class CleanUp
         return 'low';
     }
 }
+(new CarbonCleanUp());

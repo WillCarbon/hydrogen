@@ -1,12 +1,17 @@
 <?php
-namespace Carbonite\Theme;
 
-class Images
+/**
+ * Class CarbonImages
+ */
+class CarbonImages
 {
+    /**
+     * CarbonImages constructor.
+     */
     public function __construct()
     {
-        // add_action('init', [$this, 'imageSizes']);
-        // add_filter('image_size_names_choose', [$this, 'sizeNames']);
+        #add_action('init', [$this, 'imageSizes']);
+        #add_filter('image_size_names_choose', [$this, 'sizeNames']);
     }
 
     /**
@@ -34,3 +39,4 @@ class Images
         return $sizes;
     }
 }
+(new CarbonImages());

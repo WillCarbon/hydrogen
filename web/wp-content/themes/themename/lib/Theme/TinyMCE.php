@@ -1,14 +1,12 @@
 <?php
-namespace Carbonite\Theme;
 
 /**
- * TinyMCE
- * @package Carbonite\Theme
+ * CarbonTinyMCE
  */
-class TinyMCE
+class CarbonTinyMCE
 {
     /**
-     * TinyMCE constructor.
+     * CarbonTinyMCE constructor.
      */
     public function __construct()
     {
@@ -53,3 +51,4 @@ class TinyMCE
     }
 
 }
+(new CarbonTinyMCE());

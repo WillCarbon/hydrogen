@@ -1,13 +1,11 @@
 <?php
-namespace Carbonite\Theme;
 
-use \Carbonite\Mediator\Bem;
+use Carbon\Helpers\Bem;
 
 /**
- * Class LoadBem
- * @package Carbonite\Theme
+ * Class CarbonLoadBem
  */
-class LoadBem
+class CarbonLoadBem
 {
 
     /**
@@ -143,3 +141,4 @@ class LoadBem
         return $classes;
     }
 }
+(new CarbonLoadBem());

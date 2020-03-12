@@ -4,12 +4,15 @@ Project name is a Wordpress website. Possibly a short description of the website
 
 The website is built with:
 
-* [Wordpress](https://wordpress.com/) using [Carbonite](https://github.com/carboncreativeuk/carbonite)
+* [Wordpress](https://wordpress.com/) 
+* [Carbonara](https://github.com/carboncreativeuk/Carbonara) - Base Theme
+* [Carbon Neutral](https://github.com/carboncreativeuk/CarbonNeutral) - Helper Plugin
 
 ### System Requirements
 
 * [Composer](https://getcomposer.org/)
-* [NPM](https://www.npmjs.com/) & [Node](https://nodejs.org/en/)
+* [NPM](https://www.npmjs.com/) 
+* [Node](https://nodejs.org/en/)
 * [Gulp](https://gulpjs.com/)
 
 ### Installation
@@ -18,8 +21,6 @@ The website is built with:
 2. Install the dependencies: `npm install && npm run deploy`
 3. Set up a database and update the connection details in wp-config.php
 4. Set up an Valet so the site can be accessed at: http://projectname.localhost
-
-*Full instructions can be found on the [Carbon Wiki](https://github.com/carboncreativeuk/carbon-wiki)*.
 
 ### Deployment Scripts
 

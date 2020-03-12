@@ -1,15 +1,16 @@
 <?php
 
-namespace Carbonite\Post\Type;
+use Carbon\PostType\BasePostType;
+use Carbon\PostType\PostTypeInterface;
 
-use Carbonite\Post\PostType;
-use Carbonite\Post\PostTypeInterface;
-
-class Event extends PostType implements PostTypeInterface
+/**
+ * Class ExamplePostType
+ */
+class ExamplePostType extends BasePostType implements PostTypeInterface
 {
 
     /**
-     * Event constructor.
+     * ExamplePostType constructor.
      */
     public function __construct()
     {
@@ -21,21 +22,22 @@ class Event extends PostType implements PostTypeInterface
      */
     public function register()
     {
-        $this->addPostType('event', 'Events', 'Event', [
+        $this->addPostType('example', 'Examples', 'Example', [
             'rewrite'       => [
-                'slug'          => 'events',
+                'slug'          => 'examples',
                 'with_front'    => false
             ],
-            'has_archive'   => 'events',
+            'has_archive'   => 'examples',
             'supports'      => [ 'title', 'editor', 'author', 'thumbnail' ]
         ]);
 
-        $this->addTaxonomy('event_cat', 'event', 'Categories', 'Category', [
+        $this->addTaxonomy('example_cat', 'example', 'Categories', 'Category', [
             'hierarchical'      => true,
             'rewrite'           => [
-                'slug'              => 'events',
+                'slug'              => 'examples',
                 'with_front'        => false
             ]
         ]);
     }
 }
+(new ExamplePostType());

@@ -1,11 +1,9 @@
 <?php
-namespace Carbonite\Theme;
 
 /**
- * Class Styles
- * @package Carbonite\Theme
+ * Class CarbonStyles
  */
-class Styles
+class CarbonStyles
 {
     private $dir;
     private $dirCss;
@@ -25,31 +23,19 @@ class Styles
         $this->version = (defined('SITE_VERSION'))? SITE_VERSION : null;
 
         // Remove Stylesheets
-        add_action('wp_enqueue_scripts', [$this, 'deregister_styles'], 98);
+        add_action('wp_enqueue_scripts', [$this, 'deregisterStyles'], 98);
 
         // Add Stylesheets
-        add_action('wp_enqueue_scripts', [$this, 'register_styles'], 99);
-    }
-
-    /**
-     * Remove Stylesheets
-     */
-    public function deregister_styles()
-    {
-        if (is_admin())
-            return;
-
-        // Remove default WordPress stylesheet
-        wp_dequeue_style('wp-block-library');
+        add_action('wp_enqueue_scripts', [$this, 'registerStyles'], 99);
     }
 
     /**
      * Add Stylesheets
      */
-    public function register_styles()
+    public function registerStyles()
     {
-        if (is_admin())
-            return;
+        // Dont run on Dashboard
+        if (is_admin()) return;
 
         wp_enqueue_style(
             'main',
@@ -60,4 +46,17 @@ class Styles
         );
     }
 
+    /**
+     * Remove Stylesheets
+     */
+    public function deregisterStyles()
+    {
+        // Dont run on Dashboard
+        if (is_admin()) return;
+
+        // Remove default WordPress stylesheet
+        wp_dequeue_style('wp-block-library');
+    }
+
 }
+(new CarbonStyles());

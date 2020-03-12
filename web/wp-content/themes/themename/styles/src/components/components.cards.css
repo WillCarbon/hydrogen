@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.c-cards__wrap {
+    display: flex;
+    justify-content: space-between;
+    @mixin flex-parent row, wrap, sm, column, wrap;
+}
+.c-cards-title {
+    text-align: center;
+    font-size: responsive 20px 32px;
+    @mixin padding bottom, 1.5;
+}
+.c-cards-subtitle {
+    font-size: 16px;
+    @mixin padding top, .25;
+}
+
+/*
+   Individual cards
+   ========================================================================== */
+
+.c-cards__item {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    flex: 1;
+    margin: 0 $grid-padding;
+    background: $colour-grey-x-light;
+    border: 1px solid $colour-grey-light;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 40px 0 rgba(221, 221, 221, .5);
+    @mixin margin bottom, 1.5;
+    @media ($mq-sm-min) and ($mq-md-max) {
+        width: 50%;
+    }
+    &:only-of-type {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $grid-width-sm;
+    }
+    &__body {
+        padding: $grid-padding;
+        p {
+            margin-bottom: 0;
+        }
+    }
+    &__footer {
+        border-top: 1px solid $colour-grey-light;
+        padding: $grid-padding;
+        background: $colour-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__image {
+        /*background: $colour-alpha url("../../assets/svg/preload.svg") no-repeat center;*/
+        backface-visibility: hidden;
+        overflow: hidden;
+        @mixin object-fit-parent 340px, 100%;
+        img {
+            overflow: hidden;
+            border-radius: $border-radius $border-radius 0 0;
+            transition: $transition-duration $transition-easing;
+            @mixin object-fit-image;
+            &:hover {
+                background: $colour-alpha;
+                transform: scale(1.025);
+            }
+        }
+    }
+}

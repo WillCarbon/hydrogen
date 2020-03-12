@@ -1,0 +1,11 @@
+/* ==========================================================================
+   Object fit
+   ========================================================================== */
+
+.c-object-fit--polyfill {
+    background-size: cover !important;
+    background-position: center center !important;
+    img {
+        display: none !important;
+    }
+}

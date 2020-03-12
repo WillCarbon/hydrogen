@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+/* stylelint-disable */
+* {
+    box-sizing: border-box;
+}
+/* stylelint-enable */
+
+html, body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+p, pre, label {
+    margin-top: 0;
+    margin-bottom: $base-line-height;
+}
+
+strong, b {
+    font-weight: $font-bold;
+}
+
+ol, ul {
+    list-style-position: outside;
+    margin-top: 0;
+    margin-bottom: $base-line-height;
+    padding-left: 20px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid $colour-grey;
+    margin: 0 0 ($base-line-height * 2);
+}

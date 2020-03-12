@@ -1,0 +1,47 @@
+{
+    "repositories": [{
+        "type": "composer",
+        "url": "https://wpackagist.org"
+    }, {
+        "type": "composer",
+        "url": "https://wp-languages.github.io"
+    },{
+        "type": "composer",
+        "url": "https://satispress.staging.aws.carboncode.co.uk/satispress"
+    }],
+    "config": {
+        "http-basic": {
+            "satispress.staging.aws.carboncode.co.uk": {
+                "username": "composer",
+                "password": "0carbon"
+            }
+        },
+        "secure-http": true
+    },
+    "require": {
+        "php": ">=7.1",
+        "johnpbloch/wordpress": "*",
+        "koodimonni-language/core-en_gb": "*",
+        "satispress/wp-carboniser": "*",
+        "satispress/advanced-custom-fields-pro": "*",
+        "satispress/gravityforms": "*",
+        "wpackagist-plugin/wordpress-seo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Carbonite\\": "web/wp-content/themes/themename/lib"
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "web/wordpress",
+        "installer-paths": {
+            "web/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "web/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "dropin-paths": {
+            "web/wp-content/languages/": ["vendor:koodimonni-language"],
+            "web/wp-content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+            "web/wp-content/languages/themes/": ["vendor:koodimonni-theme-language"]
+        }
+    }
+}

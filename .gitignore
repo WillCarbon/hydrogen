@@ -1,0 +1,39 @@
+# System & hidden
+
+.DS_Store
+.sass-cache
+.idea
+.vscode
+*.code-workspace
+
+# Dependencies (composer, npm & bower)
+
+/vendor
+/node_modules
+bower_components
+package-lock.json
+
+# WordPress
+
+/web/wordpress
+/web/wp-config.php
+/web/.htaccess
+/web/wp-content/debug.log
+
+/web/wp-content/languages
+/web/wp-content/plugins/*
+!/web/wp-content/plugins/.gitkeep
+/web/wp-content/uploads/*
+!/web/wp-content/uploads/.gitkeep
+
+# Caches
+
+/web/wp-content/acf-cache
+/web/wp-content/wp-rocket-config
+
+# Compiled
+
+/web/wp-content/themes/**/styles/dist
+/web/wp-content/themes/**/js/dist
+/web/wp-content/themes/**/vendor
+web/version.php

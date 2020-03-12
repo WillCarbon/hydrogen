@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Panel
+   ========================================================================== */
+
+.c-panel {
+    background: $colour-grey-x-light;
+    border: 1px solid $colour-grey-light;
+    border-radius: $border-radius;
+    margin: calc($base-line-height * 2) 0;
+    padding: $base-line-height;
+}
+.c-panel__header {
+    text-align: center;
+}

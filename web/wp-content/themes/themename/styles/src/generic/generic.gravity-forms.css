@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Gravity Forms
+   ========================================================================== */
+
+/* Wrapper */
+
+.gform_wrapper {
+    background: $colour-bravo-x-light;
+    width: 100%;
+}
+
+.gform_heading {
+    margin: 0 0 $grid-padding;
+}
+
+/*
+   Labels
+   ========================================================================== */
+
+.gfield_label {
+    margin: 0 0 8px;
+    display: block;
+    line-height: 1.2;
+    font-weight: $font-medium;
+}
+
+.gfield_description {
+    margin: 0 0 8px;
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
+    color: $colour-grey;
+}
+
+/*
+   Fields
+   ========================================================================== */
+
+.gform_fields {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gfield {
+    margin-bottom: $base-line-height;
+    width: 100%;
+
+    input,
+    textarea {
+        width: 100%;
+    }
+}
+
+.gfield_50 {
+    width: 100%;
+
+    @media ($mq-md-min) {
+        width: 48%;
+    }
+}
+
+/*
+   Checkboxes / Radio buttons
+   ========================================================================== */
+
+.gfield_checkbox,
+.gfield_radio {
+    margin: 0 0 -10px;
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .gfield_columns_2 & {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            @media ($mq-md-min) {
+                width: 50%;
+            }
+        }
+    }
+
+    .gfield_inline & {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            @media ($mq-md-min) and ($mq-xl-max) {
+                width: 32%;
+            }
+
+            @media ($mq-xxl-min) {
+                width: 16%;
+            }
+        }
+    }
+}
+
+/*
+   Buttons
+   ========================================================================== */
+
+.gform_footer {
+    text-align: center;
+}
+
+.gform_button {
+    margin: 0 auto;
+    display: inline-block;
+    font-weight: $font-bold;
+    font-size: responsive 16px 20px;
+    text-decoration: none;
+    text-align: center;
+    color: $colour-white;
+    background: $colour-alpha;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, .2);
+    border-radius: $border-radius;
+    transition: all $transition-duration $transition-easing;
+    @mixin font-smoothing;
+    border: none;
+
+    @media ($mq-xxs-max) {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    @media ($mq-md-max) {
+        padding: 10px 20px;
+    }
+
+    @media ($mq-lg-min) and ($mq-lg-max) {
+        padding: calc($base-line-height / 2) 15px;
+    }
+
+    @media ($mq-xl-min) {
+        padding: calc($base-line-height / 1.8) $grid-padding;
+    }
+
+    &:hover,
+    &:active {
+        cursor: pointer;
+        box-shadow: none;
+        transform: translate(3px, 3px);
+        color: $colour-white;
+    }
+}
+
+/*
+   Required
+   ========================================================================== */
+
+.gfield_required {
+    color: $colour-bravo;
+}
+
+/*
+   Validation
+   ========================================================================== */
+
+.validation_error {
+    @mixin font-smoothing;
+    margin-bottom: $base-line-height;
+    padding: $base-line-height 4.48%;
+    color: $colour-white;
+    background: $colour-bravo;
+}
+.validation_message {
+    display: block;
+    margin-top: 4px;
+    color: $colour-bravo;
+}
+.gfield_error .ginput_container {
+    border-left: 4px solid $colour-bravo;
+}
+
+/*
+   Honeypot
+   ========================================================================== */
+
+.gform_validation_container {
+    @mixin hide-content;
+}

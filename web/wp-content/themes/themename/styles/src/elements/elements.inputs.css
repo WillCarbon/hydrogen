@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Form defaults
+   ========================================================================== */
+
+$input-height-sm  : 42px;
+$input-height-md  : 52px;
+
+$input-colour     : $colour-grey-dark;
+
+@define-mixin input {
+    font-size: inherit;
+    color: $input-colour;
+    background: no-repeat $colour-white;
+    border: 1px solid $colour-grey-light;
+    border-radius: 0;
+
+    /* stylelint-disable */
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    /* stylelint-enable */
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:disabled {
+        opacity: .6;
+    }
+}
+
+/*
+   Inputs
+   ========================================================================== */
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="url"] {
+    @mixin input;
+    width: 100%;
+    height: $base-line-height;
+    line-height: 1;
+
+    @media ($mq-sm-max) {
+        padding: calc((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
+        height: $input-height-sm;
+    }
+    @media ($mq-md-min) {
+        padding: calc((($input-height-md - 2px) - $base-line-height) / 2) 18px;
+        height: $input-height-md;
+    }
+}
+
+
+/*
+   Checkboxes / Radio buttons
+   ========================================================================== */
+
+input[type="radio"],
+input[type="checkbox"] {
+    @mixin input;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    margin-right: 10px;
+
+    & + label {
+        margin: 0;
+        font-size: 15px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+input[type="radio"] {
+    &:checked {
+        background: url("../../assets/svg/icons/checkbox-tick.svg") no-repeat center center;
+    }
+}
+
+input[type="checkbox"] {
+    &:checked {
+        background: url("../../assets/svg/icons/checkbox-tick.svg") no-repeat center center;
+    }
+}
+
+
+/*
+   Textarea
+   ========================================================================== */
+
+textarea {
+    @mixin input;
+    padding: $grid-padding-sm;
+    display: block;
+    resize: vertical;
+    overflow: auto;
+    max-height: 100px;
+}
+
+
+/*
+   Select
+   ========================================================================== */
+
+select {
+    @mixin input;
+    width: 100%;
+    height: $base-line-height;
+    line-height: 1;
+    background-image: url("../../assets/svg/icons/select-arrow.svg");
+
+    @media ($mq-sm-max) {
+        padding: calc((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
+        height: $input-height-sm;
+        background-position: calc(100% - 12px) 50%;
+    }
+
+    @media ($mq-md-min) {
+        padding: calc((($input-height-md - 2px) - $base-line-height) / 2) 18px;
+        height: $input-height-md;
+        background-position: calc(100% - 20px) 50%;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:focus::-ms-value {
+        color: $input-colour;
+        background: none;
+    }
+}

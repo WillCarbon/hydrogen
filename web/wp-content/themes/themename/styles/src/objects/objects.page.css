@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Page
+   ========================================================================== */
+
+/*
+  Page container
+  ========================================================================== */
+
+.o-page-container {
+    position: relative;
+    right: 0;
+    overflow: hidden;
+    transition: right $transition-duration $transition-easing;
+    &.o-page-container--nav-open {
+        right: $mobile-nav-width;
+    }
+}
+
+/*
+   Page
+   ========================================================================== */
+
+.o-page {
+    display: flex;
+    justify-content: space-between;
+    @mixin margin top, 2;
+    @media ($mq-sm-max) {
+        @mixin flex-base column, wrap;
+        flex-basis: auto;
+    }
+}
+
+/*
+   Main
+   ========================================================================== */
+
+.o-page__main {
+    width: 65%;
+}
+
+/*
+   Content
+   ========================================================================== */
+
+.o-page__content {
+    flex-grow: 1;
+}
+
+/*
+   Media
+   ========================================================================== */
+
+.o-page__media {
+    @media ($mq-md-min) {
+        width: 66.6%;
+    }
+    @media ($mq-xxl-min) {
+        width: 50%;
+    }
+}
+
+/*
+   Sidebar
+   ========================================================================== */
+
+.o-page__sidebar {
+    width: 35%;
+    @media ($mq-sm-max) {
+        width: 100%;
+        order: 2;
+    }
+    @media ($mq-lg-min) and ($mq-xl-max) {
+        width: 30%;
+    }
+}

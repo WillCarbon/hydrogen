@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+/* Font sizes */
+
+$font-size-min    : 14px;
+$font-size-max    : 16px;
+
+$base-line-height : 24px;
+
+/* Font families */
+
+$font-alpha       : "Avenir Next Rounded W01", "HelveticaNeue", sans-serif;
+
+$font-header      : $font-alpha;
+$font-body        : $font-alpha;
+
+/* Font weights */
+
+$font-regular     : 100;
+$font-medium      : 200;
+$font-bold        : 400;
+
+/* Quotes */
+
+$open-quote       : "\201C";
+$close-quote      : "\201D";
+
+
+/* ==========================================================================
+   Breakpoints
+   ========================================================================== */
+
+/*
+ * Breakpoint naming convention
+ *
+ * screen-xs
+ * screen-sm
+ * screen-md
+ * screen-lg
+ * screen-xl
+ *
+ * Then append with `-min` or `-max` depending on the query
+ */
+
+/* Min-width */
+
+$screen-xs-min  : 480px;
+$screen-sm-min  : 660px;
+$screen-md-min  : 768px;
+$screen-lg-min  : 960px;
+$screen-xl-min  : 1024px;
+$screen-xxl-min : 1367px;
+
+/* Max-width */
+
+$screen-xxs-max : 479px;
+$screen-xs-max  : 659px;
+$screen-sm-max  : 767px;
+$screen-md-max  : 959px;
+$screen-lg-max  : 1023px;
+$screen-xl-max  : 1366px;
+$screen-xxl-max : 1366px;
+
+/* Queries */
+
+$mq-xs-min      : (min-width: $screen-xs-min);
+$mq-sm-min      : (min-width: $screen-sm-min);
+$mq-md-min      : (min-width: $screen-md-min);
+$mq-lg-min      : (min-width: $screen-lg-min);
+$mq-xl-min      : (min-width: $screen-xl-min);
+$mq-xxl-min     : (min-width: $screen-xxl-min);
+
+$mq-xxs-max     : (max-width: $screen-xxs-max);
+$mq-xs-max      : (max-width: $screen-xs-max);
+$mq-sm-max      : (max-width: $screen-sm-max);
+$mq-md-max      : (max-width: $screen-md-max);
+$mq-lg-max      : (max-width: $screen-lg-max);
+$mq-xl-max      : (max-width: $screen-xl-max);
+
+
+/* ==========================================================================
+   Colours
+   ========================================================================== */
+
+/*
+ * Colour naming convention
+ *
+ * colour-grey-x-light
+ * colour-grey-light
+ * colour-grey-mid-light
+ * colour-grey
+ * colour-grey-mid-dark
+ * colour-grey-dark
+ * colour-grey-x-dark
+ */
+
+$colour-white            : #FFFFFF;
+$colour-grey-x-light     : #F7F6F7;
+$colour-grey-light       : #E5E3E5;
+$colour-grey-mid-light   : #AEADAE;
+$colour-grey             : #7D787A;
+$colour-grey-mid-dark    : #706C6E;
+$colour-grey-dark        : #414044;
+$colour-black            : #2A363B;
+
+$colour-alpha-light      : #638CCC;
+$colour-alpha            : #31588A;
+$colour-alpha-dark       : #3A4750;
+
+$colour-bravo            : #22C7A9;
+$colour-bravo-dark       : #2DB6A3;
+
+$colour-charlie          : #AEDBE0;
+
+$colour-delta            : #CF4647;
+
+$colour-bravo-50         : color($colour-bravo a(50%));
+$colour-bravo-70         : color($colour-bravo a(70%));
+$colour-bravo-80         : color($colour-bravo a(80%));
+
+$colour-social-facebook  : #32579D;
+$colour-social-twitter   : #55ACEE;
+$colour-social-pinterest : #D20000;
+
+
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+$grid-width-xs   : 480px;
+$grid-width-sm   : 660px;
+$grid-width-md   : 1200px;
+$grid-width-lg   : 1560px;
+$grid-width-xl   : 1872px;
+
+$grid-gutter     : 40px;
+$grid-padding    : 30px;
+$grid-padding-sm : 15px;
+
+$margin-sm-base  : ($base-line-height / 2);
+$margin-md-base  : 2.189vw;
+$margin-lg-base  : $base-line-height;
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/* Mobile nav width */
+
+$mobile-nav-width: 82.4vw;
+
+/* Border Radius */
+
+$border-radius: 4px;
+
+/* Transitions */
+
+$transition-duration : .2s;
+$transition-easing   : cubic-bezier(.4, 0, .2, 1);

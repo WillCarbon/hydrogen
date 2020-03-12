@@ -5,10 +5,10 @@
 
 get_header();
 
-$page = new Carbonite\Mediator\Page('blog');
+    get_template_part('components/layout/hero');
 
-get_template_part('loop');
+    get_template_part('components/loop/loop');
 
-get_sidebar();
+    get_sidebar();
 
 get_footer();

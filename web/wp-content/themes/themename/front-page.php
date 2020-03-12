@@ -5,8 +5,8 @@
 
 get_header();
 
-$page = new Carbonite\Mediator\Page('frontpage');
+    get_template_part('components/layout/hero');
 
-// Page markup here
+    get_template_part('components/modules/content');
 
 get_footer();

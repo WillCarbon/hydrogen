@@ -5,10 +5,10 @@
 
 get_header(); the_post();
 
-$page = new Carbonite\Mediator\Page();
+    get_template_part('components/layout/hero');
 
-// Post markup here
+    get_template_part('components/modules/content');
 
-get_sidebar();
+    get_sidebar();
 
 get_footer();

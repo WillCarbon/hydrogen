@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Class CarbonImages
+ * Class CarbonaraImages
  */
-class CarbonImages
+class CarbonaraImages
 {
     /**
-     * CarbonImages constructor.
+     * CarbonaraImages constructor.
      */
     public function __construct()
     {
@@ -39,4 +39,4 @@ class CarbonImages
         return $sizes;
     }
 }
-(new CarbonImages());
+(new CarbonaraImages());

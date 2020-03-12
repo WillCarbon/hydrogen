@@ -1,11 +1,8 @@
 <?php
 
-namespace Carbonite\REST\Action;
-
-use Carbonite\Mediator\Search;
-use Carbonite\REST\REST;
-use Carbonite\REST\RESTActionInterface;
-
+/**
+ * Class ExampleAction
+ */
 class ExampleAction extends REST implements RESTActionInterface
 {
 
@@ -39,15 +36,9 @@ class ExampleAction extends REST implements RESTActionInterface
      */
     public function search(\WP_REST_Request $request)
     {
-        $result = Search::search(
-            $request->get_param('publicationType'),
-            $request->get_param('filterType'),
-            $request->get_param('page'),
-            $request->get_param('searchTerm'),
-            $request->get_param('projectID'),
-            $request->get_param('authorID')
-        );
+        $result = [];
 
         return new \WP_REST_Response($result);
     }
 }
+(new ExampleAction());

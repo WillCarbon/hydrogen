@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class CarbonStyles
+ * Class CarbonaraStyles
  */
-class CarbonStyles
+class CarbonaraStyles
 {
     private $dir;
     private $dirCss;
@@ -59,4 +59,4 @@ class CarbonStyles
     }
 
 }
-(new CarbonStyles());
+(new CarbonaraStyles());

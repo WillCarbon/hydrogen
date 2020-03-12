@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class CarbonActivation
+ * Class CarbonaraActivation
  */
-class CarbonActivation
+class CarbonaraActivation
 {
     public function __construct()
     {
@@ -97,4 +97,4 @@ class CarbonActivation
     }
 
 }
-(new CarbonActivation());
+(new CarbonaraActivation());

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Class CarbonTrackingCodes
+ * Class CarbonaraTrackingCodes
  */
-class CarbonTrackingCodes
+class CarbonaraTrackingCodes
 {
     public $googleAnalytics;
     public $googleTags;
     public $hotjarAnalytics;
 
     /**
-     * CarbonTrackingCodes constructor.
+     * CarbonaraTrackingCodes constructor.
      */
     public function __construct()
     {
@@ -89,4 +89,4 @@ class CarbonTrackingCodes
         ' ;
     }
 }
-(new CarbonTrackingCodes());
+(new CarbonaraTrackingCodes());

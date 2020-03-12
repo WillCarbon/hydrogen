@@ -1,12 +1,12 @@
 <?php
 
 /**
- * CarbonTinyMCE
+ * CarbonaraTinyMCE
  */
-class CarbonTinyMCE
+class CarbonaraTinyMCE
 {
     /**
-     * CarbonTinyMCE constructor.
+     * CarbonaraTinyMCE constructor.
      */
     public function __construct()
     {
@@ -51,4 +51,4 @@ class CarbonTinyMCE
     }
 
 }
-(new CarbonTinyMCE());
+(new CarbonaraTinyMCE());

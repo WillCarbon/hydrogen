@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class CarbonCleanUp
+ * Class CarbonaraCleanUp
  */
-class CarbonCleanUp
+class CarbonaraCleanUp
 {
     public function __construct()
     {
@@ -183,4 +183,4 @@ class CarbonCleanUp
         return 'low';
     }
 }
-(new CarbonCleanUp());
+(new CarbonaraCleanUp());

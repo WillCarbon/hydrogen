@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class CarbonScripts
+ * Class CarbonaraScripts
  */
-class CarbonScripts
+class CarbonaraScripts
 {
     private $dir;
     private $dirJs;
@@ -11,7 +11,7 @@ class CarbonScripts
     private $version;
 
     /**
-     * CarbonScripts constructor.
+     * CarbonaraScripts constructor.
      */
     public function __construct()
     {
@@ -82,4 +82,4 @@ class CarbonScripts
     }
 
 }
-(new CarbonScripts());
+(new CarbonaraScripts());

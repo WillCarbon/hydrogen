@@ -1,7 +1,4 @@
 <?php
-/**
- * Custom Functions
- */
 
 /**
  * ACF Settings
@@ -22,16 +19,20 @@ include('lib/Theme/TinyMCE.php');
 include('lib/Theme/TrackingCodes.php');
 
 /**
- * Register Post Types
+ * Load Post Types
  */
 #include('lib/PostType/ExamplePostType.php');
 
 /**
- * Register REST Routes
+ * Load REST Routes
  *
  * You need to update REST_NAMESPACE in REST\REST.php
  */
 #include('lib/REST/REST.php');
 #include('lib/REST/RESTActionInterface.php');
 #include('lib/REST/ExampleAction.php');
+
+/**
+ * Custom Functions
+ */
 

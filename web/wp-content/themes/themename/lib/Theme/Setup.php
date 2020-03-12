@@ -1,8 +1,8 @@
 <?php
-class CarbonSetup
+class CarbonaraSetup
 {
     /**
-     * Setup constructor.
+     * CarbonaraSetup constructor.
      */
     public function __construct()
     {
@@ -81,4 +81,4 @@ class CarbonSetup
         }
     }
 }
-(new CarbonSetup());
+(new CarbonaraSetup());

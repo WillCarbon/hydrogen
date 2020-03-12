@@ -27,11 +27,6 @@
         "satispress/gravityforms": "*",
         "wpackagist-plugin/wordpress-seo": "*"
     },
-    "autoload": {
-        "psr-4": {
-            "Carbonite\\": "web/wp-content/themes/themename/lib"
-        }
-    },
     "extra": {
         "wordpress-install-dir": "web/wordpress",
         "installer-paths": {

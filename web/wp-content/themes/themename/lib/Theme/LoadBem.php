@@ -3,9 +3,9 @@
 use Carbon\Helpers\Bem;
 
 /**
- * Class CarbonLoadBem
+ * Class CarbonaraLoadBem
  */
-class CarbonLoadBem
+class CarbonaraLoadBem
 {
 
     /**
@@ -141,4 +141,4 @@ class CarbonLoadBem
         return $classes;
     }
 }
-(new CarbonLoadBem());
+(new CarbonaraLoadBem());

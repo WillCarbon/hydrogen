@@ -7,11 +7,11 @@
         "url": "https://wp-languages.github.io"
     },{
         "type": "composer",
-        "url": "https://satispress.staging.aws.carboncode.co.uk/satispress"
+        "url": "https://plugins.io.carboncode.co.uk/satispress"
     }],
     "config": {
         "http-basic": {
-            "satispress.staging.aws.carboncode.co.uk": {
+            "plugins.io.carboncode.co.uk": {
                 "username": "composer",
                 "password": "0carbon"
             }
@@ -24,7 +24,10 @@
         "koodimonni-language/core-en_gb": "*",
         "satispress/wp-carboniser": "*",
         "satispress/advanced-custom-fields-pro": "*",
+        "satispress/carbonneutral": "*",
         "satispress/gravityforms": "*",
+        "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "*",
+        "wpackagist-plugin/redirection": "*",
         "wpackagist-plugin/wordpress-seo": "*"
     },
     "extra": {

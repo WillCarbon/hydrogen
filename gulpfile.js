@@ -9,25 +9,25 @@ const devDomain = 'themename.localhost';
 
 
 const path = {
-    web     : './web/',
-    load    : './node_modules/',
-    theme   : './web/wp-content/themes/' + themeName + '/',
+    web:    './web/',
+    load:   './node_modules/',
+    theme:  './web/wp-content/themes/' + themeName + '/'
 };
 
 path.assets     = path.theme + 'assets/';
 path.vendor     = path.theme + 'vendor/';
 
 const cssConf = {
-    src         : path.theme + 'styles/src/*.scss',
-    sub         : path.theme + 'styles/src/**/*.scss',
-    build       : path.theme + 'styles/dist/'
+    src:    path.theme + 'styles/src/*.scss',
+    sub:    path.theme + 'styles/src/**/*.scss',
+    build:  path.theme + 'styles/dist/'
 };
 
 const jsConf = {
-    src         : path.theme + 'js/src/*.js',
-    sub         : path.theme + 'js/src/**/*.js',
-    vue         : path.theme + 'js/src/**/*.vue',
-    build       : path.theme + 'js/dist/'
+    src:    path.theme + 'js/src/*.js',
+    sub:    path.theme + 'js/src/**/*.js',
+    vue:    path.theme + 'js/src/**/*.vue',
+    build:  path.theme + 'js/dist/'
 };
 
 
@@ -36,7 +36,6 @@ const jsConf = {
    ========================================================================== */
 
 const { src, dest, watch, series, parallel } = require('gulp');
-const gulp          = require('gulp');
 
 const log           = require('fancy-log');
 const tap           = require('gulp-tap');
@@ -51,7 +50,7 @@ const rename        = require('gulp-rename');
 
 const browserSync   = require('browser-sync');
 
-function server(done)
+function server (done)
 {
     browserSync({
         proxy: devDomain,
@@ -62,6 +61,7 @@ function server(done)
 
     done();
 }
+
 
 /* ==========================================================================
    CSS
@@ -89,7 +89,7 @@ let processors = [
 ];
 
 /* Style Lint */
-function lintStyles()
+function lintStyles ()
 {
     return src([cssConf.sub, cssConf.src])
         .pipe(cache('sasslint'))
@@ -101,7 +101,7 @@ function lintStyles()
 }
 
 /* Development Styling */
-function devStyles()
+function devStyles ()
 {
     return src(cssConf.src)
         .pipe(tap(function (file) {
@@ -119,7 +119,7 @@ function devStyles()
 }
 
 /* Production Styling */
-function distStyles()
+function distStyles ()
 {
     return src(cssConf.src)
         .pipe(rename({
@@ -209,7 +209,7 @@ var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
-function lintScripts()
+function lintScripts ()
 {
     return src([jsConf.sub, jsConf.src])
         .pipe(eslint())
@@ -217,7 +217,7 @@ function lintScripts()
         .pipe(eslint.failAfterError());
 }
 
-function devScripts()
+function devScripts ()
 {
     return src(jsConf.sub, { read: false })
         .pipe(tap(function (file) {
@@ -225,8 +225,7 @@ function devScripts()
             file.contents = browserify(file.path, {
                 debug: true,
                 transform: [babelify]
-            })
-            .bundle();
+            }).bundle();
         }))
         .pipe(buffer())
         .pipe(sourcemaps.init({
@@ -237,43 +236,47 @@ function devScripts()
         .pipe(browserSync.stream());
 }
 
-function distScripts()
+function distScripts ()
 {
     return src(jsConf.sub, { read: false })
         .pipe(tap(function (file) {
             log(' - Bundling ' + file.path);
+
             file.contents = browserify(file.path, {
                 transform: [babelify]
-            })
-            .bundle();
+            }).bundle();
         }))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(dest(jsConf.build));
 }
 
+/* Styling Task */
+exports.scripting = series(lintScripts, devScripts, distScripts);
 
 /* ==========================================================================
    Vendor Files
    ========================================================================== */
 
-function vendor()
+function vendor ()
 {
     return src([
-        path.load + 'jquery/dist/jquery.min.js'
-    ], { 'base': path.load })
-    .pipe(tap(function (file) {
-        log(' - Coping File: ' + file.path);
-    }))
-    .pipe(dest(path.theme + '/vendor'));
+            path.load + 'jquery/dist/jquery.min.js'
+        ], { 'base': path.load })
+        .pipe(tap(function (file) {
+            log(' - Coping File: ' + file.path);
+        }))
+        .pipe(dest(path.theme + '/vendor'));
 }
+
+exports.vendor = parallel(vendor);
 
 
 /* ==========================================================================
    Watch
    ========================================================================== */
 
-function watching(done)
+function watching (done)
 {
     // Styling
     watch(
@@ -290,16 +293,17 @@ function watching(done)
     );
 
     // .html/.php
-    //watch([
-    //    path.theme + '/**/*.php',
-    //    path.theme + '/**/*.html'
-    //], function (file) {
-    //    src(file.path)
-    //        .pipe(browserSync.stream());
-    //});
+    watch([
+        path.theme + '/*.php',
+        path.theme + '/**/*.php',
+        path.theme + '/**/*.html'
+    ], function (file) {
+        src(file.path).pipe(browserSync.stream());
+    });
 
     done();
 }
+
 exports.watch = parallel(server, vendor, devStyles, devScripts,  watching);
 
 
@@ -310,7 +314,7 @@ exports.watch = parallel(server, vendor, devStyles, devScripts,  watching);
 const git   = require('git-rev');
 const fs    = require('fs');
 
-function version()
+function version ()
 {
     return git.short(function (str) {
         fs.writeFile(
@@ -322,10 +326,12 @@ function version()
     });
 }
 
+exports.version = parallel(version);
+
 
 /* ==========================================================================
    Production 🚀
    ========================================================================== */
 
-exports.build = series(vendor, distStyles, distScripts, version);
+exports.build = parallel(vendor, distStyles, distScripts, version);
 

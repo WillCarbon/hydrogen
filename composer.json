@@ -28,11 +28,12 @@
         "satispress/gravityforms": "*",
         "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "*",
         "wpackagist-plugin/redirection": "*",
-        "wpackagist-plugin/wordpress-seo": "*"
+        "wpackagist-plugin/wordpress-seo": "13.5"
     },
     "extra": {
         "wordpress-install-dir": "web/wordpress",
         "installer-paths": {
+            "web/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
             "web/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
             "web/wp-content/themes/{$name}/": ["type:wordpress-theme"]
         },

@@ -16,13 +16,6 @@
 
 define('WP_MEMORY_LIMIT', '200M');
 
-/** Set Hostname **/
-if(isset($_SERVER['HTTP_HOST'])){
-    define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
-} else {
-    define('WP_HOME', 'http://localhost');
-}
-
 /** Set Site Version (from Git) **/
 if(file_exists('version.php'))
     require_once('version.php');
@@ -40,10 +33,10 @@ define('GMAPS_KEY', '');
 
 /** Debug Mode */
 define('WP_DEBUG', false);
-define('SAVEQUERIES', true);
+define('SAVEQUERIES', false);
 define('WP_DEBUG_LOG', true);
-define('WP_DEBUG_DISPLAY', true);
-define('SCRIPT_DEBUG', true);
+define('WP_DEBUG_DISPLAY', false);
+define('SCRIPT_DEBUG', false);
 
 /** Database Connection **/
 define('DB_NAME', '');
@@ -107,11 +100,22 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', '');
+define('WPLANG', 'en_GB');
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
     define('ABSPATH', __DIR__ . '/wordpress/');
+
+/** Set Hostname **/
+if(isset($_SERVER['HTTP_HOST'])){
+    $http = 'http://';
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+        $http = 'https://';
+    }
+    define('WP_HOME', $http.$_SERVER['HTTP_HOST']);
+} else {
+    define('WP_HOME', 'http://localhost');
+}
 
 define('WP_SITEURL', WP_HOME . '/wordpress');
 define('WP_HOMEPAGE', WP_HOME);

@@ -70,6 +70,7 @@ function server(done)
 const autoprefixer  = require('autoprefixer');
 const assets        = require('postcss-assets');
 const cleanCSS      = require('gulp-clean-css');
+const objectfit     = require('postcss-object-fit-images');
 const postcss       = require('gulp-postcss');
 const responsive    = require('postcss-responsive-type');
 const sass          = require('gulp-sass');
@@ -77,6 +78,7 @@ const sasslint      = require('gulp-sass-lint');
 
 let processors = [
     autoprefixer,
+    objectfit,
     responsive,
     assets({
         loadPaths: [

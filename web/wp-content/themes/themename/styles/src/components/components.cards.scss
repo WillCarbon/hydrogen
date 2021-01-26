@@ -5,16 +5,16 @@
 .c-cards__wrap {
     display: flex;
     justify-content: space-between;
-    @mixin flex-parent row, wrap, sm, column, wrap;
+    @include flex-parent(row, wrap, sm, column, wrap);
 }
 .c-cards-title {
     text-align: center;
     font-size: responsive 20px 32px;
-    @mixin padding bottom, 1.5;
+    @include padding(bottom, 1.5);
 }
 .c-cards-subtitle {
     font-size: 16px;
-    @mixin padding top, .25;
+    @include padding(top, .25);
 }
 
 /*
@@ -31,7 +31,7 @@
     border: 1px solid $colour-grey-light;
     border-radius: $border-radius;
     box-shadow: 0 2px 40px 0 rgba(221, 221, 221, .5);
-    @mixin margin bottom, 1.5;
+    @include margin (bottom, 1.5);
     @media ($mq-sm-min) and ($mq-md-max) {
         width: 50%;
     }
@@ -58,12 +58,12 @@
         /*background: $colour-alpha url("../../assets/svg/preload.svg") no-repeat center;*/
         backface-visibility: hidden;
         overflow: hidden;
-        @mixin object-fit-parent 340px, 100%;
+        @include object-fit-parent (340px, 100%);
         img {
             overflow: hidden;
             border-radius: $border-radius $border-radius 0 0;
             transition: $transition-duration $transition-easing;
-            @mixin object-fit-image;
+            @include object-fit-image;
             &:hover {
                 background: $colour-alpha;
                 transform: scale(1.025);

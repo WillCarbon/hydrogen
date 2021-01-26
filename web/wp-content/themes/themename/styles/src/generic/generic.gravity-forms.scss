@@ -1,3 +1,5 @@
+// sass-lint:disable-all
+
 /* ==========================================================================
    Gravity Forms
    ========================================================================== */
@@ -5,7 +7,6 @@
 /* Wrapper */
 
 .gform_wrapper {
-    background: $colour-bravo-x-light;
     width: 100%;
 }
 
@@ -127,7 +128,7 @@
     box-shadow: 3px 3px 0 rgba(0, 0, 0, .2);
     border-radius: $border-radius;
     transition: all $transition-duration $transition-easing;
-    @mixin font-smoothing;
+    @include font-smoothing;
     border: none;
 
     @media ($mq-xxs-max) {
@@ -141,11 +142,11 @@
     }
 
     @media ($mq-lg-min) and ($mq-lg-max) {
-        padding: calc($base-line-height / 2) 15px;
+        padding: round($base-line-height / 2) 15px;
     }
 
     @media ($mq-xl-min) {
-        padding: calc($base-line-height / 1.8) $grid-padding;
+        padding: round($base-line-height / 1.8) $grid-padding;
     }
 
     &:hover,
@@ -170,7 +171,7 @@
    ========================================================================== */
 
 .validation_error {
-    @mixin font-smoothing;
+    @include font-smoothing;
     margin-bottom: $base-line-height;
     padding: $base-line-height 4.48%;
     color: $colour-white;
@@ -190,5 +191,7 @@
    ========================================================================== */
 
 .gform_validation_container {
-    @mixin hide-content;
+    @include hide-content;
 }
+
+// sass-lint:enable-all

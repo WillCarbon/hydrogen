@@ -24,12 +24,12 @@
    ========================================================================== */
 
 .c-hero__image {
-    @mixin object-fit-parent 100%, 100%;
-    @mixin overlay-flat;
+    @include object-fit-parent(100%, 100%);
+    @include overlay-flat(5);
     z-index: 0;
     /*background: $colour-alpha url("../../assets/svg/preload.svg") no-repeat center; */
     img {
-        @mixin object-fit-image;
+        @include object-fit-image;
     }
 }
 
@@ -38,7 +38,7 @@
    ========================================================================== */
 
 .c-hero__content {
-    @mixin center-both;
+    @include center-both;
     z-index: 10;
 }
 

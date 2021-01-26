@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .c-footer {
-    @mixin padding top, 2;
-    @mixin padding bottom, 2;
+    @include padding (top, 2);
+    @include padding (bottom, 2);
     background: $colour-black;
     a {
         text-decoration: underline;

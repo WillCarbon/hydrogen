@@ -6,7 +6,7 @@
    Clearfix
    ========================================================================== */
 
-@define-mixin clearfix {
+@mixin clearfix {
     &:after {
         content: "";
         display: block;
@@ -22,7 +22,7 @@
 /* Read more at: https://eager.io/blog/smarter-link-underlines */
 
 /* stylelint-disable */
-@define-mixin pretty-underline {
+@mixin pretty-underline {
     background:
         linear-gradient($colour-white, $colour-white) 0 1.08em/.05em 1px no-repeat,
         linear-gradient($colour-white, $colour-white) 0 1.08em/.05em 1px no-repeat,
@@ -43,7 +43,7 @@
    Image overlay
    ========================================================================== */
 
-@define-mixin overlay-flat $z-index, $alpha {
+@mixin overlay-flat( $z-index) {
     &:after {
         content: "";
         position: absolute;
@@ -51,7 +51,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: $(z-index);
+        z-index: $z-index;
     }
 }
 
@@ -60,62 +60,62 @@
    Flex
    ========================================================================== */
 
-@define-mixin flex-base $direction, $wrap {
+@mixin flex-base( $direction, $wrap) {
     display: flex;
-    flex-flow: $(direction) $(wrap);
+    flex-flow: $direction $wrap;
 }
-@define-mixin flex-justify $justify {
+@mixin flex-justify( $justify) {
     display: flex;
-    justify-content: $(justify);
+    justify-content: $justify;
 }
-@define-mixin flex-align $align {
+@mixin flex-align( $align) {
     display: flex;
-    align-items: $(align);
+    align-items: $align;
 }
-@define-mixin flex-parent $direction, $wrap, $size, $direction-responsive, $wrap-responsive {
-    flex-flow: $(direction) $(wrap);
-    @media ($mq-$(size)-max) {
-        flex-flow: $(direction-responsive) $(wrap-responsive);
-    }
+@mixin flex-parent( $direction, $wrap, $size, $direction-responsive, $wrap-responsive) {
+    flex-flow: $direction $wrap;
+    //@media ($mq-$(size)-max) {
+        flex-flow: $direction-responsive $wrap-responsive;
+    //}
 }
-@define-mixin flex-child $size {
+@mixin flex-child( $size) {
     flex: 1;
-    @media ($mq-$(size)-max) {
+    //@media ($mq-$(size)-max) {
         width: 100%;
-    }
+    //}
 }
 
 /*
    Centre layout responsive
    ========================================================================== */
 
-@define-mixin max-width $size, $width, $align {
-    @media ($mq-$(size)-max) {
-        max-width: $grid-width-$(width);
+@mixin max-width( $size, $width, $align) {
+    //@media ($mq-$(size)-max) {
+        max-width: $grid-width-#{$width};
         margin-left: auto;
         margin-right: auto;
         p, h1, h2, h3, h4, h5, h6 {
-            text-align: $(align);
+            text-align: $align;
         }
-    }
+    //}
 }
 
 /*
    Object fit polyfill
    ========================================================================== */
 
-@define-mixin object-fit $attr {
-    object-fit: $(attr);
-    font-family: "object-fit: $(attr)";
+@mixin object-fit( $attr) {
+    object-fit: $attr;
+    font-family: "object-fit: #{$attr}";
 }
 
 /*
    Object fit parent
    ========================================================================== */
 
-@define-mixin object-fit-parent $height, $width {
-    height: $(height);
-    width: $(width);
+@mixin object-fit-parent($height, $width) {
+    height: $height;
+    width: $width;
     position: relative;
 }
 
@@ -123,8 +123,8 @@
    Object fit image
    ========================================================================== */
 
-@define-mixin object-fit-image {
-    @mixin object-fit cover;
+@mixin object-fit-image {
+    @include object-fit( cover);
     position: absolute;
     left: 0;
     top: 0;
@@ -137,7 +137,7 @@
    FOUT fix
    ========================================================================== */
 
-@define-mixin fout-fix {
+@mixin fout-fix {
     .wf-loading & {
         visibility: hidden;
     }
@@ -147,7 +147,7 @@
    Hide content
    ========================================================================== */
 
-@define-mixin hide-content {
+@mixin hide-content {
     position: absolute !important;
     height: 1px; width: 1px;
     overflow: hidden;
@@ -159,7 +159,7 @@
    Font smoothing
    ========================================================================== */
 
-@define-mixin font-smoothing {
+@mixin font-smoothing {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -169,7 +169,7 @@
     No list style
    ========================================================================== */
 
-@define-mixin list-style-none {
+@mixin list-style-none {
     list-style: none;
     padding-left: 0;
 }
@@ -178,7 +178,7 @@
    Center both
    ========================================================================== */
 
-@define-mixin center-both {
+@mixin center-both {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -197,31 +197,31 @@
  * Mind blown...
  */
 
-@define-mixin padding $side, $modifier {
+@mixin padding( $side, $modifier) {
     @media ($mq-xs-max) {
-        padding-$(side): calc(($margin-sm-base) * $modifier);
+        padding-#{$side}: round(($margin-sm-base) * $modifier);
     }
     @media ($mq-sm-min) and ($mq-xl-max) {
-        padding-$(side): calc($margin-md-base * $modifier);
+        padding-#{$side}: round($margin-md-base * $modifier);
     }
     @media ($mq-xxl-min) {
-        padding-$(side): calc($margin-lg-base * $modifier);
+        padding-#{$side}: round($margin-lg-base * $modifier);
     }
 }
 
-@define-mixin margin $side, $modifier {
+@mixin margin( $side, $modifier) {
     @media ($mq-xs-max) {
-        margin-$(side): calc(($margin-sm-base) * $modifier);
+        margin-#{$side}: round(($margin-sm-base) * $modifier);
     }
     @media ($mq-sm-min) and ($mq-xl-max) {
-        margin-$(side): calc($margin-md-base * $modifier);
+        margin-#{$side}: round($margin-md-base * $modifier);
     }
     @media ($mq-xxl-min) {
-        margin-$(side): calc($margin-lg-base * $modifier);
+        margin-#{$side}: round($margin-lg-base * $modifier);
     }
 }
 
-@define-mixin mobile-gutter {
+@mixin mobile-gutter {
     @media (max-width: 360px) {
         padding-left: $grid-padding-sm;
         padding-right: $grid-padding-sm;

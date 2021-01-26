@@ -4,124 +4,197 @@
    Settings
    ========================================================================== */
 
-var devDomain = 'carbonite.localhost';
-var themeName = 'themename';
-var themeRoot = './web/wp-content/themes/' + themeName;
-var loadPath  = './node_modules/';
+const themeName = 'themename';
+const devDomain = 'themename.localhost';
+
+
+const path = {
+    web     : './web/',
+    load    : './node_modules/',
+    theme   : './web/wp-content/themes/' + themeName + '/',
+};
+
+path.assets     = path.theme + 'assets/';
+path.vendor     = path.theme + 'vendor/';
+
+const cssConf = {
+    src         : path.theme + 'styles/src/*.scss',
+    sub         : path.theme + 'styles/src/**/*.scss',
+    build       : path.theme + 'styles/dist/'
+};
+
+const jsConf = {
+    src         : path.theme + 'js/src/*.js',
+    sub         : path.theme + 'js/src/**/*.js',
+    vue         : path.theme + 'js/src/**/*.vue',
+    build       : path.theme + 'js/dist/'
+};
+
 
 /* ==========================================================================
    Packages
    ========================================================================== */
 
-var gulp            = require('gulp');
-var watch           = require('gulp-watch');
-var gutil           = require('gulp-util');
-var runSequence     = require('run-sequence');
-var git             = require('git-rev');
-var fs              = require('fs');
+const { src, dest, watch, series, parallel } = require('gulp');
+const gulp          = require('gulp');
+
+const log           = require('fancy-log');
+const tap           = require('gulp-tap');
+const cache         = require('gulp-cached');
+const sourcemaps    = require('gulp-sourcemaps');
+const rename        = require('gulp-rename');
+
 
 /* ==========================================================================
    Browser Sync
    ========================================================================== */
 
-var browserSync = require('browser-sync');
+const browserSync   = require('browser-sync');
 
-gulp.task('server', function () {
+function server(done)
+{
     browserSync({
         proxy: devDomain,
         ghostMode: false,
         notify: false,
         open: false
     });
-});
+
+    done();
+}
 
 /* ==========================================================================
    CSS
    ========================================================================== */
 
-var postcss = require('gulp-postcss');
-var cssImport = require('postcss-import');
-var scss = require('postcss-scss');
-var precss = require('precss');
-var responsiveType = require('postcss-responsive-type');
-var assets = require('postcss-assets');
-var stylelint = require('stylelint');
-var cssnano = require('cssnano');
-var autoprefixer = require('autoprefixer');
-var reporter = require('postcss-reporter');
+const autoprefixer  = require('autoprefixer');
+const assets        = require('postcss-assets');
+const cleanCSS      = require('gulp-clean-css');
+const postcss       = require('gulp-postcss');
+const responsive    = require('postcss-responsive-type');
+const sass          = require('gulp-sass');
+const sasslint      = require('gulp-sass-lint');
 
-gulp.task('lint-styles', function () {
-    var processors = [
-        stylelint,
-        reporter({
-            clearMessages: true,
-            throwError: false,
-            noPlugin: true
-        })
-    ];
-    return gulp.src(themeRoot + '/styles/src/**/*.css')
-        .pipe(postcss(processors), {
-            syntax: scss
-        });
-});
+let processors = [
+    autoprefixer,
+    responsive,
+    assets({
+        loadPaths: [
+            path.assets + 'images/',
+            path.assets + 'svg/'
+        ]
+    })
+];
 
-gulp.task('styles', ['lint-styles'], function () {
-    var processors = [
-        cssImport({
-            path: [loadPath]
-        }),
-        precss,
-        responsiveType,
-        assets({
-            loadPaths: [
-                themeRoot + '/assets/images',
-                themeRoot + '/assets/svg'
-            ]
-        }),
-        autoprefixer({
-            browsers: ['last 2 versions', '> 5% in GB']
-        })
-    ];
-    return gulp.src(themeRoot + '/styles/src/*.css')
-        .pipe(postcss(processors), {
-            syntax: scss
-        })
-        .pipe(gulp.dest(themeRoot + '/styles/dist'))
-        .pipe(browserSync.stream());
-});
+/* Style Lint */
+function lintStyles()
+{
+    return src([cssConf.sub, cssConf.src])
+        .pipe(cache('sasslint'))
+        .pipe(sasslint({
+            configFile: '.sass-lint.yml'
+        }))
+        .pipe(sasslint.format())
+        .pipe(sasslint.failOnError());
+}
 
-gulp.task('dist-styles', function () {
-    var processors = [
-        cssImport({
-            path: [loadPath]
-        }),
-        precss,
-        responsiveType,
-        assets({
-            loadPaths: [
-                themeRoot + '/assets/images',
-                themeRoot + '/assets/svg'
-            ]
-        }),
-        autoprefixer({
-            browsers: ['last 2 versions', '> 5% in GB']
-        }),
-        cssnano({
-            discardComments: {
-                removeAll: true
-            },
-            discardEmpty: true,
-            calc: {
-                precision: 3
-            }
-        })
-    ];
-    return gulp.src(themeRoot + '/styles/src/*.css')
-        .pipe(postcss(processors), {
-            syntax: scss
-        })
-        .pipe(gulp.dest(themeRoot + '/styles/dist'));
-});
+/* Development Styling */
+function devStyles()
+{
+    return src(cssConf.src)
+        .pipe(tap(function (file) {
+            log(' - Compiling: ' + file.path);
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'expanded',
+            includePaths: [path.load]
+        }).on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest(cssConf.build))
+        .pipe(browserSync.reload({ stream: true }));
+}
+
+/* Production Styling */
+function distStyles()
+{
+    return src(cssConf.src)
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(tap(function (file) {
+            log(' - Compiling: ' + file.path);
+        }))
+        .pipe(sass({
+            includePaths: [path.load]
+        }).on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(cleanCSS())
+        .pipe(dest(cssConf.build));
+}
+
+/* Styling Task */
+exports.styling = series(lintStyles, devStyles, distStyles);
+
+//gulp.task('styles', ['lint-styles'], function () {
+//    var processors = [
+//        cssImport({
+//            path: [path.load]
+//        }),
+//        precss,
+//        responsiveType,
+//        assets({
+//            path.loads: [
+//                path.theme + '/assets/images',
+//                path.theme + '/assets/svg'
+//            ]
+//        }),
+//        autoprefixer({
+//            browsers: ['last 2 versions', '> 5% in GB']
+//        })
+//    ];
+//    return src(path.theme + '/styles/src/*.css')
+//        .pipe(postcss(processors), {
+//            syntax: scss
+//        })
+//        .pipe(dest(path.theme + '/styles/dist'))
+//        .pipe(browserSync.stream());
+//});
+//
+//gulp.task('dist-styles', function () {
+//    var processors = [
+//        cssImport({
+//            path: [path.load]
+//        }),
+//        precss,
+//        responsiveType,
+//        assets({
+//            path.loads: [
+//                path.theme + '/assets/images',
+//                path.theme + '/assets/svg'
+//            ]
+//        }),
+//        autoprefixer({
+//            browsers: ['last 2 versions', '> 5% in GB']
+//        }),
+//        cssnano({
+//            discardComments: {
+//                removeAll: true
+//            },
+//            discardEmpty: true,
+//            calc: {
+//                precision: 3
+//            }
+//        })
+//    ];
+//    return src(path.theme + '/styles/src/*.css')
+//        .pipe(postcss(processors), {
+//            syntax: scss
+//        })
+//        .pipe(dest(path.theme + '/styles/dist'));
+//});
+
 
 /* ==========================================================================
    Scripts
@@ -129,103 +202,128 @@ gulp.task('dist-styles', function () {
 
 var browserify = require('browserify');
 var babelify = require('babelify');
-var tap = require('gulp-tap');
 var buffer = require('gulp-buffer');
-var sourcemaps = require('gulp-sourcemaps');
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
-gulp.task('lint-scripts', function () {
-    return gulp.src(themeRoot + '/js/src/**/*.js')
+function lintScripts()
+{
+    return src([jsConf.sub, jsConf.src])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
-});
+}
 
-gulp.task('scripts', ['lint-scripts'], function () {
-    return gulp.src(themeRoot + '/js/src/**/*.js', { read: false })
+function devScripts()
+{
+    return src(jsConf.sub, { read: false })
+        .pipe(tap(function (file) {
+            log(' - Bundling ' + file.path);
+            file.contents = browserify(file.path, {
+                debug: true,
+                transform: [babelify]
+            })
+            .bundle();
+        }))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({
+            loadMaps: true
+        }))
+        .pipe(sourcemaps.write('./'))
+        .pipe(dest(jsConf.build))
+        .pipe(browserSync.stream());
+}
+
+function distScripts()
+{
+    return src(jsConf.sub, { read: false })
+        .pipe(tap(function (file) {
+            log(' - Bundling ' + file.path);
+            file.contents = browserify(file.path, {
+                transform: [babelify]
+            })
+            .bundle();
+        }))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(dest(jsConf.build));
+}
+
+
+/* ==========================================================================
+   Vendor Files
+   ========================================================================== */
+
+function vendor()
+{
+    return src([
+        path.load + 'jquery/dist/jquery.min.js'
+    ], { 'base': path.load })
     .pipe(tap(function (file) {
-        gutil.log('Bundling ' + file.path);
-        file.contents = browserify(file.path, {
-            debug: true,
-            transform: [babelify]
-        })
-        .bundle();
+        log(' - Coping File: ' + file.path);
     }))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({
-        loadMaps: true
-    }))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(themeRoot + '/js/dist'))
-    .pipe(browserSync.stream());
-});
+    .pipe(dest(path.theme + '/vendor'));
+}
 
-gulp.task('dist-scripts', ['lint-scripts'], function () {
-    return gulp.src(themeRoot + '/js/src/**/*.js', { read: false })
-    .pipe(tap(function (file) {
-        gutil.log('Bundling ' + file.path);
-        file.contents = browserify(file.path, {
-            transform: [babelify]
-        })
-        .bundle();
-    }))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest(themeRoot + '/js/dist'));
-});
-
-gulp.task('dist-vendor', function () {
-    var files = [
-        loadPath + 'jquery/dist/jquery.min.js',
-        loadPath + 'lazysizes/lazysizes.min.js',
-        loadPath + 'lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js'
-    ];
-    gulp.src(files, { 'base': loadPath })
-        .pipe(gulp.dest(themeRoot + '/vendor'))
-});
 
 /* ==========================================================================
    Watch
    ========================================================================== */
 
-gulp.task('watch', ['styles', 'scripts', 'server'], function () {
-    // .css
-    watch(themeRoot + '/styles/src/**/*.css', function () {
-        runSequence('styles');
-    });
+function watching(done)
+{
+    // Styling
+    watch(
+        [cssConf.src, cssConf.sub],
+        { events: 'all', ignoreInitial: false },
+        series(lintStyles, devStyles)
+    );
 
-    // .js
-    watch([
-        themeRoot + '/js/src/**/*.js',
-        themeRoot + '/js/src/**/*.vue'
-    ], function (file) {
-        runSequence('scripts');
-    });
+    // JavaScript
+    watch(
+        [jsConf.src, jsConf.sub, jsConf.vue],
+        { events: 'all', ignoreInitial: false },
+        series(lintScripts, devScripts)
+    );
 
     // .html/.php
-    watch([
-        themeRoot + '/**/*.php',
-        themeRoot + '/**/*.html'
-    ], function (file) {
-        gulp.src(file.path)
-            .pipe(browserSync.stream());
+    //watch([
+    //    path.theme + '/**/*.php',
+    //    path.theme + '/**/*.html'
+    //], function (file) {
+    //    src(file.path)
+    //        .pipe(browserSync.stream());
+    //});
+
+    done();
+}
+exports.watch = parallel(server, vendor, devStyles, devScripts,  watching);
+
+
+/* ==========================================================================
+   Git Version Number
+   ========================================================================== */
+
+const git   = require('git-rev');
+const fs    = require('fs');
+
+function version()
+{
+    return git.short(function (str) {
+        fs.writeFile(
+            path.web + 'version.php', "<?php define('SITE_VERSION', '" + str + "');",
+            function () { return false; }
+        );
+
+       return log(' - website version: ' + str);
     });
-});
+}
+
 
 /* ==========================================================================
    Production 🚀
    ========================================================================== */
 
-gulp.task('dist-git', function () {
-    git.short(function (str) {
-        fs.writeFile(__dirname + '/web/version.php', "<?php define('SITE_VERSION', '" + str + "');", function () { return false; });
-    });
-});
+exports.build = series(vendor, distStyles, distScripts, version);
 
-gulp.task('build', function () {
-    runSequence(
-        ['dist-styles', 'dist-vendor', 'dist-scripts', 'dist-git']
-    );
-});

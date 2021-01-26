@@ -38,7 +38,7 @@
     background: $colour-alpha;
     border-radius: $border-radius;
     transition: all $transition-duration $transition-easing;
-    @mixin font-smoothing;
+    @include font-smoothing;
 
     &:hover,
     &:active {

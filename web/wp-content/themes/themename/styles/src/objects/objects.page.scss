@@ -23,9 +23,9 @@
 .o-page {
     display: flex;
     justify-content: space-between;
-    @mixin margin top, 2;
+    @include margin (top, 2);
     @media ($mq-sm-max) {
-        @mixin flex-base column, wrap;
+        @include flex-base (column, wrap);
         flex-basis: auto;
     }
 }

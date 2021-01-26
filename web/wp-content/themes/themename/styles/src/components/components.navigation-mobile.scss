@@ -44,7 +44,7 @@
 .c-nav-mobile__list-link {
     display: block;
     text-align: center;
-    padding: calc($base-line-height / 2) $grid-padding;
+    padding: round($base-line-height / 2) $grid-padding;
     color: $colour-alpha;
     font-size: 15px;
     transition: all $transition-duration $transition-easing;

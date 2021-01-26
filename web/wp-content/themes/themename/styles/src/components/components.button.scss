@@ -12,7 +12,7 @@
     background: $colour-alpha;
     border-radius: $border-radius;
     transition: all $transition-duration $transition-easing;
-    @mixin font-smoothing;
+    @include font-smoothing;
     @media ($mq-xxs-max) {
         display: block;
         width: 75%;
@@ -22,10 +22,10 @@
         padding: 10px 20px;
     }
     @media ($mq-lg-min) and ($mq-lg-max) {
-        padding: calc($base-line-height / 2) 15px;
+        padding: round($base-line-height / 2) 15px;
     }
     @media ($mq-xl-min) {
-        padding: calc($base-line-height / 1.8) $grid-padding;
+        padding: round($base-line-height / 1.8) $grid-padding;
     }
     &:hover {
         cursor: pointer;

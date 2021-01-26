@@ -7,7 +7,7 @@ $input-height-md  : 52px;
 
 $input-colour     : $colour-grey-dark;
 
-@define-mixin input {
+@mixin input {
     font-size: inherit;
     color: $input-colour;
     background: no-repeat $colour-white;
@@ -39,17 +39,17 @@ input[type="number"],
 input[type="email"],
 input[type="date"],
 input[type="url"] {
-    @mixin input;
+    @include input;
     width: 100%;
     height: $base-line-height;
     line-height: 1;
 
     @media ($mq-sm-max) {
-        padding: calc((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
+        padding: round((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
         height: $input-height-sm;
     }
     @media ($mq-md-min) {
-        padding: calc((($input-height-md - 2px) - $base-line-height) / 2) 18px;
+        padding: round((($input-height-md - 2px) - $base-line-height) / 2) 18px;
         height: $input-height-md;
     }
 }
@@ -61,7 +61,7 @@ input[type="url"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-    @mixin input;
+    @include input;
     width: 40px;
     min-width: 40px;
     height: 40px;
@@ -97,7 +97,7 @@ input[type="checkbox"] {
    ========================================================================== */
 
 textarea {
-    @mixin input;
+    @include input;
     padding: $grid-padding-sm;
     display: block;
     resize: vertical;
@@ -111,20 +111,20 @@ textarea {
    ========================================================================== */
 
 select {
-    @mixin input;
+    @include input;
     width: 100%;
     height: $base-line-height;
     line-height: 1;
     background-image: url("../../assets/svg/icons/select-arrow.svg");
 
     @media ($mq-sm-max) {
-        padding: calc((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
+        padding: round((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
         height: $input-height-sm;
         background-position: calc(100% - 12px) 50%;
     }
 
     @media ($mq-md-min) {
-        padding: calc((($input-height-md - 2px) - $base-line-height) / 2) 18px;
+        padding: round((($input-height-md - 2px) - $base-line-height) / 2) 18px;
         height: $input-height-md;
         background-position: calc(100% - 20px) 50%;
     }

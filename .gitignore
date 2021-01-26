@@ -1,39 +1,77 @@
-# System & hidden
+### System & hidden
 
 .DS_Store
-.sass-cache
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# ignore log files and databases
+*~
+*.log
+*.sql
+*.swp
+*.swo
+*.stTheme.cache
+*.tmlanguage.cache
+*.tmPreferences.cache
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore Editor files
 .idea
 .vscode
 *.code-workspace
+*.sublime-*
+*.komodoproject
+nbproject/*
 
-# Dependencies (composer, npm & bower)
+### Dependencies (composer, npm & bower)
 
-/vendor
-/node_modules
-bower_components
-package-lock.json
+/.sass-cache/
+/vendor/
+/node_modules/
+/package-lock.json
 
-# WordPress
+### WordPress
 
+/web/.htaccess
 /web/wordpress
 /web/wp-config.php
-/web/.htaccess
 /web/wp-content/debug.log
 
-/web/wp-content/languages
+/web/wp-content/languages/
 /web/wp-content/plugins/*
 !/web/wp-content/plugins/.gitkeep
 /web/wp-content/uploads/*
 !/web/wp-content/uploads/.gitkeep
 
-# Caches
+### Caches & Plugins
 
-/web/wp-content/acf-cache
-/web/wp-content/wp-rocket-config
+/web/wp-content/advanced-cache.php
+/web/wp-content/db.php
+/web/wp-content/object-cache.php
+/web/wp-content/aam/
+/web/wp-content/acf-cache/
+/web/wp-content/cache/
+/web/wp-content/wflogs/
+/web/wp-content/wp-rocket-config/
+/web/wp-content/w3tc-config/
 
-# Compiled
+### Compiled
 
 /web/wp-content/themes/**/styles/dist
 /web/wp-content/themes/**/js/dist
 /web/wp-content/themes/**/vendor
-web/version.php
+/web/version.php

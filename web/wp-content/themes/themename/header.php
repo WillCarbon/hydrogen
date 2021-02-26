@@ -4,20 +4,36 @@
  */
 ?><!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
-    <head>
-        <meta charset="<?php bloginfo('charset'); ?>">
-        <title><?php wp_title(''); ?></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <title><?php wp_title(''); ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script>document.documentElement.classList.remove('no-js');</script>
-        <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico">
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico">
 
-        <?php wp_head(); ?>
-    </head>
+    <?php wp_head(); ?>
+</head>
 
-    <body <?php body_class(); ?>>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<body <?php body_class(); ?>>
 
-        <?php // Header markup here ?>
+    <header class="c-header o-wrapper-parent">
+        <div class="c-header__wrap o-wrapper-centre">
+            <div class="c-header__brand">
+                <a href="<?php echo home_url('/'); ?>">
+                    <?php
+                        carbon_svg('logo', '/assets/svg/brand-elements/');
+                    ?>
+                </a>
+            </div>
+            <div class="c-header__menu">
+                <?php
+                    get_template_part('components/layout/nav', 'main');
+
+                    get_template_part('components/layout/nav', 'buttons');
+                ?>
+            </div>
+        </div>
+    </header>
+
+    <main>

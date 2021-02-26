@@ -2,16 +2,29 @@
 /**
  * The loop
  */
-if ( have_posts() ) {
 
-    while(have_posts()) : the_post();
+    if ( have_posts() ) {
+?>
 
-        get_template_part( 'components/loop/card', get_post_type() );
+    <div class="c-card-list o-wrapper-parent">
+        <div class="c-card-list__wrap o-wrapper-centre">
+            <?php
+                while(have_posts()) : the_post();
 
-    endwhile;
+                    get_template_part( 'components/loop/card', get_post_type() );
 
-} else {
+                endwhile;
+                wp_reset_postdata();
+            ?>
+        </div>
+    </div>
 
-    get_template_part( 'components/loop/empty' );
+<?php
 
-}
+        get_template_part( 'components/loop/pagination');
+
+    } else {
+
+        get_template_part( 'components/loop/empty' );
+
+    }

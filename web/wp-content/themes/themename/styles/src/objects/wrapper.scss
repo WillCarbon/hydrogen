@@ -19,3 +19,13 @@
         margin: 0 auto 40px;
     }
 }
+
+.o-wrapper-parent {
+    @include mobile-gutter;
+}
+
+.o-wrapper-centre {
+    width: 100%;
+    max-width: $grid-width-xl;
+    margin: 0 auto;
+}

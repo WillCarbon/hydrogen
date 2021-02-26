@@ -10,9 +10,10 @@ The website is built with:
 
 ### System Requirements
 
+* [PHP](https://www.php.net/) v7.4
 * [Composer](https://getcomposer.org/)
-* [NPM](https://www.npmjs.com/) 
 * [Node](https://nodejs.org/en/) v14
+* [NPM](https://www.npmjs.com/) 
 * [Gulp](https://gulpjs.com/)
 
 

@@ -20,6 +20,12 @@ if (!class_exists('CarbonaraScripts')):
             // Remove JavaScript files
             add_action('wp_enqueue_scripts', [$this, 'deregisterScripts'], 90);
 
+            // Apply Async to scripts
+            #add_filter('carbon/scripts/async', [$this, 'asyncScripts']);
+
+            // Apply Async to scripts
+            #add_filter('carbon/scripts/defer', [$this, 'deferScripts']);
+
             // Uncomment line below to use custom version of jQuery
             #add_action('wp_enqueue_scripts', [$this, 'replaceJquery'], 5);
         }
@@ -50,6 +56,30 @@ if (!class_exists('CarbonaraScripts')):
             if (is_admin()) return;
 
             wp_deregister_script('l10n');
+        }
+
+
+        /**
+         * @param array $list
+         * @return array
+         */
+        public function asyncScripts( $list )
+        {
+            $list[] = 'main';
+
+            return $list;
+        }
+
+
+        /**
+         * @param array $list
+         * @return array
+         */
+        public function deferScripts( $list )
+        {
+            $list[] = 'main';
+
+            return $list;
         }
 
 

@@ -5,13 +5,17 @@
 .o-wrapper {
     max-width: $grid-width-lg;
     margin: 0 0 40px;
-    @media ($mq-xl-max) {
+
+    .c-header &,
+    .c-footer & {
+        margin-bottom: 0;
+    }
+
+    @include break($mq-xl-max) {
         padding: 0 15px;
     }
-    @media ($mq-md-min) {
+
+    @include break($mq-md-min) {
         margin: 0 auto 40px;
-    }
-    .c-header &, .c-footer & {
-        margin-bottom: 0;
     }
 }

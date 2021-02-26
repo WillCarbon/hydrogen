@@ -59,7 +59,7 @@
 .gfield_50 {
     width: 100%;
 
-    @media ($mq-md-min) {
+    @include break($mq-md-min) {
         width: 48%;
     }
 }
@@ -86,7 +86,7 @@
         flex-wrap: wrap;
 
         li {
-            @media ($mq-md-min) {
+            @include break($mq-md-min) {
                 width: 50%;
             }
         }
@@ -97,11 +97,11 @@
         flex-wrap: wrap;
 
         li {
-            @media ($mq-md-min) and ($mq-xl-max) {
+            @include break-between($screen-md-min, $screen-xl-max) {
                 width: 32%;
             }
 
-            @media ($mq-xxl-min) {
+            @include break($mq-xxl-min) {
                 width: 16%;
             }
         }
@@ -131,21 +131,21 @@
     @include font-smoothing;
     border: none;
 
-    @media ($mq-xxs-max) {
+    @include break($mq-xxs-max) {
         display: block;
         width: 100%;
         margin: 0 auto;
     }
 
-    @media ($mq-md-max) {
+    @include break($mq-md-max) {
         padding: 10px 20px;
     }
 
-    @media ($mq-lg-min) and ($mq-lg-max) {
+    @include break-between($screen-lg-min, $screen-lg-max) {
         padding: round($base-line-height / 2) 15px;
     }
 
-    @media ($mq-xl-min) {
+    @include break($mq-xl-min) {
         padding: round($base-line-height / 1.8) $grid-padding;
     }
 

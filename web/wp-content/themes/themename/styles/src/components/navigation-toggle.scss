@@ -5,21 +5,26 @@
 .c-header__toggle {
     position: absolute;
     top: 55%;
-    transform: translate(0, -55%);
     right: $grid-padding;
-    color: $colour-grey;
+    transform: translate(0, -55%);
+
+    transition: background $transition-duration $transition-easing;
+
     font-size: 12px;
     line-height: 1;
     text-transform: lowercase;
-    transition: background $transition-duration $transition-easing;
-    @media ($mq-md-min) {
-        display: none;
-    }
+    color: $colour-grey;
+
     &:hover {
         cursor: pointer;
         color: $colour-grey-dark;
     }
+
+    @include break($mq-md-min) {
+        display: none;
+    }
 }
+
 .c-header__toggle__button {
     position: relative;
     display: block;
@@ -30,6 +35,7 @@
     border-radius: 50%;
     transition: background $transition-duration $transition-easing;
 }
+
 .c-header__toggle__burger {
     position: absolute;
     top: 17px;
@@ -38,6 +44,7 @@
     height: 1px;
     background: $colour-white;
     transition: background $transition-duration $transition-easing;
+
     &:before,
     &:after {
         content: "";
@@ -49,9 +56,11 @@
         background: $colour-white;
         transition: all $transition-duration $transition-easing;
     }
+
     &:before {
         transform: translateY(-4px);
     }
+
     &:after {
         transform: translateY(4px);
     }
@@ -63,27 +72,32 @@
     .c-header__toggle__button {
         background: $colour-bravo;
     }
+
     .c-header__toggle__burger {
         background: $colour-white;
-    }
-    .c-header__toggle__burger:before,
-    .c-header__toggle__burger:after {
-        background: $colour-white;
+
+        &:before,
+        &:after {
+            background: $colour-white;
+        }
     }
 }
 
 /* Open */
 
 .o-page-container--nav-open {
+
     .c-header__toggle__burger {
-        background: transparent !important; /* :-/ */
-    }
-    .c-header__toggle__burger:before {
-        background: $colour-white;
-        transform: rotate(45deg);
-    }
-    .c-header__toggle__burger:after {
-        background: $colour-white;
-        transform: rotate(-45deg);
+        background: transparent !important;
+
+        &:before {
+            transform: rotate(45deg);
+            background: $colour-white;
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+            background: $colour-white;
+        }
     }
 }

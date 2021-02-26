@@ -11,6 +11,7 @@
     right: 0;
     overflow: hidden;
     transition: right $transition-duration $transition-easing;
+
     &.o-page-container--nav-open {
         right: $mobile-nav-width;
     }
@@ -24,8 +25,8 @@
     display: flex;
     justify-content: space-between;
     @include margin (top, 2);
-    @media ($mq-sm-max) {
-        @include flex-base (column, wrap);
+    @include break($mq-sm-max) {
+        flex-flow: column wrap;
         flex-basis: auto;
     }
 }
@@ -51,10 +52,10 @@
    ========================================================================== */
 
 .o-page__media {
-    @media ($mq-md-min) {
+    @include break($mq-md-min) {
         width: 66.6%;
     }
-    @media ($mq-xxl-min) {
+    @include break($mq-xxl-min) {
         width: 50%;
     }
 }
@@ -65,11 +66,11 @@
 
 .o-page__sidebar {
     width: 35%;
-    @media ($mq-sm-max) {
+    @include break($mq-sm-max) {
         width: 100%;
         order: 2;
     }
-    @media ($mq-lg-min) and ($mq-xl-max) {
+    @include break-between($screen-lg-min, $screen-xl-max) {
         width: 30%;
     }
 }

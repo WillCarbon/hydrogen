@@ -8,22 +8,36 @@ const themeName = 'themename';
 const devDomain = 'themename.localhost';
 
 
+// Project path settings
 const path = {
     web:    './web/',
     load:   './node_modules/',
     theme:  './web/wp-content/themes/' + themeName + '/'
 };
 
+
+// Additional path settings
 path.assets     = path.theme + 'assets/';
 path.vendor     = path.theme + 'vendor/';
 
+
+// Files to copy to theme folder
+const vendorFiles = [
+    path.load + 'jquery/dist/jquery.min.js'
+];
+
+
+// CSS config
 const cssConf = {
     src:    path.theme + 'styles/src/*.scss',
     sub:    path.theme + 'styles/src/**/*.scss',
     build:  path.theme + 'styles/dist/'
 };
 
+
+// JavaScript config
 const jsConf = {
+    path:   path.theme + 'js/src/',
     src:    path.theme + 'js/src/*.js',
     sub:    path.theme + 'js/src/**/*.js',
     vue:    path.theme + 'js/src/**/*.vue',
@@ -139,75 +153,16 @@ function distStyles ()
 /* Styling Task */
 exports.styling = series(lintStyles, devStyles, distStyles);
 
-//gulp.task('styles', ['lint-styles'], function () {
-//    var processors = [
-//        cssImport({
-//            path: [path.load]
-//        }),
-//        precss,
-//        responsiveType,
-//        assets({
-//            path.loads: [
-//                path.theme + '/assets/images',
-//                path.theme + '/assets/svg'
-//            ]
-//        }),
-//        autoprefixer({
-//            browsers: ['last 2 versions', '> 5% in GB']
-//        })
-//    ];
-//    return src(path.theme + '/styles/src/*.css')
-//        .pipe(postcss(processors), {
-//            syntax: scss
-//        })
-//        .pipe(dest(path.theme + '/styles/dist'))
-//        .pipe(browserSync.stream());
-//});
-//
-//gulp.task('dist-styles', function () {
-//    var processors = [
-//        cssImport({
-//            path: [path.load]
-//        }),
-//        precss,
-//        responsiveType,
-//        assets({
-//            path.loads: [
-//                path.theme + '/assets/images',
-//                path.theme + '/assets/svg'
-//            ]
-//        }),
-//        autoprefixer({
-//            browsers: ['last 2 versions', '> 5% in GB']
-//        }),
-//        cssnano({
-//            discardComments: {
-//                removeAll: true
-//            },
-//            discardEmpty: true,
-//            calc: {
-//                precision: 3
-//            }
-//        })
-//    ];
-//    return src(path.theme + '/styles/src/*.css')
-//        .pipe(postcss(processors), {
-//            syntax: scss
-//        })
-//        .pipe(dest(path.theme + '/styles/dist'));
-//});
-
 
 /* ==========================================================================
    Scripts
    ========================================================================== */
 
-var browserify = require('browserify');
-var babelify = require('babelify');
-var buffer = require('gulp-buffer');
-var eslint = require('gulp-eslint');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
+const babelify      = require('babelify');
+const browserify    = require('browserify');
+const buffer        = require('gulp-buffer');
+const eslint        = require('gulp-eslint');
+const uglify        = require('gulp-uglify');
 
 function lintScripts ()
 {
@@ -219,40 +174,40 @@ function lintScripts ()
 
 function devScripts ()
 {
-    return src(jsConf.sub, { read: false })
+    return src(jsConf.sub, {read: false})
         .pipe(tap(function (file) {
-            log(' - Bundling ' + file.path);
-            file.contents = browserify(file.path, {
-                debug: true,
-                transform: [babelify]
-            }).bundle();
+            log.info(' - bundling: ' + file.path);
+            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
+                presets: ["@babel/preset-env"]
+            })).bundle();
         }))
         .pipe(buffer())
-        .pipe(sourcemaps.init({
-            loadMaps: true
-        }))
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write('./'))
         .pipe(dest(jsConf.build))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({ stream: true }));
 }
 
 function distScripts ()
 {
-    return src(jsConf.sub, { read: false })
+    return src(jsConf.sub, {read: false})
         .pipe(tap(function (file) {
-            log(' - Bundling ' + file.path);
-
-            file.contents = browserify(file.path, {
-                transform: [babelify]
-            }).bundle();
+            log.info(' - bundling: ' + file.path);
+            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
+                presets: ["@babel/preset-env"]
+            })).bundle();
         }))
         .pipe(buffer())
         .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(dest(jsConf.build));
 }
 
 /* Styling Task */
 exports.scripting = series(lintScripts, devScripts, distScripts);
+
 
 /* ==========================================================================
    Vendor Files
@@ -260,11 +215,9 @@ exports.scripting = series(lintScripts, devScripts, distScripts);
 
 function vendor ()
 {
-    return src([
-            path.load + 'jquery/dist/jquery.min.js'
-        ], { 'base': path.load })
+    return src(vendorFiles, { 'base': path.load })
         .pipe(tap(function (file) {
-            log(' - Coping File: ' + file.path);
+            log(' - coping: ' + file.path);
         }))
         .pipe(dest(path.theme + '/vendor'));
 }
@@ -282,29 +235,27 @@ function watching (done)
     watch(
         [cssConf.src, cssConf.sub],
         { events: 'all', ignoreInitial: false },
-        series(lintStyles, devStyles)
+        series(lintStyles, devStyles, distStyles)
     );
 
     // JavaScript
     watch(
         [jsConf.src, jsConf.sub, jsConf.vue],
         { events: 'all', ignoreInitial: false },
-        series(lintScripts, devScripts)
+        series(lintScripts, devScripts, distScripts)
     );
 
     // .html/.php
-    watch([
-        path.theme + '/*.php',
-        path.theme + '/**/*.php',
-        path.theme + '/**/*.html'
-    ], function (file) {
-        src(file.path).pipe(browserSync.stream());
-    });
+    watch(
+        [path.theme + '/*.php', path.theme + '/**/*.php'],
+        { events: 'all', ignoreInitial: false },
+        browserSync.reload
+    );
 
     done();
 }
 
-exports.watch = parallel(server, vendor, devStyles, devScripts,  watching);
+exports.watch = series(server, vendor, devStyles, devScripts,  watching);
 
 
 /* ==========================================================================
@@ -314,7 +265,7 @@ exports.watch = parallel(server, vendor, devStyles, devScripts,  watching);
 const git   = require('git-rev');
 const fs    = require('fs');
 
-function version ()
+function version (done)
 {
     return git.short(function (str) {
         fs.writeFile(
@@ -322,7 +273,9 @@ function version ()
             function () { return false; }
         );
 
-       return log(' - website version: ' + str);
+        log(' - version: ' + str);
+
+        done();
     });
 }
 
@@ -333,5 +286,4 @@ exports.version = parallel(version);
    Production 🚀
    ========================================================================== */
 
-exports.build = parallel(vendor, distStyles, distScripts, version);
-
+exports.build = series(vendor, distStyles, distScripts, version);

@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Generic Text Styling
+   ========================================================================== */
+
+/*
+  Basic Text
+  ========================================================================== */
+
+.o-text-centre {
+    text-align: center;
+}
+
+.o-text-bravo {
+    color: $colour-bravo;
+}
+
+.o-screen-reader {
+    display: none;
+}
+
+
+/*
+  Page container
+  ========================================================================== */
+
+.o-content-editor {
+
+    a {
+        text-decoration: underline;
+        color: $colour-bravo;
+
+        &:focus,
+        &:hover {
+            color: $colour-alpha;
+        }
+    }
+
+    ul {
+        margin: 20px 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            padding-left: 20px;
+
+            &:before {
+                content: "\2022";
+
+                position: absolute;
+                left: 5px;
+
+                color: $colour-bravo;
+            }
+        }
+    }
+}

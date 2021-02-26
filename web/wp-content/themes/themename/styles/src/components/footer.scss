@@ -6,6 +6,7 @@
     @include padding (top, 2);
     @include padding (bottom, 2);
     background: $colour-black;
+
     a {
         text-decoration: underline;
     }

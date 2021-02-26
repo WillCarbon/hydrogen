@@ -25,11 +25,11 @@
     text-indent: -9em;
     /*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
     overflow: hidden;
-    @media ($mq-sm-min) and ($mq-md-max) {
+    @include break-between($screen-sm-min, $screen-md-max) {
         width: 30.58%;
         padding-bottom: calc(28.7vw * 80/281);
     }
-    @media ($mq-lg-min) {
+    @include break($mq-lg-min) {
         margin: 2px 0;
         width: 281px;
         height: 80px;

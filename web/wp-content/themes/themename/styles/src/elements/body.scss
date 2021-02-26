@@ -3,10 +3,10 @@
    ========================================================================== */
 
 body {
+    @include font-smoothing;
     font-family: $font-body;
-    font-weight: $font-regular;
     font-size: responsive $font-size-min $font-size-max;
     line-height: 1.5;
+    font-weight: $font-regular;
     color: $colour-grey;
-    -webkit-font-smoothing: antialiased;
 }

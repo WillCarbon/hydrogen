@@ -2,10 +2,10 @@
    Form defaults
    ========================================================================== */
 
-$input-height-sm  : 42px;
-$input-height-md  : 52px;
+$input-height-sm:   42px;
+$input-height-md:   52px;
 
-$input-colour     : $colour-grey-dark;
+$input-colour:      $colour-grey-dark;
 
 @mixin input {
     font-size: inherit;
@@ -14,10 +14,10 @@ $input-colour     : $colour-grey-dark;
     border: 1px solid $colour-grey-light;
     border-radius: 0;
 
-    /* stylelint-disable */
+    /* sass-lint:disable-all */
     -webkit-appearance: none;
     -moz-appearance:    none;
-    /* stylelint-enable */
+    /* sass-lint:enable-all */
 
     &:focus {
         outline: 0;
@@ -44,11 +44,11 @@ input[type="url"] {
     height: $base-line-height;
     line-height: 1;
 
-    @media ($mq-sm-max) {
+    @include break($mq-sm-max) {
         padding: round((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
         height: $input-height-sm;
     }
-    @media ($mq-md-min) {
+    @include break($mq-md-min) {
         padding: round((($input-height-md - 2px) - $base-line-height) / 2) 18px;
         height: $input-height-md;
     }
@@ -117,13 +117,13 @@ select {
     line-height: 1;
     background-image: url("../../assets/svg/icons/select-arrow.svg");
 
-    @media ($mq-sm-max) {
+    @include break($mq-sm-max) {
         padding: round((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
         height: $input-height-sm;
         background-position: calc(100% - 12px) 50%;
     }
 
-    @media ($mq-md-min) {
+    @include break($mq-md-min) {
         padding: round((($input-height-md - 2px) - $base-line-height) / 2) 18px;
         height: $input-height-md;
         background-position: calc(100% - 20px) 50%;
@@ -133,6 +133,7 @@ select {
         cursor: pointer;
     }
 
+    /* sass-lint:disable-all */
     &::-ms-expand {
         display: none;
     }
@@ -141,4 +142,5 @@ select {
         color: $input-colour;
         background: none;
     }
+    /* sass-lint:enable-all */
 }

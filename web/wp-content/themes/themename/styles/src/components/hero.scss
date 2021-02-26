@@ -4,17 +4,17 @@
 
 .c-hero {
     position: relative;
-    @media ($mq-xs-max) {
+    @include break($mq-xs-max) {
         margin-bottom: $base-line-height;
         height: calc(100vh - 137px); /* height of the navbar */
     }
-    @media ($mq-sm-min) and ($mq-lg-max) {
+    @include break-between($screen-sm-min, $screen-lg-max) {
         height: 400px;
     }
-    @media ($mq-xl-min) and ($mq-xl-max) {
+    @include break-between($screen-xl-min, $screen-xl-max) {
         height: 510px;
     }
-    @media ($mq-xxl-min) {
+    @include break($mq-xxl-min) {
         height: 660px;
     }
 }
@@ -28,6 +28,7 @@
     @include overlay-flat(5);
     z-index: 0;
     /*background: $colour-alpha url("../../assets/svg/preload.svg") no-repeat center; */
+
     img {
         @include object-fit-image;
     }
@@ -50,6 +51,7 @@
     color: $colour-white;
     font-size: responsive 20px 52px;
 }
+
 .c-hero__subtitle {
     color: $colour-alpha;
     font-size: responsive 18px 26px;

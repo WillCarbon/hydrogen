@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.c-button {
+    display: inline-block;
+    padding: 8px 12px;
+
+    transition: all $transition-duration $transition-easing;
+    background: transparent;
+    border: 1px solid $colour-alpha;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    @include font-smoothing;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none !important;
+    text-align: center;
+    color: $colour-alpha !important;
+
+    @include break($mq-md-min) {
+        min-height: 46px;
+        padding: 10px 18px;
+
+        border-radius: 60px;
+
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    &:focus,
+    &:hover {
+        background: $colour-alpha;
+        border-color: $colour-alpha;
+        color: $colour-white !important;
+    }
+
+    &:active {
+        background: $colour-bravo;
+        border-color: $colour-bravo;
+        color: $colour-white !important;
+    }
+
+    & + .c-button {
+        margin-left: 6px;
+    }
+
+    &--bravo {
+        border-color: $colour-bravo;
+        color: $colour-bravo !important;
+
+        &:focus,
+        &:hover {
+            background-color: $colour-bravo;
+            border-color: $colour-bravo;
+            color: $colour-white !important;
+        }
+
+        &:active {
+            background: $colour-alpha;
+            border-color: $colour-alpha;
+            color: $colour-white !important;
+        }
+    }
+
+}

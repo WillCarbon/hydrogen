@@ -16,14 +16,6 @@
 
 define('WP_MEMORY_LIMIT', '200M');
 
-/** Set Site Version (from Git) **/
-if(file_exists('version.php'))
-    require_once('version.php');
-
-/** Site Version Fallback **/
-if (!defined('SITE_VERSION'))
-    define('SITE_VERSION', '');
-
 /** Disable Plugin Updates */
 define('DISALLOW_FILE_MODS', true);
 define('AUTOMATIC_UPDATER_DISABLED', true);
@@ -122,6 +114,14 @@ define('WP_HOMEPAGE', WP_HOME);
 
 define('WP_CONTENT_DIR', realpath(__DIR__ . '/wp-content/'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
+
+/** Set Site Version (from Git) **/
+if(file_exists('version.php'))
+    require_once('version.php');
+
+/** Site Version Fallback **/
+if (!defined('SITE_VERSION'))
+    define('SITE_VERSION', '');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

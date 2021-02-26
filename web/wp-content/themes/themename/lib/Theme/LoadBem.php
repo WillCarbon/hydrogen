@@ -8,6 +8,7 @@ if (!class_exists('CarbonaraLoadBem')):
      */
     class CarbonaraLoadBem
     {
+        // @todo Potentially remove this file!
 
         /**
          * Bem constructor.

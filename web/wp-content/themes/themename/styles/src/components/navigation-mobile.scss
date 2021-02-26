@@ -13,9 +13,12 @@
     background: $colour-white;
     overflow: auto;
     transition: all $transition-duration $transition-easing;
-    -webkit-overflow-scrolling: touch;
     visibility: hidden;
     opacity: 0;
+
+    /* sass-lint:disable-all */
+    -webkit-overflow-scrolling: touch;
+    /* sass-lint:enable-all */
 
     &.c-nav-mobile--nav-open {
         right: 0;
@@ -34,13 +37,16 @@
     padding-left: 0;
     text-align: left;
 }
+
 .c-nav-mobile__list-item {
     display: block;
     border-bottom: 1px solid $colour-grey-mid-light;
+
     &:last-of-type {
         border-bottom: 0;
     }
 }
+
 .c-nav-mobile__list-link {
     display: block;
     text-align: center;
@@ -49,6 +55,7 @@
     font-size: 15px;
     transition: all $transition-duration $transition-easing;
     text-decoration: none;
+
     &:hover,
     &:active,
     &:focus {

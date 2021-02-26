@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+/* Font sizes */
+
+$font-size-min:         14px;
+$font-size-max:         16px;
+
+$base-line-height:      24px;
+
+/* Font families */
+
+$font-alpha:            "Avenir Next Rounded W01", "HelveticaNeue", sans-serif;
+
+$font-header:           $font-alpha;
+$font-body:             $font-alpha;
+
+/* Font weights */
+
+$font-regular:          100;
+$font-medium:           200;
+$font-bold:             400;
+
+/* Quotes */
+
+$open-quote:            "\201C";
+$close-quote:           "\201D";

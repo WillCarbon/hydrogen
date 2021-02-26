@@ -6,20 +6,24 @@
     display: flex;
     align-items: center;
 }
+
 .c-navigation__list {
     display: flex;
     flex: 1;
-    list-style: none;
-    padding: 0;
     margin-bottom: 0;
-    @media ($mq-sm-max) {
+    padding: 0;
+    list-style: none;
+
+    @include break($mq-sm-max) {
         display: none;
     }
 }
+
 .c-navigation__item {
-    margin: 0 10px;
     display: flex;
     align-items: center;
+    margin: 0 10px;
+
     a {
         display: flex;
         align-items: center;
@@ -28,12 +32,14 @@
         color: $colour-alpha;
     }
 }
+
 .c-navigation__item--active {
     a {
-        color: $colour-bravo;
         font-weight: $font-medium;
+        color: $colour-bravo;
     }
 }
+
 .c-navigation__link {
     padding: $base-line-height 0;
 }

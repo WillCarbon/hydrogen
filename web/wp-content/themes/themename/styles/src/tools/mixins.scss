@@ -16,34 +16,38 @@
 
 
 /*
-   Pretty underlines 😍
+   Media Query Breakpoints
    ========================================================================== */
 
-/* Read more at: https://eager.io/blog/smarter-link-underlines */
-
-/* stylelint-disable */
-@mixin pretty-underline {
-    background:
-        linear-gradient($colour-white, $colour-white) 0 1.08em/.05em 1px no-repeat,
-        linear-gradient($colour-white, $colour-white) 0 1.08em/.05em 1px no-repeat,
-        linear-gradient(currentColor, currentColor) 0 1.08em/1px 1px repeat-x;
-    text-shadow:
-        .03em 0 $colour-white, -.03em 0 $colour-white,
-        .06em 0 $colour-white, -.06em 0 $colour-white,
-        .09em 0 $colour-white, -.09em 0 $colour-white,
-        .12em 0 $colour-white, -.12em 0 $colour-white,
-        .15em 0 $colour-white, -.15em 0 $colour-white;
-    &:hover {
-        background: transparent;
+@mixin break($query) {
+    @media ($query) {
+        @content
     }
 }
-/* stylelint-enable */
+
+@mixin break-min($min) {
+    @media (min-width: $min) {
+        @content
+    }
+}
+
+@mixin break-max($max) {
+    @media (max-width: $max) {
+        @content
+    }
+}
+
+@mixin break-between($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content
+    }
+}
 
 /*
    Image overlay
    ========================================================================== */
 
-@mixin overlay-flat( $z-index) {
+@mixin overlay-flat($z-index) {
     &:after {
         content: "";
         position: absolute;
@@ -55,56 +59,11 @@
     }
 }
 
-
-/*
-   Flex
-   ========================================================================== */
-
-@mixin flex-base( $direction, $wrap) {
-    display: flex;
-    flex-flow: $direction $wrap;
-}
-@mixin flex-justify( $justify) {
-    display: flex;
-    justify-content: $justify;
-}
-@mixin flex-align( $align) {
-    display: flex;
-    align-items: $align;
-}
-@mixin flex-parent( $direction, $wrap, $size, $direction-responsive, $wrap-responsive) {
-    flex-flow: $direction $wrap;
-    //@media ($mq-$(size)-max) {
-        flex-flow: $direction-responsive $wrap-responsive;
-    //}
-}
-@mixin flex-child( $size) {
-    flex: 1;
-    //@media ($mq-$(size)-max) {
-        width: 100%;
-    //}
-}
-
-/*
-   Centre layout responsive
-   ========================================================================== */
-
-@mixin max-width( $size, $width, $align) {
-    //@media ($mq-$(size)-max) {
-        max-width: $grid-width-#{$width};
-        margin-left: auto;
-        margin-right: auto;
-        p, h1, h2, h3, h4, h5, h6 {
-            text-align: $align;
-        }
-    //}
-}
-
 /*
    Object fit polyfill
    ========================================================================== */
 
-@mixin object-fit( $attr) {
+@mixin object-fit($attr) {
     object-fit: $attr;
     font-family: "object-fit: #{$attr}";
 }
@@ -124,7 +83,7 @@
    ========================================================================== */
 
 @mixin object-fit-image {
-    @include object-fit( cover);
+    @include object-fit(cover);
     position: absolute;
     left: 0;
     top: 0;
@@ -149,7 +108,8 @@
 
 @mixin hide-content {
     position: absolute !important;
-    height: 1px; width: 1px;
+    width: 1px;
+    height: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
 }
@@ -160,8 +120,24 @@
    ========================================================================== */
 
 @mixin font-smoothing {
+    // sass-lint:disable-all
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    // sass-lint:enable-all
+}
+
+
+/*
+   Header Styling
+   ========================================================================== */
+
+@mixin header-style {
+    margin-top: 0;
+    margin-bottom: $base-line-height;
+
+    font-family: $font-header;
+    font-weight: $font-bold;
+    color: $colour-alpha;
 }
 
 
@@ -197,7 +173,7 @@
  * Mind blown...
  */
 
-@mixin padding( $side, $modifier) {
+@mixin padding($side, $modifier) {
     @media ($mq-xs-max) {
         padding-#{$side}: round(($margin-sm-base) * $modifier);
     }
@@ -209,7 +185,7 @@
     }
 }
 
-@mixin margin( $side, $modifier) {
+@mixin margin($side, $modifier) {
     @media ($mq-xs-max) {
         margin-#{$side}: round(($margin-sm-base) * $modifier);
     }

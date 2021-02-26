@@ -20,7 +20,7 @@
 
     &--next,
     &--prev {
-        @media ($mq-md-max) {
+        @include break($mq-md-max) {
             display: none;
         }
     }

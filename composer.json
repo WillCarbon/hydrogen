@@ -27,6 +27,7 @@
         "satispress/carbonneutral": "*",
         "satispress/gravityforms": "*",
         "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "*",
+        "wpackagist-plugin/gdpr": "*",
         "wpackagist-plugin/redirection": "*",
         "wpackagist-plugin/wordpress-seo": "13.5"
     },

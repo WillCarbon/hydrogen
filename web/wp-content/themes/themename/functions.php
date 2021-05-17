@@ -11,32 +11,32 @@ define('CARBONARA_DIR',     get_stylesheet_directory());
 /**
  * ACF Settings
  */
-include( CARBONARA_DIR .'lib/Theme/ACF.php');
+include( CARBONARA_DIR .'/lib/Theme/ACF.php');
 
 /**
  * Load Theme Classes
  */
-include( CARBONARA_DIR .'lib/Theme/Activation.php');
-include( CARBONARA_DIR .'lib/Theme/Images.php');
-include( CARBONARA_DIR .'lib/Theme/Setup.php');
-include( CARBONARA_DIR .'lib/Theme/Scripts.php');
-include( CARBONARA_DIR .'lib/Theme/Styles.php');
-include( CARBONARA_DIR .'lib/Theme/TinyMCE.php');
-include( CARBONARA_DIR .'lib/Theme/TrackingCodes.php');
+include( CARBONARA_DIR .'/lib/Theme/Activation.php');
+include( CARBONARA_DIR .'/lib/Theme/Images.php');
+include( CARBONARA_DIR .'/lib/Theme/Setup.php');
+include( CARBONARA_DIR .'/lib/Theme/Scripts.php');
+include( CARBONARA_DIR .'/lib/Theme/Styles.php');
+include( CARBONARA_DIR .'/lib/Theme/TinyMCE.php');
+include( CARBONARA_DIR .'/lib/Theme/TrackingCodes.php');
 
 /**
  * Load Post Types
  */
-#include( CARBONARA_DIR .'lib/PostType/ExamplePostType.php');
+#include( CARBONARA_DIR .'/lib/PostType/ExamplePostType.php');
 
 /**
  * Load REST Routes
  *
  * You need to update REST_NAMESPACE in REST\REST.php
  */
-#include( CARBONARA_DIR .'lib/REST/REST.php');
-#include( CARBONARA_DIR .'lib/REST/RESTActionInterface.php');
-#include( CARBONARA_DIR .'lib/REST/ExampleAction.php');
+#include( CARBONARA_DIR .'/lib/REST/REST.php');
+#include( CARBONARA_DIR .'/lib/REST/RESTActionInterface.php');
+#include( CARBONARA_DIR .'/lib/REST/ExampleAction.php');
 
 /**
  * Custom Functions

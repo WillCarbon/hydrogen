@@ -24,8 +24,6 @@ if (!class_exists('CarbonaraSetup')):
 
             add_filter('excerpt_length',    [$this, 'excerptLength']);
             add_filter('excerpt_more',      [$this, 'excerptMore']);
-
-            add_action('template_redirect', [$this, 'prettySearchUrl']);
         }
 
 

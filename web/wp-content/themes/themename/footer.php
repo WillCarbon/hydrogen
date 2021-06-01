@@ -4,7 +4,7 @@
  */
 ?>
 
-    </main
+    </main>
 
     <footer class="c-footer">
         <div class="c-footer__wrap o-wrapper-centre">

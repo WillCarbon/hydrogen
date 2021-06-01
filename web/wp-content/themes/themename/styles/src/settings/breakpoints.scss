@@ -36,18 +36,16 @@ $screen-xxl-max:    1799px;
 
 /* Queries */
 
-$mq-xxs-min:        (min-width: $screen-xxs-min);
-$mq-xs-min:         (min-width: $screen-xs-min);
-$mq-sm-min:         (min-width: $screen-sm-min);
-$mq-md-min:         (min-width: $screen-md-min);
-$mq-lg-min:         (min-width: $screen-lg-min);
-$mq-xl-min:         (min-width: $screen-xl-min);
-$mq-xxl-min:        (min-width: $screen-xxl-min);
+$mq-xs-min:         "min-width: #{$screen-xs-min}";
+$mq-sm-min:         "min-width: #{$screen-sm-min}";
+$mq-md-min:         "min-width: #{$screen-md-min}";
+$mq-lg-min:         "min-width: #{$screen-lg-min}";
+$mq-xl-min:         "min-width: #{$screen-xl-min}";
+$mq-xxl-min:        "min-width: #{$screen-xxl-min}";
 
-$mq-xxs-max:        (max-width: $screen-xxs-max);
-$mq-xs-max:         (max-width: $screen-xs-max);
-$mq-sm-max:         (max-width: $screen-sm-max);
-$mq-md-max:         (max-width: $screen-md-max);
-$mq-lg-max:         (max-width: $screen-lg-max);
-$mq-xl-max:         (max-width: $screen-xl-max);
-$mq-xxl-max:        (max-width: $screen-xxl-max);
+$mq-xxs-max:        "max-width: #{$screen-xxs-max}";
+$mq-xs-max:         "max-width: #{$screen-xs-max}";
+$mq-sm-max:         "max-width: #{$screen-sm-max}";
+$mq-md-max:         "max-width: #{$screen-md-max}";
+$mq-lg-max:         "max-width: #{$screen-lg-max}";
+$mq-xl-max:         "max-width: #{$screen-xl-max}";

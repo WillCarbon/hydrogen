@@ -22,7 +22,6 @@ include( CARBONARA_DIR .'/lib/Theme/Setup.php');
 include( CARBONARA_DIR .'/lib/Theme/Scripts.php');
 include( CARBONARA_DIR .'/lib/Theme/Styles.php');
 include( CARBONARA_DIR .'/lib/Theme/TinyMCE.php');
-include( CARBONARA_DIR .'/lib/Theme/TrackingCodes.php');
 
 /**
  * Load Post Types

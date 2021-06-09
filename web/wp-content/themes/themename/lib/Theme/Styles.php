@@ -19,6 +19,9 @@ if (!class_exists('CarbonaraStyles')):
 
             // Add Stylesheets
             add_action('wp_enqueue_scripts', [$this, 'registerStyles'], 99);
+
+            // Add Editor Stylesheet
+            add_action( 'admin_init', [$this, 'addEditorStyle']);
         }
 
         /**
@@ -48,6 +51,14 @@ if (!class_exists('CarbonaraStyles')):
 
             // Remove default WordPress stylesheet
             wp_dequeue_style('wp-block-library');
+        }
+
+        /**
+         * Registers an editor stylesheet for the theme.
+         */
+        public function addEditorStyle()
+        {
+            add_editor_style( Theme::getCss('editor', '.css') );
         }
 
     }

@@ -62,17 +62,22 @@ const rename        = require('gulp-rename');
    Browser Sync
    ========================================================================== */
 
-const browserSync   = require('browser-sync');
+const browserSync   = require('browser-sync').create();
 
 function server (done)
 {
-    browserSync({
+    browserSync.init({
         proxy: devDomain,
         ghostMode: false,
         notify: false,
         open: false
     });
 
+    done();
+}
+
+function browserSyncReload (done){
+    browserSync.reload();
     done();
 }
 
@@ -128,8 +133,7 @@ function devStyles ()
         }).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(sourcemaps.write('.'))
-        .pipe(dest(cssConf.build))
-        .pipe(browserSync.reload({ stream: true }));
+        .pipe(dest(cssConf.build));
 }
 
 /* Production Styling */
@@ -147,7 +151,8 @@ function distStyles ()
         }).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(cleanCSS())
-        .pipe(dest(cssConf.build));
+        .pipe(dest(cssConf.build))
+        .pipe(browserSync.stream({match: '**/*.css'}));
 }
 
 /* Styling Task */
@@ -184,8 +189,7 @@ function devScripts ()
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write('./'))
-        .pipe(dest(jsConf.build))
-        .pipe(browserSync.reload({ stream: true }));
+        .pipe(dest(jsConf.build));
 }
 
 function distScripts ()
@@ -242,20 +246,20 @@ function watching (done)
     watch(
         [jsConf.src, jsConf.sub, jsConf.vue],
         { events: 'all', ignoreInitial: false },
-        series(lintScripts, devScripts, distScripts)
+        series(lintScripts, devScripts, distScripts, browserSyncReload)
     );
 
     // .html/.php
     watch(
         [path.theme + '/*.php', path.theme + '/**/*.php'],
         { events: 'all', ignoreInitial: false },
-        browserSync.reload
+        browserSyncReload
     );
 
     done();
 }
 
-exports.watch = series(server, vendor, devStyles, devScripts,  watching);
+exports.watch = parallel(server, vendor, distStyles, distScripts,  watching);
 
 
 /* ==========================================================================

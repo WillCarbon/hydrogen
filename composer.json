@@ -26,9 +26,12 @@
         "satispress/advanced-custom-fields-pro": "*",
         "satispress/carbonneutral": "*",
         "satispress/gravityforms": "*",
-        "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "*",
+        "satispress/gravityformsrecaptcha": "*",
+        "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "2.4.1",
         "wpackagist-plugin/gdpr": "*",
         "wpackagist-plugin/redirection": "*",
+        "wpackagist-plugin/relevanssi": "*",
+        "wpackagist-plugin/wordfence": "*",
         "wpackagist-plugin/wordpress-seo": "13.5"
     },
     "extra": {

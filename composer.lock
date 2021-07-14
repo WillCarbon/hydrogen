@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42823861afe26bad0595c1f4aceb25bd",
+    "content-hash": "097346daafce199955197ee758a7a2ba",
     "packages": [
         {
             "name": "composer/installers",
@@ -373,18 +373,18 @@
         },
         {
             "name": "satispress/advanced-custom-fields-pro",
-            "version": "5.9.5",
+            "version": "5.9.8",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/advanced-custom-fields-pro/5.9.5",
-                "shasum": "89fe97cf6e087a3eef5485db6e83a83f63e5edbf"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/advanced-custom-fields-pro/5.9.8",
+                "shasum": "24b77bdebae7ac97c6455ea90a636dd00449a99e"
             },
             "require": {
                 "composer/installers": "^1.0"
             },
             "type": "wordpress-plugin",
             "authors": {
-                "name": "Elliot Condon",
+                "name": "Delicious Brains",
                 "homepage": "https://www.advancedcustomfields.com"
             },
             "description": "Customize WordPress with powerful, professional and intuitive fields.",
@@ -392,11 +392,11 @@
         },
         {
             "name": "satispress/carbonneutral",
-            "version": "0.27",
+            "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/0.27",
-                "shasum": "bde7c146fd5abca5e3d608d26c1e40aca632c8e0"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/1.0.1",
+                "shasum": "cee91d08c133774ef0220667b9b3324b7527dbcf"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -410,11 +410,11 @@
         },
         {
             "name": "satispress/gravityforms",
-            "version": "2.5.1",
+            "version": "2.5.7",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.5.1",
-                "shasum": "de1373a61adacd49392d0c281dc8141fe38fe27c"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.5.7",
+                "shasum": "5a4e62bdf0189720a05ce1bc160602ef99ab431e"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -425,6 +425,25 @@
                 "homepage": "https://gravityforms.com"
             },
             "description": "Easily create web forms and manage form entries within the WordPress admin.",
+            "homepage": "https://gravityforms.com"
+        },
+        {
+            "name": "satispress/gravityformsrecaptcha",
+            "version": "1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityformsrecaptcha/1.0",
+                "shasum": "18e2b04cf153a2f5ccfbd9d87891986825e25e8e"
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "Gravity Forms",
+                "homepage": "https://gravityforms.com"
+            },
+            "description": "Enhance Gravity Forms with support for Google reCAPTCHA.",
             "homepage": "https://gravityforms.com"
         },
         {
@@ -447,15 +466,15 @@
         },
         {
             "name": "wpackagist-plugin/acf-content-analysis-for-yoast-seo",
-            "version": "3.0.1",
+            "version": "2.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/acf-content-analysis-for-yoast-seo/",
-                "reference": "tags/3.0.1"
+                "reference": "tags/2.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/acf-content-analysis-for-yoast-seo.3.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/acf-content-analysis-for-yoast-seo.2.4.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -498,6 +517,42 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/redirection/"
+        },
+        {
+            "name": "wpackagist-plugin/relevanssi",
+            "version": "4.13.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/relevanssi/",
+                "reference": "tags/4.13.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.13.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/relevanssi/"
+        },
+        {
+            "name": "wpackagist-plugin/wordfence",
+            "version": "7.5.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordfence/",
+                "reference": "tags/7.5.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.5.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordfence/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

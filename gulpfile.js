@@ -19,6 +19,14 @@ const path = {
 // Additional path settings
 path.assets     = path.theme + 'assets/';
 path.vendor     = path.theme + 'vendor/';
+path.svgPath    = path.assets + 'svg/';
+path.svgDest    = path.svgPath + 'sprites/';
+
+
+// SVG Merged Stacks
+const spriteFiles = [
+    path.svgPath + 'icons/*.svg',
+];
 
 
 // Files to copy to theme folder
@@ -56,6 +64,7 @@ const tap           = require('gulp-tap');
 const cache         = require('gulp-cached');
 const sourcemaps    = require('gulp-sourcemaps');
 const rename        = require('gulp-rename');
+const fPath         = require('path');
 
 
 /* ==========================================================================
@@ -230,6 +239,33 @@ exports.vendor = parallel(vendor);
 
 
 /* ==========================================================================
+   SVG Sprite
+   ========================================================================== */
+
+let symbols     = require('gulp-svg-symbols');
+let merge       = require('merge-stream');
+
+function sprite ()
+{
+    return merge(spriteFiles.map(function(folder) {
+        return src(folder)
+            .pipe(symbols({
+                templates: ['default-svg'],
+            }))
+            .pipe(rename({
+                basename: fPath.basename(fPath.dirname(folder))
+            }))
+            .pipe(tap(function (file) {
+                log(' - generating: ' + path.svgDest + file.path);
+            }))
+            .pipe(dest(path.svgDest));
+    }));
+}
+
+exports.sprite = parallel(sprite);
+
+
+/* ==========================================================================
    Watch
    ========================================================================== */
 
@@ -290,4 +326,4 @@ exports.version = parallel(version);
    Production 🚀
    ========================================================================== */
 
-exports.build = series(vendor, distStyles, distScripts, version);
+exports.build = series(vendor, sprite, distStyles, distScripts, version);

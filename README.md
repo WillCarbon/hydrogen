@@ -38,6 +38,7 @@ The website is built with:
 * _styling_ - Compile CSS files
 * _scripting_ - Compile JavaScript files
 * _vendor_ - Copy Vendor files to theme
+* _sprite_ - Regenerate the SVG Sprite files
 * _watch_ - Watch for changes, Local only
 * _version_ - Create theme version number
 * _build_ - Compile all files

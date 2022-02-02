@@ -4,8 +4,13 @@
    Settings
    ========================================================================== */
 
-const themeName = 'themename';
-const devDomain = 'themename.localhost';
+let themeName = 'themename';
+let devDomain = 'themename.localhost';
+
+// Hostname for Linux devices
+if (process.platform !== 'darwin') {
+    devDomain = 'http://themename.loc.carboncode.co.uk/';
+}
 
 
 // Project path settings
@@ -26,6 +31,7 @@ path.svgDest    = path.svgPath + 'sprites/';
 // SVG Merged Stacks
 const spriteFiles = [
     path.svgPath + 'icons/*.svg',
+    path.svgPath + 'social/*.svg',
 ];
 
 

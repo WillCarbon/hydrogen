@@ -1,7 +1,10 @@
 <?php
+namespace Carbonara\REST;
 
 /**
  * Class ExampleAction
+ *
+ * @package Carbonara\REST
  */
 class ExampleAction extends REST implements RESTActionInterface
 {

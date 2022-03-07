@@ -1,7 +1,10 @@
 <?php
+namespace Carbonara\REST;
 
 /**
  * Interface RESTActionInterface
+ *
+ * @package Carbonara\REST
  */
 interface RESTActionInterface
 {

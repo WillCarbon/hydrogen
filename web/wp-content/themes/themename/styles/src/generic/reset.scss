@@ -6,9 +6,14 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
     overflow-x: hidden;
+
+    @include break($mq-sm-max) {
+        &.js-nav-open {
+            overflow-y: hidden;
+        }
+    }
 }
 
 img {

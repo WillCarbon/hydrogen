@@ -62,10 +62,15 @@ input[type="url"] {
 input[type="radio"],
 input[type="checkbox"] {
     @include input;
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
     margin-right: 10px;
+    cursor: pointer;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75% auto;
 
     & + label {
         margin: 0;
@@ -73,21 +78,18 @@ input[type="checkbox"] {
         display: inline-block;
         vertical-align: middle;
     }
-
-    &:hover {
-        cursor: pointer;
-    }
 }
 
 input[type="radio"] {
+    border-radius: 50%;
     &:checked {
-        background: url("../../assets/svg/icons/checkbox-tick.svg") no-repeat center center;
+        background: url("../../assets/svg/icons/radio.svg");
     }
 }
 
 input[type="checkbox"] {
     &:checked {
-        background: url("../../assets/svg/icons/checkbox-tick.svg") no-repeat center center;
+        background: url("../../assets/svg/icons/checkbox.svg");
     }
 }
 

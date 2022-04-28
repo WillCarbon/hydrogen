@@ -4,10 +4,11 @@
 
 .c-pagination {
     display: flex;
+    justify-content: center;
 }
 
-.c-pagination-list {
-    margin: 0 0 -$grid-padding-sm;
+.c-pagination__list {
+    margin: $grid-padding-sm auto 0;
     padding: 0;
     list-style: none;
     display: flex;
@@ -15,7 +16,7 @@
     flex-wrap: wrap;
 }
 
-.c-pagination-list__item {
+.c-pagination__item {
     margin: 0 $grid-padding-sm $grid-padding-sm 0;
 
     &--next,
@@ -26,7 +27,7 @@
     }
 }
 
-.c-pagination-list__link {
+.c-pagination__link {
     padding: 6px 16px;
     display: inline-block;
     font-weight: $font-medium;
@@ -42,16 +43,17 @@
 
     &:hover,
     &:active {
-        cursor: pointer;
-        color: $colour-white;
+        background: $colour-white;
+        color: $colour-alpha;
     }
 
-    &--active {
+    .c-pagination__item--active & {
+        background: $colour-white;
         color: $colour-alpha;
-        background: transparent;
 
         &:hover,
         &:active {
+            background: $colour-white;
             color: $colour-alpha;
         }
     }

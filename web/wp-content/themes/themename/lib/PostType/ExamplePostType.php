@@ -61,7 +61,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
      */
     public function setPostsPerPage($query){
         if($query->is_main_query()) {
-            if ($query->is_post_type_archive(self::POST_TYPE) && $query->is_tax(self::TAXONOMY)) {
+            if ($query->is_post_type_archive(self::POST_TYPE) || $query->is_tax(self::TAXONOMY)) {
                 $query->set('posts_per_page', 12);
             }
         }

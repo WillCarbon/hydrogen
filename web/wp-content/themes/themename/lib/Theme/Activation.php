@@ -10,19 +10,22 @@ class Activation
 {
 
     /**
-     * CarbonaraActivation constructor.
+     * Activation constructor.
      */
     public function __construct()
     {
-        add_action('after_switch_theme', [$this, 'permalinks']);
-        add_action('after_switch_theme', [$this, 'pages']);
+        add_action('after_switch_theme', [$this, 'setPermalinks'], 10);
+        add_action('after_switch_theme', [$this, 'setPages'], 15);
+        add_action('after_switch_theme', [$this, 'setPlugins'], 20);
     }
 
 
     /**
      * Set and refresh rewrite rules
+     *
+     * @return void
      */
-    public function permalinks()
+    public function setPermalinks()
     {
         global $wp_rewrite;
         $wp_rewrite->set_permalink_structure('/%postname%/');
@@ -32,8 +35,10 @@ class Activation
 
     /**
      * Add Default Pages
+     *
+     * @return void
      */
-    public function pages()
+    public function setPages()
     {
         if (isset($_GET['activated']) && is_admin()) {
             // Set Lorem Ipsum content
@@ -70,7 +75,7 @@ class Activation
             foreach ($pages as $page) {
                 $pageExists = get_page_by_title($page['title']);
                 if (!isset($pageExists)) {
-                    $this->insertPost($page);
+                    $this->addPost($page);
                 }
             }
         }
@@ -78,11 +83,24 @@ class Activation
 
 
     /**
+     * Activate the required plugins
+     *
+     * @return void
+     */
+    public function setPlugins()
+    {
+        activate_plugin( 'carbonneutral/carbon-neutral.php' );
+        activate_plugin( 'advanced-custom-fields-pro/acf.php' );
+    }
+
+
+    /**
      * Insert the new page
      *
      * @param array $page
+     * @return void
      */
-    public function insertPost($page)
+    private function addPost($page)
     {
         $title = $page['title'];
         $content = isset($page['content']) ? $page['content'] : '';

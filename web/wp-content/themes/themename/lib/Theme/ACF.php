@@ -32,6 +32,7 @@ class ACF
             'menu_title'    => 'Example Settings',
             'menu_slug'     => 'example-settings',
             'capability'    => 'manage_options',
+            'parent_slug'   => 'edit.php?post_type=example',
             'redirect'      => false
         ];
 

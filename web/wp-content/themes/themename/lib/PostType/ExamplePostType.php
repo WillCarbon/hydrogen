@@ -26,7 +26,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
         // add_action('pre_get_posts', [$this, 'setPostsPerPage']);
 
         /** Uncomment to redirect non-frontend post types and taxonomies */
-        // add_action('pre_get_posts', [$this, 'getRedirect']);
+        // add_action('template_redirect', [$this, 'getRedirect']);
     }
 
     /**
@@ -34,21 +34,21 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
      */
     public function register()
     {
+        $this->addTaxonomy(self::TAXONOMY, self::POST_TYPE, 'Categories', 'Category', [
+            'hierarchical'      => true,
+            'rewrite'           => [
+                'slug'              => 'examples',
+                'with_front'        => false
+            ]
+        ]);
+
         $this->addPostType(self::POST_TYPE, 'Examples', 'Example', [
             'rewrite'       => [
                 'slug'          => 'examples',
                 'with_front'    => false
             ],
             'has_archive'   => 'examples',
-            'supports'      => [ 'title', 'editor', 'author', 'thumbnail' ]
-        ]);
-
-        $this->addTaxonomy(self::TAXONOMY, self::POST_TYPE, 'Categories', 'Category', [
-            'hierarchical'      => true,
-            'rewrite'           => [
-                'slug'              => 'example-cat',
-                'with_front'        => false
-            ]
+            'supports'      => [ 'title', 'editor', 'thumbnail' ]
         ]);
     }
 
@@ -60,7 +60,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
      * @return void
      */
     public function setPostsPerPage($query){
-        if($query->is_main_query()) {
+        if(!is_admin() && $query->is_main_query()) {
             if ($query->is_post_type_archive(self::POST_TYPE) || $query->is_tax(self::TAXONOMY)) {
                 $query->set('posts_per_page', 12);
             }

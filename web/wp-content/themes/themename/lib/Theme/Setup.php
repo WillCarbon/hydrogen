@@ -22,7 +22,6 @@ class Setup
 
         add_action('init',              [$this, 'disableGutenberg']);
         add_action('after_setup_theme', [$this, 'themeSupport']);
-        add_filter('upload_mimes',      [$this, 'uploadMimeTypes']);
 
         add_filter('excerpt_length',    [$this, 'excerptLength']);
         add_filter('excerpt_more',      [$this, 'excerptMore']);
@@ -64,16 +63,6 @@ class Setup
             'comment-list',
             'comment-form'
         ]);
-    }
-
-
-    /**
-     * @param $types
-     * @return mixed
-     */
-    public function uploadMimeTypes($types) {
-        $types['svg'] = 'image/svg+xml';
-        return $types;
     }
 
 

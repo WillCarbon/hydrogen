@@ -19,7 +19,7 @@
         "secure-http": true
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.4",
         "johnpbloch/wordpress": "*",
         "koodimonni-language/core-en_gb": "*",
         "satispress/wp-carboniser": "*",
@@ -27,12 +27,12 @@
         "satispress/carbonneutral": "*",
         "satispress/gravityforms": "*",
         "satispress/gravityformsrecaptcha": "*",
-        "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "2.4.1",
+        "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "*",
         "wpackagist-plugin/gdpr": "*",
         "wpackagist-plugin/redirection": "*",
         "wpackagist-plugin/relevanssi": "*",
         "wpackagist-plugin/wordfence": "*",
-        "wpackagist-plugin/wordpress-seo": "13.5"
+        "wpackagist-plugin/wordpress-seo": "*"
     },
     "extra": {
         "wordpress-install-dir": "web/wordpress",

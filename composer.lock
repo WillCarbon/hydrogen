@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd606738f06e7828316483bda1b1ca6b",
+    "content-hash": "8059b27ca4a1e4f5fc42e48439471892",
     "packages": [
         {
             "name": "composer/installers",
@@ -405,11 +405,11 @@
         },
         {
             "name": "satispress/gravityforms",
-            "version": "2.6.6",
+            "version": "2.6.7",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.6.6",
-                "shasum": "a1aed79e36687a3941a03c47e7cc4268e5e58311"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.6.7",
+                "shasum": "515beb14e4a66d67918283e43795b2ff4d1b4954"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -497,15 +497,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.3.2",
+            "version": "5.3.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.3.2"
+                "reference": "tags/5.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -533,15 +533,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "7.6.0",
+            "version": "7.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.6.0"
+                "reference": "tags/7.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.6.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.6.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -551,15 +551,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "19.6.1",
+            "version": "19.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/19.6.1"
+                "reference": "tags/19.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.6.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.7.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -575,8 +575,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -16,10 +16,15 @@
                 "password": "0carbon"
             }
         },
-        "secure-http": true
+        "secure-http": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true,
+            "koodimonni/composer-dropin-installer": true
+        }
     },
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.1",
         "johnpbloch/wordpress": "*",
         "koodimonni-language/core-en_gb": "*",
         "satispress/wp-carboniser": "*",

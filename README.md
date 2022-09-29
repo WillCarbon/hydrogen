@@ -1,16 +1,16 @@
 # Project name
 
-Project name is a Wordpress website. Possibly a short description of the website and its features.
+Project name is a WordPress website. Possibly a short description of the website and its features.
 
 The website is built with:
 
-* [Wordpress](https://wordpress.com/) 
+* [WordPress](https://wordpress.com/) 
 * [Carbonara](https://github.com/carboncreativeuk/Carbonara) - Base Theme
 * [Carbon Neutral](https://github.com/carboncreativeuk/CarbonNeutral) - Helper Plugin
 
 ### System Requirements
 
-* [PHP](https://www.php.net/) v7.4
+* [PHP](https://www.php.net/) v8.1
 * [Composer](https://getcomposer.org/)
 * [Node](https://nodejs.org/en/) v14
 * [NPM](https://www.npmjs.com/) 
@@ -19,7 +19,7 @@ The website is built with:
 
 ### Installation
 
-1. Clone the project from Github: `git clone <github url> themename`
+1. Clone the project from GitHub: `git clone <github url> themename`
 2. Install the dependencies: `npm install && npm run deploy`
 3. Set up a database and update the connection details in wp-config.php
 4. Set up a Valet instance, so the site can be accessed at: http://themename.localhost

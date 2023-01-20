@@ -7,11 +7,6 @@
 let themeName = 'themename';
 let devDomain = 'themename.localhost';
 
-// Hostname for Linux devices
-if (process.platform !== 'darwin') {
-    devDomain = 'http://themename.loc.carboncode.co.uk/';
-}
-
 
 // Project path settings
 const path = {

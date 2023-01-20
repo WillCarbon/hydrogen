@@ -22,7 +22,7 @@
             <div class="c-header__brand">
                 <a href="<?php echo home_url('/'); ?>">
                     <?php
-                        carbon_svg('logo', '/assets/svg/brand-elements/');
+                        the_carbon_svg('logo', '/assets/svg/brand-elements/');
                     ?>
                 </a>
             </div>

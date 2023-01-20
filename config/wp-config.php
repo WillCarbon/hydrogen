@@ -30,6 +30,9 @@ define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
 define('SCRIPT_DEBUG', false);
 
+/** Allow ACF Editing */
+define('CARBON_ACF_EDIT', false);
+
 /** Database Connection **/
 define('DB_NAME', '');
 define('DB_USER', '');

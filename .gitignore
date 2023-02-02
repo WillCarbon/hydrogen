@@ -50,8 +50,8 @@ package-lock.json
 /web/.htaccess
 /web/wordpress
 /web/wp-config.php
-/web/wp-content/debug.log
 
+/web/wp-content/debug.log
 /web/wp-content/languages/
 /web/wp-content/plugins/*
 !/web/wp-content/plugins/.gitkeep
@@ -60,7 +60,7 @@ package-lock.json
 
 ### Caches & Plugins
 
-wordfence-waf.php
+!/web/wordfence-waf.php
 /web/wp-content/advanced-cache.php
 /web/wp-content/db.php
 /web/wp-content/object-cache.php

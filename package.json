@@ -3,11 +3,15 @@
     "version": "1.0.0",
     "description": "",
     "main": "web/index.php",
+    "config": {
+        "dir": "web/wp-content/themes/themename"
+    },
     "scripts": {
         "deploy": "composer install && gulp build",
         "watch": "gulp watch",
         "build": "gulp build",
-        "update": "git pull && gulp build"
+        "update": "git pull && gulp build",
+        "vendor": "npm i --prefix $npm_package_config_dir"
     },
     "private": true,
     "browserslist": [

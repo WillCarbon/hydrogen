@@ -4,24 +4,18 @@
    Settings
    ========================================================================== */
 
-let themeName = 'themename';
 let devDomain = 'themename.localhost';
-
 
 // Project path settings
 const path = {
-    web:    './web/',
-    load:   './node_modules/',
-    theme:  './web/wp-content/themes/' + themeName + '/'
+    web: '../../../../web/',
+    load: 'node_modules/'
 };
 
-
 // Additional path settings
-path.assets     = path.theme + 'assets/';
-path.vendor     = path.theme + 'vendor/';
-path.svgPath    = path.assets + 'svg/';
-path.svgDest    = path.svgPath + 'sprites/';
-
+path.assets     = 'assets/';
+path.svgPath    = 'assets/svg/';
+path.svgDest    = 'assets/sprites/';
 
 // SVG Merged Stacks
 const spriteFiles = [
@@ -29,30 +23,20 @@ const spriteFiles = [
     path.svgPath + 'social/*.svg',
 ];
 
-
-// Files to copy to theme folder
-const vendorFiles = [
-    path.load + 'jquery/dist/jquery.min.js'
-];
-
-
 // CSS config
 const cssConf = {
-    src:    path.theme + 'styles/src/*.scss',
-    sub:    path.theme + 'styles/src/**/*.scss',
-    build:  path.theme + 'styles/dist/'
+    src: 'styles/src/*.scss',
+    sub: 'styles/src/**/*.scss',
+    build: 'styles/dist/'
 };
-
 
 // JavaScript config
 const jsConf = {
-    path:   path.theme + 'js/src/',
-    src:    path.theme + 'js/src/*.js',
-    sub:    path.theme + 'js/src/**/*.js',
-    vue:    path.theme + 'js/src/**/*.vue',
-    build:  path.theme + 'js/dist/'
+    src: 'js/src/*.js',
+    sub: 'js/src/**/*.js',
+    vue: 'js/src/**/*.vue',
+    build: 'js/dist/'
 };
-
 
 /* ==========================================================================
    Packages
@@ -67,15 +51,13 @@ const sourcemaps    = require('gulp-sourcemaps');
 const rename        = require('gulp-rename');
 const fPath         = require('path');
 
-
 /* ==========================================================================
    Browser Sync
    ========================================================================== */
 
 const browserSync   = require('browser-sync').create();
 
-function server (done)
-{
+function server (done) {
     browserSync.init({
         proxy: devDomain,
         ghostMode: false,
@@ -86,14 +68,13 @@ function server (done)
     done();
 }
 
-function browserSyncReload (done){
+function browserSyncReload (done) {
     browserSync.reload();
     done();
 }
 
-
 /* ==========================================================================
-   CSS
+   Styles
    ========================================================================== */
 
 const autoprefixer  = require('autoprefixer');
@@ -118,8 +99,7 @@ let processors = [
 ];
 
 /* Style Lint */
-function lintStyles ()
-{
+function lintStyles () {
     return src([cssConf.sub, cssConf.src])
         .pipe(cache('sasslint'))
         .pipe(sasslint({
@@ -130,11 +110,10 @@ function lintStyles ()
 }
 
 /* Development Styling */
-function devStyles ()
-{
+function devStyles () {
     return src(cssConf.src)
         .pipe(tap(function (file) {
-            log(' - Compiling: ' + file.path);
+            log.info('⚙️ ' + ' compiling: ' + file.path);
         }))
         .pipe(sourcemaps.init())
         .pipe(sass({
@@ -147,14 +126,13 @@ function devStyles ()
 }
 
 /* Production Styling */
-function distStyles ()
-{
+function distStyles () {
     return src(cssConf.src)
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(tap(function (file) {
-            log(' - Compiling: ' + file.path);
+            log.info('⚙️ ' + ' compiling: ' + file.path);
         }))
         .pipe(sass({
             includePaths: [path.load]
@@ -168,7 +146,6 @@ function distStyles ()
 /* Styling Task */
 exports.styling = series(lintStyles, devStyles, distStyles);
 
-
 /* ==========================================================================
    Scripts
    ========================================================================== */
@@ -179,21 +156,19 @@ const buffer        = require('gulp-buffer');
 const eslint        = require('gulp-eslint');
 const uglify        = require('gulp-uglify');
 
-function lintScripts ()
-{
+function lintScripts () {
     return src([jsConf.sub, jsConf.src])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 }
 
-function devScripts ()
-{
+function devScripts () {
     return src(jsConf.sub, {read: false})
         .pipe(tap(function (file) {
-            log.info(' - bundling: ' + file.path);
+            log.info('📦' + ' bundling: ' + file.path);
             file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ["@babel/preset-env"]
+                presets: ['@babel/preset-env']
             })).bundle();
         }))
         .pipe(buffer())
@@ -202,13 +177,12 @@ function devScripts ()
         .pipe(dest(jsConf.build));
 }
 
-function distScripts ()
-{
+function distScripts () {
     return src(jsConf.sub, {read: false})
         .pipe(tap(function (file) {
-            log.info(' - bundling: ' + file.path);
+            log.info('📦' + ' bundling: ' + file.path);
             file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ["@babel/preset-env"]
+                presets: ['@babel/preset-env']
             })).bundle();
         }))
         .pipe(buffer())
@@ -222,23 +196,6 @@ function distScripts ()
 /* Styling Task */
 exports.scripting = series(lintScripts, devScripts, distScripts);
 
-
-/* ==========================================================================
-   Vendor Files
-   ========================================================================== */
-
-function vendor ()
-{
-    return src(vendorFiles, { 'base': path.load })
-        .pipe(tap(function (file) {
-            log(' - coping: ' + file.path);
-        }))
-        .pipe(dest(path.theme + '/vendor'));
-}
-
-exports.vendor = parallel(vendor);
-
-
 /* ==========================================================================
    SVG Sprite
    ========================================================================== */
@@ -246,8 +203,7 @@ exports.vendor = parallel(vendor);
 let symbols     = require('gulp-svg-symbols');
 let merge       = require('merge-stream');
 
-function sprite ()
-{
+function sprite () {
     return merge(spriteFiles.map(function(folder) {
         return src(folder)
             .pipe(symbols({
@@ -257,7 +213,7 @@ function sprite ()
                 basename: fPath.basename(fPath.dirname(folder))
             }))
             .pipe(tap(function (file) {
-                log(' - generating: ' + path.svgDest + file.path);
+                log.info('🪄' + ' generating: ' + path.svgDest + file.path);
             }))
             .pipe(dest(path.svgDest));
     }));
@@ -265,13 +221,11 @@ function sprite ()
 
 exports.sprite = parallel(sprite);
 
-
 /* ==========================================================================
-   Watch
+   Watch 👀
    ========================================================================== */
 
-function watching (done)
-{
+function watching (done) {
     // Styling
     watch(
         [cssConf.src, cssConf.sub],
@@ -288,7 +242,7 @@ function watching (done)
 
     // .html/.php
     watch(
-        [path.theme + '/*.php', path.theme + '/**/*.php'],
+        ['*.php', '**/*.php'],
         { events: 'all', ignoreInitial: false },
         browserSyncReload
     );
@@ -296,8 +250,7 @@ function watching (done)
     done();
 }
 
-exports.watch = parallel(server, vendor, distStyles, distScripts,  watching);
-
+exports.watch = parallel(server, distStyles, distScripts, watching);
 
 /* ==========================================================================
    Git Version Number
@@ -306,15 +259,14 @@ exports.watch = parallel(server, vendor, distStyles, distScripts,  watching);
 const git   = require('git-rev');
 const fs    = require('fs');
 
-function version (done)
-{
+function version (done) {
     return git.short(function (str) {
         fs.writeFile(
             path.web + 'version.php', "<?php define('SITE_VERSION', '" + str + "');",
             function () { return false; }
         );
 
-        log(' - version: ' + str);
+        log.info('📄' + ' version: ' + str);
 
         done();
     });
@@ -322,9 +274,8 @@ function version (done)
 
 exports.version = parallel(version);
 
-
 /* ==========================================================================
    Production 🚀
    ========================================================================== */
 
-exports.build = series(vendor, sprite, distStyles, distScripts, version);
+exports.build = series(sprite, distStyles, distScripts, version);

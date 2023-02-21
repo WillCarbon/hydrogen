@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<symbol id="checkbox" viewBox="0 0 20 20">
+  <path fill="none" stroke="#F27C36" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M52,767.992558 C52,767.992558 53.3370585,768.596779 54.8313352,770.091056 C56.3256118,771.585333 57.4656589,773.458217 57.4656589,773.458217 C57.4656589,773.458217 63.7253953,759.56493 68.1224185,757" transform="translate(-50 -755)"/>
+</symbol>
+<symbol id="radio" viewBox="0 0 20 20"><circle fill="#F27C36" cx="10.042" cy="10.042" r="9.5339"/></symbol>
+<symbol id="select-arrow" viewBox="0 0 19 12">
+  <polygon fill="#222222" fill-rule="evenodd" points="351.839 961.081 353.96 975.96 339.081 973.839" transform="rotate(45 1345.293 78.226)"/>
+</symbol>
+</svg>

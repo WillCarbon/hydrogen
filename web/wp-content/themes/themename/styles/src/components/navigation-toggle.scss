@@ -30,6 +30,17 @@
     cursor: pointer;
 
     font-size: 0;
+
+    &:hover {
+        .c-nav-toggle__burger {
+            background: $colour-charlie;
+
+            &:before,
+            &:after {
+                background: $colour-charlie;
+            }
+        }
+    }
 }
 
 .c-nav-toggle__burger {
@@ -64,19 +75,6 @@
 
     &:after {
         transform: translateY(8px);
-    }
-}
-
-/* Hover */
-
-.c-nav-toggle__button:hover {
-    .c-nav-toggle__burger {
-        background: $colour-charlie;
-
-        &:before,
-        &:after {
-            background: $colour-charlie;
-        }
     }
 }
 

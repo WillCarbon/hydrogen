@@ -15,7 +15,7 @@ const path = {
 // Additional path settings
 path.assets     = 'assets/';
 path.svgPath    = 'assets/svg/';
-path.svgDest    = 'assets/sprites/';
+path.svgDest    = 'assets/svg/sprites/';
 
 // SVG Merged Stacks
 const spriteFiles = [

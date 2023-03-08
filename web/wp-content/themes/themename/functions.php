@@ -3,9 +3,10 @@
 /**
  * Theme Settings
  */
-define('CARBONARA_FILE',    __FILE__);
-define('CARBONARA_URL',     get_stylesheet_directory_uri());
-define('CARBONARA_DIR',     get_stylesheet_directory());
+define('CARBONARA_FILE',        __FILE__);
+define('CARBONARA_URL',         get_stylesheet_directory_uri());
+define('CARBONARA_DIR',         get_stylesheet_directory());
+define('CARBONARA_ITERATION',   '2.0');
 
 
 /**

@@ -76,5 +76,4 @@ package-lock.json
 /web/wp-content/themes/**/assets/svg/sprites
 /web/wp-content/themes/**/styles/dist
 /web/wp-content/themes/**/js/dist
-/web/wp-content/themes/**/vendor
 /web/version.php

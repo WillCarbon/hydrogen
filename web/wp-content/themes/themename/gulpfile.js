@@ -8,8 +8,8 @@ let devDomain = 'themename.localhost';
 
 // Project path settings
 const path = {
-    web: '../../../../web/',
-    load: 'node_modules/'
+    web: '../../../',
+    load: './node_modules/'
 };
 
 // Additional path settings
@@ -20,7 +20,7 @@ path.svgDest    = 'assets/svg/sprites/';
 // SVG Merged Stacks
 const spriteFiles = [
     path.svgPath + 'icons/*.svg',
-    path.svgPath + 'social/*.svg',
+    path.svgPath + 'social/*.svg'
 ];
 
 // CSS config
@@ -253,29 +253,7 @@ function watching (done) {
 exports.watch = parallel(server, distStyles, distScripts, watching);
 
 /* ==========================================================================
-   Git Version Number
-   ========================================================================== */
-
-const git   = require('git-rev');
-const fs    = require('fs');
-
-function version (done) {
-    return git.short(function (str) {
-        fs.writeFile(
-            path.web + 'version.php', "<?php define('SITE_VERSION', '" + str + "');",
-            function () { return false; }
-        );
-
-        log.info('📄' + ' version: ' + str);
-
-        done();
-    });
-}
-
-exports.version = parallel(version);
-
-/* ==========================================================================
    Production 🚀
    ========================================================================== */
 
-exports.build = series(sprite, distStyles, distScripts, version);
+exports.build = series(sprite, distStyles, distScripts);

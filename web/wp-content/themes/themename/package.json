@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "private": true,
   "scripts": {
+    "postinstall": "npm run build",
     "watch": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build" 
   },
   "author": "",
   "license": "ISC",

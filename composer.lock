@@ -368,11 +368,11 @@
         },
         {
             "name": "satispress/advanced-custom-fields-pro",
-            "version": "6.0.6",
+            "version": "6.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/advanced-custom-fields-pro/6.0.6",
-                "shasum": "f4ca2a684d2e2f938bb8de2fed9e175f7d9e487d"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/advanced-custom-fields-pro/6.0.7",
+                "shasum": "2eab20bf6a472225be40c0b7bfbb10f7aa870a38"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -387,11 +387,11 @@
         },
         {
             "name": "satispress/carbonneutral",
-            "version": "3.1.5",
+            "version": "3.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/3.1.5",
-                "shasum": "5d0c770a7aa7eb1f8d25ba15c4d5ffbdac1a8960"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/3.4.0",
+                "shasum": "911722b04fb9fc7dc71e73d2505799728b651b59"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -405,11 +405,11 @@
         },
         {
             "name": "satispress/gravityforms",
-            "version": "2.6.9",
+            "version": "2.7.2",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.6.9",
-                "shasum": "eb1e2c36fe5a4f78e8ffc7435b9ce2d22821fc6f"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.7.2",
+                "shasum": "045e00b607dd349c7c96636da68587378cb3efc6"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -497,15 +497,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.3.6",
+            "version": "5.3.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.3.6"
+                "reference": "tags/5.3.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -515,15 +515,15 @@
         },
         {
             "name": "wpackagist-plugin/relevanssi",
-            "version": "4.18.2",
+            "version": "4.18.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/relevanssi/",
-                "reference": "tags/4.18.2"
+                "reference": "tags/4.18.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.18.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.18.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -533,15 +533,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "7.8.2",
+            "version": "7.9.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.8.2"
+                "reference": "tags/7.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.8.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.9.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -551,15 +551,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "19.14",
+            "version": "20.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/19.14"
+                "reference": "tags/20.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.2.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

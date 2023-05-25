@@ -45,7 +45,7 @@ define('SMTP_SECURE', 'false');
 define('SMTP_PORT', '2525');
 define('SMTP_USERNAME', 'carbon-creative/z-carbon-mailtrap');
 define('SMTP_PASSWORD', 'd81uMkjjXYCf4jHgcY9962fZ');
-define('SMTP_PASSWORD', 'nobody@maileramtrix.net');
+define('SMTP_FROM', 'nobody@maileramtrix.net');
 
 /** Live SMTP **/
 //define('SMTP_HOST', 'smtp.mailermatrix.net');

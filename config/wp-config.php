@@ -53,7 +53,7 @@ define('SMTP_FROM', 'nobody@maileramtrix.net');
 //define('SMTP_PORT', '2525');
 //define('SMTP_USERNAME', 'carbon-creative/mailer-matrix');
 //define('SMTP_PASSWORD', '-replace-with-unique-credential-');
-//define('SMTP_PASSWORD', 'nobody@maileramtrix.net');
+//define('SMTP_FROM', 'nobody@maileramtrix.net');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

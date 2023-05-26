@@ -20,7 +20,7 @@ class Setup
 
         add_action('init',              [$this, 'registerMenus']);
 
-        add_action('init',              [$this, 'disableGutenberg']);
+        // add_action('init',              [$this, 'disableGutenberg']);
         add_action('after_setup_theme', [$this, 'themeSupport']);
 
         add_filter('excerpt_length',    [$this, 'excerptLength']);

@@ -18,6 +18,7 @@ include( CARBONARA_DIR .'/lib/Theme/ACF.php');
  * Load Theme Classes
  */
 include( CARBONARA_DIR .'/lib/Theme/Activation.php');
+include( CARBONARA_DIR .'/lib/Theme/Gutenberg.php');
 include( CARBONARA_DIR .'/lib/Theme/Images.php');
 include( CARBONARA_DIR .'/lib/Theme/Setup.php');
 include( CARBONARA_DIR .'/lib/Theme/Scripts.php');
@@ -27,7 +28,7 @@ include( CARBONARA_DIR .'/lib/Theme/TinyMCE.php');
 /**
  * Load Post Types
  */
-#include( CARBONARA_DIR .'/lib/PostType/ExamplePostType.php');
+include( CARBONARA_DIR .'/lib/PostType/ExamplePostType.php');
 
 /**
  * Load REST Routes
@@ -42,3 +43,8 @@ include( CARBONARA_DIR .'/lib/Theme/TinyMCE.php');
  * Custom Functions
  */
 
+add_filter( 'carbonberg/blocks/text-image/text/type', 'editorType' );
+
+function editorType() {
+    return 'wysiwyg';
+}

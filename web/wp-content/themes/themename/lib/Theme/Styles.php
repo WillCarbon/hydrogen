@@ -61,6 +61,13 @@ class Styles
     public function addEditorStyle()
     {
         add_editor_style( Theme::getCss('editor', '.css') );
+        
+        wp_enqueue_style(
+            'admin_css', 
+            Theme::getCss('editor', '.css'), 
+            false, 
+            Theme::getVersion() 
+        );
     }
 
 }

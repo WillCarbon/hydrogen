@@ -1,0 +1,55 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "settings": {
+        "color": {
+			"background": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"gradients": [],
+            "defaultPalette": false,
+            "palette": [
+				{
+					"slug": "alpha",
+					"color": "var(--colour-alpha)",
+					"name": "Alpha"
+				},
+				{
+					"slug": "bravo",
+					"color": "var(--colour-bravo)",
+					"name": "Bravo"
+				},
+				{
+					"slug": "charlie",
+					"color": "var(--colour-charlie)",
+					"name": "Charlie"
+				}
+			]
+        },
+		"typography": {
+			"fontWeight": false,
+			"customFontSize": false,
+			"fontStyle": false,
+			"textTransform": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"dropCap": false,
+			"fontFamilies": [],
+			"fontSizes": []
+		},
+		"blocks": {
+			"core/paragraph": {
+                "color": {},
+                "custom": {},
+                "layout": {},
+                "spacing": {},
+                "typography": {}
+            }
+		}
+    },
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--font-alpha)"
+		}
+	}
+}

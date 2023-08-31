@@ -46,3 +46,26 @@ $colour-error-bg-text:      $colour-white;
 $colour-social-facebook:    #32579d;
 $colour-social-twitter:     #55acee;
 $colour-social-pinterest:   #d20000;
+
+:root {
+   --colour-white-base:          #fff;
+   --colour-black-base:          #000;
+   
+   --colour-grey-dark:           #444444;
+   --colour-grey-mid-dark:       #616161;
+   --colour-grey:                #7d7d7d;
+   --colour-grey-mid-light:      #b0b0b0;
+   --colour-grey-light:          #e5e5e5;
+
+   --colour-alpha-dark:          #335b5e;
+   --colour-alpha:               #148791;
+   --colour-alpha-light:         #7bdbe3;
+
+   --colour-bravo-dark:          #5e3c50;
+   --colour-bravo:               #de4ba0;
+   --colour-bravo-light:         #e392c1;
+
+   --colour-charlie-dark:        #ab9718;
+   --colour-charlie:             #dec51f;
+   --colour-charlie-light:       #e3d264;
+}

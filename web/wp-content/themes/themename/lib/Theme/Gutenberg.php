@@ -23,10 +23,11 @@ class Gutenberg
         return array(
             'core/video',
             'core/paragraph',
-            'core/file',
-            'carbonberg/accordion',
-            'carbonberg/image',
-            'carbonberg/text-image'
+            'core/image',
+            'core/file'
+            // 'carbonberg/accordion',
+            // 'carbonberg/image',
+            // 'carbonberg/text-image'
         );
     }
 }

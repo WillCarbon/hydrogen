@@ -30,3 +30,11 @@ $border-radius:         4px;
 /* Transitions */
 $transition-duration:   .2s;
 $transition-easing:     cubic-bezier(.4, 0, .2, 1);
+
+:root {
+   --border-radius:     15px;
+
+   --grid-padding-lg:   60px;
+   --grid-padding:      30px;
+   --grid-padding-sm:   15px;
+}

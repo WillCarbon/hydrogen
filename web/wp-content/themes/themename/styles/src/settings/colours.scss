@@ -34,10 +34,6 @@ $colour-charlie:            #aedbe0;
 
 $colour-delta:              #cf4647;
 
-$colour-bravo-50:           color($colour-bravo a(50%));
-$colour-bravo-70:           color($colour-bravo a(70%));
-$colour-bravo-80:           color($colour-bravo a(80%));
-
 $colour-success-bg:         #2db6a3;
 $colour-success-text:       $colour-white;
 $colour-error-bg:           #d20000;
@@ -48,8 +44,8 @@ $colour-social-twitter:     #55acee;
 $colour-social-pinterest:   #d20000;
 
 :root {
-   --colour-white-base:          #fff;
-   --colour-black-base:          #000;
+   --colour-white:               #fff;
+   --colour-black:               #000;
    
    --colour-grey-dark:           #444444;
    --colour-grey-mid-dark:       #616161;
@@ -68,4 +64,11 @@ $colour-social-pinterest:   #d20000;
    --colour-charlie-dark:        #ab9718;
    --colour-charlie:             #dec51f;
    --colour-charlie-light:       #e3d264;
+
+   --colour-heading-1:           var(--colour-alpha);
+   --colour-heading-2:           var(--colour-bravo);
+   --colour-heading-3:           var(--colour-charlie);
+   --colour-heading-4:           var(--colour-black);
+   --colour-heading-5:           var(--colour-black);
+   --colour-heading-6:           var(--colour-black);
 }

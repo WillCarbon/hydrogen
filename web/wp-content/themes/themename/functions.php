@@ -42,9 +42,3 @@ include( CARBONARA_DIR .'/lib/PostType/ExamplePostType.php');
 /**
  * Custom Functions
  */
-
-// add_filter( 'carbonberg/blocks/text-image/text/type', 'editorType' );
-
-// function editorType() {
-//     return 'wysiwyg';
-// }

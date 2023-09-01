@@ -24,7 +24,17 @@ class Gutenberg
             'core/video',
             'core/paragraph',
             'core/image',
-            'core/file'
+            'core/file',
+            'core/heading',
+            'core/file',
+            'core/gallery',
+            'core/list',
+            'core/quote',
+            'core/columns',
+            'core/button',
+            'core/block',
+            'core/media-text',
+            'core/social-link'
             // 'carbonberg/accordion',
             // 'carbonberg/image',
             // 'carbonberg/text-image'

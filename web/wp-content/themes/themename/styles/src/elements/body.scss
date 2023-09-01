@@ -4,13 +4,13 @@
 
 body {
     @include font-smoothing;
-    font-family: $font-body;
-    font-size: responsive $font-size-min $font-size-max;
-    line-height: 1.5;
-    font-weight: $font-regular;
-    color: $colour-grey;
+    // font-family: $font-body;
+    // font-size: responsive $font-size-min $font-size-max;
+    // line-height: 1.5;
+    // font-weight: $font-regular;
+    // color: $colour-grey;
 
-    &.mce-content-body {
-        margin: 20px;
-    }
+    // &.mce-content-body {
+    //     margin: 20px;
+    // }
 }

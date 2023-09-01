@@ -38,18 +38,96 @@
 			"fontSizes": []
 		},
 		"blocks": {
-			"core/paragraph": {
-                "color": {},
-                "custom": {},
-                "layout": {},
-                "spacing": {},
-                "typography": {}
+			"core/heading": {
+                "color": {
+					"palette": [
+						{
+							"slug": "alpha",
+							"color": "var(--colour-alpha)",
+							"name": "Alpha"
+						}
+					]
+				}
             }
 		}
     },
 	"styles": {
+		"border": {
+            "radius": "var(--border-radius)"
+		},
+		"color": {
+            "background": "var(--colour-white)",
+            "text": "var(--colour-black)"
+        },
+		"spacing": {
+            "blockGap": "var(--grid-padding)"
+		},
 		"typography": {
-			"fontFamily": "var(--font-alpha)"
+			"fontFamily": "var(--font-family-alpha)",
+			"fontSize": "var(--font-size-body)",
+			"fontWeight": "var(--font-weight-regular)",
+			"lineHeight": "var(--line-height)"
+		},
+		"blocks" : {
+			"core/image": {
+				"variations": {
+					"rounded" : {
+						"border": {
+							"radius": "8px"
+						}
+					}
+				}
+			}
+		},
+		"elements": {
+			"h1": {
+				"color": {
+					"text": "var(--colour-heading-1)"
+				},
+				"typography": {
+					"fontSize": "var(--font-size-heading-1)"
+				}
+			},
+            "h2": {
+				"color": {
+					"text": "var(--colour-heading-2)"
+				},
+				"typography": {
+					"fontSize": "var(--font-size-heading-2)"
+				}
+			},
+            "h3": {
+				"color": {
+					"text": "var(--colour-heading-3)"
+				},
+				"typography": {
+					"fontSize": "var(--font-size-heading-3)"
+				}
+			},
+            "h4": {
+				"color": {
+					"text": "var(--colour-heading-4)"
+				},
+				"typography": {
+					"fontSize": "var(--font-size-heading-4)"
+				}
+			},
+            "h5": {
+				"color": {
+					"text": "var(--colour-heading-5)"
+				},
+				"typography": {
+					"fontSize": "var(--font-size-heading-5)"
+				}
+			},
+            "h6": {
+				"color": {
+					"text": "var(--colour-heading-6)"
+				},
+				"typography": {
+					"fontSize": "var(--font-size-heading-6)"
+				}
+			}
 		}
 	}
 }

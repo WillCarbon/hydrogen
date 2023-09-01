@@ -63,6 +63,7 @@ class Setup
             'comment-list',
             'comment-form'
         ]);
+        add_theme_support('core-block-patterns');
     }
 
 

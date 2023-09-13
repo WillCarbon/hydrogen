@@ -2,6 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
     "settings": {
+		"appearanceTools": false,
         "color": {
 			"background": false,
 			"customDuotone": false,
@@ -26,6 +27,9 @@
 				}
 			]
         },
+		"dimensions": {
+			"minHeight": false
+		},
 		"typography": {
 			"fontWeight": false,
 			"customFontSize": false,
@@ -38,17 +42,29 @@
 			"fontSizes": []
 		},
 		"blocks": {
-			"core/heading": {
-                "color": {
-					"palette": [
-						{
-							"slug": "alpha",
-							"color": "var(--colour-alpha)",
-							"name": "Alpha"
-						}
-					]
+			"core/group": {
+				"color": {
+					"background": true,
+					"text": false
 				}
-            }
+			},
+			"core/media-text": {
+				"color": {
+					"background": true
+				}
+			},
+			"core/button": {
+				"border": {
+					"radius": false
+				},
+				"color": {
+					"text": false
+				},
+				"appearanceTools": false,
+				"layout": {
+					"allowEditing": false
+				}
+			}
 		}
     },
 	"styles": {
@@ -67,17 +83,6 @@
 			"fontSize": "var(--font-size-body)",
 			"fontWeight": "var(--font-weight-regular)",
 			"lineHeight": "var(--line-height)"
-		},
-		"blocks" : {
-			"core/image": {
-				"variations": {
-					"rounded" : {
-						"border": {
-							"radius": "8px"
-						}
-					}
-				}
-			}
 		},
 		"elements": {
 			"h1": {

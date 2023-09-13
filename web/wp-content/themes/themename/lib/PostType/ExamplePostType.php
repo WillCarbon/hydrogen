@@ -37,7 +37,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
         $this->addTaxonomy(self::TAXONOMY, self::POST_TYPE, 'Categories', 'Category', [
             'hierarchical'      => true,
             'rewrite'           => [
-                'slug'              => 'examples',
+                'slug'              => 'example_tax',
                 'with_front'        => false
             ]
         ]);
@@ -48,6 +48,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
                 'with_front'    => false
             ],
             'has_archive'   => 'examples',
+            'show_in_rest'  => true,
             'supports'      => [ 'title', 'editor', 'thumbnail' ]
         ]);
     }

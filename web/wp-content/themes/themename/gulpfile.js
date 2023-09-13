@@ -151,10 +151,13 @@ exports.styling = series(lintStyles, devStyles, distStyles);
    ========================================================================== */
 
 const babelify      = require('babelify');
-const browserify    = require('browserify');
-const buffer        = require('gulp-buffer');
+// const browserify    = require('browserify');
+// const buffer        = require('gulp-buffer');
 const eslint        = require('gulp-eslint');
-const uglify        = require('gulp-uglify');
+// const uglify        = require('gulp-uglify');š
+const esbuild          = require('gulp-esbuild')
+const { externalGlobalPlugin } = require('esbuild-plugin-external-global');
+const babel      = require('gulp-babel');
 
 function lintScripts () {
     return src([jsConf.sub, jsConf.src])
@@ -163,34 +166,70 @@ function lintScripts () {
         .pipe(eslint.failAfterError());
 }
 
+function devScripts1 () {
+    const config = {
+        outdir: '',
+        bundle: true,
+        minify: true,
+        target: 'es5',
+        loader: {
+            '.js': 'jsx'
+        },
+        plugins: [
+            externalGlobalPlugin({
+                '@wordpress/i18n': 'wp.i18n',
+                '@wordpress/element': 'wp.element',
+                '@wordpress/blocks': 'wp.blocks',
+                '@wordpress/components': 'wp.components'
+            })
+        ]
+    };
+
+    return esbuild.build({
+        ...config,
+        entryPoints: [jsConf.sub, jsConf.src],
+        outfile: jsConf.build
+    });
+}
+
 function devScripts () {
-    return src(jsConf.sub, {read: false})
-        .pipe(tap(function (file) {
-            log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ['@babel/preset-env']
-            })).bundle();
+    return src([jsConf.sub, jsConf.src], {read: true})
+        .pipe(esbuild({
+            outdir: '',
+            bundle: true,
+            target: 'es2015',
+            loader: {
+                '.js': 'jsx'
+            },
+            plugins: [
+                externalGlobalPlugin({
+                    '@wordpress/blocks': 'wp.blocks'
+                })
+            ]
         }))
-        .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(dest(jsConf.build));
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(dest(jsConf.build))
 }
 
 function distScripts () {
-    return src(jsConf.sub, {read: false})
-        .pipe(tap(function (file) {
-            log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ['@babel/preset-env']
-            })).bundle();
+    return src([jsConf.sub, jsConf.src], {read: true})
+        .pipe(esbuild({
+            outdir: '',
+            bundle: true,
+            target: 'es2015',
+            minify: true,
+            loader: {
+                '.js': 'jsx'
+            },
+            plugins: [
+                externalGlobalPlugin({
+                    '@wordpress/blocks': 'wp.blocks'
+                })
+            ]
         }))
-        .pipe(buffer())
-        .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(dest(jsConf.build));
+        .pipe(dest(jsConf.build))
 }
 
 /* Styling Task */
@@ -230,14 +269,14 @@ function watching (done) {
     watch(
         [cssConf.src, cssConf.sub],
         { events: 'all', ignoreInitial: false },
-        series(lintStyles, devStyles, distStyles)
+        series(lintStyles, devStyles)
     );
 
     // JavaScript
     watch(
         [jsConf.src, jsConf.sub, jsConf.vue],
         { events: 'all', ignoreInitial: false },
-        series(lintScripts, devScripts, distScripts, browserSyncReload)
+        series(lintScripts, devScripts, browserSyncReload)
     );
 
     // .html/.php

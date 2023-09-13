@@ -63,7 +63,10 @@ class Setup
             'comment-list',
             'comment-form'
         ]);
-        add_theme_support('core-block-patterns');
+        add_theme_support( 'disable-custom-font-sizes' );
+        add_theme_support( 'editor-styles' );
+        remove_theme_support( 'core-block-patterns' );
+        remove_theme_support( `block-templates`); 
     }
 
 

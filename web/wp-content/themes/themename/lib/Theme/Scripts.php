@@ -16,6 +16,9 @@ class Scripts
      */
     public function __construct()
     {
+        // Add Blocks Javascript files
+        add_action('enqueue_block_editor_assets', [$this, 'registerBlocksScripts'], 1);
+        
         // Add Javascript files
         add_action('wp_enqueue_scripts', [$this, 'registerScripts'], 99);
 
@@ -30,6 +33,21 @@ class Scripts
 
         // Uncomment line below to use custom version of jQuery
         #add_action('wp_enqueue_scripts', [$this, 'replaceJquery'], 5);
+    }
+
+    /**
+     * Add Blocks Javascript files
+     */
+    public function registerBlocksScripts()
+    {
+        wp_enqueue_script(
+            'carbonblocks',
+            get_stylesheet_directory_uri() . '/build/carbonblocks.js',
+            //Theme::getJs('carbonblocks'),
+            ['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
+            Theme::getVersion(),
+            true
+        );
     }
 
     /**

@@ -36,7 +36,8 @@ class Styles
 
         wp_enqueue_style(
             'main',
-            Theme::getCss('main', '.css'),
+            Theme::getUri() . '/build/css_main.css',
+            // Theme::getCss('main', '.css'),
             false,
             Theme::getVersion(),
             'all'
@@ -59,12 +60,11 @@ class Styles
      * Registers an editor stylesheet for the theme.
      */
     public function addEditorStyle()
-    {
-        add_editor_style( Theme::getCss('editor', '.css') );
-        
+    {   
         wp_enqueue_style(
             'admin_css', 
-            Theme::getCss('editor', '.css'), 
+            Theme::getUri() . '/build/css_editor.css',
+            // Theme::getCss('editor', '.css'), 
             false, 
             Theme::getVersion() 
         );

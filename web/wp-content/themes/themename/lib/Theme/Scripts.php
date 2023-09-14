@@ -42,8 +42,7 @@ class Scripts
     {
         wp_enqueue_script(
             'carbonblocks',
-            get_stylesheet_directory_uri() . '/build/carbonblocks.js',
-            //Theme::getJs('carbonblocks'),
+            Theme::getUri() . '/build/js_carbonblocks.js',
             ['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
             Theme::getVersion(),
             true
@@ -60,7 +59,8 @@ class Scripts
 
         wp_enqueue_script(
             'main',
-            Theme::getJs('main'),
+            Theme::getUri() . '/build/js_main.js',
+            // Theme::getJs('main'),
             false,
             Theme::getVersion(),
             true

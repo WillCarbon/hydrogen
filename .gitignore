@@ -8,6 +8,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+build
 
 # ignore log files and databases
 *~

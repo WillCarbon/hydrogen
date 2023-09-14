@@ -8,15 +8,19 @@
     },
     "scripts": {
         "postinstall": "npm i --prefix $npm_package_config_dir",
-        "deploy": "composer install && npm run version",
-        "watch": "npm run watch --prefix $npm_package_config_dir",
+        "deploy": "composer install && npm run version && npm run svg-sprite",
+        "watch": "npm run start --prefix $npm_package_config_dir",
         "build": "npm run build --prefix $npm_package_config_dir",
-        "update": "git pull && npm run build && npm run version",
-        "version": "node setup/version.js init"
+        "update": "git pull && npm run build && npm run version && npm run svg-sprite",
+        "version": "node setup/version.js init",
+        "svg-sprite": "svg-symbol-sprite -i $npm_package_config_dir/assets/svg/icons -o $npm_package_config_dir/assets/svg/sprites/icons.svg --config svgo.config.js --style false && svg-symbol-sprite -i $npm_package_config_dir/assets/svg/social -o $npm_package_config_dir/assets/svg/sprites/social.svg --config svgo.config.js --style false"
     },
     "private": true,
     "dependencies": {
         "fs-extra": "^11.1.0",
         "git-revision": "0.0.2"
+    },
+    "devDependencies": {
+        "svg-symbol-sprite": "^1.4.0"
     }
 }

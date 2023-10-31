@@ -61,13 +61,15 @@ class Styles
      */
     public function addEditorStyle()
     {   
-        wp_enqueue_style(
-            'admin_css', 
-            Theme::getUri() . '/build/css_editor.css',
-            // Theme::getCss('editor', '.css'), 
-            false, 
-            Theme::getVersion() 
-        );
+        add_editor_style( Theme::getUri() . '/build/css_editor.css' );
+
+        // wp_enqueue_style(
+        //     'admin_css', 
+        //     Theme::getUri() . '/build/css_editor.css',
+        //     // Theme::getCss('editor', '.css'), 
+        //     false, 
+        //     Theme::getVersion() 
+        // );
     }
 
 }

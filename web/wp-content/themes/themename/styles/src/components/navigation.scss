@@ -3,43 +3,44 @@
    ========================================================================== */
 
 .c-navigation {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .c-navigation__list {
-    display: flex;
-    flex: 1;
-    margin-bottom: 0;
-    padding: 0;
-    list-style: none;
+	display: flex;
+	flex: 1;
+	margin-bottom: 0;
+	padding: 0;
+	list-style: none;
 
-    @include break($mq-sm-max) {
-        display: none;
-    }
+	@include break($mq-sm-max) {
+		display: none;
+	}
 }
 
 .c-navigation__item {
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
+	display: flex;
+	align-items: center;
+	margin: 0 10px;
 
-    a {
-        display: flex;
-        align-items: center;
-        flex-grow: 1;
-        height: 100%;
-        color: $colour-alpha;
-    }
+	a {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+		height: 100%;
+		color: var(--wp--custom--colour--alpha);
+	}
 }
 
 .c-navigation__item--active {
-    a {
-        font-weight: $font-medium;
-        color: $colour-bravo;
-    }
+
+	a {
+		font-weight: var(--font-weight-medium);
+		color: var(--wp--custom--colour--bravo);
+	}
 }
 
 .c-navigation__link {
-    padding: $base-line-height 0;
+	padding: var(--grid-padding-sm) 0;
 }

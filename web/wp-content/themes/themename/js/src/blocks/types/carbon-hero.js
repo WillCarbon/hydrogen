@@ -1,9 +1,9 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
-registerBlockType( 'carbon/text', {
+registerBlockType( 'carbon/hero', {
     apiVersion: 2,
-    title: 'Text',
+    title: 'Hero',
     category: 'text',
     icon: 'text',
     edit: () => {
@@ -12,15 +12,17 @@ registerBlockType( 'carbon/text', {
                 'core/group',
                 'core/paragraph',
                 'core/heading',
-                'core/list',
             ],
             template = [
                 [ 'core/group', {}, [
                     [ 'core/heading', {
                         placeholder: 'Lorem ipsum dolor sit amet...',
-                        lock: {
-                            move: false,
-                            remove: true,
+                        level: 4,
+                        attributes: {
+                            lock: {
+                                move: true,
+                                remove: false,
+                            },
                         },
                     } ],
                     [ 'core/paragraph', {

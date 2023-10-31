@@ -7,11 +7,12 @@
    ========================================================================== */
 
 @mixin clearfix {
-    &:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
+
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
 }
 
 
@@ -20,27 +21,27 @@
    ========================================================================== */
 
 @mixin break($query) {
-    @media ($query) {
-        @content
-    }
+
+	@media ($query) {
+		@content; }
 }
 
 @mixin break-min($min) {
-    @media (min-width: $min) {
-        @content
-    }
+
+	@media (min-width: $min) {
+		@content; }
 }
 
 @mixin break-max($max) {
-    @media (max-width: $max) {
-        @content
-    }
+
+	@media (max-width: $max) {
+		@content; }
 }
 
 @mixin break-between($min, $max) {
-    @media (min-width: $min) and (max-width: $max) {
-        @content
-    }
+
+	@media (min-width: $min) and (max-width: $max) {
+		@content; }
 }
 
 /*
@@ -48,15 +49,16 @@
    ========================================================================== */
 
 @mixin overlay-flat($z-index) {
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: $z-index;
-    }
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: $z-index;
+	}
 }
 
 /*
@@ -64,8 +66,8 @@
    ========================================================================== */
 
 @mixin object-fit($attr) {
-    object-fit: $attr;
-    font-family: "object-fit: #{$attr}";
+	object-fit: $attr;
+	font-family: "object-fit: #{$attr}";
 }
 
 /*
@@ -73,9 +75,9 @@
    ========================================================================== */
 
 @mixin object-fit-parent($height, $width) {
-    height: $height;
-    width: $width;
-    position: relative;
+	height: $height;
+	width: $width;
+	position: relative;
 }
 
 /*
@@ -83,13 +85,14 @@
    ========================================================================== */
 
 @mixin object-fit-image {
-    @include object-fit(cover);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
+
+	@include object-fit(cover);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
 }
 
 /*
@@ -97,9 +100,10 @@
    ========================================================================== */
 
 @mixin fout-fix {
-    .wf-loading & {
-        visibility: hidden;
-    }
+
+	.wf-loading & {
+		visibility: hidden;
+	}
 }
 
 /*
@@ -107,11 +111,11 @@
    ========================================================================== */
 
 @mixin hide-content {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
 }
 
 
@@ -120,10 +124,10 @@
    ========================================================================== */
 
 @mixin font-smoothing {
-    // sass-lint:disable-all
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    // sass-lint:enable-all
+	// sass-lint:disable-all
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	// sass-lint:enable-all
 }
 
 
@@ -132,12 +136,12 @@
    ========================================================================== */
 
 @mixin header-style {
-    margin-top: 0;
-    margin-bottom: $base-line-height;
+	margin-top: 0;
+	margin-bottom: var(--grid-padding);
 
-    font-family: $font-header;
-    font-weight: $font-bold;
-    color: $colour-alpha;
+	font-family: var(--font-family-alpha);
+	font-weight: var(--font-weight-bold);
+	color: var(--wp--custom--colour--alpha);
 }
 
 
@@ -146,8 +150,8 @@
    ========================================================================== */
 
 @mixin list-style-none {
-    list-style: none;
-    padding-left: 0;
+	list-style: none;
+	padding-left: 0;
 }
 
 /*
@@ -155,55 +159,57 @@
    ========================================================================== */
 
 @mixin center-both {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 /*
    Consistent spacing
    ========================================================================== */
 
-/**
- *
- * This mixin adds padding to an element using consistent base values to try
- * and normalize the spacing as the padding reduces towards mobile.
- *
- * Mind blown...
- */
-
-@mixin padding($side, $modifier) {
-    @media ($mq-xs-max) {
-        padding-#{$side}: round(($margin-sm-base) * $modifier);
-    }
-    @media ($mq-sm-min) and ($mq-xl-max) {
-        padding-#{$side}: round($margin-md-base * $modifier);
-    }
-    @media ($mq-xxl-min) {
-        padding-#{$side}: round($margin-lg-base * $modifier);
-    }
-}
-
-@mixin margin($side, $modifier) {
-    @media ($mq-xs-max) {
-        margin-#{$side}: round(($margin-sm-base) * $modifier);
-    }
-    @media ($mq-sm-min) and ($mq-xl-max) {
-        margin-#{$side}: round($margin-md-base * $modifier);
-    }
-    @media ($mq-xxl-min) {
-        margin-#{$side}: round($margin-lg-base * $modifier);
-    }
-}
-
 @mixin mobile-gutter {
-    @media (max-width: 360px) {
-        padding-left: $grid-padding-sm;
-        padding-right: $grid-padding-sm;
-    }
-    @media (min-width: 361px) {
-        padding-left: $grid-padding;
-        padding-right: $grid-padding;
-    }
+
+	@media (max-width: 360px) {
+		padding-left: var(--grid-padding-sm);
+		padding-right: var(--grid-padding-sm);
+	}
+
+	@media (min-width: 361px) {
+		padding-left: var(--grid-padding);
+		padding-right: var(--grid-padding);
+	}
+}
+
+/*
+   Fluid typography
+   ========================================================================== */
+
+$remBase: 16;
+$widthMin: 480;
+$widthMax: 1920;
+
+@mixin font-size($valueMin, $valueMax) {
+  $fontMin: $valueMin * $remBase;
+  $fontMax: $valueMax * $remBase;
+  font-size: $valueMin * 1rem;
+
+  @media (min-width: #{$widthMin}px) {
+    font-size: calc( #{$fontMin}px + (#{$fontMax} - #{$fontMin}) * ((100vw - #{$widthMin}px) / (#{$widthMax} - #{$widthMin})));
+  }
+
+  @media (min-width: #{$widthMax}px) {
+    font-size: $valueMax * 1rem;
+  }
+}
+
+/*
+   To REM
+   ========================================================================== */
+
+@function toRem($value) {
+	$value: $value / ($value * 0 + 1);
+    $remValue: ($value / 16); 
+    @return $remValue;
 }

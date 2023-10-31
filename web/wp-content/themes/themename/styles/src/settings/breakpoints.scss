@@ -2,50 +2,40 @@
    Breakpoints
    ========================================================================== */
 
-/*
- * Breakpoint naming convention
- *
- * screen-xs
- * screen-sm
- * screen-md
- * screen-lg
- * screen-xl
- *
- * Then append with `-min` or `-max` depending on the query
- */
+:root {
+   --screen-xxs-min:    360px;
+   --screen-xs-min:     480px;
+   --screen-sm-min:     660px;
+   --screen-md-min:     768px;
+   --screen-lg-min:     960px;
+   --screen-xl-min:     1024px;
+   --screen-xxl-min:    1367px;
+   --screen-xxxl-min:   1920px;
 
-/* Min-width */
+   --screen-xxs-max:    479px;
+   --screen-xs-max:     659px;
+   --screen-sm-max:     767px;
+   --screen-md-max:     959px;
+   --screen-lg-max:     1023px;
+   --screen-xl-max:     1366px;
+   --screen-xxl-max:    1919px;
 
-$screen-xxs-min:    360px;
-$screen-xs-min:     480px;
-$screen-sm-min:     660px;
-$screen-md-min:     768px;
-$screen-lg-min:     960px;
-$screen-xl-min:     1024px;
-$screen-xxl-min:    1367px;
-
-/* Max-width */
-
-$screen-xxs-max:    479px;
-$screen-xs-max:     659px;
-$screen-sm-max:     767px;
-$screen-md-max:     959px;
-$screen-lg-max:     1023px;
-$screen-xl-max:     1366px;
-$screen-xxl-max:    1799px;
+   --screen-width-min: 480;
+	--screen-width-max: 1920;
+}
 
 /* Queries */
 
-$mq-xs-min:         "min-width: #{$screen-xs-min}";
-$mq-sm-min:         "min-width: #{$screen-sm-min}";
-$mq-md-min:         "min-width: #{$screen-md-min}";
-$mq-lg-min:         "min-width: #{$screen-lg-min}";
-$mq-xl-min:         "min-width: #{$screen-xl-min}";
-$mq-xxl-min:        "min-width: #{$screen-xxl-min}";
+$mq-xs-min:         "min-width: #{var(--screen-xs-min)}";
+$mq-sm-min:         "min-width: #{var(--screen-sm-min)}";
+$mq-md-min:         "min-width: #{var(--screen-md-min)}";
+$mq-lg-min:         "min-width: #{var(--screen-lg-min)}";
+$mq-xl-min:         "min-width: #{var(--screen-xl-min)}";
+$mq-xxl-min:        "min-width: #{var(--screen-xxl-min)}";
 
-$mq-xxs-max:        "max-width: #{$screen-xxs-max}";
-$mq-xs-max:         "max-width: #{$screen-xs-max}";
-$mq-sm-max:         "max-width: #{$screen-sm-max}";
-$mq-md-max:         "max-width: #{$screen-md-max}";
-$mq-lg-max:         "max-width: #{$screen-lg-max}";
-$mq-xl-max:         "max-width: #{$screen-xl-max}";
+$mq-xxs-max:        "max-width: #{var(--screen-xxs-max)}";
+$mq-xs-max:         "max-width: #{var(--screen-xs-max)}";
+$mq-sm-max:         "max-width: #{var(--screen-sm-max)}";
+$mq-md-max:         "max-width: #{var(--screen-md-max)}";
+$mq-lg-max:         "max-width: #{var(--screen-lg-max)}";
+$mq-xl-max:         "max-width: #{var(--screen-xl-max)}";

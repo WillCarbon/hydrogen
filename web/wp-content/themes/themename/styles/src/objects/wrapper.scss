@@ -3,29 +3,30 @@
    ========================================================================== */
 
 .o-wrapper {
-    max-width: $grid-width-lg;
-    margin: 0 0 40px;
+	max-width: var(--grid-width-lg);
+	margin: 0 0 40px;
 
-    .c-header &,
-    .c-footer & {
-        margin-bottom: 0;
-    }
+	.c-header &,
+	.c-footer & {
+		margin-bottom: 0;
+	}
 
-    @include break($mq-xl-max) {
-        padding: 0 15px;
-    }
+	@include break($mq-xl-max) {
+		padding: 0 15px;
+	}
 
-    @include break($mq-md-min) {
-        margin: 0 auto 40px;
-    }
+	@include break($mq-md-min) {
+		margin: 0 auto 40px;
+	}
 }
 
 .o-wrapper-parent {
-    @include mobile-gutter;
+
+	@include mobile-gutter;
 }
 
 .o-wrapper-centre {
-    width: 100%;
-    max-width: $grid-width-xl;
-    margin: 0 auto;
+	width: 100%;
+	max-width: var(--grid-width-xl);
+	margin: 0 auto;
 }

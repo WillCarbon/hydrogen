@@ -49,7 +49,13 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
             ],
             'has_archive'   => 'examples',
             'show_in_rest'  => true,
-            'supports'      => [ 'title', 'editor', 'thumbnail' ]
+            'supports'      => [ 'title', 'editor', 'thumbnail' ],
+            'template'      => array(
+                array( 'core/media-text', array(
+                    'variation' => 'media-text-img-right'
+                ) ),
+            ),
+            // 'template_lock' => 'all'
         ]);
     }
 

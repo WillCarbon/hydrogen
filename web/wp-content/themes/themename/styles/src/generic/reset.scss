@@ -3,56 +3,57 @@
    ========================================================================== */
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-    overflow-x: hidden;
+	overflow-x: hidden;
 
-    @include break($mq-sm-max) {
-        &.js-nav-open {
-            overflow-y: hidden;
-        }
-    }
+	@include break($mq-sm-max) {
+
+		&.js-nav-open {
+			overflow-y: hidden;
+		}
+	}
 }
 
 img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
+	max-width: 100%;
+	width: auto;
+	height: auto;
 }
 
 figure {
-    margin: 0;
+	margin: 0;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+	width: 100%;
+	border-collapse: collapse;
 }
 
 p,
 pre,
 label {
-    margin-top: 0;
-    margin-bottom: $base-line-height;
+	margin-top: 0;
+	margin-bottom: var(--grid-padding-sm);
 }
 
 strong,
 b {
-    font-weight: $font-bold;
+	font-weight: var(--font-weight-bold);
 }
 
 ol,
 ul {
-    list-style-position: outside;
-    margin-top: 0;
-    margin-bottom: $base-line-height;
-    padding-left: 20px;
+	list-style-position: outside;
+	margin-top: 0;
+	margin-bottom: var(--grid-padding-sm);
+	padding-left: 20px;
 }
 
 hr {
-    border: 0;
-    border-top: 1px solid $colour-grey;
-    margin: 0 0 ($base-line-height * 2);
+	border: 0;
+	border-top: 1px solid var(--wp--custom--colour--grey);
+	margin: 0 0 var(--grid-padding);
 }

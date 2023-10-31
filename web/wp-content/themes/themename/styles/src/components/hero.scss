@@ -3,20 +3,23 @@
    ========================================================================== */
 
 .c-hero {
-    position: relative;
-    @include break($mq-xs-max) {
-        margin-bottom: $base-line-height;
-        height: calc(100vh - 137px); /* height of the navbar */
-    }
-    @include break-between($screen-sm-min, $screen-lg-max) {
-        height: 400px;
-    }
-    @include break-between($screen-xl-min, $screen-xl-max) {
-        height: 510px;
-    }
-    @include break($mq-xxl-min) {
-        height: 660px;
-    }
+	position: relative;
+
+	@include break($mq-xs-max) {
+		height: calc(100vh - 137px); /* height of the navbar */
+	}
+
+	@include break-between(var(--screen-sm-min), var(--screen-lg-max)) {
+		height: 400px;
+	}
+
+	@include break-between(var(--screen-xl-min), var(--screen-xl-max)) {
+		height: 510px;
+	}
+
+	@include break($mq-xxl-min) {
+		height: 660px;
+	}
 }
 
 /*
@@ -24,14 +27,17 @@
    ========================================================================== */
 
 .c-hero__image {
-    @include object-fit-parent(100%, 100%);
-    @include overlay-flat(5);
-    z-index: 0;
-    /*background: $colour-alpha url("../../assets/svg/preload.svg") no-repeat center; */
 
-    img {
-        @include object-fit-image;
-    }
+	@include object-fit-parent(100%, 100%);
+	@include overlay-flat(5);
+	z-index: 0;
+
+	/*background: var(--wp--custom--colour--alpha) url("../../assets/svg/preload.svg") no-repeat center; */
+
+	img {
+
+		@include object-fit-image;
+	}
 }
 
 /*
@@ -39,8 +45,9 @@
    ========================================================================== */
 
 .c-hero__content {
-    @include center-both;
-    z-index: 10;
+
+	@include center-both;
+	z-index: 10;
 }
 
 /*
@@ -48,11 +55,11 @@
    ========================================================================== */
 
 .c-hero__title {
-    color: $colour-white;
-    font-size: responsive 20px 52px;
+	color: var(--wp--preset--color--white);
+	font-size: responsive 20px 52px;
 }
 
 .c-hero__subtitle {
-    color: $colour-alpha;
-    font-size: responsive 18px 26px;
+	color: var(--wp--custom--colour--alpha);
+	font-size: responsive 18px 26px;
 }

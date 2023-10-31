@@ -2,6 +2,18 @@
    Blocks
    ========================================================================== */
 
-.b-block {
-    margin: 0 0 $grid-padding;
+.cb-block {
+	margin: 0 0 var(--grid-padding);
+
+    &.o-background {
+        + .o-background {
+            margin-top: calc(#{var(--grid-padding)} * -1);
+        }
+    }
+}
+
+.cb-block__wrap {
+    @include mobile-gutter;
+    margin: 0 auto;
+    max-width: var(--grid-width-lg);
 }

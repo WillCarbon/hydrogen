@@ -24,7 +24,7 @@ class Scripts
 
         // Remove JavaScript files
         add_action('wp_enqueue_scripts', [$this, 'deregisterScripts'], 90);
-
+        
         // Apply Async to scripts
         #add_filter('carbon/scripts/async', [$this, 'asyncScripts']);
 
@@ -41,9 +41,9 @@ class Scripts
     public function registerBlocksScripts()
     {
         wp_enqueue_script(
-            'carbonblocks',
-            Theme::getUri() . '/build/js_carbonblocks.js',
-            ['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
+            'blocks',
+            Theme::getUri() . '/build/js_blocks.js',
+            ['lodash', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
             Theme::getVersion(),
             true
         );

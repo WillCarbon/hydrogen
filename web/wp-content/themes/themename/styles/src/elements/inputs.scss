@@ -5,27 +5,26 @@
 $input-height-sm:   42px;
 $input-height-md:   52px;
 
-$input-colour:      $colour-grey-dark;
-
 @mixin input {
-    font-size: inherit;
-    color: $input-colour;
-    background: no-repeat $colour-white;
-    border: 1px solid $colour-grey-light;
-    border-radius: 0;
+	font-size: inherit;
+	color: var(--wp--preset--color--black);
+	background: no-repeat var(--wp--preset--color--white);
+	border: 1px solid var(--wp--custom--colour--grey-light);
+	border-radius: 0;
 
-    /* sass-lint:disable-all */
-    -webkit-appearance: none;
-    -moz-appearance:    none;
-    /* sass-lint:enable-all */
+	/* sass-lint:disable-all */
+	-webkit-appearance: none;
+	-moz-appearance: none;
 
-    &:focus {
-        outline: 0;
-    }
+	/* sass-lint:enable-all */
 
-    &:disabled {
-        opacity: .6;
-    }
+	&:focus {
+		outline: 0;
+	}
+
+	&:disabled {
+		opacity: 0.6;
+	}
 }
 
 /*
@@ -39,19 +38,19 @@ input[type="number"],
 input[type="email"],
 input[type="date"],
 input[type="url"] {
-    @include input;
-    width: 100%;
-    height: $base-line-height;
-    line-height: 1;
+	@include input;
+	width: 100%;
+	line-height: 1;
 
-    @include break($mq-sm-max) {
-        padding: round((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
-        height: $input-height-sm;
-    }
-    @include break($mq-md-min) {
-        padding: round((($input-height-md - 2px) - $base-line-height) / 2) 18px;
-        height: $input-height-md;
-    }
+	@include break($mq-sm-max) {
+		padding: var(--grid-padding-sm) 12px;
+		height: $input-height-sm;
+	}
+
+	@include break($mq-md-min) {
+		padding: var(--grid-padding-sm) 18px;
+		height: $input-height-md;
+	}
 }
 
 
@@ -61,37 +60,39 @@ input[type="url"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-    @include input;
-    width: 25px;
-    min-width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    cursor: pointer;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 75% auto;
+	@include input;
+	width: 25px;
+	min-width: 25px;
+	height: 25px;
+	margin-right: 10px;
+	cursor: pointer;
 
-    & + label {
-        margin: 0;
-        font-size: 15px;
-        display: inline-block;
-        vertical-align: middle;
-    }
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 75% auto;
+
+	& + label {
+		margin: 0;
+		font-size: 15px;
+		display: inline-block;
+		vertical-align: middle;
+	}
 }
 
 input[type="radio"] {
-    border-radius: 50%;
-    
-    &:checked {
-        background-image: url("../../assets/svg/icons/radio.svg");
-    }
+	border-radius: 50%;
+
+	&:checked {
+		background-image: url("../../assets/svg/icons/radio.svg");
+	}
 }
 
 input[type="checkbox"] {
-    &:checked {
-        background-image: url("../../assets/svg/icons/checkbox.svg");
-    }
+
+	&:checked {
+		background-image: url("../../assets/svg/icons/checkbox.svg");
+	}
 }
 
 
@@ -100,12 +101,13 @@ input[type="checkbox"] {
    ========================================================================== */
 
 textarea {
-    @include input;
-    padding: $grid-padding-sm;
-    display: block;
-    resize: vertical;
-    overflow: auto;
-    max-height: 100px;
+
+	@include input;
+	padding: var(--grid-padding-sm);
+	display: block;
+	resize: vertical;
+	overflow: auto;
+	max-height: 100px;
 }
 
 
@@ -114,36 +116,36 @@ textarea {
    ========================================================================== */
 
 select {
-    @include input;
-    width: 100%;
-    height: $base-line-height;
-    line-height: 1;
-    background-image: url("../../assets/svg/icons/select-arrow.svg");
+	@include input;
+	width: 100%;
+	line-height: 1;
+	background-image: url("../../assets/svg/icons/select-arrow.svg");
 
-    @include break($mq-sm-max) {
-        padding: round((($input-height-sm - 2px) - $base-line-height) / 2) 12px;
-        height: $input-height-sm;
-        background-position: calc(100% - 12px) 50%;
-    }
+	@include break($mq-sm-max) {
+		padding: var(--grid-padding-sm) 12px;
+		height: $input-height-sm;
+		background-position: calc(100% - 12px) 50%;
+	}
 
-    @include break($mq-md-min) {
-        padding: round((($input-height-md - 2px) - $base-line-height) / 2) 18px;
-        height: $input-height-md;
-        background-position: calc(100% - 20px) 50%;
-    }
+	@include break($mq-md-min) {
+		padding: var(--grid-padding-sm) 18px;
+		height: $input-height-md;
+		background-position: calc(100% - 20px) 50%;
+	}
 
-    &:hover {
-        cursor: pointer;
-    }
+	&:hover {
+		cursor: pointer;
+	}
 
-    /* sass-lint:disable-all */
-    &::-ms-expand {
-        display: none;
-    }
+	/* sass-lint:disable-all */
+	&::-ms-expand {
+		display: none;
+	}
 
-    &:focus::-ms-value {
-        color: $input-colour;
-        background: none;
-    }
-    /* sass-lint:enable-all */
+	&:focus::-ms-value {
+		color: var(--wp--preset--color--black);
+		background: none;
+	}
+
+	/* sass-lint:enable-all */
 }

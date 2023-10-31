@@ -15,12 +15,14 @@ module.exports = {
             css_main: path.resolve( process.cwd(), 'styles/src', 'main.scss' ),
             css_editor: path.resolve( process.cwd(), 'styles/src', 'editor.scss' ),
             js_main: path.resolve( process.cwd(), 'js/src', 'main.js' ),
-            js_carbonblocks: path.resolve( process.cwd(), 'js/src', 'carbonblocks.js' ),
+            js_blocks: path.resolve( process.cwd(), 'js/src', 'blocks.js' ),
         },
         output: {
             filename: '[name].js',
             path: __dirname + '/build',
         },
     },
-    plugins: [ ...defaultConfig.plugins ],
+    plugins: [
+        ...defaultConfig.plugins,
+    ],
 };

@@ -6,11 +6,12 @@
 
 .lazyload,
 .lazyloading {
-    opacity: 0;
+	opacity: 0;
 }
+
 .lazyloaded {
-    opacity: 1;
-    transition: opacity .3s;
+	opacity: 1;
+	transition: opacity 0.3s;
 }
 
 // sass-lint:enable-all

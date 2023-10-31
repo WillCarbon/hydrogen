@@ -3,11 +3,9 @@
    ========================================================================== */
 
 .c-footer {
-    @include padding (top, 2);
-    @include padding (bottom, 2);
-    background: $colour-black;
+	background: var(--wp--preset--color--black);
 
-    a {
-        text-decoration: underline;
-    }
+	a {
+		text-decoration: underline;
+	}
 }

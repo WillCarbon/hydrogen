@@ -9,16 +9,19 @@ registerBlockType( 'carbon/image-text', {
     edit: () => {
         const
             template = [
-                [ 'core/media-text', {
-                    mediaPosition: 'right',
-                }, [
-                    [ 'core/heading', {
-                        placeholder: 'Lorem ipsum dolor sit amet...',
-                    } ],
-                    [ 'core/paragraph', {
-                        placeholder: 'Et leo duis ut diam quam nulla porttitor. Justo eget magna fermentum iaculis eu non diam phasellus. Cras sed felis eget velit aliquet sagittis. Porttitor massa id neque aliquam vestibulum morbi blandit cursus risus...',
-                    } ],
-                ],
+                [
+                    'core/media-text', {
+                        mediaPosition: 'right',
+                    }, [
+                        [ 'core/image', {} ],
+                        [ 'core/heading', {
+                            placeholder: 'Lorem ipsum dolor sit amet...',
+                        } ],
+                        [ 'core/paragraph', {
+                            placeholder: 'Et leo duis ut diam quam nulla porttitor. Justo eget magna fermentum iaculis eu non diam phasellus. Cras sed felis eget velit aliquet sagittis. Porttitor massa id neque aliquam vestibulum morbi blandit cursus risus...',
+                        } ],
+                        [ 'core/button', {} ],
+                    ],
                 ],
             ];
 

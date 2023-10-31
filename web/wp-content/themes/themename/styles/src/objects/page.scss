@@ -7,14 +7,14 @@
   ========================================================================== */
 
 .o-page-container {
-    position: relative;
-    right: 0;
-    overflow: hidden;
-    transition: right $transition-duration $transition-easing;
+	position: relative;
+	right: 0;
+	overflow: hidden;
+	transition: right var(--transition-duration) var(--transition-easing);
 
-    &.o-page-container--nav-open {
-        right: $mobile-nav-width;
-    }
+	&.o-page-container--nav-open {
+		right: var(--mobile-nav-width);
+	}
 }
 
 /*
@@ -22,13 +22,13 @@
    ========================================================================== */
 
 .o-page {
-    display: flex;
-    justify-content: space-between;
-    @include margin (top, 2);
-    @include break($mq-sm-max) {
-        flex-flow: column wrap;
-        flex-basis: auto;
-    }
+	display: flex;
+	justify-content: space-between;
+
+	@include break($mq-sm-max) {
+		flex-flow: column wrap;
+		flex-basis: auto;
+	}
 }
 
 /*
@@ -36,7 +36,7 @@
    ========================================================================== */
 
 .o-page__main {
-    width: 65%;
+	width: 65%;
 }
 
 /*
@@ -44,7 +44,7 @@
    ========================================================================== */
 
 .o-page__content {
-    flex-grow: 1;
+	flex-grow: 1;
 }
 
 /*
@@ -52,12 +52,14 @@
    ========================================================================== */
 
 .o-page__media {
-    @include break($mq-md-min) {
-        width: 66.6%;
-    }
-    @include break($mq-xxl-min) {
-        width: 50%;
-    }
+
+	@include break($mq-md-min) {
+		width: 66.6%;
+	}
+
+	@include break($mq-xxl-min) {
+		width: 50%;
+	}
 }
 
 /*
@@ -65,12 +67,14 @@
    ========================================================================== */
 
 .o-page__sidebar {
-    width: 35%;
-    @include break($mq-sm-max) {
-        width: 100%;
-        order: 2;
-    }
-    @include break-between($screen-lg-min, $screen-xl-max) {
-        width: 30%;
-    }
+	width: 35%;
+
+	@include break($mq-sm-max) {
+		width: 100%;
+		order: 2;
+	}
+
+	@include break-between(var(--screen-lg-min), var(--screen-xl-max)) {
+		width: 30%;
+	}
 }

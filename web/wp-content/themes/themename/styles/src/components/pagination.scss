@@ -3,58 +3,60 @@
    ========================================================================== */
 
 .c-pagination {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .c-pagination__list {
-    margin: $grid-padding-sm auto 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+	margin: var(--grid-padding-sm) auto 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .c-pagination__item {
-    margin: 0 $grid-padding-sm $grid-padding-sm 0;
+	margin: 0 var(--grid-padding-sm) var(--grid-padding-sm) 0;
 
-    &--next,
-    &--prev {
-        @include break($mq-md-max) {
-            display: none;
-        }
-    }
+	&--next,
+	&--prev {
+
+		@include break($mq-md-max) {
+			display: none;
+		}
+	}
 }
 
 .c-pagination__link {
-    padding: 6px 16px;
-    display: inline-block;
-    font-weight: $font-medium;
-    font-size: responsive 16px 20px;
-    text-decoration: none;
-    text-align: center;
-    border: 2px solid $colour-alpha;
-    color: $colour-white;
-    background: $colour-alpha;
-    border-radius: $border-radius;
-    transition: all $transition-duration $transition-easing;
-    @include font-smoothing;
+	padding: 6px 16px;
+	display: inline-block;
+	font-weight: var(--font-weight-medium);
+	font-size: responsive 16px 20px;
+	text-decoration: none;
+	text-align: center;
+	border: 2px solid var(--wp--custom--colour--alpha);
+	color: var(--wp--preset--color--white);
+	background: var(--wp--custom--colour--alpha);
+	border-radius: var(--border-radius);
+	transition: all var(--transition-duration) var(--transition-easing);
 
-    &:hover,
-    &:active {
-        background: $colour-white;
-        color: $colour-alpha;
-    }
+	@include font-smoothing;
 
-    .c-pagination__item--active & {
-        background: $colour-white;
-        color: $colour-alpha;
+	&:hover,
+	&:active {
+		background: var(--wp--preset--color--white);
+		color: var(--wp--custom--colour--alpha);
+	}
 
-        &:hover,
-        &:active {
-            background: $colour-white;
-            color: $colour-alpha;
-        }
-    }
+	.c-pagination__item--active & {
+		background: var(--wp--preset--color--white);
+		color: var(--wp--custom--colour--alpha);
+
+		&:hover,
+		&:active {
+			background: var(--wp--preset--color--white);
+			color: var(--wp--custom--colour--alpha);
+		}
+	}
 }

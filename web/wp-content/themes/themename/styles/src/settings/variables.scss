@@ -1,40 +1,22 @@
 /* ==========================================================================
-   Grid
+   Variables
    ========================================================================== */
-
-$grid-width-xs:         480px;
-$grid-width-sm:         660px;
-$grid-width-md:         1200px;
-$grid-width-lg:         1560px;
-$grid-width-xl:         1872px;
-
-$grid-gutter:           40px;
-$grid-padding:          30px;
-$grid-padding-sm:       15px;
-
-$margin-sm-base:        ($base-line-height / 2);
-$margin-md-base:        2.189vw;
-$margin-lg-base:        $base-line-height;
-
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
-
-/* Mobile nav width */
-$mobile-nav-width:      82.4vw;
-
-/* Border Radius */
-$border-radius:         4px;
-
-/* Transitions */
-$transition-duration:   .2s;
-$transition-easing:     cubic-bezier(.4, 0, .2, 1);
 
 :root {
-   --border-radius:     15px;
+	--grid-padding-lg:      60px;
+	--grid-padding:         30px;
+	--grid-padding-sm:      15px;
 
-   --grid-padding-lg:   60px;
-   --grid-padding:      30px;
-   --grid-padding-sm:   15px;
+   --grid-width-xs:        480px;
+   --grid-width-sm:        660px;
+   --grid-width-md:        1200px;
+   --grid-width-lg:        1560px;
+   --grid-width-xl:        1872px;
+	
+   --border-radius:        15px;
+
+   --mobile-nav-width:     82.4vw;
+
+   --transition-easing:    cubic-bezier(0.4, 0, 0.2, 1);
+   --transition-duration:  0.2s;
 }

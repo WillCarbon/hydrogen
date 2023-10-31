@@ -3,11 +3,11 @@
    ========================================================================== */
 
 a {
-    color: $colour-alpha;
-    transition: color .2s ease-out;
-    text-decoration: none;
+	color: var(--wp--custom--colour--alpha);
+	transition: color 0.2s ease-out;
+	text-decoration: none;
 
-    &:hover {
-        color: $colour-alpha;
-    }
+	&:hover {
+		color: var(--wp--custom--colour--alpha);
+	}
 }

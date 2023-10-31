@@ -43,52 +43,8 @@ include( CARBONARA_DIR .'/lib/PostType/ExamplePostType.php');
  * Custom Functions
  */
 
-/**
- * Disable lock/unlock functionality on blocks
- */
-function disableLockBlocks( $settings, $context ) {
-	$settings['canLockBlocks'] = false;
+add_filter( 'carbonberg/blocks/text/text/fieldtype', 'carbonbergTextFieldType', 20 );
 
-	return $settings;
+function carbonbergTextFieldType() {
+    return 'wysiwyg';
 }
-
-add_filter( 'block_editor_settings_all', 'disableLockBlocks', 10, 2 );
-
-/**
- * Example post type block structure
- */
-function block_template_example() {
-    $post_type_object = get_post_type_object( 'example' );
-
-    $post_type_object->template = array(
-        array( 'core/media-text', array(
-			'variation' => 'media-text-img-right'
-		) ),
-    );
-
-    $post_type_object->template_lock = 'all';
-}
-
-add_action( 'init', 'block_template_example' );
-
-/**
- * Page block structure
- */
-function register_block_template() {
-	$block_template = array(
-        array('core/columns', array(),
-			array('core/column', array('width' => 33.33), array(
-				array('core/paragraph', array()),
-			)),
-			array('core/column', array('width' => 66.66), array(
-				array('core/paragraph', array()),
-			)),
-		)
-    );
-	
-    $post_type_object                = get_post_type_object( 'page' );
-    $post_type_object->template      = $block_template;
-    $post_type_object->template_lock = 'all';
-}
-
-// add_action( 'init', 'register_block_template' );

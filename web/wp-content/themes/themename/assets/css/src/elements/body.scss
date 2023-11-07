@@ -2,9 +2,11 @@
    Body
    ========================================================================== */
 
+
+
 body {
 	@include font-smoothing;
-	font-size: var(--base-font-size);
+
 	// font-family: var(--font-family-alpha);
 	// line-height: var(--line-height);
 	// font-weight: var(--font-weight-regular);

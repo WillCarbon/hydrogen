@@ -2,24 +2,6 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
     "settings": {
-		"custom": {
-			"colour": {
-				"grey-dark": "#444",
-				"grey-mid-dark": "#616161",
-				"grey": "#7d7d7d",
-				"grey-mid-light": "#b0b0b0",
-				"grey-light": "#e5e5e5",
-				"alpha-dark": "#335b5e",
-				"alpha": "#148791",
-				"alpha-light": "#7bdbe3",
-				"bravo-dark": "#5e3c50",
-				"bravo": "#de4ba0",
-				"bravo-light": "#e392c1",
-				"charlie-dark": "#ab9718",
-				"charlie": "#dec51f",
-				"charlie-light": "#e3d264"
-			}
-		},
         "color": {
 			"background": false,
 			"text": false,
@@ -30,18 +12,18 @@
             "palette": [
 				{
 					"slug": "alpha",
-					"color": "var(--wp--custom--colour--alpha)",
-					"name": "Alpha"
+					"color": "var(--colour-alpha--base)",
+					"name": "Blue"
 				},
 				{
 					"slug": "bravo",
-					"color": "var(--wp--custom--colour--bravo)",
-					"name": "Bravo"
+					"color": "var(--colour-bravo--base)",
+					"name": "Pink"
 				},
 				{
 					"slug": "charlie",
-					"color": "var(--wp--custom--colour--charlie)",
-					"name": "Charlie"
+					"color": "var(--colour-charlie--base)",
+					"name": "Yellow"
 				}
 			]
         },

@@ -10,14 +10,29 @@
 
 	--font-family-alpha: 	Arial, helvetica, sans-serif;
 
-	--font-size-heading-1: 	3rem;
+	--font-size-heading-1: 	toRem(48);
 	--font-size-heading-2: 	2.5rem;
 	--font-size-heading-3: 	2rem;
 	--font-size-heading-4: 	1.75rem;
 	--font-size-heading-5: 	1.5rem;
 	--font-size-heading-6: 	1.25rem;
-	--font-size-body: 		1rem;
+
+	--font-size--lg:
+	--font-size--md:
+	--font-size--sm:
+	--font-size--base:
 
 	--line-height: 			1.5;
-	--base-font-size:		16px;
+	--font-size-body:		100%;
+
+	// --font-size-body-sm:	toRem(18);
+	// --font-size-body-md:	toRem(20);
+
+	// @media (min-width: var(--screen-md-min)) {
+	// 	--font-size-body: var(--font-size-body-sm);
+	// }
+
+	// @media (min-width: var(--screen-lg-min)) {
+	// 	--font-size-body: var(--font-size-body-md)
+	// }
 }

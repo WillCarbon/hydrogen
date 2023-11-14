@@ -1,12 +1,12 @@
 <?php
-namespace Carbonara\Theme;
+namespace CarbonPress\Theme;
 
 use Carbon\Helpers\Theme;
 
 /**
  * Class Scripts
  *
- * @package Carbonara\Theme
+ * @package CarbonPress\Theme
  */
 class Scripts
 {
@@ -17,28 +17,28 @@ class Scripts
     public function __construct()
     {
         // Add Blocks Javascript files
-        add_action('enqueue_block_editor_assets', [$this, 'registerBlocksScripts'], 1);
+        add_action('enqueue_block_editor_assets', [$this, 'register_blocks_scripts'], 1);
         
         // Add Javascript files
-        add_action('wp_enqueue_scripts', [$this, 'registerScripts'], 99);
+        add_action('wp_enqueue_scripts', [$this, 'register_scripts'], 99);
 
         // Remove JavaScript files
-        add_action('wp_enqueue_scripts', [$this, 'deregisterScripts'], 90);
+        add_action('wp_enqueue_scripts', [$this, 'deregister_scripts'], 90);
         
         // Apply Async to scripts
-        #add_filter('carbon/scripts/async', [$this, 'asyncScripts']);
+        #add_filter('carbon/scripts/async', [$this, 'async_scripts']);
 
         // Apply Async to scripts
-        #add_filter('carbon/scripts/defer', [$this, 'deferScripts']);
+        #add_filter('carbon/scripts/defer', [$this, 'defer_scripts']);
 
         // Uncomment line below to use custom version of jQuery
-        #add_action('wp_enqueue_scripts', [$this, 'replaceJquery'], 5);
+        #add_action('wp_enqueue_scripts', [$this, 'replace_jquery'], 5);
     }
 
     /**
      * Add Blocks Javascript files
      */
-    public function registerBlocksScripts()
+    public function register_blocks_scripts()
     {
         wp_enqueue_script(
             'blocks',
@@ -49,10 +49,11 @@ class Scripts
         );
     }
 
+    
     /**
      * Add Javascript files
      */
-    public function registerScripts()
+    public function register_scripts()
     {
         // Dont run on Dashboard
         if (is_admin()) return;
@@ -67,10 +68,11 @@ class Scripts
         );
     }
 
+
     /**
      * Remove JavaScript files
      */
-    public function deregisterScripts()
+    public function deregister_scripts()
     {
         // Dont run on Dashboard
         if (is_admin()) return;
@@ -83,7 +85,7 @@ class Scripts
      * @param array $list
      * @return array
      */
-    public function asyncScripts( $list )
+    public function async_scripts( $list )
     {
         $list[] = 'main';
 
@@ -95,7 +97,7 @@ class Scripts
      * @param array $list
      * @return array
      */
-    public function deferScripts( $list )
+    public function defer_scripts( $list )
     {
         $list[] = 'main';
 
@@ -106,7 +108,7 @@ class Scripts
     /**
      * Replace WordPress jQuery
      */
-    public function replaceJquery()
+    public function replace_jquery()
     {
         // Dont run on Dashboard
         if (is_admin()) return;

@@ -10,9 +10,9 @@
 	font-size: 12px;
 	line-height: 1;
 	text-transform: lowercase;
-	color: var(--wp--custom--colour--grey);
+	color: var(--colour--grey);
 
-	@include break($mq-xl-min) {
+	@media (var(--mq-xl-min)) {
 		display: none;
 	}
 }
@@ -34,11 +34,11 @@
 	&:hover {
 
 		.c-nav-toggle__burger {
-			background: var(--wp--custom--colour--charlie);
+			background: var(--colour-charlie);
 
 			&::before,
 			&::after {
-				background: var(--wp--custom--colour--charlie);
+				background: var(--colour-charlie);
 			}
 		}
 	}
@@ -53,7 +53,7 @@
 	margin-left: -15px;
 
 	transition: background var(--transition-duration) var(--transition-easing);
-	background: var(--wp--custom--colour--bravo);
+	background: var(--colour-bravo);
 
 	&::before,
 	&::after {
@@ -67,7 +67,7 @@
 		height: 2px;
 
 		transition: all var(--transition-duration) var(--transition-easing);
-		background: var(--wp--custom--colour--bravo);
+		background: var(--colour-bravo);
 	}
 
 	&::before {
@@ -88,12 +88,12 @@
 
 		&::before {
 			transform: rotate(45deg);
-			background: var(--wp--custom--colour--charlie);
+			background: var(--colour-charlie);
 		}
 
 		&::after {
 			transform: rotate(-45deg);
-			background: var(--wp--custom--colour--charlie);
+			background: var(--colour-charlie);
 		}
 	}
 }

@@ -26,7 +26,6 @@
    Elements
    ========================================================================== */
 
-@import "elements/html";
 @import "elements/body";
 @import "elements/headings";
 @import "elements/inputs";
@@ -39,36 +38,17 @@
    Objects
    ========================================================================== */
 
-@import "objects/backgrounds";
 @import "objects/content";
-@import "objects/fadein";
 @import "objects/headings";
-@import "objects/page";
-@import "objects/wrapper";
 
 /* ==========================================================================
    Components
    ========================================================================== */
 
 @import "components/button";
-@import "components/cards";
-@import "components/footer";
-@import "components/header";
-@import "components/hero";
-@import "components/navigation";
-@import "components/navigation-mobile";
-@import "components/navigation-toggle";
-@import "components/pagination";
-
-/* ==========================================================================
-   Blocks
-   ========================================================================== */
-
-@import "blocks/blocks";
 
 /* ==========================================================================
    Trumps
    ========================================================================== */
 
-@import "trumps/lazysizes";
-@import "trumps/wordpress";
+//@import "trumps/lazysizes";

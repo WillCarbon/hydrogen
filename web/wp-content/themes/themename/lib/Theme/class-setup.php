@@ -1,10 +1,10 @@
 <?php
-namespace Carbonara\Theme;
+namespace CarbonPress\Theme;
 
 /**
  * Class Setup
  *
- * @package Carbonara\Theme
+ * @package CarbonPress\Theme
  */
 class Setup
 {
@@ -14,24 +14,18 @@ class Setup
      */
     public function __construct()
     {
-        if (!isset($GLOBALS['content_width'])) {
-            $GLOBALS['content_width'] = 584;
-        }
+        add_action('init',              [$this, 'register_menus']);
+        add_action('after_setup_theme', [$this, 'theme_support']);
 
-        add_action('init',              [$this, 'registerMenus']);
-
-        // add_action('init',              [$this, 'disableGutenberg']);
-        add_action('after_setup_theme', [$this, 'themeSupport']);
-
-        add_filter('excerpt_length',    [$this, 'excerptLength']);
-        add_filter('excerpt_more',      [$this, 'excerptMore']);
+        add_filter('excerpt_length',    [$this, 'excerpt_length']);
+        add_filter('excerpt_more',      [$this, 'excerpt_more']);
     }
 
 
     /**
      * Setup Men Locations
      */
-    public function registerMenus()
+    public function register_menus()
     {
         register_nav_menus([
             'header-menu' => 'Main Menu',
@@ -41,18 +35,9 @@ class Setup
 
 
     /**
-     * Disable WordPress v5 Gutenberg editor
-     */
-    public function disableGutenberg()
-    {
-        add_filter('use_block_editor_for_post', '__return_false', 10);
-    }
-
-
-    /**
      * Set up theme support
      */
-    public function themeSupport()
+    public function theme_support()
     {
         add_theme_support('menus');
         add_theme_support('widgets');
@@ -66,14 +51,14 @@ class Setup
         add_theme_support( 'disable-custom-font-sizes' );
         add_theme_support( 'editor-styles' );
         remove_theme_support( 'core-block-patterns' );
-        remove_theme_support( `block-templates`); 
+        remove_theme_support( 'block-templates' ); 
     }
 
 
     /**
      * @return int
      */
-    public function excerptLength()
+    public function excerpt_length()
     {
         return 40;
     }
@@ -83,7 +68,7 @@ class Setup
      * @param $more
      * @return string
      */
-    public function excerptMore($more)
+    public function excerpt_more($more)
     {
         return '…<a href="' . get_permalink() . '">' . 'Read more' . '</a>';
     }

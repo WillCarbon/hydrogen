@@ -14,7 +14,7 @@
 	padding: 0;
 	list-style: none;
 
-	@include break($mq-sm-max) {
+	@media (var(--mq-sm-max)) {
 		display: none;
 	}
 }
@@ -29,7 +29,7 @@
 		align-items: center;
 		flex-grow: 1;
 		height: 100%;
-		color: var(--wp--custom--colour--alpha);
+		color: var(--colour-alpha);
 	}
 }
 
@@ -37,7 +37,7 @@
 
 	a {
 		font-weight: var(--font-weight-medium);
-		color: var(--wp--custom--colour--bravo);
+		color: var(--colour-bravo);
 	}
 }
 

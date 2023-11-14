@@ -3,20 +3,26 @@
    ========================================================================== */
 
 :root {
-	--grid-padding-lg:      60px;
-	--grid-padding:         30px;
-	--grid-padding-sm:      15px;
+   --border-radius:        8px;
 
-   --grid-width-xs:        480px;
-   --grid-width-sm:        660px;
-   --grid-width-md:        1200px;
-   --grid-width-lg:        1560px;
-   --grid-width-xl:        1872px;
-	
-   --border-radius:        15px;
+   /* Screen edge spacing */
+   --gutter-sm:            16px;
+   --gutter-md:            32px;
+   --gutter-lg:            48px;
 
-   --mobile-nav-width:     82.4vw;
+   /* Wrapper widths */
+   --wrapper-xs:           480px;
+   --wrapper-sm:           660px;
+   --wrapper-md:           1200px;
+   --wrapper-lg:           1560px;
+   --wrapper-xl:           1872px;
 
+   /* Generic spacing */
+	--spacing-sm:           16px;
+   --spacing-md:           32px;
+   --spacing-lg:           48px;
+
+   /* Transitions */
    --transition-easing:    cubic-bezier(0.4, 0, 0.2, 1);
    --transition-duration:  0.2s;
 }

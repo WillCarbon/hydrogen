@@ -9,7 +9,7 @@
 html {
 	overflow-x: hidden;
 
-	@include break($mq-sm-max) {
+	@media (var(--mq-sm-max)) {
 
 		&.js-nav-open {
 			overflow-y: hidden;
@@ -54,6 +54,6 @@ ul {
 
 hr {
 	border: 0;
-	border-top: 1px solid var(--wp--custom--colour--grey);
+	border-top: 1px solid var(--colour--grey);
 	margin: 0 0 var(--grid-padding);
 }

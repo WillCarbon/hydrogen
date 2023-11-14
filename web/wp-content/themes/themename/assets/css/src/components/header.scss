@@ -27,12 +27,12 @@
 	/*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
 	overflow: hidden;
 
-	@include break-between(var(--screen-sm-min), var(--screen-md-max)) {
+	@media (var(--mq-sm-min)) and (var(--mq-md-max)) {
 		width: 30.58%;
 		padding-bottom: calc(28.7vw * 80 / 281);
 	}
 
-	@include break($mq-lg-min) {
+	@media (var(--mq-lg-min)) {
 		margin: 2px 0;
 		width: 281px;
 		height: 80px;

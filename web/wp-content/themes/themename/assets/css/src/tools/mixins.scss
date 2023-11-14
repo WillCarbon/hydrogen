@@ -7,7 +7,6 @@
    ========================================================================== */
 
 @mixin clearfix {
-
 	&::after {
 		content: "";
 		display: block;
@@ -15,41 +14,11 @@
 	}
 }
 
-
-/*
-   Media Query Breakpoints
-   ========================================================================== */
-
-@mixin break($query) {
-
-	@media ($query) {
-		@content; }
-}
-
-@mixin break-min($min) {
-
-	@media (min-width: $min) {
-		@content; }
-}
-
-@mixin break-max($max) {
-
-	@media (max-width: $max) {
-		@content; }
-}
-
-@mixin break-between($min, $max) {
-
-	@media (min-width: $min) and (max-width: $max) {
-		@content; }
-}
-
 /*
    Image overlay
    ========================================================================== */
 
 @mixin overlay-flat($z-index) {
-
 	&::after {
 		content: "";
 		position: absolute;
@@ -85,7 +54,6 @@
    ========================================================================== */
 
 @mixin object-fit-image {
-
 	@include object-fit(cover);
 	position: absolute;
 	left: 0;
@@ -93,17 +61,6 @@
 	width: 100%;
 	height: 100%;
 	display: block;
-}
-
-/*
-   FOUT fix
-   ========================================================================== */
-
-@mixin fout-fix {
-
-	.wf-loading & {
-		visibility: hidden;
-	}
 }
 
 /*
@@ -141,28 +98,7 @@
 
 	font-family: var(--font-family-alpha);
 	font-weight: var(--font-weight-bold);
-	color: var(--wp--custom--colour--alpha);
-}
-
-
-/*
-    No list style
-   ========================================================================== */
-
-@mixin list-style-none {
-	list-style: none;
-	padding-left: 0;
-}
-
-/*
-   Center both
-   ========================================================================== */
-
-@mixin center-both {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	color: var(--colour-alpha);
 }
 
 /*
@@ -170,15 +106,17 @@
    ========================================================================== */
 
 @mixin mobile-gutter {
+	padding-left: var(--gutter-sm);
+	padding-right: var(--gutter-sm);
 
-	@media (max-width: 360px) {
-		padding-left: var(--grid-padding-sm);
-		padding-right: var(--grid-padding-sm);
+	@media (var(--mq-xxs-min)) {
+		padding-left: var(--gutter-md);
+		padding-right: var(--gutter-md);
 	}
 
-	@media (min-width: 361px) {
-		padding-left: var(--grid-padding);
-		padding-right: var(--grid-padding);
+	@media (var(--mq-xl-min)) {
+		padding-left: var(--gutter-lg);
+		padding-right: var(--gutter-lg);
 	}
 }
 

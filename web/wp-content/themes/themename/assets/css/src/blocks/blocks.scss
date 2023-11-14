@@ -15,5 +15,5 @@
 .cb-block__wrap {
     @include mobile-gutter;
     margin: 0 auto;
-    max-width: var(--grid-width-lg);
+    max-width: var(--wrapper-lg);
 }

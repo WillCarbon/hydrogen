@@ -7,7 +7,7 @@
 	flex-flow: column wrap;
 	justify-content: space-between;
 
-	@include break($mq-md-min) {
+	@media (var(--mq-md-min)) {
 		flex-flow: row wrap;
 	}
 }
@@ -32,19 +32,19 @@
 	flex: 1;
 	margin: 0 var(--grid-padding);
 
-	background: var(--wp--custom--colour--grey-x-light);
+	background: var(--colour--grey-x-light);
 	border-radius: var(--border-radius);
-	border: 1px solid var(--wp--custom--colour--grey-light);
+	border: 1px solid var(--colour--grey-light);
 	box-shadow: 0 2px 40px 0 rgba(221, 221, 221, 0.5);
 
-	@include break-between(var(--screen-sm-min), var(--screen-md-max)) {
+	@media (var(--mq-sm-min)) and (var(--mq-md-max)) {
 		width: 50%;
 	}
 
 	&:only-of-type {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--grid-width-sm);
+		max-width: var(--wrapper-sm);
 	}
 
 	&__body {
@@ -56,7 +56,7 @@
 	}
 
 	&__footer {
-		border-top: 1px solid var(--wp--custom--colour--grey-light);
+		border-top: 1px solid var(--colour--grey-light);
 		padding: var(--grid-padding);
 		background: var(--wp--preset--color--white);
 		display: flex;
@@ -66,7 +66,7 @@
 
 	&__image {
 
-		/*background: var(--wp--custom--colour--alpha) url("../../assets/svg/preload.svg") no-repeat center;*/
+		/*background: var(--colour-alpha) url("../../assets/svg/preload.svg") no-repeat center;*/
 		backface-visibility: hidden;
 		overflow: hidden;
 
@@ -80,7 +80,7 @@
 			@include object-fit-image;
 
 			&:hover {
-				background: var(--wp--custom--colour--alpha);
+				background: var(--colour-alpha);
 				transform: scale(1.025);
 			}
 		}

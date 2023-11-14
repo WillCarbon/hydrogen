@@ -10,10 +10,15 @@
 	position: relative;
 	right: 0;
 	overflow: hidden;
-	transition: right var(--transition-duration) var(--transition-easing);
+	transition: var(--transition-duration) var(--transition-easing);
+	transition-property: opacity, visibility;
+
+	visibility: hidden;
+	opacity: 0;
 
 	&.o-page-container--nav-open {
-		right: var(--mobile-nav-width);
+		visibility: visible;
+		opacity: 1;
 	}
 }
 
@@ -25,7 +30,7 @@
 	display: flex;
 	justify-content: space-between;
 
-	@include break($mq-sm-max) {
+	@media (var(--mq-sm-max)) {
 		flex-flow: column wrap;
 		flex-basis: auto;
 	}
@@ -53,11 +58,11 @@
 
 .o-page__media {
 
-	@include break($mq-md-min) {
+	@media (var(--mq-md-min)) {
 		width: 66.6%;
 	}
 
-	@include break($mq-xxl-min) {
+	@media (var(--mq-xxl-min)) {
 		width: 50%;
 	}
 }
@@ -69,12 +74,12 @@
 .o-page__sidebar {
 	width: 35%;
 
-	@include break($mq-sm-max) {
+	@media (var(--mq-sm-max)) {
 		width: 100%;
 		order: 2;
 	}
 
-	@include break-between(var(--screen-lg-min), var(--screen-xl-max)) {
+	@media (var(--mq-md-min)) and (var(--mq-xl-max)) {
 		width: 30%;
 	}
 }

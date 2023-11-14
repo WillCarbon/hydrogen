@@ -9,7 +9,7 @@ $input-height-md:   52px;
 	font-size: inherit;
 	color: var(--wp--preset--color--black);
 	background: no-repeat var(--wp--preset--color--white);
-	border: 1px solid var(--wp--custom--colour--grey-light);
+	border: 1px solid var(--colour--grey-light);
 	border-radius: 0;
 
 	/* sass-lint:disable-all */
@@ -42,12 +42,12 @@ input[type="url"] {
 	width: 100%;
 	line-height: 1;
 
-	@include break($mq-sm-max) {
+	@media (var(--mq-sm-max)) {
 		padding: var(--grid-padding-sm) 12px;
 		height: $input-height-sm;
 	}
 
-	@include break($mq-md-min) {
+	@media (var(--mq-md-min)) {
 		padding: var(--grid-padding-sm) 18px;
 		height: $input-height-md;
 	}
@@ -121,13 +121,13 @@ select {
 	line-height: 1;
 	background-image: url("../../assets/svg/icons/select-arrow.svg");
 
-	@include break($mq-sm-max) {
+	@media (var(--mq-sm-max)) {
 		padding: var(--grid-padding-sm) 12px;
 		height: $input-height-sm;
 		background-position: calc(100% - 12px) 50%;
 	}
 
-	@include break($mq-md-min) {
+	@media (var(--mq-md-min)) {
 		padding: var(--grid-padding-sm) 18px;
 		height: $input-height-md;
 		background-position: calc(100% - 20px) 50%;

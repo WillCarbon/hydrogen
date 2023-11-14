@@ -11,33 +11,7 @@
 }
 
 .o-text-bravo {
-	color: var(--wp--custom--colour--bravo);
-}
-
-.o-screen-reader {
-	display: none;
-}
-
-
-/*
-  Backgrounds
-  ========================================================================== */
-
-.o-background {
-	padding-top: var(--grid-padding);
-	padding-bottom: var(--grid-padding);
-}
-
-.o-background--alpha {
-	background-color: var(--wp--custom--colour--alpha);
-}
-
-.o-background--bravo {
-	background-color: var(--wp--custom--colour--bravo);
-}
-
-.o-background--charlie {
-	background-color: var(--wp--custom--colour--charlie);
+	color: var(--colour-bravo);
 }
 
 
@@ -50,11 +24,11 @@
 
 	a {
 		text-decoration: underline;
-		color: var(--wp--custom--colour--bravo);
+		color: var(--colour-bravo);
 
 		&:focus,
 		&:hover {
-			color: var(--wp--custom--colour--alpha);
+			color: var(--colour-alpha);
 		}
 	}
 
@@ -72,7 +46,7 @@
 				position: absolute;
 				left: 5px;
 
-				color: var(--wp--custom--colour--bravo);
+				color: var(--colour-bravo);
 			}
 		}
 	}

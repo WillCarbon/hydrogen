@@ -1,10 +1,10 @@
 <?php
-namespace Carbonara\Theme;
+namespace CarbonPress\Theme;
 
 /**
  * Class Setup
  *
- * @package Carbonara\Theme
+ * @package CarbonPress\Theme
  */
 class Gutenberg
 {
@@ -13,15 +13,15 @@ class Gutenberg
      */
     public function __construct()
     {
-        add_filter( 'allowed_block_types_all',      [$this, 'setBlockTypes'], 20) ;
-        add_filter( 'block_editor_settings_all',    [$this, 'disableLockBlocks'], 10, 2 );
-        // add_action( 'init',                         [$this, 'registerBlockTemplatePage'], 20 );
+        add_filter( 'allowed_block_types_all',      [$this, 'set_block_types'], 20) ;
+        add_filter( 'block_editor_settings_all',    [$this, 'disable_lock_blocks'], 10, 2 );
+        // add_action( 'init',                         [$this, 'register_block_template_page'], 20 );
     }
 
     /**
      * Choose block types
      */
-    public function setBlockTypes() 
+    public function set_block_types() 
     {
         return array(
             'core/heading',
@@ -34,7 +34,6 @@ class Gutenberg
             'core/columns',
             'core/column',
             'core/media-text', 
-
             'carbonberg/text',
             'carbonberg/image',
             'carbonberg/text-image',
@@ -46,7 +45,7 @@ class Gutenberg
     /**
      * Disable lock/unlock functionality on blocks
      */
-    public function disableLockBlocks( $settings, $context ) 
+    public function disable_lock_blocks( $settings, $context ) 
     {
         $settings['canLockBlocks'] = current_user_can( 'activate_plugins' );
     
@@ -55,8 +54,9 @@ class Gutenberg
 
     /**
      * Block template: Page
+     * @TODO: In progress
      */
-    public function registerBlockTemplatePage() 
+    public function register_block_template_page() 
     {
         $block_template = array(
             array( 'core/columns', array(), array(

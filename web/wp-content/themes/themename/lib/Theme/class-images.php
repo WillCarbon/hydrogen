@@ -1,10 +1,10 @@
 <?php
-namespace Carbonara\Theme;
+namespace CarbonPress\Theme;
 
 /**
  * Class Images
  *
- * @package Carbonara\Theme
+ * @package CarbonPress\Theme
  */
 class Images
 {
@@ -14,14 +14,14 @@ class Images
      */
     public function __construct()
     {
-        #add_action('init', [$this, 'imageSizes']);
-        #add_filter('image_size_names_choose', [$this, 'sizeNames']);
+        #add_action('init', [$this, 'image_sizes']);
+        #add_filter('image_size_names_choose', [$this, 'size_names']);
     }
 
     /**
      * Add custom image sizes
      */
-    public function imageSizes()
+    public function image_sizes()
     {
         // Create image with specific width
         add_image_size( 'example-width', 150 );
@@ -36,7 +36,7 @@ class Images
     /**
      * Set custom image size names
      */
-    public function sizeNames($sizes) {
+    public function size_names($sizes) {
         $sizes['example-width'] = 'Example: Width Only';
         $sizes['example-ratio'] = 'Example: Keep Ratio';
         $sizes['example-crop'] = 'Example: Crop Image';

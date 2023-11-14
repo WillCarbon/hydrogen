@@ -1,10 +1,10 @@
 <?php
-namespace Carbonara\Theme;
+namespace CarbonPress\Theme;
 
 /**
  * Class ACF
  *
- * @package Carbonara\Theme
+ * @package CarbonPress\Theme
  */
 class ACF
 {

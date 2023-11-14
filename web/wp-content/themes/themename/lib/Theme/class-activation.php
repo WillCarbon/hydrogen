@@ -1,10 +1,10 @@
 <?php
-namespace Carbonara\Theme;
+namespace CarbonPress\Theme;
 
 /**
  * Class Activation
  *
- * @package Carbonara\Theme
+ * @package CarbonPress\Theme
  */
 class Activation
 {
@@ -14,9 +14,9 @@ class Activation
      */
     public function __construct()
     {
-        add_action('after_switch_theme', [$this, 'setPermalinks'], 10);
-        add_action('after_switch_theme', [$this, 'setPages'], 15);
-        add_action('after_switch_theme', [$this, 'setPlugins'], 20);
+        add_action('after_switch_theme', [$this, 'refresh_permalinks'], 10);
+        add_action('after_switch_theme', [$this, 'set_pages'], 15);
+        add_action('after_switch_theme', [$this, 'set_plugins'], 20);
     }
 
 
@@ -25,7 +25,7 @@ class Activation
      *
      * @return void
      */
-    public function setPermalinks()
+    public function refresh_permalinks()
     {
         global $wp_rewrite;
         $wp_rewrite->set_permalink_structure('/%postname%/');
@@ -38,7 +38,7 @@ class Activation
      *
      * @return void
      */
-    public function setPages()
+    public function set_pages()
     {
         if (isset($_GET['activated']) && is_admin()) {
             // Set Lorem Ipsum content
@@ -75,7 +75,7 @@ class Activation
             foreach ($pages as $page) {
                 $pageExists = get_page_by_title($page['title']);
                 if (!isset($pageExists)) {
-                    $this->addPost($page);
+                    $this->add_post($page);
                 }
             }
         }
@@ -87,7 +87,7 @@ class Activation
      *
      * @return void
      */
-    public function setPlugins()
+    public function set_plugins()
     {
         activate_plugin( 'carbonneutral/carbon-neutral.php' );
         activate_plugin( 'advanced-custom-fields-pro/acf.php' );
@@ -100,7 +100,7 @@ class Activation
      * @param array $page
      * @return void
      */
-    private function addPost($page)
+    private function add_post($page)
     {
         $title = $page['title'];
         $content = isset($page['content']) ? $page['content'] : '';

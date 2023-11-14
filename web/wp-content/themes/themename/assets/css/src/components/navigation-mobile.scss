@@ -5,9 +5,11 @@
 .c-nav-mobile {
 	position: fixed;
 	top: 0;
-	right: -var(--mobile-nav-width);
+	left: 0;
+	right: 0;
+	bottom: 0;
 
-	width: var(--mobile-nav-width);
+	width: 100%;
 	height: 100%;
 	z-index: 200;
 	background: var(--wp--preset--color--white);
@@ -41,7 +43,7 @@
 
 .c-nav-mobile__list-item {
 	display: block;
-	border-bottom: 1px solid var(--wp--custom--colour--grey-light);
+	border-bottom: 1px solid var(--colour--grey-light);
 
 	&:last-of-type {
 		border-bottom: 0;
@@ -52,7 +54,7 @@
 	display: block;
 	text-align: center;
 	padding: var(--grid-padding-sm) var(--grid-padding);
-	color: var(--wp--custom--colour--alpha);
+	color: var(--colour-alpha);
 	font-size: 15px;
 	transition: all var(--transition-duration) var(--transition-easing);
 	text-decoration: none;
@@ -62,6 +64,6 @@
 	&:focus {
 		color: var(--wp--preset--color--white);
 		text-decoration: none;
-		background-color: var(--wp--custom--colour--alpha);
+		background-color: var(--colour-alpha);
 	}
 }

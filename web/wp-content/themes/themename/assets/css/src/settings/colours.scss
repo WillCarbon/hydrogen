@@ -2,6 +2,18 @@
    Colours
    ========================================================================== */
 
+/*
+ * colour naming convention
+ *
+ * colour-grey-x-light
+ * colour-grey-light
+ * colour-grey-mid-light
+ * colour-grey
+ * colour-grey-mid-dark
+ * colour-grey-dark
+ * colour-grey-x-dark
+ */
+
 :root {
    --colour-black:            "#000";
    --colour-white:            "#fff";
@@ -13,14 +25,22 @@
    --colour-grey--light:      "#e5e5e5";
 
    --colour-alpha--dark:      "#7bdbe3";
-   --colour-alpha--base:      "#148791";
+   --colour-alpha:            "#148791";
    --colour-alpha--light:     "#335b5e";
 
    --colour-bravo--dark:      "#5e3c50";
-   --colour-bravo--base:      "#de4ba0";
+   --colour-bravo:            "#de4ba0";
    --colour-bravo--light:     "#e392c1";
 
    --colour-charlie--dark:    "#ab9718";
-   --colour-charlie--base:    "#dec51f";
+   --colour-charlie:          "#dec51f";
    --colour-charlie--light:   "#e3d264";
+
+   --colour-delta--dark:      "#ab9718";
+   --colour-delta:            "#dec51f";
+   --colour-delta--light:     "#e3d264";
+
+   --colour-echo--dark:       "#ab9718";
+   --colour-echo:             "#dec51f";
+   --colour-echo--light:      "#e3d264";
 }

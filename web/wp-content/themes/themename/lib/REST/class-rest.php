@@ -1,10 +1,10 @@
 <?php
-namespace Carbonara\REST;
+namespace CarbonPress\REST;
 
 /**
  * Class REST
  *
- * @package Carbonara\REST
+ * @package CarbonPress\REST
  */
 class REST
 {

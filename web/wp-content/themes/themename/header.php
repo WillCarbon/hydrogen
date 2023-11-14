@@ -30,7 +30,7 @@
                 <?php
                     get_template_part('components/layout/nav', 'main');
 
-                    get_template_part('components/layout/nav', 'buttons');
+                    get_template_part('components/layout/nav', 'toggle');
                 ?>
             </div>
         </div>

@@ -30,7 +30,7 @@
 	display: block;
 	font-size: 14px;
 	line-height: 1.2;
-	color: var(--wp--custom--colour--grey);
+	color: var(--colour--grey);
 }
 
 /*
@@ -59,7 +59,7 @@
 .gfield_50 {
 	width: 100%;
 
-	@include break($mq-md-min) {
+	@media (var(--mq-md-min)) {
 		width: 48%;
 	}
 }
@@ -87,7 +87,7 @@
 
 		li {
 
-			@include break($mq-md-min) {
+			@media (var(--mq-md-min)) {
 				width: 50%;
 			}
 		}
@@ -98,12 +98,11 @@
 		flex-wrap: wrap;
 
 		li {
-
-			@include break-between(var(--screen-md-min), var(--screen-xl-max)) {
+			@media (var(--mq-md-min)) and (var(--mq-xl-max)) {
 				width: 32%;
 			}
 
-			@include break($mq-xxl-min) {
+			@media (var(--mq-xxl-min)) {
 				width: 16%;
 			}
 		}
@@ -126,7 +125,7 @@
 	text-decoration: none;
 	text-align: center;
 	color: var(--wp--preset--color--white);
-	background: var(--wp--custom--colour--alpha);
+	background: var(--colour-alpha);
 	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
 	border-radius: var(--border-radius);
 	transition: all var(--transition-duration) var(--transition-easing);
@@ -134,21 +133,21 @@
 	@include font-smoothing;
 	border: none;
 
-	@include break($mq-xxs-max) {
+	@media (var(--mq-xxs-max)) {
 		display: block;
 		width: 100%;
 		margin: 0 auto;
 	}
 
-	@include break($mq-md-max) {
+	@media (var(--mq-md-max)) {
 		padding: 10px 20px;
 	}
 
-	@include break-between(var(--screen-lg-min), var(--screen-lg-max)) {
+	@media (var(--mq-lg-min)) and (var(--mq-lg-max)) {
 		padding: var(--grid-padding-sm) 15px;
 	}
 
-	@include break($mq-xl-min) {
+	@media (var(--mq-xl-min)) {
 		padding: var(--grid-padding-sm) var(--grid-padding);
 	}
 
@@ -166,7 +165,7 @@
    ========================================================================== */
 
 .gfield_required {
-	color: var(--wp--custom--colour--bravo);
+	color: var(--colour-bravo);
 }
 
 /*
@@ -178,17 +177,17 @@
 	margin-bottom: var(--grid-padding-sm);
 	padding: var(--grid-padding-sm);
 	color: var(--wp--preset--color--white);
-	background: var(--wp--custom--colour--bravo);
+	background: var(--colour-bravo);
 }
 
 .validation_message {
 	display: block;
 	margin-top: 4px;
-	color: var(--wp--custom--colour--bravo);
+	color: var(--colour-bravo);
 }
 
 .gfield_error .ginput_container {
-	border-left: 4px solid var(--wp--custom--colour--bravo);
+	border-left: 4px solid var(--colour-bravo);
 }
 
 /*

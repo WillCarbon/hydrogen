@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .o-wrapper {
-	max-width: var(--grid-width-lg);
+	max-width: var(--wrapper-lg);
 	margin: 0 0 40px;
 
 	.c-header &,
@@ -11,11 +11,11 @@
 		margin-bottom: 0;
 	}
 
-	@include break($mq-xl-max) {
+	@media (var(--mq-xl-max)) {
 		padding: 0 15px;
 	}
 
-	@include break($mq-md-min) {
+	@media (var(--mq-md-min)) {
 		margin: 0 auto 40px;
 	}
 }
@@ -27,6 +27,6 @@
 
 .o-wrapper-centre {
 	width: 100%;
-	max-width: var(--grid-width-xl);
+	max-width: var(--wrapper-xl);
 	margin: 0 auto;
 }

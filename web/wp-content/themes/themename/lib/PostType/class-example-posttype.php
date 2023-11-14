@@ -1,5 +1,5 @@
 <?php
-namespace Carbonara\PostType;
+namespace CarbonPress\PostType;
 
 use Carbon\PostType\BasePostType;
 use Carbon\PostType\PostTypeInterface;
@@ -7,7 +7,7 @@ use Carbon\PostType\PostTypeInterface;
 /**
  * Class ExamplePostType
  *
- * @package Carbonara\PostType
+ * @package CarbonPress\PostType
  */
 class ExamplePostType extends BasePostType implements PostTypeInterface
 {
@@ -23,10 +23,10 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
         add_action('init', [$this, 'register']);
 
         /** Uncomment to set a custom page count */
-        // add_action('pre_get_posts', [$this, 'setPostsPerPage']);
+        // add_action('pre_get_posts', [$this, 'set_posts_per_page']);
 
         /** Uncomment to redirect non-frontend post types and taxonomies */
-        // add_action('template_redirect', [$this, 'getRedirect']);
+        // add_action('template_redirect', [$this, 'get_redirect']);
     }
 
     /**
@@ -37,7 +37,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
         $this->addTaxonomy(self::TAXONOMY, self::POST_TYPE, 'Categories', 'Category', [
             'hierarchical'      => true,
             'rewrite'           => [
-                'slug'              => 'example_tax',
+                'slug'              => 'example/cat',
                 'with_front'        => false
             ]
         ]);
@@ -49,13 +49,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
             ],
             'has_archive'   => 'examples',
             'show_in_rest'  => true,
-            'supports'      => [ 'title', 'editor', 'thumbnail' ],
-            'template'      => array(
-                array( 'core/media-text', array(
-                    'variation' => 'media-text-img-right'
-                ) ),
-            ),
-            // 'template_lock' => 'all'
+            'supports'      => [ 'title', 'editor', 'thumbnail' ]
         ]);
     }
 
@@ -66,7 +60,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
      * @param \WP_Query     $query
      * @return void
      */
-    public function setPostsPerPage($query){
+    public function set_posts_per_page($query){
         if(!is_admin() && $query->is_main_query()) {
             if ($query->is_post_type_archive(self::POST_TYPE) || $query->is_tax(self::TAXONOMY)) {
                 $query->set('posts_per_page', 12);
@@ -78,7 +72,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
     /**
      * Redirect single pages to archive
      */
-    public function getRedirect()
+    public function get_redirect()
     {
         /** Redirect unused post type */
         if (is_singular(self::POST_TYPE)) {

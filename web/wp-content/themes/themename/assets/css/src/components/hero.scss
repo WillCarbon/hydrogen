@@ -5,19 +5,19 @@
 .c-hero {
 	position: relative;
 
-	@include break($mq-xs-max) {
+	@media (var(--mq-xs-max)) {
 		height: calc(100vh - 137px); /* height of the navbar */
 	}
 
-	@include break-between(var(--screen-sm-min), var(--screen-lg-max)) {
+	@media (var(--mq-sm-min)) and (var(--mq-lg-max)) {
 		height: 400px;
 	}
 
-	@include break-between(var(--screen-xl-min), var(--screen-xl-max)) {
+	@media (var(--mq-xl-min)) and (var(--mq-xl-max)) {
 		height: 510px;
 	}
 
-	@include break($mq-xxl-min) {
+	@media (var(--mq-xxl-min)) {
 		height: 660px;
 	}
 }
@@ -27,15 +27,12 @@
    ========================================================================== */
 
 .c-hero__image {
-
 	@include object-fit-parent(100%, 100%);
 	@include overlay-flat(5);
 	z-index: 0;
-
-	/*background: var(--wp--custom--colour--alpha) url("../../assets/svg/preload.svg") no-repeat center; */
+	/*background: var(--colour-alpha) url("../../assets/svg/preload.svg") no-repeat center; */
 
 	img {
-
 		@include object-fit-image;
 	}
 }
@@ -45,8 +42,6 @@
    ========================================================================== */
 
 .c-hero__content {
-
-	@include center-both;
 	z-index: 10;
 }
 
@@ -60,6 +55,6 @@
 }
 
 .c-hero__subtitle {
-	color: var(--wp--custom--colour--alpha);
+	color: var(--colour-alpha);
 	font-size: responsive 18px 26px;
 }

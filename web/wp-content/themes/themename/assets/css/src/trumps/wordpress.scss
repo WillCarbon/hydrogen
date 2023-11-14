@@ -1,13 +1,7 @@
 /* ==========================================================================
-   Links
+   Wordpress
    ========================================================================== */
 
-a {
-	color: var(--colour-alpha);
-	transition: color 0.2s ease-out;
-	text-decoration: none;
-
-	&:hover {
-		color: var(--colour-alpha);
-	}
+.screen-reader-text {
+	display: none;
 }

@@ -22,7 +22,7 @@
 	&--next,
 	&--prev {
 
-		@include break($mq-md-max) {
+		@media (var(--mq-md-max)) {
 			display: none;
 		}
 	}
@@ -31,32 +31,30 @@
 .c-pagination__link {
 	padding: 6px 16px;
 	display: inline-block;
-	font-weight: var(--font-weight-medium);
 	font-size: responsive 16px 20px;
 	text-decoration: none;
 	text-align: center;
-	border: 2px solid var(--wp--custom--colour--alpha);
+	border: 2px solid var(--colour-alpha);
 	color: var(--wp--preset--color--white);
-	background: var(--wp--custom--colour--alpha);
+	background: var(--colour-alpha);
 	border-radius: var(--border-radius);
 	transition: all var(--transition-duration) var(--transition-easing);
-
 	@include font-smoothing;
 
 	&:hover,
 	&:active {
 		background: var(--wp--preset--color--white);
-		color: var(--wp--custom--colour--alpha);
+		color: var(--colour-alpha);
 	}
 
 	.c-pagination__item--active & {
 		background: var(--wp--preset--color--white);
-		color: var(--wp--custom--colour--alpha);
+		color: var(--colour-alpha);
 
 		&:hover,
 		&:active {
 			background: var(--wp--preset--color--white);
-			color: var(--wp--custom--colour--alpha);
+			color: var(--colour-alpha);
 		}
 	}
 }

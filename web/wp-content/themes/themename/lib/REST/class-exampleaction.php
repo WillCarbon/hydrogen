@@ -1,12 +1,12 @@
 <?php
-namespace Carbonara\REST;
+namespace CarbonPress\REST;
 
 /**
  * Class ExampleAction
  *
- * @package Carbonara\REST
+ * @package CarbonPress\REST
  */
-class ExampleAction extends REST implements RESTActionInterface
+class ExampleAction extends REST
 {
 
     /**

@@ -1,10 +1,10 @@
 <?php
-namespace Carbonara\Theme;
+namespace CarbonPress\Theme;
 
 /**
  * TinyMCE
  *
- * @package Carbonara\Theme
+ * @package CarbonPress\Theme
  */
 class TinyMCE
 {
@@ -15,16 +15,16 @@ class TinyMCE
     public function __construct()
     {
         //
-        add_filter('mce_buttons', [$this, 'modifyButtonsRow1']);
+        add_filter('mce_buttons', [$this, 'modify_buttons_row_1']);
 
         //
-        add_filter('mce_buttons_2', [$this, 'modifyButtonsRow2']);
+        add_filter('mce_buttons_2', [$this, 'modify_buttons_row_2']);
 
         //
-        add_filter('tiny_mce_before_init', [$this, 'removeHeaderFromEditor']);
+        add_filter('tiny_mce_before_init', [$this, 'remove_header_from_editor']);
 
         // Attach callback to 'tiny_mce_before_init'
-        add_filter( 'tiny_mce_before_init', [$this, 'formatOptions'] );
+        add_filter( 'tiny_mce_before_init', [$this, 'format_options'] );
     }
 
     /**
@@ -33,7 +33,7 @@ class TinyMCE
      * @param array $buttons
      * @return array
      */
-    public function modifyButtonsRow1( $buttons )
+    public function modify_buttons_row_1( $buttons )
     {
         //Remove the format dropdown select and text color selector
         $remove = array( 'numlist', 'hr', 'alignleft', 'aligncenter', 'alignright', 'wp_more' );
@@ -49,7 +49,7 @@ class TinyMCE
      * @param array $buttons
      * @return array
      */
-    public function modifyButtonsRow2( $buttons )
+    public function modify_buttons_row_2( $buttons )
     {
 
         // Remove the format dropdown select and text color selector
@@ -69,7 +69,7 @@ class TinyMCE
      * @param array $init
      * @return array
      */
-    public function removeHeaderFromEditor( $init )
+    public function remove_header_from_editor( $init )
     {
         $init['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;Preformatted=pre;';
         return $init;
@@ -82,7 +82,7 @@ class TinyMCE
      * @param array $init_array
      * @return array
      */
-    public function formatOptions( $init_array )
+    public function format_options( $init_array )
     {
         $style_formats = array(
             array(

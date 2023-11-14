@@ -1,3 +1,2 @@
-import './components/Modernizr';
-import './components/DisableFormZoom';
+// import './components/Modernizr';
 import './classes/Navigation';

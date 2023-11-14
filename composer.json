@@ -24,7 +24,7 @@
         }
     },
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "johnpbloch/wordpress": "*",
         "koodimonni-language/core-en_gb": "*",
         "satispress/wp-carboniser": "*",

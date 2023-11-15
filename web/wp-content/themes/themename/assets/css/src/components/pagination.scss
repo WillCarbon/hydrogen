@@ -3,58 +3,57 @@
    ========================================================================== */
 
 .c-pagination {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .c-pagination__list {
-	margin: var(--grid-padding-sm) auto 0;
-	padding: 0;
-	list-style: none;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
+    margin: var(--spacing-sm) auto 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .c-pagination__item {
-	margin: 0 var(--grid-padding-sm) var(--grid-padding-sm) 0;
+    margin: 0 var(--spacing-sm) var(--spacing-sm) 0;
 
-	&--next,
-	&--prev {
+    &--next,
+    &--prev {
 
-		@media (var(--mq-md-max)) {
-			display: none;
-		}
-	}
+        @media (var(--mq-md-max)) {
+            display: none;
+        }
+    }
 }
 
 .c-pagination__link {
-	padding: 6px 16px;
-	display: inline-block;
-	font-size: responsive 16px 20px;
-	text-decoration: none;
-	text-align: center;
-	border: 2px solid var(--colour-alpha);
-	color: var(--wp--preset--color--white);
-	background: var(--colour-alpha);
-	border-radius: var(--border-radius);
-	transition: all var(--transition-duration) var(--transition-easing);
-	@include font-smoothing;
+    padding: 6px 16px;
+    display: inline-block;
+    font-size: responsive 16px 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid var(--colour-alpha);
+    color: var(--colour--white);
+    background: var(--colour-alpha);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-duration) var(--transition-easing);
 
-	&:hover,
-	&:active {
-		background: var(--wp--preset--color--white);
-		color: var(--colour-alpha);
-	}
+    &:hover,
+    &:active {
+        background: var(--colour--white);
+        color: var(--colour-alpha);
+    }
 
-	.c-pagination__item--active & {
-		background: var(--wp--preset--color--white);
-		color: var(--colour-alpha);
+    .c-pagination__item--active & {
+        background: var(--colour--white);
+        color: var(--colour-alpha);
 
-		&:hover,
-		&:active {
-			background: var(--wp--preset--color--white);
-			color: var(--colour-alpha);
-		}
-	}
+        &:hover,
+        &:active {
+            background: var(--colour--white);
+            color: var(--colour-alpha);
+        }
+    }
 }

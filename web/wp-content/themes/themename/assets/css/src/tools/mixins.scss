@@ -1,153 +1,70 @@
 /* ==========================================================================
-   Mixins
-   ========================================================================== */
+  Mixins
+  ========================================================================== */
 
 /*
-   Clearfix
-   ========================================================================== */
+  Clearfix
+  ========================================================================== */
 
 @mixin clearfix {
-	&::after {
-		content: "";
-		display: block;
-		clear: both;
-	}
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
 }
 
 /*
-   Image overlay
-   ========================================================================== */
-
-@mixin overlay-flat($z-index) {
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: $z-index;
-	}
-}
-
-/*
-   Object fit polyfill
-   ========================================================================== */
+  Object fit polyfill
+  ========================================================================== */
 
 @mixin object-fit($attr) {
-	object-fit: $attr;
-	font-family: "object-fit: #{$attr}";
+    object-fit: $attr;
+    font-family: "object-fit: #{$attr}";
 }
 
 /*
-   Object fit parent
-   ========================================================================== */
-
-@mixin object-fit-parent($height, $width) {
-	height: $height;
-	width: $width;
-	position: relative;
-}
-
-/*
-   Object fit image
-   ========================================================================== */
+  Object fit image
+  ========================================================================== */
 
 @mixin object-fit-image {
-	@include object-fit(cover);
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	display: block;
+    @include object-fit(cover);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 /*
-   Hide content
-   ========================================================================== */
-
-@mixin hide-content {
-	position: absolute !important;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
-}
-
-
-/*
-   Font smoothing
-   ========================================================================== */
-
-@mixin font-smoothing {
-	// sass-lint:disable-all
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	// sass-lint:enable-all
-}
-
-
-/*
-   Header Styling
-   ========================================================================== */
+  Header Styling
+  ========================================================================== */
 
 @mixin header-style {
-	margin-top: 0;
-	margin-bottom: var(--grid-padding);
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
 
-	font-family: var(--font-family-alpha);
-	font-weight: var(--font-weight-bold);
-	color: var(--colour-alpha);
+    font-family: var(--font-family-alpha);
+    font-weight: var(--font-weight-bold);
+    color: var(--colour-alpha);
 }
 
 /*
-   Consistent spacing
-   ========================================================================== */
+  Consistent spacing
+  ========================================================================== */
 
 @mixin mobile-gutter {
-	padding-left: var(--gutter-sm);
-	padding-right: var(--gutter-sm);
+    padding-left: var(--gutter-sm);
+    padding-right: var(--gutter-sm);
 
-	@media (var(--mq-xxs-min)) {
-		padding-left: var(--gutter-md);
-		padding-right: var(--gutter-md);
-	}
+    @media (var(--mq-xxs-min)) {
+        padding-left: var(--gutter-md);
+        padding-right: var(--gutter-md);
+    }
 
-	@media (var(--mq-xl-min)) {
-		padding-left: var(--gutter-lg);
-		padding-right: var(--gutter-lg);
-	}
-}
-
-/*
-   Fluid typography
-   ========================================================================== */
-
-$remBase: 16;
-$widthMin: 480;
-$widthMax: 1920;
-
-@mixin font-size($valueMin, $valueMax) {
-  $fontMin: $valueMin * $remBase;
-  $fontMax: $valueMax * $remBase;
-  font-size: $valueMin * 1rem;
-
-  @media (min-width: #{$widthMin}px) {
-    font-size: calc( #{$fontMin}px + (#{$fontMax} - #{$fontMin}) * ((100vw - #{$widthMin}px) / (#{$widthMax} - #{$widthMin})));
-  }
-
-  @media (min-width: #{$widthMax}px) {
-    font-size: $valueMax * 1rem;
-  }
-}
-
-/*
-   To REM
-   ========================================================================== */
-
-@function toRem($value) {
-	$value: $value / ($value * 0 + 1);
-    $remValue: ($value / 16); 
-    @return $remValue;
+    @media (var(--mq-xl-min)) {
+        padding-left: var(--gutter-lg);
+        padding-right: var(--gutter-lg);
+    }
 }

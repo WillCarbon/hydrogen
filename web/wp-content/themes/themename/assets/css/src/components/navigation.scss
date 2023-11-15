@@ -3,44 +3,43 @@
    ========================================================================== */
 
 .c-navigation {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .c-navigation__list {
-	display: flex;
-	flex: 1;
-	margin-bottom: 0;
-	padding: 0;
-	list-style: none;
+    display: none;
+    flex: 1;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
 
-	@media (var(--mq-sm-max)) {
-		display: none;
-	}
+    @media (var(--mq-md-min)) {
+        display: flex;
+    }
 }
 
 .c-navigation__item {
-	display: flex;
-	align-items: center;
-	margin: 0 10px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
 
-	a {
-		display: flex;
-		align-items: center;
-		flex-grow: 1;
-		height: 100%;
-		color: var(--colour-alpha);
-	}
+    a {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        height: 100%;
+        color: var(--colour-alpha);
+    }
 }
 
 .c-navigation__item--active {
-
-	a {
-		font-weight: var(--font-weight-medium);
-		color: var(--colour-bravo);
-	}
+    a {
+        font-weight: var(--font-weight-medium);
+        color: var(--colour-bravo);
+    }
 }
 
 .c-navigation__link {
-	padding: var(--grid-padding-sm) 0;
+    padding: var(--spacing-sm) 0;
 }

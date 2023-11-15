@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Embeds
+   ========================================================================== */
+
+.o-post-embed {
+    position: relative;
+
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 16/9 ratio */
+    &--video {
+        padding-bottom: 56.25%;
+    }
+
+    /* 4/3 ratio */
+    &--audio {
+        padding-bottom: 133.333%;
+    }
+}

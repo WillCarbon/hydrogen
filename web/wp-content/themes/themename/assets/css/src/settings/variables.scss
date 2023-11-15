@@ -1,28 +1,28 @@
 /* ==========================================================================
-   Variables
-   ========================================================================== */
+Variables
+========================================================================== */
 
 :root {
-   --border-radius:        8px;
+    --border-radius:        8px;
 
-   /* Screen edge spacing */
-   --gutter-sm:            16px;
-   --gutter-md:            32px;
-   --gutter-lg:            48px;
+    /* Screen edge spacing */
+    --gutter-sm:            16px;
+    --gutter-md:            32px;
+    --gutter-lg:            48px;
 
-   /* Wrapper widths */
-   --wrapper-xs:           480px;
-   --wrapper-sm:           660px;
-   --wrapper-md:           1200px;
-   --wrapper-lg:           1560px;
-   --wrapper-xl:           1872px;
+    /* Wrapper widths */
+    --wrapper-xs:           480px;
+    --wrapper-sm:           660px;
+    --wrapper-md:           1200px;
+    --wrapper-lg:           1560px;
+    --wrapper-xl:           1872px;
 
-   /* Generic spacing */
-	--spacing-sm:           16px;
-   --spacing-md:           32px;
-   --spacing-lg:           48px;
+    /* Generic spacing */
+    --spacing-sm:           16px;
+    --spacing-md:           32px;
+    --spacing-lg:           48px;
 
-   /* Transitions */
-   --transition-easing:    cubic-bezier(0.4, 0, 0.2, 1);
-   --transition-duration:  0.2s;
+    /* Transitions */
+    --transition-easing:    cubic-bezier(.4, 0, .2, 1);
+    --transition-duration:  .2s;
 }

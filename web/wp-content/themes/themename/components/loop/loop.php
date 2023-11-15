@@ -6,16 +6,20 @@
     if ( have_posts() ) {
 ?>
 
-    <div class="c-card-list o-wrapper-parent">
-        <div class="c-card-list__wrap o-wrapper-centre">
-            <?php
-                while(have_posts()) : the_post();
+    <div class="c-cards o-wrapper-parent">
+        <div class="c-cards__wrap o-wrapper-centre">
 
-                    get_template_part( 'components/loop/card', get_post_type() );
+            <div class="c-cards-list">
+                <?php
+                    while(have_posts()) : the_post();
 
-                endwhile;
-                wp_reset_postdata();
-            ?>
+                        get_template_part( 'components/loop/card', get_post_type() );
+
+                    endwhile;
+                    wp_reset_postdata();
+                ?>
+            </div>
+
         </div>
     </div>
 

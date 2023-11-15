@@ -7,19 +7,19 @@
   ========================================================================== */
 
 .o-page-container {
-	position: relative;
-	right: 0;
-	overflow: hidden;
-	transition: var(--transition-duration) var(--transition-easing);
-	transition-property: opacity, visibility;
+    position: relative;
+    right: 0;
+    overflow: hidden;
+    transition: var(--transition-duration) var(--transition-easing);
+    transition-property: opacity, visibility;
 
-	visibility: hidden;
-	opacity: 0;
+    visibility: hidden;
+    opacity: 0;
 
-	&.o-page-container--nav-open {
-		visibility: visible;
-		opacity: 1;
-	}
+    &.o-page-container--nav-open {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 /*
@@ -27,13 +27,13 @@
    ========================================================================== */
 
 .o-page {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
-	@media (var(--mq-sm-max)) {
-		flex-flow: column wrap;
-		flex-basis: auto;
-	}
+    @media (var(--mq-sm-max)) {
+        flex-flow: column wrap;
+        flex-basis: auto;
+    }
 }
 
 /*
@@ -41,30 +41,7 @@
    ========================================================================== */
 
 .o-page__main {
-	width: 65%;
-}
-
-/*
-   Content
-   ========================================================================== */
-
-.o-page__content {
-	flex-grow: 1;
-}
-
-/*
-   Media
-   ========================================================================== */
-
-.o-page__media {
-
-	@media (var(--mq-md-min)) {
-		width: 66.6%;
-	}
-
-	@media (var(--mq-xxl-min)) {
-		width: 50%;
-	}
+    width: 65%;
 }
 
 /*
@@ -72,14 +49,14 @@
    ========================================================================== */
 
 .o-page__sidebar {
-	width: 35%;
+    width: 35%;
+    width: 100%;
 
-	@media (var(--mq-sm-max)) {
-		width: 100%;
-		order: 2;
-	}
+    @media (var(--mq-sm-max)) {
+        order: 2;
+    }
 
-	@media (var(--mq-md-min)) and (var(--mq-xl-max)) {
-		width: 30%;
-	}
+    @media (var(--mq-md-min)) and (var(--mq-xl-max)) {
+        width: 30%;
+    }
 }

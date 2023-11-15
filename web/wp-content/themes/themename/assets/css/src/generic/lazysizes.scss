@@ -1,7 +1,13 @@
 /* ==========================================================================
-   Wordpress
+   Lazysizes
    ========================================================================== */
 
-.screen-reader-text {
-	display: none;
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+
+.lazyloaded {
+    opacity: 1;
+    transition: opacity .3s;
 }

@@ -3,30 +3,15 @@
    ========================================================================== */
 
 .o-wrapper {
-	max-width: var(--wrapper-lg);
-	margin: 0 0 40px;
-
-	.c-header &,
-	.c-footer & {
-		margin-bottom: 0;
-	}
-
-	@media (var(--mq-xl-max)) {
-		padding: 0 15px;
-	}
-
-	@media (var(--mq-md-min)) {
-		margin: 0 auto 40px;
-	}
+    max-width: var(--wrapper-lg);
 }
 
 .o-wrapper-parent {
-
-	@include mobile-gutter;
+    @include mobile-gutter;
 }
 
 .o-wrapper-centre {
-	width: 100%;
-	max-width: var(--wrapper-xl);
-	margin: 0 auto;
+    width: 100%;
+    max-width: var(--wrapper-xl);
+    margin: 0 auto;
 }

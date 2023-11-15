@@ -4,14 +4,8 @@
    Gravity Forms
    ========================================================================== */
 
-/* Wrapper */
-
 .gform_wrapper {
 	width: 100%;
-}
-
-.gform_heading {
-	margin: 0 0 var(--grid-padding);
 }
 
 /*
@@ -21,8 +15,6 @@
 .gfield_label {
 	margin: 0 0 8px;
 	display: block;
-	line-height: 1.2;
-	font-weight: var(--font-weight-medium);
 }
 
 .gfield_description {
@@ -47,7 +39,7 @@
 }
 
 .gfield {
-	margin-bottom: var(--grid-padding);
+	margin-bottom: var(--spacing-md);
 	width: 100%;
 
 	input,
@@ -110,57 +102,6 @@
 }
 
 /*
-   Buttons
-   ========================================================================== */
-
-.gform_footer {
-	text-align: center;
-}
-
-.gform_button {
-	margin: 0 auto;
-	display: inline-block;
-	font-weight: var(--font-weight-bold);
-	font-size: responsive 16px 20px;
-	text-decoration: none;
-	text-align: center;
-	color: var(--wp--preset--color--white);
-	background: var(--colour-alpha);
-	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
-	border-radius: var(--border-radius);
-	transition: all var(--transition-duration) var(--transition-easing);
-
-	@include font-smoothing;
-	border: none;
-
-	@media (var(--mq-xxs-max)) {
-		display: block;
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	@media (var(--mq-md-max)) {
-		padding: 10px 20px;
-	}
-
-	@media (var(--mq-lg-min)) and (var(--mq-lg-max)) {
-		padding: var(--grid-padding-sm) 15px;
-	}
-
-	@media (var(--mq-xl-min)) {
-		padding: var(--grid-padding-sm) var(--grid-padding);
-	}
-
-	&:hover,
-	&:active {
-		cursor: pointer;
-		box-shadow: none;
-		transform: translate(3px, 3px);
-		color: var(--wp--preset--color--white);
-	}
-}
-
-/*
    Required
    ========================================================================== */
 
@@ -173,10 +114,9 @@
    ========================================================================== */
 
 .validation_error {
-	@include font-smoothing;
-	margin-bottom: var(--grid-padding-sm);
-	padding: var(--grid-padding-sm);
-	color: var(--wp--preset--color--white);
+	margin-bottom: var(--spacing-sm);
+	padding: var(--spacing-sm);
+	color: var(--colour--white);
 	background: var(--colour-bravo);
 }
 
@@ -188,15 +128,6 @@
 
 .gfield_error .ginput_container {
 	border-left: 4px solid var(--colour-bravo);
-}
-
-/*
-   Honeypot
-   ========================================================================== */
-
-.gform_validation_container {
-
-	@include hide-content;
 }
 
 // sass-lint:enable-all

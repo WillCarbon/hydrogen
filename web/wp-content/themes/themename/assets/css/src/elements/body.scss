@@ -2,17 +2,13 @@
    Body
    ========================================================================== */
 
-
-
 body {
-	@include font-smoothing;
+    color: var(--colour--black);
+    font-family: var(--font-family-alpha);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height);
 
-	// font-family: var(--font-family-alpha);
-	// line-height: var(--line-height);
-	// font-weight: var(--font-weight-regular);
-	// color: var(--wp--preset--color--black);
-
-	// &.mce-content-body {
-	//     margin: 20px;
-	// }
+    &.mce-content-body {
+        margin: 20px;
+    }
 }

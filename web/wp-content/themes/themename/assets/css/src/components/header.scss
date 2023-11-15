@@ -3,14 +3,14 @@
    ========================================================================== */
 
 .c-header {
-	width: 100%;
-	padding: var(--grid-padding);
-	background: var(--wp--preset--color--white);
-	position: relative;
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--colour--white);
+    position: relative;
 }
 
 .c-header__wrap {
-	display: flex;
+    display: flex;
 }
 
 /*
@@ -18,23 +18,23 @@
    ========================================================================== */
 
 .c-header__brand {
-	position: relative;
-	display: block;
-	width: 188px;
-	height: 54px;
-	text-indent: -9em;
+    position: relative;
+    display: block;
+    width: 188px;
+    height: 54px;
+    text-indent: -9em;
 
-	/*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
-	overflow: hidden;
+    /*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
+    overflow: hidden;
 
-	@media (var(--mq-sm-min)) and (var(--mq-md-max)) {
-		width: 30.58%;
-		padding-bottom: calc(28.7vw * 80 / 281);
-	}
+    @media (var(--mq-sm-min)) and (var(--mq-md-max)) {
+        width: 30.58%;
+        padding-bottom: calc(28.7vw * 80 / 281);
+    }
 
-	@media (var(--mq-lg-min)) {
-		margin: 2px 0;
-		width: 281px;
-		height: 80px;
-	}
+    @media (var(--mq-lg-min)) {
+        margin: 2px 0;
+        width: 281px;
+        height: 80px;
+    }
 }

@@ -83,7 +83,7 @@ const cleanCSS      = require('gulp-clean-css');
 const objectfit     = require('postcss-object-fit-images');
 const postcss       = require('gulp-postcss');
 const responsive    = require('postcss-responsive-type');
-const sass          = require('gulp-sass')(require('node-sass'));
+const sass          = require('gulp-sass')(require('sass'));
 const sasslint      = require('gulp-sass-lint');
 
 let processors = [

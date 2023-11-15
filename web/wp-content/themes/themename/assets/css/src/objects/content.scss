@@ -1,76 +1,36 @@
 /* ==========================================================================
-   Generic Text Styling
+   Editor content styling
    ========================================================================== */
-
-/*
-  Basic Text
-  ========================================================================== */
-
-.o-text-centre {
-	text-align: center;
-}
-
-.o-text-bravo {
-	color: var(--colour-bravo);
-}
-
-
-/*
-  Page container
-  ========================================================================== */
 
 .mce-content-body,
 .o-content-editor {
 
-	a {
-		text-decoration: underline;
-		color: var(--colour-bravo);
+    a {
+        text-decoration: underline;
+        color: var(--colour-alpha);
 
-		&:focus,
-		&:hover {
-			color: var(--colour-alpha);
-		}
-	}
+        &:focus,
+        &:hover {
+            color: var(--colour-bravo);
+        }
+    }
 
-	ul {
-		margin: 20px 0;
-		padding: 0;
+    ul {
+        margin: 20px 0;
+        padding: 0;
 
-		li {
-			position: relative;
-			padding-left: 20px;
+        li {
+            position: relative;
+            padding-left: 20px;
 
-			&::before {
-				content: "\2022";
+            &::before {
+                content: "\2022";
 
-				position: absolute;
-				left: 5px;
+                position: absolute;
+                left: 5px;
 
-				color: var(--colour-bravo);
-			}
-		}
-	}
-}
-
-
-/*
-  OEmedded videos
-  ========================================================================== */
-
-.o-post-embed {
-	position: relative;
-
-	&--video {
-		padding-bottom: 56.25%;
-
-		iframe,
-		object,
-		embed {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-	}
+                color: var(--colour-alpha);
+            }
+        }
+    }
 }

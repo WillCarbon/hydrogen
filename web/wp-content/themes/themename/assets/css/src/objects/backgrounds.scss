@@ -3,18 +3,18 @@
    ========================================================================== */
 
 .o-background {
-	padding-top: var(--grid-padding);
-	padding-bottom: var(--grid-padding);
-}
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
 
-.o-background--alpha {
-	background-color: var(--colour-alpha);
-}
+    &--alpha {
+        background-color: var(--colour-alpha);
+    }
 
-.o-background--bravo {
-	background-color: var(--colour-bravo);
-}
+    &--bravo {
+        background-color: var(--colour-bravo);
+    }
 
-.o-background--charlie {
-	background-color: var(--colour-charlie);
+    &--charlie {
+        background-color: var(--colour-charlie);
+    }
 }

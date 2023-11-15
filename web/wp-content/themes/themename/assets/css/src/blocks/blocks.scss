@@ -3,11 +3,11 @@
    ========================================================================== */
 
 .cb-block {
-	margin: 0 0 var(--grid-padding);
+    margin: 0 0 var(--spacing-md);
 
     &.o-background {
         + .o-background {
-            margin-top: calc(#{var(--grid-padding)} * -1);
+            margin-top: calc(#{var(--spacing-md)} * -1);
         }
     }
 }

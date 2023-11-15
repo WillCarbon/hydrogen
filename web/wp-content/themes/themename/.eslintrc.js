@@ -9,9 +9,9 @@ module.exports = {
         allowImportExportEverywhere: true,
     },
     // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-    extends: [
-        'plugin:@wordpress/eslint-plugin/recommended-with-formatting',
-    ],
+    // extends: [
+    //     'plugin:@wordpress/eslint-plugin/recommended-with-formatting',
+    // ],
     // add your custom rules here
     rules: {
         'arrow-parens': 0,

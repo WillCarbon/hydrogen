@@ -95,41 +95,10 @@
 /* ==========================================================================
    Breakpoints
    ========================================================================== */
-:root {
-  /* Min width */
-  --screen-xxs-min: 360px;
-  --screen-xs-min: 480px;
-  --screen-sm-min: 660px;
-  --screen-md-min: 768px;
-  --screen-lg-min: 960px;
-  --screen-xl-min: 1024px;
-  --screen-xxl-min: 1366px;
-  --screen-xxxl-min: 1920px;
-  /* Max width */
-  --screen-xxs-max: 479px;
-  --screen-xs-max: 659px;
-  --screen-sm-max: 767px;
-  --screen-md-max: 959px;
-  --screen-lg-max: 1023px;
-  --screen-xl-max: 1365px;
-  --screen-xxl-max: 1919px;
-  /* Min media queries */
-  --mq-xxs-min: "min-width: var(--screen-xxs-min)";
-  --mq-xs-min: "min-width: var(--screen-xs-min)";
-  --mq-sm-min: "min-width: var(--screen-sm-min)";
-  --mq-md-min: "min-width: var(--screen-md-min)";
-  --mq-lg-min: "min-width: var(--screen-lg-min)";
-  --mq-xl-min: "min-width: var(--screen-xl-min)";
-  --mq-xxl-min: "min-width: var(--screen-xxl-min)";
-  /* Max media queries */
-  --mq-xxs-max: "max-width: var(--screen-xxs-max)";
-  --mq-xs-max: "max-width: var(--screen-xs-max)";
-  --mq-sm-max: "max-width: var(--screen-sm-max)";
-  --mq-md-max: "max-width: var(--screen-md-max)";
-  --mq-lg-max: "max-width: var(--screen-lg-max)";
-  --mq-xl-max: "max-width: var(--screen-xl-max)";
-}
-
+/* Min width */
+/* Max width */
+/* Min media queries */
+/* Max media queries */
 /* ==========================================================================
 Variables
 ========================================================================== */
@@ -495,7 +464,7 @@ template {
 html {
   overflow-x: hidden;
 }
-@media (var(--mq-sm-max)) {
+@media (min-width: 767px) {
   html.js-nav-open {
     overflow-y: hidden;
   }
@@ -610,7 +579,8 @@ input[type=date],
 input[type=url] {
   font-size: inherit;
   color: var(--colour--black);
-  background: no-repeat var(--colour--white);
+  background-color: var(--colour-white);
+  background-repeat: no-repeat;
   border: 1px solid var(--colour--grey-light);
   border-radius: 0;
   /* sass-lint:disable-all */
@@ -640,7 +610,7 @@ input[type=date]:disabled,
 input[type=url]:disabled {
   opacity: 0.6;
 }
-@media (var(--mq-md-min)) {
+@media (min-width: 960px) {
   input[type=text],
   input[type=password],
   input[type=tel],
@@ -660,7 +630,8 @@ input[type=radio],
 input[type=checkbox] {
   font-size: inherit;
   color: var(--colour--black);
-  background: no-repeat var(--colour--white);
+  background-color: var(--colour-white);
+  background-repeat: no-repeat;
   border: 1px solid var(--colour--grey-light);
   border-radius: 0;
   /* sass-lint:disable-all */
@@ -709,7 +680,8 @@ input[type=checkbox]:checked {
 textarea {
   font-size: inherit;
   color: var(--colour--black);
-  background: no-repeat var(--colour--white);
+  background-color: var(--colour-white);
+  background-repeat: no-repeat;
   border: 1px solid var(--colour--grey-light);
   border-radius: 0;
   /* sass-lint:disable-all */
@@ -735,7 +707,8 @@ textarea:disabled {
 select {
   font-size: inherit;
   color: var(--colour--black);
-  background: no-repeat var(--colour--white);
+  background-color: var(--colour-white);
+  background-repeat: no-repeat;
   border: 1px solid var(--colour--grey-light);
   border-radius: 0;
   /* sass-lint:disable-all */
@@ -757,7 +730,7 @@ select:focus {
 select:disabled {
   opacity: 0.6;
 }
-@media (var(--mq-md-min)) {
+@media (min-width: 960px) {
   select {
     padding: var(--spacing-sm) 18px;
     height: 52px;
@@ -961,7 +934,7 @@ p {
   text-align: center;
   color: var(--colour-alpha) !important;
 }
-@media (var(--mq-md-min)) {
+@media (min-width: 960px) {
   .c-button {
     min-height: 46px;
     padding: 10px 18px;

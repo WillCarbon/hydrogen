@@ -51,7 +51,7 @@
 .gfield_50 {
 	width: 100%;
 
-	@media (var(--mq-md-min)) {
+	@media ($mq-md-min) {
 		width: 48%;
 	}
 }
@@ -79,7 +79,7 @@
 
 		li {
 
-			@media (var(--mq-md-min)) {
+			@media ($mq-md-min) {
 				width: 50%;
 			}
 		}
@@ -90,11 +90,11 @@
 		flex-wrap: wrap;
 
 		li {
-			@media (var(--mq-md-min)) and (var(--mq-xl-max)) {
+			@media ($mq-md-min) and ($mq-xl-max) {
 				width: 32%;
 			}
 
-			@media (var(--mq-xxl-min)) {
+			@media ($mq-xxl-min) {
 				width: 16%;
 			}
 		}
@@ -117,7 +117,7 @@
 	margin-bottom: var(--spacing-sm);
 	padding: var(--spacing-sm);
 	color: var(--colour--white);
-	background: var(--colour-bravo);
+	background-color: var(--colour-bravo);
 }
 
 .validation_message {

@@ -58,12 +58,12 @@
     padding-left: var(--gutter-sm);
     padding-right: var(--gutter-sm);
 
-    @media (var(--mq-xxs-min)) {
+    @media ($mq-xxs-min) {
         padding-left: var(--gutter-md);
         padding-right: var(--gutter-md);
     }
 
-    @media (var(--mq-xl-min)) {
+    @media ($mq-xl-min) {
         padding-left: var(--gutter-lg);
         padding-right: var(--gutter-lg);
     }

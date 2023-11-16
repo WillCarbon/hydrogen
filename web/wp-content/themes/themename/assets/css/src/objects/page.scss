@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
 
-    @media (var(--mq-sm-max)) {
+    @media ($mq-sm-max) {
         flex-flow: column wrap;
         flex-basis: auto;
     }
@@ -52,11 +52,11 @@
     width: 35%;
     width: 100%;
 
-    @media (var(--mq-sm-max)) {
+    @media ($mq-sm-max) {
         order: 2;
     }
 
-    @media (var(--mq-md-min)) and (var(--mq-xl-max)) {
+    @media ($mq-md-min) and ($mq-xl-max) {
         width: 30%;
     }
 }

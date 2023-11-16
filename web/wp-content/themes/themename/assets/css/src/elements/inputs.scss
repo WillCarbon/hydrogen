@@ -8,7 +8,8 @@ $input-height-md:   52px;
 @mixin input {
     font-size: inherit;
     color: var(--colour--black);
-    background: no-repeat var(--colour--white);
+    background-color: var(--colour-white);
+    background-repeat: no-repeat;
     border: 1px solid var(--colour--grey-light);
     border-radius: 0;
 
@@ -43,7 +44,7 @@ input[type="url"] {
     padding: var(--spacing-sm) 12px;
     height: $input-height-sm;
 
-    @media (var(--mq-md-min)) {
+    @media ($mq-md-min) {
         padding: var(--spacing-sm) 18px;
         height: $input-height-md;
     }
@@ -117,7 +118,7 @@ select {
     height: $input-height-sm;
     background-position: calc(100% - 12px) 50%;
 
-    @media (var(--mq-md-min)) {
+    @media ($mq-md-min) {
         padding: var(--spacing-sm) 18px;
         height: $input-height-md;
         background-position: calc(100% - 20px) 50%;
@@ -133,7 +134,7 @@ select {
     }
 
     &:focus::-ms-value {
-    color: var(--colour--black);
+        color: var(--colour--black);
         background: none;
     }
     /* sass-lint:enable-all */

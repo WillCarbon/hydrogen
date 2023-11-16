@@ -22,7 +22,7 @@
     &--next,
     &--prev {
 
-        @media (var(--mq-md-max)) {
+        @media ($mq-md-max) {
             display: none;
         }
     }
@@ -36,23 +36,23 @@
     text-align: center;
     border: 2px solid var(--colour-alpha);
     color: var(--colour--white);
-    background: var(--colour-alpha);
+    background-color: var(--colour-alpha);
     border-radius: var(--border-radius);
     transition: all var(--transition-duration) var(--transition-easing);
 
     &:hover,
     &:active {
-        background: var(--colour--white);
+        background-color: var(--colour--white);
         color: var(--colour-alpha);
     }
 
     .c-pagination__item--active & {
-        background: var(--colour--white);
+        background-color: var(--colour--white);
         color: var(--colour-alpha);
 
         &:hover,
         &:active {
-            background: var(--colour--white);
+            background-color: var(--colour--white);
             color: var(--colour-alpha);
         }
     }

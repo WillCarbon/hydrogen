@@ -22,15 +22,12 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    flex: 1 1 max(320px, min(33.33%, 480px));
+    flex: 1;
 
-    background: var(--colour--grey-x-light);
+    background-color: var(--colour--grey-x-light);
     border-radius: var(--border-radius);
     border: 1px solid var(--colour--grey-light);
-
-    @media (var(--mq-sm-min)) and (var(--mq-md-max)) {
-        width: 50%;
-    }
+    min-width: 300px;
 
     &:only-of-type {
         margin-left: auto;
@@ -63,7 +60,7 @@
         @include object-fit-image;
 
         &:hover {
-            background: var(--colour-alpha);
+            background-color: var(--colour-alpha);
             transform: scale(1.025);
         }
     }

@@ -5,19 +5,19 @@
 .c-hero {
     position: relative;
 
-    @media (var(--mq-xs-max)) {
+    @media ($mq-xs-max) {
         height: calc(100vh - 137px); /* height of the navbar */
     }
 
-    @media (var(--mq-sm-min)) and (var(--mq-lg-max)) {
+    @media ($mq-sm-min) and ($mq-lg-max) {
         height: 400px;
     }
 
-    @media (var(--mq-xl-min)) and (var(--mq-xl-max)) {
+    @media ($mq-xl-min) and ($mq-xl-max) {
         height: 510px;
     }
 
-    @media (var(--mq-xxl-min)) {
+    @media ($mq-xxl-min) {
         height: 660px;
     }
 }

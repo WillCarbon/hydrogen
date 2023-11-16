@@ -5,7 +5,7 @@
 .c-header {
     width: 100%;
     padding: var(--spacing-md);
-    background: var(--colour--white);
+    background-color: var(--colour--white);
     position: relative;
 }
 
@@ -27,12 +27,12 @@
     /*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
     overflow: hidden;
 
-    @media (var(--mq-sm-min)) and (var(--mq-md-max)) {
+    @media ($mq-sm-min) and ($mq-md-max) {
         width: 30.58%;
         padding-bottom: calc(28.7vw * 80 / 281);
     }
 
-    @media (var(--mq-lg-min)) {
+    @media ($mq-lg-min) {
         margin: 2px 0;
         width: 281px;
         height: 80px;

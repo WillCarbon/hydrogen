@@ -12,7 +12,7 @@
 
     cursor: pointer;
 
-    font-size: 16px;
+    font-size: to-rem(16);
     line-height: 18px;
     text-decoration: none !important;
     text-align: center;
@@ -22,7 +22,7 @@
         min-height: 46px;
         padding: 10px 18px;
 
-        font-size: 18px;
+        font-size: to-rem(18);
         line-height: 22px;
     }
 

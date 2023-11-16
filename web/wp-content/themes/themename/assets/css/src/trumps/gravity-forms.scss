@@ -20,7 +20,7 @@
 .gfield_description {
 	margin: 0 0 8px;
 	display: block;
-	font-size: 14px;
+	font-size: to-rem(16);
 	line-height: 1.2;
 	color: var(--colour--grey);
 }

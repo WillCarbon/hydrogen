@@ -31,7 +31,7 @@
 .c-pagination__link {
     padding: 6px 16px;
     display: inline-block;
-    font-size: responsive 16px 20px;
+    font-size: #{fluid(16px, 20px)};
     text-decoration: none;
     text-align: center;
     border: 2px solid var(--colour-alpha);

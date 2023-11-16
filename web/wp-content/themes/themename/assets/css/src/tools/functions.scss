@@ -34,3 +34,8 @@ $default-max-bp: 1366px;
     $max-size-rem: round(px-to-rem($max-size), 2);
     @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
 }
+
+@function to-rem($value) {
+    $rem-value: calc($value / 16) + rem;
+    @return $rem-value;
+}

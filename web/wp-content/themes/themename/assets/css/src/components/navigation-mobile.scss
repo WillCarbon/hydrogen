@@ -54,7 +54,7 @@
     text-align: center;
     padding: var(--spacing-sm) var(--spacing-md);
     color: var(--colour-alpha);
-    font-size: 15px;
+    font-size: to-rem(16);
     transition: all var(--transition-duration) var(--transition-easing);
     text-decoration: none;
 

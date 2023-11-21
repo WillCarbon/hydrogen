@@ -31,6 +31,11 @@ include CARBONPRESS_DIR .'/lib/Theme/class-tinymce.php';
 include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
 
 /**
+ * Load Blocks
+ */
+include CARBONPRESS_DIR .'/lib/Blocks/class-example-block.php';
+
+/**
  * Load REST Routes
  *
  * You need to update REST_NAMESPACE in REST\REST.php
@@ -41,3 +46,18 @@ include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
 /**
  * Custom Functions
  */
+
+ function my_add_template_to_posts() {
+
+    $post_type_object = get_post_type_object( 'post' );
+
+    $post_type_object->template = array(
+        array( 'core/image', array() ),
+        array( 'core/image', array() ),
+    );
+
+    $post_type_object->template_lock = 'all';
+
+}
+
+add_action( 'init', 'my_add_template_to_posts' );

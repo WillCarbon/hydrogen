@@ -1,2 +1,2 @@
-// import './components/Modernizr';
-import './classes/Navigation';
+// import './imports/Modernizr';
+import './imports/Navigation';

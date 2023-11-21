@@ -26,7 +26,8 @@ class Gutenberg
             'carbonberg/image',
             'carbonberg/text-image',
             'carbonberg/form',
-            'carbonberg/accordion'
+            'carbonberg/accordion',
+            'core/image'
         );
     }
 }

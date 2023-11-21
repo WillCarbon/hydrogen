@@ -27,7 +27,8 @@ const spriteFiles = [
 const cssConf = {
     src: 'assets/css/src/*.scss',
     sub: 'assets/css/src/**/*.scss',
-    build: 'assets/css/dist/'
+    blocks: 'assets/css/src/blocks/*.scss',
+    build: 'assets/css/dist/',
 };
 
 // JavaScript config
@@ -36,6 +37,12 @@ const jsConf = {
     sub: 'assets/js/src/**/*.js',
     vue: 'assets/js/src/**/*.vue',
     build: 'assets/js/dist/'
+};
+
+// Blocks config
+const blocks = {
+    src: 'assets/css/src/blocks/*.scss',
+    sub: 'assets/css/src/blocks/*.scss/**/*.scss'
 };
 
 /* ==========================================================================
@@ -80,16 +87,13 @@ function browserSyncReload (done) {
 const autoprefixer  = require('autoprefixer');
 const assets        = require('postcss-assets');
 const cleanCSS      = require('gulp-clean-css');
-const objectfit     = require('postcss-object-fit-images');
 const postcss       = require('gulp-postcss');
-const responsive    = require('postcss-responsive-type');
 const sass          = require('gulp-sass')(require('sass'));
 const sasslint      = require('gulp-sass-lint');
+const gulpIgnore    = require('gulp-ignore');
 
 let processors = [
     autoprefixer,
-    objectfit,
-    responsive,
     assets({
         loadPaths: [
             path.assets + 'images/',
@@ -143,18 +147,14 @@ function distStyles () {
         .pipe(browserSync.stream({match: '**/*.css'}));
 }
 
-/* Styling Task */
 exports.styling = series(lintStyles, devStyles, distStyles);
 
 /* ==========================================================================
    Scripts
    ========================================================================== */
 
-const babelify      = require('babelify');
-const browserify    = require('browserify');
-const buffer        = require('gulp-buffer');
+const esbuild       = require('gulp-esbuild');
 const eslint        = require('gulp-eslint');
-const uglify        = require('gulp-uglify');
 
 function lintScripts () {
     return src([jsConf.sub, jsConf.src])
@@ -164,36 +164,39 @@ function lintScripts () {
 }
 
 function devScripts () {
-    return src(jsConf.sub, {read: false})
+    return src(jsConf.sub)
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ['@babel/preset-env']
-            })).bundle();
         }))
-        .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(dest(jsConf.build));
+        .pipe(esbuild({
+            bundle: true,
+            sourcemap: 'external',
+            loader: {
+                '.js': 'js',
+            },
+        }))
+        .pipe(dest(jsConf.build))
 }
 
 function distScripts () {
-    return src(jsConf.sub, {read: true})
+    return src(jsConf.sub)
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ['@babel/preset-env']
-            })).bundle();
         }))
-        .pipe(buffer())
-        .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min'
+        .pipe(esbuild({
+            bundle: true,
+            minify: true,
+            outExtension: {
+                '.js': '.min.js'
+            },
+            sourcemap: 'external',
+            loader: {
+                '.js': 'js',
+            },
         }))
-        .pipe(dest(jsConf.build));
+        .pipe(dest(jsConf.build))
 }
 
-/* Styling Task */
 exports.scripting = series(lintScripts, devScripts, distScripts);
 
 /* ==========================================================================

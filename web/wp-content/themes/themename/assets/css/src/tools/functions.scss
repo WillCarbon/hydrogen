@@ -9,7 +9,7 @@
   ========================================================================== */
 
 $default-min-bp: 360px;
-$default-max-bp: 1366px;
+$default-max-bp: 1920px;
 
 @function round($number, $decimals: 0) {
     $n: 1;

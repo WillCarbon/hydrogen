@@ -155,6 +155,7 @@ const browserify    = require('browserify');
 const buffer        = require('gulp-buffer');
 const eslint        = require('gulp-eslint');
 const uglify        = require('gulp-uglify');
+const rollup        = require('gulp-rollup');
 
 function lintScripts () {
     return src([jsConf.sub, jsConf.src])
@@ -178,13 +179,16 @@ function devScripts () {
 }
 
 function distScripts () {
-    return src(jsConf.sub, {read: false})
+    return src(jsConf.sub, {read: true})
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
             file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
                 presets: ['@babel/preset-env']
             })).bundle();
         }))
+        // .pipe(rollup({
+        //     input: 'assets/js/src/'
+        // }))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(rename({

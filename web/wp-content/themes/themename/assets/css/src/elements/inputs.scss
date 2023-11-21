@@ -2,31 +2,6 @@
    Form defaults
    ========================================================================== */
 
-$input-height-sm:   42px;
-$input-height-md:   52px;
-
-@mixin input {
-    font-size: inherit;
-    color: var(--colour--black);
-    background-color: var(--colour-white);
-    background-repeat: no-repeat;
-    border: 1px solid var(--colour--grey-light);
-    border-radius: 0;
-
-    /* sass-lint:disable-all */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    /* sass-lint:enable-all */
-
-    &:focus {
-        outline: 0;
-    }
-
-    &:disabled {
-        opacity: .6;
-    }
-}
-
 /*
    Inputs
    ========================================================================== */
@@ -42,11 +17,11 @@ input[type="url"] {
     width: 100%;
     line-height: 1;
     padding: var(--spacing-sm) 12px;
-    height: $input-height-sm;
+    height: var(--input-height-sm);
 
     @media ($mq-md-min) {
         padding: var(--spacing-sm) 18px;
-        height: $input-height-md;
+        height: var(--input-height-md);
     }
 }
 
@@ -112,20 +87,17 @@ textarea {
 select {
     @include input;
     width: 100%;
+    height: var(--input-height-sm);
     line-height: 1;
     background-image: url("../../assets/svg/icons/select-arrow.svg");
-    padding: var(--spacing-sm) 12px;
-    height: $input-height-sm;
     background-position: calc(100% - 12px) 50%;
+    padding: var(--spacing-sm) 12px;
+    cursor: pointer;
 
     @media ($mq-md-min) {
         padding: var(--spacing-sm) 18px;
-        height: $input-height-md;
+        height: var(--input-height-md);
         background-position: calc(100% - 20px) 50%;
-    }
-
-    &:hover {
-        cursor: pointer;
     }
 
     /* sass-lint:disable-all */

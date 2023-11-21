@@ -25,4 +25,8 @@ Variables
     /* Transitions */
     --transition-easing:    cubic-bezier(.4, 0, .2, 1);
     --transition-duration:  .2s;
+
+    /* Forms */
+    --input-height-sm:      to-rem(42);
+    --input-height-md:      to-rem(52);
 }

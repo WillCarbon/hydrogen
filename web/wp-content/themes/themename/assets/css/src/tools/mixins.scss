@@ -68,3 +68,24 @@
         padding-right: var(--gutter-lg);
     }
 }
+
+/*
+  Input
+  ========================================================================== */
+
+@mixin input {
+    font-size: inherit;
+    color: var(--colour--black);
+    background-color: var(--colour-white);
+    background-repeat: no-repeat;
+    border: 1px solid var(--colour--grey-light);
+    border-radius: 0;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:disabled {
+        opacity: .6;
+    }
+}

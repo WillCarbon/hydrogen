@@ -41,6 +41,7 @@
         "gulp-jshint": "*",
         "gulp-postcss": "*",
         "gulp-rename": "*",
+        "gulp-rollup": "^2.17.0",
         "gulp-sass": "*",
         "gulp-sass-lint": "*",
         "gulp-sourcemaps": "*",

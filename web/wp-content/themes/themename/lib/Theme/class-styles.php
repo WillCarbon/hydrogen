@@ -36,7 +36,7 @@ class Styles
      * @TODO: Replace in Carbon Neutral
      */
     public function temp_path( $path, $subdir, $name, $ext, $type )
-    { 
+    {
         $path = get_template_directory_uri() . '/assets/css/dist/';
         return $path;
     }
@@ -67,14 +67,14 @@ class Styles
         if (is_admin()) return;
 
         // Remove default WordPress stylesheet
-        wp_dequeue_style('wp-block-library');
+        // wp_dequeue_style('wp-block-library');
     }
 
     /**
      * Registers an editor stylesheet for the theme.
      */
     public function add_editor_style()
-    {   
+    {
         add_editor_style( Theme::getCss('editor') );
     }
 
@@ -83,7 +83,7 @@ class Styles
      * @TODO: Set up
      */
     public function add_admin_style()
-    {   
+    {
         add_editor_style( Theme::getCss('admin') );
     }
 

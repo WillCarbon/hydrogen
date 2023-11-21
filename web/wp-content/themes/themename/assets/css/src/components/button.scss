@@ -13,17 +13,17 @@
     cursor: pointer;
 
     font-size: to-rem(16);
-    line-height: 18px;
+    line-height: to-rem(18);
     text-decoration: none !important;
     text-align: center;
     color: var(--colour-alpha) !important;
 
     @media ($mq-md-min) {
-        min-height: 46px;
+        min-height: to-rem(46);
         padding: 10px 18px;
 
         font-size: to-rem(18);
-        line-height: 22px;
+        line-height: to-rem(22);
     }
 
     &:focus,
@@ -40,7 +40,7 @@
     }
 
     & + .c-button {
-        margin-left: 6px;
+        margin-left: to-rem(6);
     }
 }
 

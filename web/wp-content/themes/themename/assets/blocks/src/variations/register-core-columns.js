@@ -1,5 +1,6 @@
 import { registerBlockVariation } from '@wordpress/blocks';
 import { SVG, Path } from '@wordpress/primitives';
+// eslint-disable-next-line import/default
 import domReady from '@wordpress/dom-ready';
 
 const columns4ColumnsIcon = (

@@ -8,11 +8,10 @@
     },
     "scripts": {
         "postinstall": "npm i --prefix $npm_package_config_dir",
-        "deploy": "composer install && npm run version && npm run svg-sprite",
+        "deploy": "composer install && npm run version",
         "watch": "npm run watch --prefix $npm_package_config_dir",
         "build": "npm run build --prefix $npm_package_config_dir",
-        "svg-sprite": "npm run svg-sprite --prefix $npm_package_config_dir",
-        "update": "git pull && npm run build && npm run version && npm run svg-sprite",
+        "update": "git pull && npm run build && npm run version",
         "version": "node setup/version.js init"
     },
     "private": true,

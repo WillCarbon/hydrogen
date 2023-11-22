@@ -13,7 +13,8 @@ class Gutenberg
      */
     public function __construct()
     {
-        add_filter( 'allowed_block_types_all',      [$this, 'set_block_types'], 20) ;
+        add_filter( 'allowed_block_types_all',      [$this, 'set_block_types'], 20);
+        add_filter( 'block_categories_all',         [$this, 'add_block_categories'], 20);
     }
 
     /**
@@ -27,8 +28,22 @@ class Gutenberg
             'carbonberg/text-image',
             'carbonberg/form',
             'carbonberg/accordion',
-            'core/image'
+            'carbonberg/example',
+            'core/paragraph'
         );
+    }
+
+    /**
+     * Add block categories
+     */
+    public function add_block_categories( $block_categories )
+    {
+        $block_categories[] = array(
+            'slug'  => 'example',
+            'title' => 'Example'
+        );
+
+        return $block_categories;
     }
 }
 (new Gutenberg());

@@ -16,15 +16,18 @@ class Scripts
      */
     public function __construct()
     {
+        // @TODO: Replace in Carbon Neutral
+        add_filter('carbon/theme/js/path', [$this, 'temp_path'], 10, 5);
+
         // Add Blocks Javascript files
-        add_action('enqueue_block_editor_assets', [$this, 'register_blocks_scripts'], 1);
-        
+        // add_action('enqueue_block_editor_assets', [$this, 'register_blocks_scripts'], 1);
+
         // Add Javascript files
         add_action('wp_enqueue_scripts', [$this, 'register_scripts'], 99);
 
         // Remove JavaScript files
         add_action('wp_enqueue_scripts', [$this, 'deregister_scripts'], 90);
-        
+
         // Apply Async to scripts
         #add_filter('carbon/scripts/async', [$this, 'async_scripts']);
 
@@ -36,20 +39,28 @@ class Scripts
     }
 
     /**
+     * @TODO: Replace in Carbon Neutral
+     */
+    public function temp_path( $path, $subdir, $name, $ext, $type )
+    {
+        $path = get_template_directory_uri() . '/assets/js/dist/';
+        return $path;
+    }
+
+    /**
      * Add Blocks Javascript files
      */
     public function register_blocks_scripts()
     {
         wp_enqueue_script(
             'blocks',
-            Theme::getUri() . '/build/js_blocks.js',
+            Theme::getJs('blocks'),
             ['lodash', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
             Theme::getVersion(),
             true
         );
     }
 
-    
     /**
      * Add Javascript files
      */
@@ -60,14 +71,12 @@ class Scripts
 
         wp_enqueue_script(
             'main',
-            Theme::getUri() . '/build/js_main.js',
-            // Theme::getJs('main'),
+            Theme::getJs('main'),
             false,
             Theme::getVersion(),
             true
         );
     }
-
 
     /**
      * Remove JavaScript files
@@ -80,7 +89,6 @@ class Scripts
         wp_deregister_script('l10n');
     }
 
-
     /**
      * @param array $list
      * @return array
@@ -92,7 +100,6 @@ class Scripts
         return $list;
     }
 
-
     /**
      * @param array $list
      * @return array
@@ -103,7 +110,6 @@ class Scripts
 
         return $list;
     }
-
 
     /**
      * Replace WordPress jQuery

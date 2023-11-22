@@ -98,8 +98,8 @@
             "blockGap": "var(--spacing-md)"
 		},
 		"typography": {
-			"fontFamily": "var(--font-family-alpha)",
-			"fontSize": "var(--font-size-body)",
+			"fontFamily": "var(--font-family--alpha)",
+			"fontSize": "var(--font-size--body)",
 			"fontWeight": "var(--font-weight-regular)",
 			"lineHeight": "var(--line-height)"
 		},

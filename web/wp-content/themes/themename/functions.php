@@ -33,7 +33,7 @@ include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
 /**
  * Load Blocks
  */
-include CARBONPRESS_DIR .'/lib/Blocks/class-example-block.php';
+include CARBONPRESS_DIR .'/lib/Blocks/ExampleBlock/register.php';
 
 /**
  * Load REST Routes
@@ -47,17 +47,17 @@ include CARBONPRESS_DIR .'/lib/Blocks/class-example-block.php';
  * Custom Functions
  */
 
- function my_add_template_to_posts() {
+//  function my_add_template_to_posts() {
 
-    $post_type_object = get_post_type_object( 'post' );
+//     $post_type_object = get_post_type_object( 'post' );
 
-    $post_type_object->template = array(
-        array( 'core/image', array() ),
-        array( 'core/image', array() ),
-    );
+//     $post_type_object->template = array(
+//         array( 'core/image', array() ),
+//         array( 'core/image', array() ),
+//     );
 
-    $post_type_object->template_lock = 'all';
+//     $post_type_object->template_lock = 'all';
 
-}
+// }
 
-add_action( 'init', 'my_add_template_to_posts' );
+// add_action( 'init', 'my_add_template_to_posts' );

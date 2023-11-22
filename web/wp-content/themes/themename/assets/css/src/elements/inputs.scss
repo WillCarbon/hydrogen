@@ -15,13 +15,13 @@ input[type="date"],
 input[type="url"] {
     @include input;
     width: 100%;
-    line-height: 1;
-    padding: var(--spacing-sm) 12px;
     height: var(--input-height-sm);
+    padding: var(--spacing-sm) 12px;
+    line-height: 1;
 
     @media ($mq-md-min) {
-        padding: var(--spacing-sm) 18px;
         height: var(--input-height-md);
+        padding: var(--spacing-sm) 18px;
     }
 }
 
@@ -37,16 +37,15 @@ input[type="checkbox"] {
     min-width: 25px;
     height: 25px;
     margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75% auto;
     cursor: pointer;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 75% auto;
-
     & + label {
+        display: inline-block;
         margin: 0;
         font-size: to-rem(16);
-        display: inline-block;
         vertical-align: middle;
     }
 }
@@ -72,11 +71,11 @@ input[type="checkbox"] {
 
 textarea {
     @include input;
-    padding: var(--spacing-sm);
     display: block;
-    resize: vertical;
-    overflow: auto;
+    padding: var(--spacing-sm);
     max-height: 100px;
+    overflow: auto;
+    resize: vertical;
 }
 
 
@@ -88,10 +87,10 @@ select {
     @include input;
     width: 100%;
     height: var(--input-height-sm);
-    line-height: 1;
+    padding: var(--spacing-sm) 12px;
     background-image: url("../../assets/svg/icons/select-arrow.svg");
     background-position: calc(100% - 12px) 50%;
-    padding: var(--spacing-sm) 12px;
+    line-height: 1;
     cursor: pointer;
 
     @media ($mq-md-min) {
@@ -106,8 +105,8 @@ select {
     }
 
     &:focus::-ms-value {
-        color: var(--colour--black);
         background: none;
+        color: var(--colour--black);
     }
     /* sass-lint:enable-all */
 }

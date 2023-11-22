@@ -13,16 +13,16 @@
    ========================================================================== */
 
 .gfield_label {
-	margin: 0 0 8px;
 	display: block;
+    margin: 0 0 8px;
 }
 
 .gfield_description {
-	margin: 0 0 8px;
 	display: block;
+    margin: 0 0 8px;
+	color: var(--colour--grey);
 	font-size: to-rem(16);
 	line-height: 1.2;
-	color: var(--colour--grey);
 }
 
 /*
@@ -30,17 +30,17 @@
    ========================================================================== */
 
 .gform_fields {
-	margin: 0;
-	padding: 0;
-	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+    margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .gfield {
+    width: 100%;
 	margin-bottom: var(--spacing-md);
-	width: 100%;
 
 	input,
 	textarea {
@@ -67,10 +67,10 @@
 	list-style: none;
 
 	li {
-		margin-bottom: 10px;
-		display: flex;
+        display: flex;
 		align-items: center;
 		width: 100%;
+		margin-bottom: 10px;
 	}
 
 	.gfield_columns_2 & {
@@ -78,7 +78,6 @@
 		flex-wrap: wrap;
 
 		li {
-
 			@media ($mq-md-min) {
 				width: 50%;
 			}
@@ -116,8 +115,8 @@
 .validation_error {
 	margin-bottom: var(--spacing-sm);
 	padding: var(--spacing-sm);
+    background-color: var(--colour-bravo);
 	color: var(--colour--white);
-	background-color: var(--colour-bravo);
 }
 
 .validation_message {

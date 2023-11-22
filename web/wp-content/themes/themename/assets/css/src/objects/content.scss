@@ -6,8 +6,8 @@
 .o-content-editor {
 
     a {
-        text-decoration: underline;
         color: var(--colour-alpha);
+        text-decoration: underline;
 
         &:focus,
         &:hover {
@@ -25,10 +25,8 @@
 
             &::before {
                 content: "\2022";
-
                 position: absolute;
                 left: 5px;
-
                 color: var(--colour-alpha);
             }
         }

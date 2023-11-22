@@ -2,8 +2,8 @@
     "name": "carbonberg/example",
     "title": "Example",
     "description": "An example block.",
-    "category": "media",
-    "icon": "excerpt-view",
+    "category": "example",
+    "icon": "block-default",
     "keywords": ["example"],
     "acf": {
         "mode": "auto",

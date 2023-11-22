@@ -7,13 +7,12 @@
   ========================================================================== */
 
 .o-page-container {
+    visibility: hidden;
     position: relative;
     right: 0;
     overflow: hidden;
     transition: var(--transition-duration) var(--transition-easing);
     transition-property: opacity, visibility;
-
-    visibility: hidden;
     opacity: 0;
 
     &.o-page-container--nav-open {
@@ -31,32 +30,7 @@
     justify-content: space-between;
 
     @media ($mq-sm-max) {
-        flex-flow: column wrap;
         flex-basis: auto;
-    }
-}
-
-/*
-   Main
-   ========================================================================== */
-
-.o-page__main {
-    width: 65%;
-}
-
-/*
-   Sidebar
-   ========================================================================== */
-
-.o-page__sidebar {
-    width: 35%;
-    width: 100%;
-
-    @media ($mq-sm-max) {
-        order: 2;
-    }
-
-    @media ($mq-md-min) and ($mq-xl-max) {
-        width: 30%;
+        flex-flow: column wrap;
     }
 }

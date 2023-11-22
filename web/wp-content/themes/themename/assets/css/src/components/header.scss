@@ -3,10 +3,10 @@
    ========================================================================== */
 
 .c-header {
+    position: relative;
     width: 100%;
     padding: var(--spacing-md);
     background-color: var(--colour--white);
-    position: relative;
 }
 
 .c-header__wrap {
@@ -18,14 +18,13 @@
    ========================================================================== */
 
 .c-header__brand {
-    position: relative;
     display: block;
+    position: relative;
     width: 188px;
     height: 54px;
-    text-indent: -9em;
-
-    /*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
     overflow: hidden;
+    /*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
+    text-indent: -9em;
 
     @media ($mq-sm-min) and ($mq-md-max) {
         width: 30.58%;
@@ -33,7 +32,6 @@
     }
 
     @media ($mq-lg-min) {
-        margin: 2px 0;
         width: 281px;
         height: 80px;
     }

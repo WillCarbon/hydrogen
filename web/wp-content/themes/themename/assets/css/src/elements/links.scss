@@ -3,8 +3,8 @@
    ========================================================================== */
 
 a {
-    color: var(--colour-black);
     transition: color .2s ease-out;
+    color: var(--colour-black);
     text-decoration: none;
 
     &:hover {

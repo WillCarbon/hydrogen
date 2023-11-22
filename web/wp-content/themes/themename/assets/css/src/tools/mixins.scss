@@ -29,12 +29,12 @@
 
 @mixin object-fit-image {
     @include object-fit(cover);
+    display: block;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    display: block;
 }
 
 /*
@@ -44,10 +44,9 @@
 @mixin header-style {
     margin-top: 0;
     margin-bottom: var(--spacing-md);
-
+    color: var(--colour-alpha);
     font-family: var(--font-family-alpha);
     font-weight: var(--font-weight-bold);
-    color: var(--colour-alpha);
 }
 
 /*
@@ -74,12 +73,12 @@
   ========================================================================== */
 
 @mixin input {
-    font-size: inherit;
-    color: var(--colour--black);
-    background-color: var(--colour-white);
-    background-repeat: no-repeat;
     border: 1px solid var(--colour--grey-light);
     border-radius: 0;
+    background-color: var(--colour-white);
+    background-repeat: no-repeat;
+    color: var(--colour--black);
+    font-size: inherit;
 
     &:focus {
         outline: 0;

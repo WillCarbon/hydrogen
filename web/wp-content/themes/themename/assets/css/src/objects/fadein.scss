@@ -3,9 +3,9 @@
    ========================================================================== */
 
 .o-fadein {
-    opacity: 0;
     animation: fadeIn ease-in;
     animation-fill-mode: forwards;
+    opacity: 0;
 
     &--fast {
         animation-duration: .5s;

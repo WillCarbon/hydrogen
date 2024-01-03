@@ -33,6 +33,8 @@ const cssConf = {
 
 // JavaScript config
 const jsConf = {
+    base: 'assets/js/src/',
+    cat: 'assets/js/src/**/',
     src: 'assets/js/src/*.js',
     sub: 'assets/js/src/**/*.js',
     vue: 'assets/js/src/**/*.vue',
@@ -51,6 +53,7 @@ const blocksConf = {
 
 const { src, dest, watch, series, parallel } = require('gulp');
 
+const fs = require('fs');
 const log           = require('fancy-log');
 const tap           = require('gulp-tap');
 const cache         = require('gulp-cached');
@@ -158,6 +161,8 @@ const browserify    = require('browserify');
 const buffer        = require('gulp-buffer');
 const eslint        = require('gulp-eslint');
 const uglify        = require('gulp-uglify');
+const concat    = require('gulp-concat-flatten');
+const sort      = require('gulp-sort');
 
 function lintScripts () {
     return src([jsConf.sub, jsConf.src])
@@ -181,11 +186,10 @@ function devScripts () {
         .pipe(dest(jsConf.build))
 }
 
-function distScriptsTest () {
-    return src(jsConf.sub, {read: false})
+function distScriptFiles () {
+    return src([jsConf.src, '!' + jsConf.sub])
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).bundle();
         }))
         .pipe(buffer())
         .pipe(uglify())
@@ -195,27 +199,24 @@ function distScriptsTest () {
         .pipe(dest(jsConf.build));
 }
 
-function distScripts () {
-    return src(jsConf.sub)
+function distScriptFolders () {
+
+    return src([jsConf.sub, '!' + jsConf.src])
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
         }))
-        .pipe(esbuild({
-            bundle: true,
-            minify: true,
-            outExtension: {
-                '.js': '.min.js'
-            },
-            sourcemap: 'external',
-            loader: {
-                '.js': 'js',
-            },
+        .pipe(sort()) // Recommendation, see below
+        .pipe(uglify())
+        .pipe(concat(jsConf.cat, 'js', {'newLine': '\n\n'}))
+        .pipe(rename( {
+            dirname: '',
+            suffix: '.min'
         }))
-        .pipe(dest(jsConf.build))
+        .pipe(dest(jsConf.build));
 }
 
 /* Styling Task */
-exports.scripting = series(lintScripts, devScripts, distScripts);
+exports.scripting = series(lintScripts, devScripts, distScriptFiles, distScriptFolders);
 
 /* ==========================================================================
    SVG Sprite
@@ -258,7 +259,7 @@ function watching (done) {
     watch(
         [jsConf.src, jsConf.sub, jsConf.vue],
         { events: 'all', ignoreInitial: false },
-        series(lintScripts, devScripts, distScripts, browserSyncReload)
+        series(lintScripts, devScripts, distScriptFiles, distScriptFolders, browserSyncReload)
     );
 
     // .html/.php
@@ -271,10 +272,10 @@ function watching (done) {
     done();
 }
 
-exports.watch = parallel(server, distStyles, distScripts, watching);
+exports.watch = parallel(server, distStyles, distScriptFiles, distScriptFolders, watching);
 
 /* ==========================================================================
    Production 🚀
    ========================================================================== */
 
-exports.build = series(sprite, distStyles, distScripts);
+exports.build = series(sprite, distStyles, distScriptFiles, distScriptFolders);

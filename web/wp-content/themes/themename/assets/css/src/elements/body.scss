@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Body
+   ========================================================================== */
+
+body {
+    color: var(--colour--black);
+    font-family: var(--font-family-alpha);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height);
+
+    &.mce-content-body {
+        margin: 20px;
+    }
+}

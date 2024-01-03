@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.c-hero {
+    position: relative;
+
+    @media ($mq-xs-max) {
+        height: calc(100vh - 137px); /* height of the navbar */
+    }
+
+    @media ($mq-sm-min) and ($mq-lg-max) {
+        height: 400px;
+    }
+
+    @media ($mq-xl-min) and ($mq-xl-max) {
+        height: 510px;
+    }
+
+    @media ($mq-xxl-min) {
+        height: 660px;
+    }
+}
+
+/*
+   Image
+   ========================================================================== */
+
+.c-hero__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+        @include object-fit-image;
+    }
+}
+
+/*
+   Content
+   ========================================================================== */
+
+.c-hero__content {
+    z-index: 10;
+}
+
+/*
+   Title
+   ========================================================================== */
+
+.c-hero__title {
+    color: var(--colour--black);
+}
+
+.c-hero__subtitle {
+    color: var(--colour-black);
+}

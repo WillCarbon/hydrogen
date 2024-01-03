@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Fade in
+   ========================================================================== */
+
+.o-fadein {
+    animation: fadeIn ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    &--fast {
+        animation-duration: .5s;
+    }
+
+    &--1 {
+        animation-duration: 1s;
+    }
+
+    &--2 {
+        animation-duration: 2s;
+    }
+
+    &--3 {
+        animation-duration: 3s;
+    }
+
+    &--delay-1 {
+        animation-delay: .25s;
+    }
+
+    &--delay-2 {
+        animation-delay: .5s;
+    }
+
+    &--delay-3 {
+        animation-delay: .75s;
+    }
+
+    &--delay-4 {
+        animation-delay: 1s;
+    }
+
+    &--delay-5 {
+        animation-delay: 1.25s;
+    }
+
+    &--delay-6 {
+        animation-delay: 1.5s;
+    }
+
+    &--delay-7 {
+        animation-delay: 1.75s;
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

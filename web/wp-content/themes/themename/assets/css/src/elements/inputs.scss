@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Form defaults
+   ========================================================================== */
+
+/*
+   Inputs
+   ========================================================================== */
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="url"] {
+    @include input;
+    width: 100%;
+    height: var(--input-height-sm);
+    padding: var(--spacing-sm) 12px;
+    line-height: 1;
+
+    @media ($mq-md-min) {
+        height: var(--input-height-md);
+        padding: var(--spacing-sm) 18px;
+    }
+}
+
+
+/*
+   Checkboxes / Radio buttons
+   ========================================================================== */
+
+input[type="radio"],
+input[type="checkbox"] {
+    @include input;
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75% auto;
+    cursor: pointer;
+
+    & + label {
+        display: inline-block;
+        margin: 0;
+        font-size: to-rem(16);
+        vertical-align: middle;
+    }
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+
+    &:checked {
+        background-image: url("../../assets/svg/icons/radio.svg");
+    }
+}
+
+input[type="checkbox"] {
+    &:checked {
+        background-image: url("../../assets/svg/icons/checkbox.svg");
+    }
+}
+
+
+/*
+   Textarea
+   ========================================================================== */
+
+textarea {
+    @include input;
+    display: block;
+    padding: var(--spacing-sm);
+    max-height: 100px;
+    overflow: auto;
+    resize: vertical;
+}
+
+
+/*
+   Select
+   ========================================================================== */
+
+select {
+    @include input;
+    width: 100%;
+    height: var(--input-height-sm);
+    padding: var(--spacing-sm) 12px;
+    background-image: url("../../assets/svg/icons/select-arrow.svg");
+    background-position: calc(100% - 12px) 50%;
+    line-height: 1;
+    cursor: pointer;
+
+    @media ($mq-md-min) {
+        padding: var(--spacing-sm) 18px;
+        height: var(--input-height-md);
+        background-position: calc(100% - 20px) 50%;
+    }
+
+    /* sass-lint:disable-all */
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:focus::-ms-value {
+        background: none;
+        color: var(--colour--black);
+    }
+    /* sass-lint:enable-all */
+}

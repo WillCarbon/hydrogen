@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+a {
+    transition: color .2s ease-out;
+    color: var(--colour-black);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--colour-alpha);
+    }
+}

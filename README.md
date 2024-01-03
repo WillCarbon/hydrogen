@@ -1,18 +1,19 @@
 # Project name
 
-Project name is a WordPress website. Possibly a short description of the website and its features.
+Project name is a WordPress website.
 
 The website is built with:
 
-* [WordPress](https://wordpress.com/) 
-* [Carbonara](https://github.com/carboncreativeuk/Carbonara) - Base Theme
-* [Carbon Neutral](https://github.com/carboncreativeuk/CarbonNeutral) - Helper Plugin
+* [WordPress](https://wordpress.com/) and Gutenberg
+* [Hydrogen](https://github.com/carboncreativeuk/Hydrogen) - Base Theme
+* [Carbon Neutral](https://github.com/carboncreativeuk/CarbonNeutral) - Carbon Helper Plugin
+* [Carbonberg](https://github.com/carboncreativeuk/Carbonberg) - Carbon Default Blocks
 
 ### System Requirements
 
-* [PHP](https://www.php.net/) v8.1
+* [PHP](https://www.php.net/) v8.2
 * [Composer](https://getcomposer.org/)
-* [Node](https://nodejs.org/en/) v14
+* [Node](https://nodejs.org/en/) v20
 * [NPM](https://www.npmjs.com/) 
 * [Gulp](https://gulpjs.com/)
 
@@ -37,7 +38,6 @@ The website is built with:
 
 * _styling_ - Compile CSS files
 * _scripting_ - Compile JavaScript files
-* _vendor_ - Copy Vendor files to theme
 * _sprite_ - Regenerate the SVG Sprite files
 * _watch_ - Watch for changes, Local only
 * _version_ - Create theme version number

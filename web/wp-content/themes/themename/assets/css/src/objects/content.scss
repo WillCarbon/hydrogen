@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Editor content styling
+   ========================================================================== */
+
+.mce-content-body,
+.o-content-editor {
+
+    a {
+        color: var(--colour-alpha);
+        text-decoration: underline;
+
+        &:focus,
+        &:hover {
+            color: var(--colour-bravo);
+        }
+    }
+
+    ul {
+        margin: 20px 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            padding-left: 20px;
+
+            &::before {
+                content: "\2022";
+                position: absolute;
+                left: 5px;
+                color: var(--colour-alpha);
+            }
+        }
+    }
+}

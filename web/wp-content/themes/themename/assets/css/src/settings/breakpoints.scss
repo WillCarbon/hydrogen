@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Breakpoints
+   ========================================================================== */
+
+/* Min width */
+$screen-xxs-min:     360px;
+$screen-xs-min:      660px;
+$screen-sm-min:      768px;
+$screen-md-min:      960px;
+$screen-lg-min:      1024px;
+$screen-xl-min:      1366px;
+$screen-xxl-min:     1920px;
+
+/* Max width */
+$screen-xxs-max:     479px;
+$screen-xs-max:      659px;
+$screen-sm-max:      767px;
+$screen-md-max:      959px;
+$screen-lg-max:      1023px;
+$screen-xl-max:      1365px;
+$screen-xxl-max:     1919px;
+
+/* Min media queries */
+$mq-xxs-min:         "min-width: #{$screen-xxs-min}";
+$mq-xs-min:          "min-width: #{$screen-xs-min}";
+$mq-sm-min:          "min-width: #{$screen-sm-min}";
+$mq-md-min:          "min-width: #{$screen-md-min}";
+$mq-lg-min:          "min-width: #{$screen-lg-min}";
+$mq-xl-min:          "min-width: #{$screen-xl-min}";
+$mq-xxl-min:         "min-width: #{$screen-xxl-min}";
+
+/* Max media queries */
+$mq-xxs-max:         "min-width: #{$screen-xxs-max}";
+$mq-xs-max:          "min-width: #{$screen-xs-max}";
+$mq-sm-max:          "min-width: #{$screen-sm-max}";
+$mq-md-max:          "min-width: #{$screen-md-max}";
+$mq-lg-max:          "min-width: #{$screen-lg-max}";
+$mq-xl-max:          "min-width: #{$screen-xl-max}";
+$mq-xxl-max:         "min-width: #{$screen-xxl-max}";

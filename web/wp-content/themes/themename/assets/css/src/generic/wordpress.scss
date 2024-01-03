@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Wordpress
+   ========================================================================== */
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    border: 0;
+    word-wrap: normal !important;
+
+    &:focus {
+        display: block;
+        z-index: 100000;
+        top: 5px;
+        left: 5px;
+        width: auto;
+        height: auto;
+        padding: 15px 23px 14px;
+        clip: auto !important;
+        clip-path: none;
+        background-color: var(--colour-white);
+        color: var(--colour-black);
+        font-size: 1em;
+        line-height: normal;
+        text-decoration: none;
+    }
+}

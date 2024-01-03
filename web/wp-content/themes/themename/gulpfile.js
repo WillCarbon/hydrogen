@@ -25,17 +25,24 @@ const spriteFiles = [
 
 // CSS config
 const cssConf = {
-    src: 'styles/src/*.scss',
-    sub: 'styles/src/**/*.scss',
-    build: 'styles/dist/'
+    src: 'assets/css/src/*.scss',
+    sub: 'assets/css/src/**/*.scss',
+    blocks: 'assets/css/src/blocks/*.scss',
+    build: 'assets/css/dist/',
 };
 
 // JavaScript config
 const jsConf = {
-    src: 'js/src/*.js',
-    sub: 'js/src/**/*.js',
-    vue: 'js/src/**/*.vue',
-    build: 'js/dist/'
+    src: 'assets/js/src/*.js',
+    sub: 'assets/js/src/**/*.js',
+    vue: 'assets/js/src/**/*.vue',
+    build: 'assets/js/dist/'
+};
+
+// Blocks config
+const blocksConf = {
+    src: 'assets/css/src/blocks/*.scss',
+    sub: 'assets/css/src/blocks/*.scss/**/*.scss'
 };
 
 /* ==========================================================================
@@ -80,16 +87,12 @@ function browserSyncReload (done) {
 const autoprefixer  = require('autoprefixer');
 const assets        = require('postcss-assets');
 const cleanCSS      = require('gulp-clean-css');
-const objectfit     = require('postcss-object-fit-images');
 const postcss       = require('gulp-postcss');
-const responsive    = require('postcss-responsive-type');
-const sass          = require('gulp-sass');
+const sass          = require('gulp-sass')(require('sass'));
 const sasslint      = require('gulp-sass-lint');
 
 let processors = [
     autoprefixer,
-    objectfit,
-    responsive,
     assets({
         loadPaths: [
             path.assets + 'images/',
@@ -98,7 +101,7 @@ let processors = [
     })
 ];
 
-/* Style Lint */
+// Style Lint
 function lintStyles () {
     return src([cssConf.sub, cssConf.src])
         .pipe(cache('sasslint'))
@@ -109,7 +112,7 @@ function lintStyles () {
         .pipe(sasslint.failOnError());
 }
 
-/* Development Styling */
+// Development Styling
 function devStyles () {
     return src(cssConf.src)
         .pipe(tap(function (file) {
@@ -125,7 +128,7 @@ function devStyles () {
         .pipe(dest(cssConf.build));
 }
 
-/* Production Styling */
+// Production Styling
 function distStyles () {
     return src(cssConf.src)
         .pipe(rename({
@@ -150,7 +153,7 @@ exports.styling = series(lintStyles, devStyles, distStyles);
    Scripts
    ========================================================================== */
 
-const babelify      = require('babelify');
+const esbuild       = require('gulp-esbuild');
 const browserify    = require('browserify');
 const buffer        = require('gulp-buffer');
 const eslint        = require('gulp-eslint');
@@ -164,26 +167,25 @@ function lintScripts () {
 }
 
 function devScripts () {
-    return src(jsConf.sub, {read: false})
+    return src(jsConf.sub)
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ['@babel/preset-env']
-            })).bundle();
         }))
-        .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(dest(jsConf.build));
+        .pipe(esbuild({
+            bundle: true,
+            sourcemap: 'external',
+            loader: {
+                '.js': 'js',
+            },
+        }))
+        .pipe(dest(jsConf.build))
 }
 
-function distScripts () {
+function distScriptsTest () {
     return src(jsConf.sub, {read: false})
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).transform(babelify.configure({
-                presets: ['@babel/preset-env']
-            })).bundle();
+            file.contents = browserify(file.path, {debug: true}).bundle();
         }))
         .pipe(buffer())
         .pipe(uglify())
@@ -191,6 +193,25 @@ function distScripts () {
             suffix: '.min'
         }))
         .pipe(dest(jsConf.build));
+}
+
+function distScripts () {
+    return src(jsConf.sub)
+        .pipe(tap(function (file) {
+            log.info('📦' + ' bundling: ' + file.path);
+        }))
+        .pipe(esbuild({
+            bundle: true,
+            minify: true,
+            outExtension: {
+                '.js': '.min.js'
+            },
+            sourcemap: 'external',
+            loader: {
+                '.js': 'js',
+            },
+        }))
+        .pipe(dest(jsConf.build))
 }
 
 /* Styling Task */
@@ -228,7 +249,7 @@ exports.sprite = parallel(sprite);
 function watching (done) {
     // Styling
     watch(
-        [cssConf.src, cssConf.sub],
+        [cssConf.src, cssConf.sub, cssConf.blocks],
         { events: 'all', ignoreInitial: false },
         series(lintStyles, devStyles, distStyles)
     );

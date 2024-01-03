@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+
+    @media ($mq-sm-max) {
+
+        &.js-nav-open {
+            overflow-y: hidden;
+        }
+    }
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+p,
+pre,
+label {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+strong,
+b {
+    font-weight: var(--font-weight-bold);
+}
+
+ol,
+ul {
+
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    padding-left: 20px;
+    list-style-position: outside;
+}
+
+hr {
+    margin: 0 0 var(--spacing-md);
+    border: 0;
+    border-top: 1px solid var(--colour--grey);
+}

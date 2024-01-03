@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Colours
+   ========================================================================== */
+
+/*
+ * colour naming convention
+ *
+ * colour-grey-x-light
+ * colour-grey-light
+ * colour-grey-mid-light
+ * colour-grey
+ * colour-grey-mid-dark
+ * colour-grey-dark
+ * colour-grey-x-dark
+ */
+
+:root {
+    --colour-black:                 #151515;
+    --colour-white:                 #fff;
+
+    --colour-grey--light:           #e5e5e5;
+    --colour-grey--mid-light:       #b0b0b0;
+    --colour-grey:                  #7d7d7d;
+    --colour-grey--mid-dark:        #616161;
+    --colour-grey--dark:            #444;
+
+    --colour-alpha--light:          #e58481;
+    --colour-alpha--mid-light:      #e58481;
+    --colour-alpha:                 #ed5955;
+    --colour-alpha--mid-dark:       #b72c28;
+    --colour-alpha--dark:           #b72c28;
+
+    --colour-bravo--light:          #8ff2cb;
+    --colour-bravo--mid-light:      #8ff2cb;
+    --colour-bravo:                 #1aeb92;
+    --colour-bravo--mid-dark:       #109d66;
+    --colour-bravo--dark:           #109d66;
+
+    --colour-charlie--light:        #8cd9e8;
+    --colour-charlie--mid-light:    #8cd9e8;
+    --colour-charlie:               #2da6bd;
+    --colour-charlie--mid-dark:     #158095;
+    --colour-charlie--dark:         #158095;
+
+    --colour-delta--light:          #e25a92;
+    --colour-delta--mid-light:      #e25a92;
+    --colour-delta:                 #88024e;
+    --colour-delta--mid-dark:       #810036;
+    --colour-delta--dark:           #810036;
+
+    --colour-echo--light:           #7fb0ba;
+    --colour-echo--mid-light:       #7fb0ba;
+    --colour-echo:                  #447a85;
+    --colour-echo--mid-dark:        #21535d;
+    --colour-echo--dark:            #21535d;
+}

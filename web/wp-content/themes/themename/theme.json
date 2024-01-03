@@ -1,0 +1,114 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "settings": {
+        "color": {
+			"background": false,
+			"text": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"gradients": [],
+            "defaultPalette": false,
+            "palette": [
+				{
+					"slug": "alpha",
+					"color": "var(--colour-alpha)",
+					"name": "Blue"
+				},
+				{
+					"slug": "bravo",
+					"color": "var(--colour-bravo)",
+					"name": "Pink"
+				},
+				{
+					"slug": "charlie",
+					"color": "var(--colour-charlie)",
+					"name": "Yellow"
+				}
+			]
+        },
+		"dimensions": {
+			"minHeight": false
+		},
+		"layout": {
+            "contentSize": "800px",
+            "wideSize": "1000px"
+        },
+		"typography": {
+			"fontWeight": false,
+			"customFontSize": false,
+			"fontStyle": false,
+			"textTransform": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"dropCap": false,
+			"fontFamilies": [],
+			"fontSizes": []
+		},
+		"blocks": {
+			"carbonberg/text": {
+				"color": {
+					"background": true
+				}
+			},
+			"carbonberg/image": {
+				"color": {
+					"background": true
+				}
+			},
+			"carbonberg/text-image": {
+				"color": {
+					"background": true
+				}
+			},
+			"carbonberg/form": {
+				"color": {
+					"background": true
+				}
+			},
+			"carbonberg/accordion": {
+				"color": {
+					"background": true
+				}
+			},
+			"carbonberg/video": {
+				"color": {
+					"background": true
+				}
+			},
+			"core/button": {
+				"color": {
+					"background": true
+				},
+				"border": {
+					"radius": false
+				}
+			}
+		}
+    },
+	"styles": {
+		"border": {
+            "radius": "var(--border-radius)"
+		},
+		"color": {
+            "background": "var(--colour-white)",
+            "text": "var(--colour-black)"
+        },
+		"spacing": {
+            "blockGap": "var(--spacing-md)"
+		},
+		"typography": {
+			"fontFamily": "var(--font-family--alpha)",
+			"fontSize": "var(--font-size--body)",
+			"fontWeight": "var(--font-weight-regular)",
+			"lineHeight": "var(--line-height)"
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": "0"
+				}
+			}
+		}
+	}
+}

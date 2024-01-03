@@ -1,0 +1,132 @@
+// sass-lint:disable-all
+
+/* ==========================================================================
+   Gravity Forms
+   ========================================================================== */
+
+.gform_wrapper {
+	width: 100%;
+}
+
+/*
+   Labels
+   ========================================================================== */
+
+.gfield_label {
+	display: block;
+    margin: 0 0 8px;
+}
+
+.gfield_description {
+	display: block;
+    margin: 0 0 8px;
+	color: var(--colour--grey);
+	font-size: to-rem(16);
+	line-height: 1.2;
+}
+
+/*
+   Fields
+   ========================================================================== */
+
+.gform_fields {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+    margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gfield {
+    width: 100%;
+	margin-bottom: var(--spacing-md);
+
+	input,
+	textarea {
+		width: 100%;
+	}
+}
+
+.gfield_50 {
+	width: 100%;
+
+	@media ($mq-md-min) {
+		width: 48%;
+	}
+}
+
+/*
+   Checkboxes / Radio buttons
+   ========================================================================== */
+
+.gfield_checkbox,
+.gfield_radio {
+	margin: 0 0 -10px;
+	padding: 0;
+	list-style: none;
+
+	li {
+        display: flex;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.gfield_columns_2 & {
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			@media ($mq-md-min) {
+				width: 50%;
+			}
+		}
+	}
+
+	.gfield_inline & {
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			@media ($mq-md-min) and ($mq-xl-max) {
+				width: 32%;
+			}
+
+			@media ($mq-xxl-min) {
+				width: 16%;
+			}
+		}
+	}
+}
+
+/*
+   Required
+   ========================================================================== */
+
+.gfield_required {
+	color: var(--colour-bravo);
+}
+
+/*
+   Validation
+   ========================================================================== */
+
+.validation_error {
+	margin-bottom: var(--spacing-sm);
+	padding: var(--spacing-sm);
+    background-color: var(--colour-bravo);
+	color: var(--colour--white);
+}
+
+.validation_message {
+	display: block;
+	margin-top: 4px;
+	color: var(--colour-bravo);
+}
+
+.gfield_error .ginput_container {
+	border-left: 4px solid var(--colour-bravo);
+}
+
+// sass-lint:enable-all

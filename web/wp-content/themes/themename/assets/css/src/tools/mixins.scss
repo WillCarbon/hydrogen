@@ -1,0 +1,90 @@
+/* ==========================================================================
+  Mixins
+  ========================================================================== */
+
+/*
+  Clearfix
+  ========================================================================== */
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+/*
+  Object fit polyfill
+  ========================================================================== */
+
+@mixin object-fit($attr) {
+    object-fit: $attr;
+    font-family: "object-fit: #{$attr}";
+}
+
+/*
+  Object fit image
+  ========================================================================== */
+
+@mixin object-fit-image {
+    @include object-fit(cover);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+  Header Styling
+  ========================================================================== */
+
+@mixin header-style {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    color: var(--colour-alpha);
+    font-family: var(--font-family-alpha);
+    font-weight: var(--font-weight-bold);
+}
+
+/*
+  Consistent spacing
+  ========================================================================== */
+
+@mixin mobile-gutter {
+    padding-left: var(--gutter-sm);
+    padding-right: var(--gutter-sm);
+
+    @media ($mq-xxs-min) {
+        padding-left: var(--gutter-md);
+        padding-right: var(--gutter-md);
+    }
+
+    @media ($mq-xl-min) {
+        padding-left: var(--gutter-lg);
+        padding-right: var(--gutter-lg);
+    }
+}
+
+/*
+  Input
+  ========================================================================== */
+
+@mixin input {
+    border: 1px solid var(--colour--grey-light);
+    border-radius: 0;
+    background-color: var(--colour-white);
+    background-repeat: no-repeat;
+    color: var(--colour--black);
+    font-size: inherit;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:disabled {
+        opacity: .6;
+    }
+}

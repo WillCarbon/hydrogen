@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.c-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.c-navigation__list {
+    display: none;
+    flex: 1;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+
+    @media ($mq-md-min) {
+        display: flex;
+    }
+}
+
+.c-navigation__item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+
+    a {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        height: 100%;
+        color: var(--colour-alpha);
+    }
+}
+
+.c-navigation__item--active {
+    a {
+        color: var(--colour-bravo);
+        font-weight: var(--font-weight-medium);
+    }
+}
+
+.c-navigation__link {
+    padding: var(--spacing-sm) 0;
+}

@@ -54,6 +54,7 @@ const { src, dest, watch, series, parallel } = require('gulp');
 const log           = require('fancy-log');
 const tap           = require('gulp-tap');
 const cache         = require('gulp-cached');
+const sourcemaps    = require('gulp-sourcemaps');
 const rename        = require('gulp-rename');
 const fPath         = require('path');
 
@@ -80,22 +81,6 @@ function browserSyncReload (done) {
 }
 
 /* ==========================================================================
-   Clean
-   ========================================================================== */
-
-var rimraf = require('gulp-rimraf');
-
-function cleanStyles () {
-    return src(cssConf.build, { read: false, allowEmpty: true })
-        .pipe(rimraf());
-}
-
-function cleanScripts () {
-    return src(jsConf.build, { read: false, allowEmpty: true })
-        .pipe(rimraf());
-}
-
-/* ==========================================================================
    Styles
    ========================================================================== */
 
@@ -105,7 +90,6 @@ const cleanCSS      = require('gulp-clean-css');
 const postcss       = require('gulp-postcss');
 const sass          = require('gulp-sass')(require('sass'));
 const sasslint      = require('gulp-sass-lint');
-const sourcemaps    = require('gulp-sourcemaps');
 
 let processors = [
     autoprefixer,
@@ -129,8 +113,8 @@ function lintStyles () {
 }
 
 // Development Styling
-function devStyles (dir) {
-    return src(dir)
+function devStyles () {
+    return src(cssConf.src)
         .pipe(tap(function (file) {
             log.info('⚙️ ' + ' compiling: ' + file.path);
         }))
@@ -144,17 +128,9 @@ function devStyles (dir) {
         .pipe(dest(cssConf.build));
 }
 
-function devMainStyles () {
-    return devStyles(cssConf.src)
-}
-
-function devBlockStyles () {
-    return devStyles(cssConf.blocks)
-}
-
 // Production Styling
-function distStyles (dir) {
-    return src(dir)
+function distStyles () {
+    return src(cssConf.src)
         .pipe(rename({
             suffix: '.min'
         }))
@@ -170,20 +146,18 @@ function distStyles (dir) {
         .pipe(browserSync.stream({match: '**/*.css'}));
 }
 
-function distMainStyles () {
-    return distStyles(cssConf.src)
-}
-
-function distBlockStyles () {
-    return distStyles(cssConf.blocks)
-}
+/* Styling Task */
+exports.styling = series(lintStyles, devStyles, distStyles);
 
 /* ==========================================================================
    Scripts
    ========================================================================== */
 
 const esbuild       = require('gulp-esbuild');
+const browserify    = require('browserify');
+const buffer        = require('gulp-buffer');
 const eslint        = require('gulp-eslint');
+const uglify        = require('gulp-uglify');
 
 function lintScripts () {
     return src([jsConf.sub, jsConf.src])
@@ -207,6 +181,20 @@ function devScripts () {
         .pipe(dest(jsConf.build))
 }
 
+function distScriptsTest () {
+    return src(jsConf.sub, {read: false})
+        .pipe(tap(function (file) {
+            log.info('📦' + ' bundling: ' + file.path);
+            file.contents = browserify(file.path, {debug: true}).bundle();
+        }))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(dest(jsConf.build));
+}
+
 function distScripts () {
     return src(jsConf.sub)
         .pipe(tap(function (file) {
@@ -225,6 +213,9 @@ function distScripts () {
         }))
         .pipe(dest(jsConf.build))
 }
+
+/* Styling Task */
+exports.scripting = series(lintScripts, devScripts, distScripts);
 
 /* ==========================================================================
    SVG Sprite
@@ -249,6 +240,8 @@ function sprite () {
     }));
 }
 
+exports.sprite = parallel(sprite);
+
 /* ==========================================================================
    Watch 👀
    ========================================================================== */
@@ -258,7 +251,7 @@ function watching (done) {
     watch(
         [cssConf.src, cssConf.sub, cssConf.blocks],
         { events: 'all', ignoreInitial: false },
-        series(lintStyles, devMainStyles, devBlockStyles)
+        series(lintStyles, devStyles, distStyles)
     );
 
     // JavaScript
@@ -278,10 +271,10 @@ function watching (done) {
     done();
 }
 
-exports.watch = parallel(server, cleanStyles, cleanScripts, devMainStyles, devBlockStyles, devScripts, watching);
+exports.watch = parallel(server, distStyles, distScripts, watching);
 
 /* ==========================================================================
    Production 🚀
    ========================================================================== */
 
-exports.build = series(sprite, cleanStyles, cleanScripts, distMainStyles, distBlockStyles, distScripts);
+exports.build = series(sprite, distStyles, distScripts);

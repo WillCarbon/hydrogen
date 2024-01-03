@@ -46,11 +46,11 @@ class Gutenberg
          */
 
         return array(
-            //'core/paragraph',
+            // 'core/paragraph',
+            // 'carbonpress/example-block',
             'carbonberg/accordion',
             'carbonberg/image',
             'carbonberg/text-image',
-             'carbonpress/example-block',
         );
     }
 

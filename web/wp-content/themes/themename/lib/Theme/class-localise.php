@@ -23,7 +23,7 @@ class Localisation
     public function __construct()
     {
         // Define the translation directory.
-        $this->dir = CARBONBERG_DIR . '/langs';
+        $this->dir = CARBONPRESS_DIR . '/langs';
 
         add_action( 'after_setup_theme', [ $this, 'getTextdomain' ], 1 );
     }
@@ -36,7 +36,7 @@ class Localisation
 	 */
 	public function getTextdomain()
     {
-		load_theme_textdomain( CARBONBERG_TXTDOMAIN, $this->dir );
+		load_theme_textdomain( CARBONPRESS_TXTDOMAIN, $this->dir );
 	}
 
 }

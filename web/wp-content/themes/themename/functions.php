@@ -3,10 +3,11 @@
 /**
  * Theme Settings
  */
-define('CARBONPRESS_FILE',        __FILE__);
-define('CARBONPRESS_URL',         get_stylesheet_directory_uri());
-define('CARBONPRESS_DIR',         get_stylesheet_directory());
-define('CARBONPRESS_ITERATION',   '3.0');
+define('CARBONPRESS_FILE',      __FILE__);
+define('CARBONPRESS_URL',       get_stylesheet_directory_uri());
+define('CARBONPRESS_DIR',       get_stylesheet_directory());
+define('CARBONPRESS_TXTDOMAIN', 'carbonpress');
+define('CARBONPRESS_ITERATION', '3.0');
 
 
 /**
@@ -20,20 +21,21 @@ include CARBONPRESS_DIR .'/lib/Theme/class-acf.php';
 include CARBONPRESS_DIR .'/lib/Theme/class-activation.php';
 include CARBONPRESS_DIR .'/lib/Theme/class-gutenberg.php';
 include CARBONPRESS_DIR .'/lib/Theme/class-images.php';
+include CARBONPRESS_DIR .'/lib/Theme/class-localise.php';
 include CARBONPRESS_DIR .'/lib/Theme/class-setup.php';
 include CARBONPRESS_DIR .'/lib/Theme/class-scripts.php';
 include CARBONPRESS_DIR .'/lib/Theme/class-styles.php';
 include CARBONPRESS_DIR .'/lib/Theme/class-tinymce.php';
 
 /**
- * Load Post Types
+ * Load Custom Post Types
  */
-include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
+#include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
 
 /**
- * Load Blocks
+ * Load Custom Blocks
  */
-include CARBONPRESS_DIR .'/lib/Blocks/ExampleBlock/register.php';
+#include CARBONPRESS_DIR .'/blocks/example-block/register.php';
 
 /**
  * Load REST Routes
@@ -46,18 +48,5 @@ include CARBONPRESS_DIR .'/lib/Blocks/ExampleBlock/register.php';
 /**
  * Custom Functions
  */
-
-//  function my_add_template_to_posts() {
-
-//     $post_type_object = get_post_type_object( 'post' );
-
-//     $post_type_object->template = array(
-//         array( 'core/image', array() ),
-//         array( 'core/image', array() ),
-//     );
-
-//     $post_type_object->template_lock = 'all';
-
-// }
-
-// add_action( 'init', 'my_add_template_to_posts' );
+include( CARBONPRESS_DIR .'/lib/Custom/class-carbon-overwrite.php');
+#include( CARBONPRESS_DIR .'/lib/Custom/class-custom-example.php');

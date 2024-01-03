@@ -20,8 +20,11 @@ define('WP_MEMORY_LIMIT', '200M');
 define('DISALLOW_FILE_MODS', true);
 define('AUTOMATIC_UPDATER_DISABLED', true);
 
+/** Allow ACF Editing */
+define('CARBON_ACF_EDIT', false);
+
 /** Google Maps API Key **/
-define('GMAPS_KEY', '');
+define('CARBON_GMAPS_KEY', '');
 
 /** Debug Mode */
 define('WP_DEBUG', false);
@@ -29,9 +32,6 @@ define('SAVEQUERIES', false);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
 define('SCRIPT_DEBUG', false);
-
-/** Allow ACF Editing */
-define('CARBON_ACF_EDIT', false);
 
 /** Database Connection **/
 define('DB_NAME', '');

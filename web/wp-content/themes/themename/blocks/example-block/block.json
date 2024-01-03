@@ -1,8 +1,8 @@
 {
-    "name": "carbonPress/example",
+    "name": "carbonpress/example-block",
     "title": "Example",
     "description": "A example block.",
-    "category": "media",
+    "category": "carbonpress",
     "icon": "excerpt-view",
     "keywords": ["text", "image"],
     "acf": {

@@ -17,7 +17,7 @@ class Styles
     public function __construct()
     {
         // @TODO: Replace in Carbon Neutral
-        add_filter('carbon/theme/css/path', [$this, 'temp_path'], 10, 5);
+        #add_filter('carbon/theme/css/path', [$this, 'temp_path'], 10, 5);
 
         // Add Stylesheets
         add_action('wp_enqueue_scripts', [$this, 'register_styles'], 99);

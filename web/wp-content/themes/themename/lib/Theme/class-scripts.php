@@ -17,7 +17,7 @@ class Scripts
     public function __construct()
     {
         // @TODO: Replace in Carbon Neutral
-        add_filter('carbon/theme/js/path', [$this, 'temp_path'], 10, 5);
+        #add_filter('carbon/theme/js/path', [$this, 'temp_path'], 10, 5);
 
         // Add Blocks Javascript files
         // add_action('enqueue_block_editor_assets', [$this, 'register_blocks_scripts'], 1);

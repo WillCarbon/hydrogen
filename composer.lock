@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "606235ee0382a60661b5fff4cbb4f505",
+    "content-hash": "2a1096cc37e56df60d3ea8de9486e6c9",
     "packages": [
         {
             "name": "composer/installers",
@@ -153,20 +153,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "6.4.1",
+            "version": "6.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "e87c9c3db68acf73e918e974e53f63c20291b1f1"
+                "reference": "cea8e15d973a3dc55ea336cb0ceb7aeee4ebd286"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/e87c9c3db68acf73e918e974e53f63c20291b1f1",
-                "reference": "e87c9c3db68acf73e918e974e53f63c20291b1f1",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/cea8e15d973a3dc55ea336cb0ceb7aeee4ebd286",
+                "reference": "cea8e15d973a3dc55ea336cb0ceb7aeee4ebd286",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "6.4.1",
+                "johnpbloch/wordpress-core": "6.4.2",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=7.0.0"
             },
@@ -195,20 +195,20 @@
                 "issues": "https://core.trac.wordpress.org/",
                 "source": "https://core.trac.wordpress.org/browser"
             },
-            "time": "2023-11-09T01:33:31+00:00"
+            "time": "2023-12-06T16:30:48+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "6.4.1",
+            "version": "6.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "bc7bf692e02d9d18c81ab167ef6e9036d0becde0"
+                "reference": "00ea636cf89fd17daacbc3862f368a2782267825"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/bc7bf692e02d9d18c81ab167ef6e9036d0becde0",
-                "reference": "bc7bf692e02d9d18c81ab167ef6e9036d0becde0",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/00ea636cf89fd17daacbc3862f368a2782267825",
+                "reference": "00ea636cf89fd17daacbc3862f368a2782267825",
                 "shasum": ""
             },
             "require": {
@@ -216,7 +216,7 @@
                 "php": ">=7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.4.1"
+                "wordpress/core-implementation": "6.4.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -243,7 +243,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2023-11-09T01:33:28+00:00"
+            "time": "2023-12-06T16:30:44+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -301,10 +301,10 @@
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "6.4.1",
+            "version": "6.4.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/6.4.1/en_GB.zip"
+                "url": "https://downloads.wordpress.org/translation/core/6.4.2/en_GB.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -386,12 +386,30 @@
             "homepage": "https://www.advancedcustomfields.com"
         },
         {
-            "name": "satispress/carbonneutral",
-            "version": "3.7.0",
+            "name": "satispress/carbonberg",
+            "version": "0.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/3.7.0",
-                "shasum": "a83158961eb0419a2f47c554ba454623801f9940"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.3.0",
+                "shasum": "475cacf623049b4e109a8b2f7f8147bdd653ee54"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "Carbon Creative",
+                "homepage": "https://www.carboncreative.net/"
+            },
+            "description": "WordPress Plugin to add custom ACF blocks within the Gutenberg editor"
+        },
+        {
+            "name": "satispress/carbonneutral",
+            "version": "4.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.0.0",
+                "shasum": "7b531efd9bae95711d96022de553ff1610cab7ab"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -405,11 +423,11 @@
         },
         {
             "name": "satispress/gravityforms",
-            "version": "2.7.17",
+            "version": "2.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.7.17",
-                "shasum": "f3ed3a514fa6384b1450ae7d8771ead02ac0a444"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.8.0",
+                "shasum": "570791f0e306b6b352672b69016499d06c882716"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -496,34 +514,16 @@
             "homepage": "https://wordpress.org/plugins/gdpr/"
         },
         {
-            "name": "wpackagist-plugin/gutenberg",
-            "version": "16.5.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/16.5.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.16.5.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gutenberg/"
-        },
-        {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.3.10",
+            "version": "5.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.3.10"
+                "reference": "tags/5.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.10.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -551,15 +551,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "7.10.7",
+            "version": "7.11.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.10.7"
+                "reference": "tags/7.11.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.10.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.11.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -569,15 +569,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "21.5",
+            "version": "21.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/21.5"
+                "reference": "tags/21.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -596,5 +596,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

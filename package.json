@@ -12,11 +12,14 @@
         "watch": "npm run watch --prefix $npm_package_config_dir",
         "build": "npm run build --prefix $npm_package_config_dir",
         "update": "git pull && npm run build && npm run version",
-        "version": "node setup/version.js init"
+        "version": "node setup/version.js init",
+        "lang-make-pot": "wp i18n make-pot $npm_package_config_dir/ $npm_package_config_dir/langs/carbonpress.pot --domain=carbonpress",
+        "lang-update-po": "wp i18n update-po $npm_package_config_dir/langs/carbonpress.pot $npm_package_config_dir/langs/\n",
+        "lang-make-mo": "wp i18n make-mo $npm_package_config_dir/langs/"
     },
     "private": true,
     "dependencies": {
-        "fs-extra": "^11.1.0",
+        "fs-extra": "11.1.0",
         "git-revision": "0.0.2"
     }
 }

@@ -8,16 +8,16 @@
 
         $hero       = get_field('hero', $news_id);
         if (!isset($hero['title']) || empty($hero['title'])) {
-            $hero['title']  = 'Latest News';
+            $hero['title']  = __('Latest News', 'carbonpress');
         }
 
     } elseif ( is_404() ) {
 
-        $hero['title']  = 'Page Not Found';
+        $hero['title']  = __('Page Not Found', 'carbonpress');
 
     } elseif ( is_search() ) {
 
-        $hero['title']  = 'Search Results';
+        $hero['title']  = __('Search Results', 'carbonpress');
 
     } elseif ( is_category() || is_tag() ) {
 

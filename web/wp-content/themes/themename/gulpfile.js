@@ -33,16 +33,11 @@ const cssConf = {
 
 // JavaScript config
 const jsConf = {
+    base: 'assets/js/src/',
+    cat: 'assets/js/src/**/',
     src: 'assets/js/src/*.js',
     sub: 'assets/js/src/**/*.js',
-    vue: 'assets/js/src/**/*.vue',
     build: 'assets/js/dist/'
-};
-
-// Blocks config
-const blocksConf = {
-    src: 'assets/css/src/blocks/*.scss',
-    sub: 'assets/css/src/blocks/*.scss/**/*.scss'
 };
 
 /* ==========================================================================
@@ -153,39 +148,45 @@ exports.styling = series(lintStyles, devStyles, distStyles);
    Scripts
    ========================================================================== */
 
-const esbuild       = require('gulp-esbuild');
-const browserify    = require('browserify');
 const buffer        = require('gulp-buffer');
 const eslint        = require('gulp-eslint');
 const uglify        = require('gulp-uglify');
+const concat    = require('gulp-concat-flatten');
+const sort      = require('gulp-sort');
 
 function lintScripts () {
-    return src([jsConf.sub, jsConf.src])
+    return src([jsConf.src, jsConf.sub])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 }
 
-function devScripts () {
-    return src(jsConf.sub)
+function devScriptFiles () {
+    return src([jsConf.src])
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
         }))
-        .pipe(esbuild({
-            bundle: true,
-            sourcemap: 'external',
-            loader: {
-                '.js': 'js',
-            },
-        }))
-        .pipe(dest(jsConf.build))
+        .pipe(buffer())
+        .pipe(dest(jsConf.build));
 }
 
-function distScriptsTest () {
-    return src(jsConf.sub, {read: false})
+function devScriptFolders () {
+    return src([jsConf.sub, '!' + jsConf.src])
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
-            file.contents = browserify(file.path, {debug: true}).bundle();
+        }))
+        .pipe(sort())
+        .pipe(concat(jsConf.cat, 'js', {'newLine': '\n\n'}))
+        .pipe(rename( {
+            dirname: ''
+        }))
+        .pipe(dest(jsConf.build));
+}
+
+function distScriptFiles () {
+    return src([jsConf.src])
+        .pipe(tap(function (file) {
+            log.info('📦' + ' bundling: ' + file.path);
         }))
         .pipe(buffer())
         .pipe(uglify())
@@ -195,27 +196,24 @@ function distScriptsTest () {
         .pipe(dest(jsConf.build));
 }
 
-function distScripts () {
-    return src(jsConf.sub)
+function distScriptFolders () {
+    return src([jsConf.sub, '!' + jsConf.src])
         .pipe(tap(function (file) {
             log.info('📦' + ' bundling: ' + file.path);
         }))
-        .pipe(esbuild({
-            bundle: true,
-            minify: true,
-            outExtension: {
-                '.js': '.min.js'
-            },
-            sourcemap: 'external',
-            loader: {
-                '.js': 'js',
-            },
+        .pipe(sort())
+        .pipe(uglify())
+        .pipe(concat(jsConf.cat, 'js', {'newLine': '\n\n'}))
+        .pipe(rename( {
+            dirname: '',
+            suffix: '.min'
         }))
-        .pipe(dest(jsConf.build))
+        .pipe(dest(jsConf.build));
 }
 
 /* Styling Task */
-exports.scripting = series(lintScripts, devScripts, distScripts);
+exports.scripting = series(lintScripts, devScriptFiles, devScriptFolders, distScriptFiles, distScriptFolders);
+// exports.scripting = series(distScriptFiles);
 
 /* ==========================================================================
    SVG Sprite
@@ -256,9 +254,9 @@ function watching (done) {
 
     // JavaScript
     watch(
-        [jsConf.src, jsConf.sub, jsConf.vue],
+        [jsConf.src, jsConf.sub],
         { events: 'all', ignoreInitial: false },
-        series(lintScripts, devScripts, distScripts, browserSyncReload)
+        series(lintScripts, devScriptFiles, devScriptFolders, distScriptFiles, distScriptFolders, browserSyncReload)
     );
 
     // .html/.php
@@ -271,10 +269,10 @@ function watching (done) {
     done();
 }
 
-exports.watch = parallel(server, distStyles, distScripts, watching);
+exports.watch = parallel(server, distStyles, devScriptFiles, devScriptFolders, distScriptFiles, distScriptFolders, watching);
 
 /* ==========================================================================
    Production 🚀
    ========================================================================== */
 
-exports.build = series(sprite, distStyles, distScripts);
+exports.build = series(sprite, distStyles, devScriptFiles, devScriptFolders, distScriptFiles, distScriptFolders);

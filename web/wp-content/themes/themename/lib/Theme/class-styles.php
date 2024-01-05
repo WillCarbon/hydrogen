@@ -16,9 +16,6 @@ class Styles
      */
     public function __construct()
     {
-        // @TODO: Replace in Carbon Neutral
-        #add_filter('carbon/theme/css/path', [$this, 'temp_path'], 10, 5);
-
         // Add Stylesheets
         add_action('wp_enqueue_scripts', [$this, 'register_styles'], 99);
 
@@ -33,18 +30,10 @@ class Styles
     }
 
     /**
-     * @TODO: Replace in Carbon Neutral
-     */
-    public function temp_path( $path, $subdir, $name, $ext, $type )
-    {
-        $path = get_template_directory_uri() . '/assets/css/dist/';
-        return $path;
-    }
-
-    /**
      * Add Stylesheets
      */
     public function register_styles()
+    : void
     {
         // Dont run on Dashboard
         if (is_admin()) return;
@@ -62,6 +51,7 @@ class Styles
      * Remove Stylesheets
      */
     public function deregister_styles()
+    : void
     {
         // Dont run on Dashboard
         if (is_admin()) return;
@@ -74,6 +64,7 @@ class Styles
      * Registers an editor stylesheet for the theme.
      */
     public function add_editor_style()
+    : void
     {
         add_editor_style( Theme::getCss('editor') );
     }
@@ -83,6 +74,7 @@ class Styles
      * @TODO: Set up
      */
     public function add_admin_style()
+    : void
     {
         add_editor_style( Theme::getCss('admin') );
     }

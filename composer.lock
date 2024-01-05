@@ -405,11 +405,11 @@
         },
         {
             "name": "satispress/carbonneutral",
-            "version": "4.0.0",
+            "version": "4.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.0.0",
-                "shasum": "7b531efd9bae95711d96022de553ff1610cab7ab"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.1.0",
+                "shasum": "a6db49ae1033c7bca20dacb66f42d0b2c89ef975"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -533,15 +533,15 @@
         },
         {
             "name": "wpackagist-plugin/relevanssi",
-            "version": "4.21.2",
+            "version": "4.22.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/relevanssi/",
-                "reference": "tags/4.21.2"
+                "reference": "tags/4.22.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.21.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.22.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

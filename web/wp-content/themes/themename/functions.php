@@ -50,3 +50,5 @@ include CARBONPRESS_DIR .'/lib/Theme/class-tinymce.php';
  */
 include( CARBONPRESS_DIR .'/lib/Custom/class-carbon-overwrite.php');
 #include( CARBONPRESS_DIR .'/lib/Custom/class-custom-example.php');
+
+add_filter('carbon/walker/accessibility', '__return_true');

@@ -16,7 +16,10 @@ class Scripts
      */
     public function __construct()
     {
-        // Add Javascript files
+        // Enqueue Javascript files
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 98);
+
+        // Register Javascript files
         add_action('wp_enqueue_scripts', [$this, 'register_scripts'], 99);
 
         // Remove JavaScript files
@@ -27,9 +30,9 @@ class Scripts
     }
 
     /**
-     * Add Javascript files
+     * Enqueue Javascript files
      */
-    public function register_scripts()
+    public function enqueue_scripts()
     : void
     {
         // Dont run on Dashboard
@@ -41,10 +44,14 @@ class Scripts
             Theme::getJs('modernizr'),
             false,
             Theme::getVersion(),
+            [
+                'strategy' => 'async',
+                'in_footer' => false,
+            ]
         ); */
 
         wp_enqueue_script(
-            'main',
+            'cp-main',
             Theme::getJs('main'),
             false,
             Theme::getVersion(),
@@ -54,6 +61,26 @@ class Scripts
             ]
         );
     }
+
+
+    /**
+     * Register Javascript files
+     */
+    public function register_scripts()
+    : void
+    {
+        wp_enqueue_script(
+            'cp-example',
+            Theme::getJs('example'),
+            false,
+            Theme::getVersion(),
+            [
+                //'strategy' => 'async',
+                'in_footer' => true,
+            ]
+        );
+    }
+
 
     /**
      * Remove JavaScript files
@@ -66,6 +93,7 @@ class Scripts
 
         wp_deregister_script('l10n');
     }
+
 
     /**
      * Replace WordPress jQuery

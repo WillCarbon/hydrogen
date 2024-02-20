@@ -40,10 +40,11 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
     {
         $this->addTaxonomy(self::TAXONOMY, self::POST_TYPE, 'Categories', 'Category', [
             'hierarchical'      => true,
+            'show_in_rest'      => true,
             'rewrite'           => [
                 'slug'              => 'example/cat',
-                'with_front'        => false
-            ]
+                'with_front'        => false,
+            ],
         ]);
 
         $this->addPostType(self::POST_TYPE, 'Examples', 'Example', [

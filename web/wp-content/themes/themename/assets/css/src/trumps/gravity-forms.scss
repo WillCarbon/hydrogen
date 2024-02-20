@@ -5,7 +5,7 @@
    ========================================================================== */
 
 .gform_wrapper {
-	width: 100%;
+    width: 100%;
 }
 
 /*
@@ -13,16 +13,16 @@
    ========================================================================== */
 
 .gfield_label {
-	display: block;
+    display: block;
     margin: 0 0 8px;
 }
 
 .gfield_description {
-	display: block;
+    display: block;
     margin: 0 0 8px;
-	color: var(--colour--grey);
-	font-size: to-rem(16);
-	line-height: 1.2;
+    color: var(--colour--grey);
+    font-size: to-rem(16);
+    line-height: 1.2;
 }
 
 /*
@@ -30,28 +30,28 @@
    ========================================================================== */
 
 .gform_fields {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0;
-	padding: 0;
-	list-style: none;
+    padding: 0;
+    list-style: none;
 }
 
 .gfield {
     width: 100%;
-	margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
 
-	input,
-	textarea {
-		width: 100%;
-	}
+    input,
+    textarea {
+        width: 100%;
+    }
 }
 
 .gfield_50 {
-	width: 100%;
+    width: 100%;
 
-	@media ($mq-md-min) {
+    @media ($mq-md-min) {
 		width: 48%;
 	}
 }
@@ -97,7 +97,7 @@
 				width: 16%;
 			}
 		}
-	}
+    }
 }
 
 /*
@@ -105,7 +105,7 @@
    ========================================================================== */
 
 .gfield_required {
-	color: var(--colour-bravo);
+    color: var(--colour-bravo);
 }
 
 /*
@@ -113,20 +113,20 @@
    ========================================================================== */
 
 .validation_error {
-	margin-bottom: var(--spacing-sm);
-	padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
     background-color: var(--colour-bravo);
-	color: var(--colour--white);
+    color: var(--colour--white);
 }
 
 .validation_message {
-	display: block;
-	margin-top: 4px;
-	color: var(--colour-bravo);
+    display: block;
+    margin-top: 4px;
+    color: var(--colour-bravo);
 }
 
 .gfield_error .ginput_container {
-	border-left: 4px solid var(--colour-bravo);
+    border-left: 4px solid var(--colour-bravo);
 }
 
 // sass-lint:enable-all

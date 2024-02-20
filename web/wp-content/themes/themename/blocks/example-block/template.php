@@ -29,6 +29,13 @@ $class_name = '';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }
+
+// Enqueue stylesheets
+if ( !empty($block['style_handles']) ) {
+    foreach ($block['style_handles'] as $handle) {
+        wp_enqueue_style($handle);
+    }
+}
 ?>
 
 <div class="<?php echo $block_class; ?> <?php echo esc_attr( $class_name ); ?>">

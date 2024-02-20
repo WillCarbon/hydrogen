@@ -30,7 +30,7 @@ include CARBONPRESS_DIR .'/lib/Theme/class-tinymce.php';
 /**
  * Load Custom Post Types
  */
-#include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
+include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
 
 /**
  * Load Custom Blocks

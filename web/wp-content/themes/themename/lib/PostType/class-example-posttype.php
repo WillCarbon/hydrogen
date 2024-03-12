@@ -1,19 +1,20 @@
 <?php
 namespace CarbonPress\PostType;
 
-use Carbon\PostType\BasePostType;
-use Carbon\PostType\PostTypeInterface;
+use Carbon\Helpers\PostType;
+use WP_Query;
 
 /**
  * Class ExamplePostType
  *
  * @package CarbonPress\PostType
  */
-class ExamplePostType extends BasePostType implements PostTypeInterface
+class ExamplePostType
 {
     const POST_TYPE = 'example';
 
     const TAXONOMY  = 'example_cat';
+
 
     /**
      * ExamplePostType constructor.
@@ -38,7 +39,11 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
     public function register()
     : void
     {
-        $this->addTaxonomy(self::TAXONOMY, self::POST_TYPE, 'Categories', 'Category', [
+        // Ensure that Carbon Neutral is installed and activated
+        if ( !class_exists('Carbon\Helpers\PostType') )
+            return;
+
+        PostType::addTaxonomy(self::TAXONOMY, self::POST_TYPE, 'Categories', 'Category', [
             'hierarchical'      => true,
             'show_in_rest'      => true,
             'rewrite'           => [
@@ -47,7 +52,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
             ],
         ]);
 
-        $this->addPostType(self::POST_TYPE, 'Examples', 'Example', [
+        PostType::addPostType(self::POST_TYPE, 'Examples', 'Example', [
             'rewrite'       => [
                 'slug'          => 'examples',
                 'with_front'    => false
@@ -98,7 +103,7 @@ class ExamplePostType extends BasePostType implements PostTypeInterface
     /**
      * Set archives Posts Per Page
      *
-     * @param \WP_Query     $query
+     * @param WP_Query $query
      * @return void
      */
     public function set_posts_per_page($query)

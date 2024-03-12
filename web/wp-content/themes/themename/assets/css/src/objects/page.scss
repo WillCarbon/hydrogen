@@ -6,31 +6,21 @@
   Page container
   ========================================================================== */
 
-.o-page-container {
-    visibility: hidden;
-    position: relative;
-    right: 0;
-    overflow: hidden;
-    transition: var(--transition-duration) var(--transition-easing);
-    transition-property: opacity, visibility;
-    opacity: 0;
+//.o-page-container {
+//}
 
-    &.o-page-container--nav-open {
-        visibility: visible;
-        opacity: 1;
-    }
-}
 
 /*
    Page
    ========================================================================== */
 
-.o-page {
-    display: flex;
-    justify-content: space-between;
+//.o-page-content {
+//}
 
-    @media ($mq-sm-max) {
-        flex-basis: auto;
-        flex-flow: column wrap;
-    }
-}
+
+/*
+   Page
+   ========================================================================== */
+
+//.o-page-sidebar {
+//}

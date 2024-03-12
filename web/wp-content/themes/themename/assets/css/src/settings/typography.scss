@@ -22,9 +22,9 @@
     --font-size-heading-6:  #{fluid(16px, 20px)};
 
     /* Font sizes - Body */
-    --font-size-body--sm:   to-rem(14);
+    --font-size-body--sm:   #{to-rem(14)};
     --font-size-body:       100%;
-    --font-size-body--lg:   to-rem(18);
+    --font-size-body--lg:   #{to-rem(18)};
 
     --line-height:          1.5;
 }

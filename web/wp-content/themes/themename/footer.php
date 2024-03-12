@@ -6,7 +6,7 @@
 
     </main>
 
-    <footer class="c-footer">
+    <footer class="c-footer o-wrapper-parent">
         <div class="c-footer__wrap o-wrapper-centre">
 
             <div class="c-footer-menu">

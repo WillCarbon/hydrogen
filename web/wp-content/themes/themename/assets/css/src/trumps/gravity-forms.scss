@@ -20,7 +20,7 @@
 .gfield_description {
     display: block;
     margin: 0 0 8px;
-    color: var(--colour--grey);
+    color: var(--colour-grey);
     font-size: to-rem(16);
     line-height: 1.2;
 }
@@ -116,7 +116,7 @@
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-sm);
     background-color: var(--colour-bravo);
-    color: var(--colour--white);
+    color: var(--colour-white);
 }
 
 .validation_message {

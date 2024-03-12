@@ -35,15 +35,15 @@ include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
 /**
  * Load Custom Blocks
  */
-#include CARBONPRESS_DIR .'/blocks/example-block/register.php';
+//include CARBONPRESS_DIR .'/blocks/example-block/register.php';
 
 /**
  * Load REST Routes
  *
  * You need to update REST_NAMESPACE in REST\REST.php
  */
-#include( CARBONPRESS_DIR .'/lib/REST/class-rest.php');
-#include( CARBONPRESS_DIR .'/lib/REST/class-exampleaction.php');
+//include( CARBONPRESS_DIR .'/lib/REST/class-rest.php');
+//include( CARBONPRESS_DIR .'/lib/REST/class-exampleaction.php');
 
 /**
  * Custom Functions

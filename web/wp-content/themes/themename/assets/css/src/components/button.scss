@@ -27,13 +27,13 @@
     &:hover {
         border-color: var(--colour-alpha);
         background-color: var(--colour-alpha);
-        color: var(--colour--white) !important;
+        color: var(--colour-white) !important;
     }
 
     &:active {
         border-color: var(--colour-bravo);
         background-color: var(--colour-bravo);
-        color: var(--colour--white) !important;
+        color: var(--colour-white) !important;
     }
 
     & + .c-button {
@@ -48,18 +48,18 @@
 .c-button--alpha {
     border-color: var(--colour-alpha);
     background-color: var(--colour-alpha);
-    color: var(--colour--white) !important;
+    color: var(--colour-white) !important;
 
     &:focus,
     &:hover {
         border-color: var(--colour-bravo);
         background-color: var(--colour-bravo);
-        color: var(--colour--white) !important;
+        color: var(--colour-white) !important;
     }
 
     &:active {
         border-color: var(--colour-bravo);
         background-color: var(--colour-bravo);
-        color: var(--colour--white) !important;
+        color: var(--colour-white) !important;
     }
 }

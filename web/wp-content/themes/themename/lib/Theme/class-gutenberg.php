@@ -49,7 +49,7 @@ class Gutenberg
             // 'core/paragraph',
             'carbonberg/accordion',
             'carbonberg/image',
-            //'carbonberg/text-image',
+            'carbonberg/text-image',
             // 'carbonpress/example-block',
             'gravityforms/form',
         );

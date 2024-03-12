@@ -40,8 +40,8 @@
     $hx=0;
 ?>
 
-<div class="c-hero">
-    <div class="c-hero__wrap">
+<div class="c-hero o-wrapper-parent">
+    <div class="c-hero__wrap o-wrapper-centre">
         <h1 class="c-hero__title o-fadein o-fadein--1">
             <?php echo esc_html($hero['title']); ?>
         </h1>

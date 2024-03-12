@@ -35,24 +35,24 @@
     border: 2px solid var(--colour-alpha);
     border-radius: var(--border-radius);
     background-color: var(--colour-alpha);
-    color: var(--colour--white);
+    color: var(--colour-white);
     font-size: #{fluid(16px, 20px)};
     text-align: center;
     text-decoration: none;
 
     &:hover,
     &:active {
-        background-color: var(--colour--white);
+        background-color: var(--colour-white);
         color: var(--colour-alpha);
     }
 
     .c-pagination__item--active & {
-        background-color: var(--colour--white);
+        background-color: var(--colour-white);
         color: var(--colour-alpha);
 
         &:hover,
         &:active {
-            background-color: var(--colour--white);
+            background-color: var(--colour-white);
             color: var(--colour-alpha);
         }
     }

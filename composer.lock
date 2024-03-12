@@ -387,11 +387,11 @@
         },
         {
             "name": "satispress/carbonberg",
-            "version": "0.4.1",
+            "version": "0.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.4.1",
-                "shasum": "6cb46c572aec3758fe74cd3caa585f1961c5a29a"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.4.3",
+                "shasum": "3d43cb807e94333032da0088a482bf72231e2c62"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -423,11 +423,11 @@
         },
         {
             "name": "satispress/gravityforms",
-            "version": "2.8.3",
+            "version": "2.8.5",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.8.3",
-                "shasum": "ab38991aa16e1a714c3aa93b9150d58d4abe02f1"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.8.5",
+                "shasum": "a847655d2f42e2420bb922e5c869f2b65e5b90e4"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -551,15 +551,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "7.11.3",
+            "version": "7.11.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.11.3"
+                "reference": "tags/7.11.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.11.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.11.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -569,15 +569,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "22.1",
+            "version": "22.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/22.1"
+                "reference": "tags/22.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.22.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.22.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

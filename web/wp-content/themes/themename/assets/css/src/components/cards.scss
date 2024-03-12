@@ -24,9 +24,9 @@
     flex-flow: column;
     justify-content: space-between;
     min-width: 300px;
-    border: 1px solid var(--colour--grey-light);
+    border: 1px solid var(--colour-grey--mid-light);
     border-radius: var(--border-radius);
-    background-color: var(--colour--grey-x-light);
+    background-color: var(--colour-grey--light);
 
 
     &:only-of-type {

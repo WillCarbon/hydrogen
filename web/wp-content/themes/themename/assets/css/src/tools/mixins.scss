@@ -73,11 +73,11 @@
   ========================================================================== */
 
 @mixin input {
-    border: 1px solid var(--colour--grey-light);
+    border: 1px solid var(--colour-grey--light);
     border-radius: 0;
     background-color: var(--colour-white);
     background-repeat: no-repeat;
-    color: var(--colour--black);
+    color: var(--colour-black);
     font-size: inherit;
 
     &:focus {

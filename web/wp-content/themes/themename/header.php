@@ -21,6 +21,10 @@
 
 <body <?php body_class(); ?>>
 
+    <a href="#site-content" class="screen-reader-text">
+        <?php echo __('Skip to Content', 'carbonpress'); ?>
+    </a>
+
     <header class="c-header o-wrapper-parent">
         <div class="c-header__wrap o-wrapper-centre">
             <div class="c-header__brand">
@@ -40,4 +44,4 @@
         </div>
     </header>
 
-    <main>
+    <main id="site-content" class="o-page-container">

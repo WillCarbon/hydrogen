@@ -29,11 +29,11 @@
 
     &:hover {
         .c-nav-toggle__burger {
-            background-color: var(--colour-charlie);
+            background-color: var(--colour-bravo);
 
             &::before,
             &::after {
-                background-color: var(--colour-charlie);
+                background-color: var(--colour-bravo);
             }
         }
     }
@@ -46,7 +46,7 @@
     height: 2px;
     margin-left: -15px;
     transition: background-color var(--transition-duration) var(--transition-easing);
-    background-color: var(--colour-bravo);
+    background-color: var(--colour-black);
 
     &::before,
     &::after {
@@ -57,7 +57,7 @@
         width: 100%;
         height: 2px;
         transition: all var(--transition-duration) var(--transition-easing);
-        background-color: var(--colour-bravo);
+        background-color: var(--colour-black);
     }
 
     &::before {
@@ -78,12 +78,12 @@
 
         &::before {
             transform: rotate(45deg);
-            background-color: var(--colour-charlie);
+            background-color: var(--colour-bravo);
         }
 
         &::after {
             transform: rotate(-45deg);
-            background-color: var(--colour-charlie);
+            background-color: var(--colour-bravo);
         }
     }
 }

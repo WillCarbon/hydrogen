@@ -6,7 +6,7 @@
     margin-top: var(--gutter-sm);
     margin-bottom: var(--gutter-sm);
 
-    &.o-background {
+    &.has-background {
         margin-top: 0;
         margin-bottom: 0;
         padding-top: var(--gutter-sm);
@@ -17,7 +17,7 @@
         margin-top: var(--gutter-md);
         margin-bottom: var(--gutter-md);
 
-        &.o-background {
+        &.has-background {
             margin-top: 0;
             margin-bottom: 0;
             padding-top: var(--gutter-md);
@@ -29,7 +29,7 @@
         margin-top: var(--gutter-lg);
         margin-bottom: var(--gutter-lg);
 
-        &.o-background {
+        &.has-background {
             margin-top: 0;
             margin-bottom: 0;
             padding-top: var(--gutter-lg);

@@ -4,21 +4,26 @@
 
 .c-hero {
     position: relative;
+    background-color: var(--colour-grey--light);
+}
+
+.c-hero__wrap {
+    display: flex;
 
     @media ($mq-xs-max) {
         height: calc(100vh - 137px); /* height of the navbar */
     }
 
     @media ($mq-sm-min) and ($mq-lg-max) {
-        height: 400px;
+        height: 300px;
     }
 
     @media ($mq-xl-min) and ($mq-xl-max) {
-        height: 510px;
+        height: 400px;
     }
 
     @media ($mq-xxl-min) {
-        height: 660px;
+        height: 450px;
     }
 }
 
@@ -27,9 +32,11 @@
    ========================================================================== */
 
 .c-hero__image {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 0;
 
     img {
@@ -42,7 +49,7 @@
    ========================================================================== */
 
 .c-hero__content {
-    z-index: 10;
+    margin: auto 0 0;
 }
 
 /*

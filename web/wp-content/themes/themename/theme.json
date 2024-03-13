@@ -13,17 +13,27 @@
 				{
 					"slug": "alpha",
 					"color": "var(--colour-alpha)",
-					"name": "Blue"
+					"name": "Red"
 				},
 				{
 					"slug": "bravo",
 					"color": "var(--colour-bravo)",
-					"name": "Pink"
+					"name": "Blue"
 				},
 				{
 					"slug": "charlie",
 					"color": "var(--colour-charlie)",
-					"name": "Yellow"
+					"name": "Green"
+				},
+				{
+					"slug": "delta",
+					"color": "var(--colour-charlie)",
+					"name": "Purple"
+				},
+				{
+					"slug": "echo",
+					"color": "var(--colour-charlie)",
+					"name": "Blue alt"
 				}
 			]
         },

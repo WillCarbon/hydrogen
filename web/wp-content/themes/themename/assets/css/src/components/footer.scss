@@ -3,9 +3,47 @@
    ========================================================================== */
 
 .c-footer {
-    background-color: var(--colour-black);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+
+    background-color: var(--colour-alpha--dark);
+}
+
+.c-footer__wrap {
+    color: var(--colour-white);
 
     a {
         text-decoration: underline;
+        color: var(--colour-white);
+
+        &:focus,
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
+
+
+/*
+   Navigation
+   ========================================================================== */
+
+// .c-footer-menu {
+//
+// }
+
+// .c-footer-nav {
+//
+// }
+
+.c-footer-nav__list {
+    list-style: disc;
+}
+
+// .c-footer-nav__item {
+//
+// }
+
+// .c-footer-nav__link {
+//
+// }

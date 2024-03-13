@@ -32,10 +32,10 @@ $mq-xxl-min:         "min-width: #{$screen-xxl-min}";
 $mq-xxxl-min:        "min-width: #{$screen-xxxl-min}";
 
 /* Max media queries */
-$mq-xxs-max:         "min-width: #{$screen-xxs-max}";
-$mq-xs-max:          "min-width: #{$screen-xs-max}";
-$mq-sm-max:          "min-width: #{$screen-sm-max}";
-$mq-md-max:          "min-width: #{$screen-md-max}";
-$mq-lg-max:          "min-width: #{$screen-lg-max}";
-$mq-xl-max:          "min-width: #{$screen-xl-max}";
-$mq-xxl-max:         "min-width: #{$screen-xxl-max}";
+$mq-xxs-max:         "max-width: #{$screen-xxs-max}";
+$mq-xs-max:          "max-width: #{$screen-xs-max}";
+$mq-sm-max:          "max-width: #{$screen-sm-max}";
+$mq-md-max:          "max-width: #{$screen-md-max}";
+$mq-lg-max:          "max-width: #{$screen-lg-max}";
+$mq-xl-max:          "max-width: #{$screen-xl-max}";
+$mq-xxl-max:         "max-width: #{$screen-xxl-max}";

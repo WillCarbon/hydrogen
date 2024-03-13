@@ -5,13 +5,15 @@
 .c-header {
     position: relative;
     width: 100%;
-    padding: var(--spacing-md);
-    background-color: var(--colour-white);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    background-color: var(--colour-alpha);
 }
 
 .c-header__wrap {
     display: flex;
 }
+
 
 /*
    Logo
@@ -25,6 +27,12 @@
     overflow: hidden;
     /*background: inline("../../assets/svg/brand-elements/logo.svg") no-repeat 0/contain;*/
     text-indent: -9em;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 
     @media ($mq-sm-min) and ($mq-md-max) {
         width: 30.58%;

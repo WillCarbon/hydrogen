@@ -405,11 +405,11 @@
         },
         {
             "name": "satispress/carbonneutral",
-            "version": "4.4.0",
+            "version": "4.5.1",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.4.0",
-                "shasum": "1eeded8a7a05ae24f3c816b9d9316b0fdd5c0574"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.5.1",
+                "shasum": "e931b4797f5665a8a47239a84cf0ae7b08bf59e9"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

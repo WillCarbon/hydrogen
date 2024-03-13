@@ -19,8 +19,7 @@ path.svgDest    = 'assets/svg/sprites/';
 
 // SVG Merged Stacks
 const spriteFiles = [
-    path.svgPath + 'icons/*.svg',
-    path.svgPath + 'social/*.svg'
+    path.svgPath + 'icons/*.svg'
 ];
 
 // CSS config

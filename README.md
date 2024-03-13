@@ -1,6 +1,6 @@
-# Project name
+# Project Name
 
-Project name is a WordPress website.
+Project Name is a WordPress website.
 
 The website is built with:
 
@@ -32,6 +32,9 @@ The website is built with:
 * `npm run watch` Runs _gulp watch_
 * `npm run build` Runs _gulp build_
 * `npm run update` Runs _git pull_ and _gulp build_
+
+#### Additional Language Scripts
+
 
 
 ### Available Gulp Tasks

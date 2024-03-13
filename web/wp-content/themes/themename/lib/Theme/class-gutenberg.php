@@ -29,7 +29,7 @@ class Gutenberg
      * @param \WP_Block_Editor_Context $editor_context
      * @return array
      */
-    public function set_block_types( bool|array $allowed_block_types, \WP_Block_Editor_Context $editor_context )
+    public function set_block_types( mixed $allowed_block_types, \WP_Block_Editor_Context $editor_context )
     : array
     {
         /** Example: Custom blocks list for Blog Posts */
@@ -68,7 +68,7 @@ class Gutenberg
     {
         array_unshift($block_categories, array(
             'slug'  => 'carbonpress',
-            'title' => 'themename'
+            'title' => 'Project Name'
         ));
 
         return $block_categories;

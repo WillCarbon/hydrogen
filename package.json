@@ -14,7 +14,7 @@
         "update": "git pull && npm run build && npm run version",
         "version": "node setup/version.js init",
         "lang-make-pot": "wp i18n make-pot $npm_package_config_dir/ $npm_package_config_dir/langs/carbonpress.pot --domain=carbonpress",
-        "lang-update-po": "wp i18n update-po $npm_package_config_dir/langs/carbonpress.pot $npm_package_config_dir/langs/\n",
+        "lang-update-po": "wp i18n update-po $npm_package_config_dir/langs/carbonpress.pot $npm_package_config_dir/langs/",
         "lang-make-mo": "wp i18n make-mo $npm_package_config_dir/langs/"
     },
     "private": true,

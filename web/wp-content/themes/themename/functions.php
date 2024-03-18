@@ -30,12 +30,16 @@ include CARBONPRESS_DIR .'/lib/Theme/class-tinymce.php';
 /**
  * Load Custom Post Types
  */
-include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
+include CARBONPRESS_DIR .'/lib/PostType/class-post-posttype.php';
+include CARBONPRESS_DIR .'/lib/PostType/class-page-posttype.php';
+//include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
 
 /**
  * Load Custom Blocks
  */
-//include CARBONPRESS_DIR .'/blocks/example-block/register.php';
+include CARBONPRESS_DIR .'/blocks/hero/register.php';
+//include CARBONPRESS_DIR .'/blocks/example-image/register.php';
+//include CARBONPRESS_DIR .'/blocks/example-text/register.php';
 
 /**
  * Load REST Routes
@@ -50,5 +54,3 @@ include CARBONPRESS_DIR .'/lib/PostType/class-example-posttype.php';
  */
 include( CARBONPRESS_DIR .'/lib/Custom/class-carbon-overwrite.php');
 #include( CARBONPRESS_DIR .'/lib/Custom/class-custom-example.php');
-
-add_filter('carbon/walker/accessibility', '__return_true');

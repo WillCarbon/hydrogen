@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a1096cc37e56df60d3ea8de9486e6c9",
+    "content-hash": "1a1e78e5d636b9a18104fe36deb4118c",
     "packages": [
         {
             "name": "composer/installers",
@@ -387,11 +387,11 @@
         },
         {
             "name": "satispress/carbonberg",
-            "version": "0.4.3",
+            "version": "0.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.4.3",
-                "shasum": "3d43cb807e94333032da0088a482bf72231e2c62"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.5.0",
+                "shasum": "21057d794792fbcf9385de8de47b665fb6e00b7e"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

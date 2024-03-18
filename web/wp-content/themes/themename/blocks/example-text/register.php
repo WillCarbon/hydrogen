@@ -1,10 +1,11 @@
 <?php
 
 /**
- * Class ExampleText
+ * Class CP_Block_Example_Text
  */
-if ( ! class_exists( 'ExampleText' ) ) {
-    class ExampleText extends CB_Base_Block
+if ( ! class_exists( 'CP_Block_Example_Text' ) ) {
+
+    class CP_Block_Example_Text extends CB_Base_Block
     {
         /**
          * ExampleBlock constructor.
@@ -58,6 +59,6 @@ if ( ! class_exists( 'ExampleText' ) ) {
         }
 
     }
-    (new ExampleText());
+    (new CP_Block_Example_Text());
 
 }

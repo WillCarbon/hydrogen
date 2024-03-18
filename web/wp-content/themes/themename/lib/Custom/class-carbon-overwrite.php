@@ -29,7 +29,7 @@ class CarbonOverwrite
     : array
     {
         return [
-            'facebook', 'twitter', 'linkedin', 'email'
+            'facebook', 'x', 'linkedin', 'email'
         ];
     }
 

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Class ExampleBlock
+ * Class CP_Block_Example_Image
  */
-if ( ! class_exists( 'ExampleImage' ) ) {
-    class ExampleImage extends CB_Base_Block
+if ( ! class_exists( 'CP_Block_Example_Image' ) ) {
+    class CP_Block_Example_Image extends CB_Base_Block
     {
         /**
          * ExampleBlock constructor.
@@ -58,6 +58,6 @@ if ( ! class_exists( 'ExampleImage' ) ) {
         }
 
     }
-    (new ExampleImage());
+    (new CP_Block_Example_Image());
 
 }

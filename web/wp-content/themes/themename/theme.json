@@ -27,12 +27,12 @@
 				},
 				{
 					"slug": "delta",
-					"color": "var(--colour-charlie)",
+					"color": "var(--colour-delta)",
 					"name": "Purple"
 				},
 				{
 					"slug": "echo",
-					"color": "var(--colour-charlie)",
+					"color": "var(--colour-echo)",
 					"name": "Blue alt"
 				}
 			]

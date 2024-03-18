@@ -37,7 +37,7 @@ include CARBONPRESS_DIR .'/lib/PostType/class-page-posttype.php';
 /**
  * Load Custom Blocks
  */
-include CARBONPRESS_DIR .'/blocks/hero/register.php';
+//include CARBONPRESS_DIR .'/blocks/hero/register.php';
 //include CARBONPRESS_DIR .'/blocks/example-image/register.php';
 //include CARBONPRESS_DIR .'/blocks/example-text/register.php';
 

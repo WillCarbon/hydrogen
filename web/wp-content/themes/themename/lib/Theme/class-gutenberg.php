@@ -43,7 +43,7 @@ class Gutenberg
          */
 
         return array(
-            // 'core/paragraph',
+             'core/paragraph',
             'carbonberg/accordion',
             'carbonberg/image',
             'carbonberg/text-image',

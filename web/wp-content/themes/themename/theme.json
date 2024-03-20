@@ -27,12 +27,12 @@
 				},
 				{
 					"slug": "delta",
-					"color": "var(--colour-charlie)",
+					"color": "var(--colour-delta)",
 					"name": "Purple"
 				},
 				{
 					"slug": "echo",
-					"color": "var(--colour-charlie)",
+					"color": "var(--colour-echo)",
 					"name": "Blue alt"
 				}
 			]
@@ -41,8 +41,8 @@
 			"minHeight": false
 		},
 		"layout": {
-            "contentSize": "800px",
-            "wideSize": "1000px"
+            "contentSize": "var(--layout-size-content)",
+            "wideSize": "var(--layout-size-wide)"
         },
 		"typography": {
 			"fontWeight": false,
@@ -56,6 +56,33 @@
 			"fontSizes": []
 		},
 		"blocks": {
+			"carbonberg/accordion": {
+				"color": {
+					"background": true,
+                    "palette": [
+                        {
+                            "slug": "grey-light",
+                            "color": "var(--colour-grey--light)",
+                            "name": "Light Grey"
+                        },
+                        {
+                            "slug": "alpha",
+                            "color": "var(--colour-alpha)",
+                            "name": "Red"
+                        },
+                        {
+                            "slug": "bravo",
+                            "color": "var(--colour-bravo)",
+                            "name": "Blue"
+                        },
+                        {
+                            "slug": "charlie",
+                            "color": "var(----colour-charlie)",
+                            "name": "Charlie"
+                        }
+                    ]
+				}
+			},
 			"carbonberg/text": {
 				"color": {
 					"background": true
@@ -72,11 +99,6 @@
 				}
 			},
 			"carbonberg/form": {
-				"color": {
-					"background": true
-				}
-			},
-			"carbonberg/accordion": {
 				"color": {
 					"background": true
 				}

@@ -13,12 +13,11 @@
 
 $block_name     = 'example-image';
 $block_class    = ['o-block', 'b-example-image'];
-$wrap_class     = ['o-block-wrap', 'b-example-image__wrap'];
+$wrap_class     = ['o-block-wrap', 'b-example-image__wrap', 'o-content-editor'];
 
 // Grab ACF fields
-$image = get_field('image');
-$image = wp_get_attachment_image($image, 'medium');
-if ( empty($image) )
+$text = get_field('content');
+if ( empty($text) )
     return;
 
 // Optional anchor
@@ -51,7 +50,7 @@ if ( !empty($block['style_handles']) ) {
 <section<?php echo $anchor; ?> class="<?php echo implode(' ', $block_class); ?>">
     <div class="<?php echo implode(' ', $wrap_class); ?>">
 
-        <?php echo $image; ?>
+        <?php echo $text; ?>
 
     </div>
 </section>

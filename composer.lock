@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a1096cc37e56df60d3ea8de9486e6c9",
+    "content-hash": "1a1e78e5d636b9a18104fe36deb4118c",
     "packages": [
         {
             "name": "composer/installers",
@@ -387,11 +387,11 @@
         },
         {
             "name": "satispress/carbonberg",
-            "version": "0.4.3",
+            "version": "0.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.4.3",
-                "shasum": "3d43cb807e94333032da0088a482bf72231e2c62"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.8.0",
+                "shasum": "89842b8b4ee34921a210ed052fd40f0d30b70ed1"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -405,11 +405,11 @@
         },
         {
             "name": "satispress/carbonneutral",
-            "version": "4.5.1",
+            "version": "4.5.2",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.5.1",
-                "shasum": "e931b4797f5665a8a47239a84cf0ae7b08bf59e9"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.5.2",
+                "shasum": "e392b4513ac29e1d930b82cd4aa7027cd6b4a841"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -569,15 +569,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "22.2",
+            "version": "22.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/22.2"
+                "reference": "tags/22.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.22.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.22.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

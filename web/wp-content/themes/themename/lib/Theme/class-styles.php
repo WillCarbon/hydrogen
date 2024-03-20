@@ -99,13 +99,13 @@ class Styles
     public function add_admin_style()
     : void
     {
-        //wp_enqueue_style(
-        //    'cp-admin',
-        //    Theme::getCss('admin'),
-        //    false,
-        //    Theme::getVersion(),
-        //    'all'
-        //);
+        wp_enqueue_style(
+            'cp-admin',
+            Theme::getCss('admin'),
+            false,
+            Theme::getVersion(),
+            'all'
+        );
 
         //wp_enqueue_style(
         //    'cp-blocks',

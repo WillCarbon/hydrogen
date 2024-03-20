@@ -1,4 +1,2 @@
 
-    <div class="o-content-editor">
-        <?php the_content(); ?>
-    </div>
+    <?php the_content(); ?>

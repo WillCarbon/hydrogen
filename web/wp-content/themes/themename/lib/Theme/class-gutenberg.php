@@ -13,9 +13,15 @@ class Gutenberg
      */
     public function __construct()
     {
+        // Lock the homepage blocks
         add_filter( 'allowed_block_types_all', [$this, 'set_block_types'], 20, 2);
 
+        // Lock the homepage blocks
         add_filter( 'block_categories_all', [$this, 'add_block_categories'], 20, 2);
+
+        /**
+         * Post type specific setups are controlled in the CPT register file
+         */
     }
 
 
@@ -29,28 +35,20 @@ class Gutenberg
      * @param \WP_Block_Editor_Context $editor_context
      * @return array
      */
-    public function set_block_types( bool|array $allowed_block_types, \WP_Block_Editor_Context $editor_context )
+    public function set_block_types( mixed $allowed_block_types, \WP_Block_Editor_Context $editor_context )
     : array
     {
-        /** Example: Custom blocks list for Blog Posts */
-        if ( 'post' === $editor_context->post->post_type ) {
-            /* return array(
-                'core/image',
-                'core/paragraph',
-            ); */
-        }
-
         /**
-         * To set blocks per Custom Post Type,
-         * see CPT register file
+         * Post type specific setups are controlled in the CPT register file
          */
 
         return array(
-            // 'core/paragraph',
+             'core/paragraph',
             'carbonberg/accordion',
             'carbonberg/image',
             'carbonberg/text-image',
-            // 'carbonpress/example-block',
+            // 'carbonpress/example-image',
+            // 'carbonpress/example-text',
             'gravityforms/form',
         );
     }
@@ -68,7 +66,7 @@ class Gutenberg
     {
         array_unshift($block_categories, array(
             'slug'  => 'carbonpress',
-            'title' => 'themename'
+            'title' => 'Project Name'
         ));
 
         return $block_categories;

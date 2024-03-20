@@ -1,6 +1,6 @@
-# Project name
+# Project Name
 
-Project name is a WordPress website.
+Project Name is a WordPress website.
 
 The website is built with:
 
@@ -32,6 +32,16 @@ The website is built with:
 * `npm run watch` Runs _gulp watch_
 * `npm run build` Runs _gulp build_
 * `npm run update` Runs _git pull_ and _gulp build_
+* `npm run version` Runs _node setup/version.js init_
+
+
+#### Additional Language Scripts
+
+For more about languages, please see the [wiki article here](#).
+
+* `npm run lang-make-pot` Runs _wp i18n make-pot ..._
+* `npm run lang-update-po` Runs _wp i18n update-po ..._
+* `npm run lang-make-mo` Runs _wp i18n make-mo ..._
 
 
 ### Available Gulp Tasks
@@ -40,7 +50,6 @@ The website is built with:
 * _scripting_ - Compile JavaScript files
 * _sprite_ - Regenerate the SVG Sprite files
 * _watch_ - Watch for changes, Local only
-* _version_ - Create theme version number
 * _build_ - Compile all files
 
 

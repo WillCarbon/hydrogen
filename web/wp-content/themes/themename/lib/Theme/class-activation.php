@@ -90,6 +90,7 @@ class Activation
     public function set_plugins()
     {
         activate_plugin( 'carbonneutral/carbon-neutral.php' );
+        activate_plugin( 'carbonberg/carbonberg.php' );
         activate_plugin( 'advanced-custom-fields-pro/acf.php' );
     }
 

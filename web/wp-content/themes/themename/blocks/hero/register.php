@@ -1,23 +1,26 @@
 <?php
 
-/**
- * Class CP_Block_Hero
- */
 if ( ! class_exists( 'CP_Block_Hero' ) ) {
+
     class CP_Block_Hero extends CB_Base_Block
     {
-        /**
-         * HeroBlock constructor.
-         */
+
+        private CB_Block $block;
+
         public function __construct()
         {
-            $this->set_key( 'hero' );
+            if ( !class_exists('CB_Block') )
+                return;
 
-            $this->set_name( __('Hero', 'carbonpress') );
+            $this->block = new CB_Block();
 
-            $this->set_url( CARBONPRESS_URL . '/blocks/hero/' );
+            $this->block->set_key( 'hero' );
 
-            $this->set_dir( CARBONPRESS_DIR . '/blocks/hero/' );
+            $this->block->set_name( __('Hero', 'carbonpress') );
+
+            $this->block->set_url( CARBONPRESS_URL . '/blocks/hero/' );
+
+            $this->block->set_dir( CARBONPRESS_DIR . '/blocks/hero/' );
 
             add_action( 'init', [$this, 'register'] );
         }
@@ -35,10 +38,10 @@ if ( ! class_exists( 'CP_Block_Hero' ) ) {
             /**
              * Set up the Block
              */
-            $this->add_acf_block([
+            $this->block->add_acf_block([
                 'icon'          => 'cover-image',
                 'textdomain'    => CARBONPRESS_TXTDOMAIN,
-                'preview_image' => get_carbon_img_url('/blocks/hero/preview.png')
+                'preview_image' => $this->block->get_url() .'preview.png',
             ]);
 
         }

@@ -6,6 +6,10 @@
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-md);
 
+    &--grey-light {
+        background-color: var(--colour-grey--light);
+    }
+
     &--alpha {
         background-color: var(--colour-alpha);
     }

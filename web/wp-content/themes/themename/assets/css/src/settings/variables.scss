@@ -29,4 +29,8 @@ Variables
     /* Forms */
     --input-height-sm:      #{to-rem(42)};
     --input-height-md:      #{to-rem(52)};
+
+    /* Set Layout sizes */
+    --layout-size-content:  var(--wrapper-md);
+    --layout-size-wide:     var(--wrapper-xl);
 }

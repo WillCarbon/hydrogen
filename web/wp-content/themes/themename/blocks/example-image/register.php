@@ -1,23 +1,26 @@
 <?php
 
-/**
- * Class CP_Block_Example_Image
- */
 if ( ! class_exists( 'CP_Block_Example_Image' ) ) {
-    class CP_Block_Example_Image extends CB_Base_Block
+
+    class CP_Block_Example_Image
     {
-        /**
-         * ExampleBlock constructor.
-         */
+
+        private CB_Block $block;
+
         public function __construct()
         {
-            $this->set_key( 'example-image' );
+            if ( !class_exists('CB_Block') )
+                return;
 
-            $this->set_name( __('Example Image', 'carbonpress') );
+            $this->block = new CB_Block();
 
-            $this->set_url( CARBONPRESS_URL . '/blocks/example-image/' );
+            $this->block->set_key( 'example-image' );
 
-            $this->set_dir( CARBONPRESS_DIR . '/blocks/example-image/' );
+            $this->block->set_name( __('Example Image', 'carbonpress') );
+
+            $this->block->set_url( CARBONPRESS_URL . '/blocks/example-image/' );
+
+            $this->block->set_dir( CARBONPRESS_DIR . '/blocks/example-image/' );
 
             add_action( 'init', [$this, 'register'] );
         }
@@ -35,24 +38,24 @@ if ( ! class_exists( 'CP_Block_Example_Image' ) ) {
             /**
              * Add default stylesheet (block-example-image.css)
              */
-            // $this->add_style( Theme::getCss('block-example-image'), '', [
+            // $this->block->add_style( Theme::getCss('block-example-image'), '', [
             //     'version' => Theme::getVersion(),
             // ]);
 
             /**
              * Add additional stylesheets (block-example-image-more.css)
              */
-            // $this->add_style( Theme::getCss('block-example-image-more'), 'more', [
+            // $this->block->add_style( Theme::getCss('block-example-image-more'), 'more', [
             //     'version' => Theme::getVersion(),
             // ]);
 
             /**
              * Set up the Block
              */
-            $this->add_acf_block([
+            $this->block->add_acf_block([
                 'icon'          => 'block-default',
                 'textdomain'    => CARBONPRESS_TXTDOMAIN,
-                'preview_image' => get_carbon_img_url('/blocks/example-image/preview.png'),
+                'preview_image' => $this->block->get_url() .'preview.png',
             ]);
 
         }

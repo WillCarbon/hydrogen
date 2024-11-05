@@ -2,7 +2,7 @@
 
 if ( ! class_exists( 'CP_Block_Hero' ) ) {
 
-    class CP_Block_Hero extends CB_Base_Block
+    class CP_Block_Hero
     {
 
         private CB_Block $block;

@@ -20,7 +20,8 @@ define('WP_MEMORY_LIMIT', '200M');
 define('DISALLOW_FILE_MODS', true);
 define('AUTOMATIC_UPDATER_DISABLED', true);
 
-/** Allow ACF Editing */
+/** ACF Config **/
+define('ACF_PRO_LICENSE', '');
 define('CARBON_ACF_EDIT', false);
 
 /** Google Maps API Key **/

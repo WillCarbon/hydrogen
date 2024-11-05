@@ -21,6 +21,26 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_65f8465da45d0",
+            "label": "content",
+            "name": "content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -28,7 +48,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "example-settings"
+                "value": "web-settings"
             }
         ]
     ],
@@ -41,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683643522
+    "modified": 1710769773
 }

@@ -43,13 +43,13 @@ class Gutenberg
          */
 
         return array(
-             'core/paragraph',
+            // 'core/paragraph',
             'carbonberg/accordion',
-            'carbonberg/image',
-            'carbonberg/text-image',
+            //'carbonberg/image',
+            //'carbonberg/text-image',
             // 'carbonpress/example-image',
             // 'carbonpress/example-text',
-            'gravityforms/form',
+            //'gravityforms/form',
         );
     }
 

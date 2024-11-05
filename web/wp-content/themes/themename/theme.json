@@ -1,9 +1,10 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"$schema": "https://schemas.wp.org/6.0/theme.json",
     "version": 2,
     "settings": {
         "color": {
-			"background": false,
+            "custom": true,
+			"background": true,
 			"text": false,
 			"customDuotone": false,
 			"customGradient": false,
@@ -110,7 +111,17 @@
 			},
 			"core/button": {
 				"color": {
-					"background": true
+                    "defaultPalette": false,
+                    "custom": true,
+                    "text": false,
+                    "background": true,
+					"palette": [
+                        {
+                            "slug": "alpha",
+                            "color": "var(--colour-alpha)",
+                            "name": "Red"
+                        }
+                    ]
 				},
 				"border": {
 					"radius": false

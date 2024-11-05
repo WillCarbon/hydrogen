@@ -2,6 +2,10 @@
    Wordpress
    ========================================================================== */
 
+.clearfix {
+    @include clearfix;
+}
+
 .screen-reader-text {
     position: absolute;
     width: 1px;

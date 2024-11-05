@@ -108,6 +108,11 @@ function lintStyles () {
 
 // Development Styling
 function devStyles () {
+    // build minified files
+    distStyles
+        .pipe(browserSync.stream({match: '**/*.css'}))
+
+    // build un-minified files
     return src(cssConf.src)
         .pipe(tap(function (file) {
             log.info('⚙️ ' + ' compiling: ' + file.path);
@@ -119,7 +124,8 @@ function devStyles () {
         }).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(sourcemaps.write('.'))
-        .pipe(dest(cssConf.build));
+        .pipe(dest(cssConf.build))
+        .pipe(browserSync.stream({match: '**/*.css'}));
 }
 
 // Production Styling
@@ -136,8 +142,7 @@ function distStyles () {
         }).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(cleanCSS())
-        .pipe(dest(cssConf.build))
-        .pipe(browserSync.stream({match: '**/*.css'}));
+        .pipe(dest(cssConf.build));
 }
 
 /* Styling Task */
@@ -248,7 +253,7 @@ function watching (done) {
     watch(
         [cssConf.src, cssConf.sub, cssConf.blocks],
         { events: 'all', ignoreInitial: false },
-        series(lintStyles, devStyles, distStyles)
+        series(lintStyles, devStyles)
     );
 
     // JavaScript

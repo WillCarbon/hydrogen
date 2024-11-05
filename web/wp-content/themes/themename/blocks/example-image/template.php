@@ -30,7 +30,7 @@ if ( ! empty( $block['anchor'] ) ) {
 // Add background styling
 if ( !empty($block['backgroundColor']) ) {
     $block_class[] = 'has-background';
-    $block_class[] = 'has-background-' . $block['backgroundColor'];
+    $block_class[] = 'has-background--' . $block['backgroundColor'];
     $block_class[] = 'o-background';
     $block_class[] = 'o-background--' . $block['backgroundColor'];
 }

@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "url": "https://api.github.com/repos/composer/installers/zipball/12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e",
                 "shasum": ""
             },
             "require": {
@@ -25,12 +25,12 @@
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "composer/composer": "1.6.* || ^2.0",
-                "composer/semver": "^1 || ^3",
-                "phpstan/phpstan": "^0.12.55",
-                "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^5.3",
-                "symfony/process": "^5"
+                "composer/composer": "^1.10.27 || ^2.7",
+                "composer/semver": "^1.7.2 || ^3.4.0",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-phpunit": "^1",
+                "symfony/phpunit-bridge": "^7.1.1",
+                "symfony/process": "^5 || ^6 || ^7"
             },
             "type": "composer-plugin",
             "extra": {
@@ -87,6 +87,7 @@
                 "cockpit",
                 "codeigniter",
                 "concrete5",
+                "concreteCMS",
                 "croogo",
                 "dokuwiki",
                 "drupal",
@@ -133,7 +134,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v2.2.0"
+                "source": "https://github.com/composer/installers/tree/v2.3.0"
             },
             "funding": [
                 {
@@ -149,24 +150,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-20T06:45:11+00:00"
+            "time": "2024-06-24T20:46:46+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "6.4.3",
+            "version": "6.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "b20c2071f4cd609953dbd7ffc97e5201094499f0"
+                "reference": "d3a4bdf75c79166487cf889f71acca52852d9716"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b20c2071f4cd609953dbd7ffc97e5201094499f0",
-                "reference": "b20c2071f4cd609953dbd7ffc97e5201094499f0",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/d3a4bdf75c79166487cf889f71acca52852d9716",
+                "reference": "d3a4bdf75c79166487cf889f71acca52852d9716",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "6.4.3",
+                "johnpbloch/wordpress-core": "6.7.0",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=7.0.0"
             },
@@ -195,28 +196,28 @@
                 "issues": "https://core.trac.wordpress.org/",
                 "source": "https://core.trac.wordpress.org/browser"
             },
-            "time": "2024-01-30T19:31:18+00:00"
+            "time": "2024-11-14T16:46:29+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "6.4.3",
+            "version": "6.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "389a4e72f3e14a995f89fa4bc5a69c7cf75ae2a8"
+                "reference": "3b6bdf11cf72ecb3777914259604dda961798ce2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/389a4e72f3e14a995f89fa4bc5a69c7cf75ae2a8",
-                "reference": "389a4e72f3e14a995f89fa4bc5a69c7cf75ae2a8",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/3b6bdf11cf72ecb3777914259604dda961798ce2",
+                "reference": "3b6bdf11cf72ecb3777914259604dda961798ce2",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": ">=7.0.0"
+                "php": ">=7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.4.3"
+                "wordpress/core-implementation": "6.7.0"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -243,7 +244,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2024-01-30T19:31:14+00:00"
+            "time": "2024-11-14T16:46:24+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -301,10 +302,10 @@
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "6.4.3",
+            "version": "6.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/6.4.3/en_GB.zip"
+                "url": "https://downloads.wordpress.org/translation/core/6.7/en_GB.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -368,11 +369,11 @@
         },
         {
             "name": "satispress/advanced-custom-fields-pro",
-            "version": "6.2.6.1",
+            "version": "6.3.10",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/advanced-custom-fields-pro/6.2.6.1",
-                "shasum": "f28b0283a51737ffffb6a7b3dbac4fc9abc8c35c"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/advanced-custom-fields-pro/6.3.10",
+                "shasum": "119fd738602082bb227b4d1a0e8c92ef3eb612af"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -387,11 +388,11 @@
         },
         {
             "name": "satispress/carbonberg",
-            "version": "0.8.0",
+            "version": "0.8.3",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.8.0",
-                "shasum": "89842b8b4ee34921a210ed052fd40f0d30b70ed1"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonberg/0.8.3",
+                "shasum": "9819f22d5c1c89709a7c99330c401ef4f8a8f775"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -405,11 +406,11 @@
         },
         {
             "name": "satispress/carbonneutral",
-            "version": "4.5.2",
+            "version": "4.5.7",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.5.2",
-                "shasum": "e392b4513ac29e1d930b82cd4aa7027cd6b4a841"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/carbonneutral/4.5.7",
+                "shasum": "e8ac6fdbfd82e167d0abcf8920ada3fd0755e035"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -423,11 +424,11 @@
         },
         {
             "name": "satispress/gravityforms",
-            "version": "2.8.5",
+            "version": "2.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.8.5",
-                "shasum": "a847655d2f42e2420bb922e5c869f2b65e5b90e4"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityforms/2.9.0",
+                "shasum": "7ec7deb52e3499a10189fb103777c60a7d23b130"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -442,11 +443,11 @@
         },
         {
             "name": "satispress/gravityformsrecaptcha",
-            "version": "1.4.0",
+            "version": "1.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityformsrecaptcha/1.4.0",
-                "shasum": "a25c98acb2a065e8594cba4fa6d96173e0bc0806"
+                "url": "https://plugins.io.carboncode.co.uk/satispress/gravityformsrecaptcha/1.6.0",
+                "shasum": "4f95e119f8e65f627579509bdff6a113950dda14"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -515,15 +516,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.4.2",
+            "version": "5.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.4.2"
+                "reference": "tags/5.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.4.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -533,15 +534,15 @@
         },
         {
             "name": "wpackagist-plugin/relevanssi",
-            "version": "4.22.1",
+            "version": "4.23.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/relevanssi/",
-                "reference": "tags/4.22.1"
+                "reference": "tags/4.23.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.22.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/relevanssi.4.23.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -551,15 +552,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "7.11.4",
+            "version": "8.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.11.4"
+                "reference": "tags/8.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.11.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordfence.8.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -569,15 +570,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "22.3",
+            "version": "23.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/22.3"
+                "reference": "tags/23.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.22.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.23.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -596,5 +597,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -69,16 +69,16 @@ class Scripts
     public function register_scripts()
     : void
     {
-        wp_enqueue_script(
-            'cp-example',
-            Theme::getJs('example'),
-            false,
-            Theme::getVersion(),
-            [
-                //'strategy' => 'async',
-                'in_footer' => true,
-            ]
-        );
+//        wp_enqueue_script(
+//            'cp-example',
+//            Theme::getJs('example'),
+//            false,
+//            Theme::getVersion(),
+//            [
+//                //'strategy' => 'async',
+//                'in_footer' => true,
+//            ]
+//        );
     }
 
 

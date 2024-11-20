@@ -1,6 +1,6 @@
-# Project Name
+# Hydrogen
 
-Project Name is a WordPress website.
+Hydrogen is a WordPress website.
 
 The website is built with:
 
@@ -23,7 +23,7 @@ The website is built with:
 1. Clone the project from GitHub: `git clone <github url> themename`
 2. Install the dependencies: `npm install && npm run deploy`
 3. Set up a database and update the connection details in wp-config.php
-4. Set up a Valet instance, so the site can be accessed at: http://themename.localhost
+4. Set up a Valet instance, so the site can be accessed at: http://hydrogen.localhost
 
 
 ### Deployment Scripts
@@ -60,4 +60,4 @@ For more about languages, please see the [wiki article here](#).
 
 ### Credits
 
-* [Name](https://github.com/name)
+* [Will](https://github.com/WillCarbon)
